@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SageGap — The story of a child's learning belongs to the family that lives it.</title>
+<meta name="description" content="SageGap Academic Systems helps families navigate special education, own their child's learning story, and partner with schools from a position of knowledge and confidence."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1C3D50;
+  --navy-dark:#0F2535;
+  --teal:#3A8C74;
+  --teal-light:#5aaf96;
+  --teal-pale:#EAF5F0;
+  --gold:#E9A820;
+  --gold-pale:#FDF6E3;
+  --gold-dark:#B07D10;
+  --cream:#F5F1EB;
+  --sand:#EDE8DF;
+  --charcoal:#252523;
+  --muted:#6B6B66;
+  --border:rgba(28,61,80,0.08);
+  --white:#FFFFFF;
+  /* Clay surface palette from reference */
+  --clay-bg: linear-gradient(135deg, #dce8ed 0%, #f0ece6 55%, #e8ddd4 100%);
+  --clay-warm: #f0ebe3;
+  --clay-cool: #e2ecf0;
+  --clay-mid:  #eceae6;
+  --clay-shadow: rgba(180,165,148,0.45);
+  --clay-shadow-cool: rgba(140,170,185,0.30);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--charcoal);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Lora',serif;line-height:1.15}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;height:70px;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(10px);
+  border-bottom:0.5px solid var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:11px}
+.nav-logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;background:var(--white);box-shadow:0 0 0 3px var(--white)}
+.nav-wordmark{font-family:'Lora',serif;font-size:19px;font-weight:700;color:var(--navy);letter-spacing:-0.2px}
+.nav-wordmark span{color:var(--teal)}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:14px;font-weight:400;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{
+  background:var(--navy)!important;color:var(--white)!important;
+  padding:10px 22px;border-radius:40px;font-size:13px!important;
+  font-weight:500!important;transition:background 0.2s!important;
+}
+.nav-cta:hover{background:var(--teal)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:1.5px;background:var(--navy);display:block;transition:all 0.25s}
+
+/* HERO */
+#hero{
+  min-height:100vh;padding:140px 6% 100px;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:80px;align-items:center;
+  background:var(--cream);position:relative;overflow:hidden;
+}
+#hero::after{
+  content:'';position:absolute;bottom:-200px;right:-200px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(58,140,116,0.07) 0%,transparent 68%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:22px;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--teal);flex-shrink:0}
+.hero-h1{
+  font-size:clamp(38px,4.8vw,66px);font-weight:700;
+  color:var(--navy);line-height:1.08;margin-bottom:30px;letter-spacing:-1.5px;
+}
+.hero-h1 em{font-style:italic;color:var(--teal)}
+.hero-verbatim{
+  font-family:'Lora',serif;font-size:18px;font-style:italic;
+  color:var(--charcoal);line-height:1.65;
+  border-left:3px solid var(--gold);padding-left:20px;
+  margin-bottom:44px;max-width:480px;
+}
+.hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--navy);color:var(--white);
+  padding:15px 32px;border-radius:40px;
+  font-size:15px;font-weight:500;letter-spacing:0.01em;
+  transition:background 0.2s,transform 0.15s;display:inline-block;
+}
+.btn-primary:hover{background:var(--teal);transform:translateY(-1px)}
+.btn-ghost{
+  color:var(--navy);font-size:14px;font-weight:400;
+  display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid rgba(28,61,80,0.3);padding-bottom:2px;
+  transition:color 0.2s,border-color 0.2s;
+}
+.btn-ghost:hover{color:var(--teal);border-color:var(--teal)}
+.hero-right{display:flex;flex-direction:column;gap:14px}
+.hero-card{
+  background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
+  border-radius:20px;padding:26px 28px;
+  border:none;position:relative;overflow:hidden;
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.82),
+    inset -2px -2px 6px rgba(210,165,90,0.18),
+    inset 3px 0px 14px rgba(58,140,116,0.09),
+    8px 14px 28px rgba(160,138,108,0.40),
+    -4px -6px 18px rgba(70,155,175,0.18),
+    0 2px 4px rgba(160,138,108,0.12);
+}
+.hero-card-bar{position:absolute;left:0;top:0;bottom:0;width:4px}
+.hero-card-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;margin-bottom:8px}
+.hero-card-value{font-family:'Lora',serif;font-size:20px;font-weight:600;color:var(--navy);line-height:1.3}
+.hero-card-sub{font-size:13px;color:var(--muted);margin-top:5px}
+.hero-stat-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hero-stat{
+  background:linear-gradient(145deg, #20455c 0%, #142e3e 100%);
+  border-radius:18px;padding:22px 18px;color:var(--white);text-align:center;
+  box-shadow:
+    inset 2px 3px 8px rgba(90,175,150,0.14),
+    inset -3px -3px 10px rgba(232,168,32,0.10),
+    inset 1px 1px 4px rgba(255,255,255,0.06),
+    8px 16px 32px rgba(10,25,38,0.55),
+    -3px -5px 16px rgba(40,110,120,0.18),
+    0 2px 4px rgba(10,25,38,0.25);
+}
+.hero-stat-num{font-family:'Lora',serif;font-size:36px;font-weight:700;display:block;color:var(--gold);line-height:1}
+.hero-stat-label{font-size:12px;font-weight:300;color:rgba(255,255,255,0.7);margin-top:6px;display:block}
+
+/* MARQUEE STRIP */
+.marquee-strip{
+  background:var(--navy);padding:18px 0;overflow:hidden;
+  display:flex;white-space:nowrap;
+}
+.marquee-track{
+  display:flex;gap:0;animation:marquee 30s linear infinite;flex-shrink:0;
+}
+.marquee-item{
+  font-size:13px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);padding:0 40px;
+  display:inline-flex;align-items:center;gap:16px;
+}
+.marquee-item::after{content:'·';color:var(--gold);font-size:18px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION SHARED */
+section{padding:100px 6%}
+.section-eyebrow{
+  font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:16px;display:block;
+}
+.section-h2{
+  font-size:clamp(30px,3.5vw,48px);font-weight:700;
+  color:var(--navy);letter-spacing:-0.8px;margin-bottom:24px;
+}
+.section-h2 em{font-style:italic;color:var(--teal)}
+.section-lead{font-size:18px;font-weight:300;color:var(--muted);line-height:1.75;max-width:640px}
+
+/* THE GAP */
+#the-gap{background:var(--white)}
+.gap-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:60px}
+.gap-statements{display:flex;flex-direction:column;gap:0}
+.gap-stmt{
+  padding:28px 0;border-bottom:0.5px solid var(--border);
+  display:flex;gap:20px;align-items:flex-start;
+}
+.gap-num{
+  font-family:'Lora',serif;font-size:13px;font-weight:500;
+  color:var(--teal);min-width:28px;margin-top:3px;
+}
+.gap-stmt-text{font-size:16px;font-weight:300;line-height:1.7;color:var(--charcoal)}
+.gap-stmt-text strong{font-weight:500;color:var(--navy)}
+.gap-pull{
+  background:linear-gradient(145deg, #22485e 0%, #1a3a4c 50%, #0f2535 100%);
+  border-radius:24px;padding:48px 40px;
+  position:sticky;top:100px;
+  box-shadow:
+    inset 2px 3px 8px rgba(90,175,150,0.14),
+    inset -3px -3px 10px rgba(232,168,32,0.10),
+    inset 1px 1px 4px rgba(255,255,255,0.06),
+    8px 16px 32px rgba(10,25,38,0.55),
+    -3px -5px 16px rgba(40,110,120,0.18),
+    0 2px 4px rgba(10,25,38,0.25);
+}
+.gap-pull-quote{
+  font-family:'Lora',serif;font-size:24px;font-style:italic;font-weight:400;
+  color:var(--white);line-height:1.5;margin-bottom:32px;
+}
+.gap-pull-quote span{color:var(--gold)}
+.gap-pull-stat{margin-top:20px;padding-top:20px;border-top:0.5px solid rgba(255,255,255,0.15)}
+.gap-pull-stat-num{font-family:'Lora',serif;font-size:42px;font-weight:700;color:var(--gold);display:block;line-height:1}
+.gap-pull-stat-label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;display:block}
+
+/* CANONICAL EGG */
+#canonical-egg{background:var(--cream)}
+.egg-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
+.egg-visual{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at 50% 70%, rgba(232,168,32,0.06) 0%, transparent 60%),
+             radial-gradient(ellipse at 30% 30%, rgba(90,175,150,0.05) 0%, transparent 50%);
+  border-radius:24px;padding:40px 20px 60px;
+}
+.egg-shape{
+  width:300px;height:360px;
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:0;position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 32% 28%, rgba(255,255,255,0.18) 0%, transparent 45%),
+    radial-gradient(ellipse at 70% 75%, rgba(15,37,53,0.6) 0%, transparent 50%),
+    linear-gradient(145deg, #2a5266 0%, #1a3a4c 40%, #0f2535 100%);
+  box-shadow:
+    inset 0 2px 6px rgba(255,255,255,0.10),
+    inset -8px -16px 32px rgba(8,20,30,0.55),
+    inset 6px 8px 20px rgba(58,140,116,0.18),
+    12px 28px 52px rgba(15,37,53,0.45),
+    -4px -8px 20px rgba(90,175,150,0.12),
+    0 60px 40px -20px rgba(15,37,53,0.25);
+  transform-style:preserve-3d;
+}
+.egg-shape::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 35% 25%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.04) 30%, transparent 55%),
+    radial-gradient(ellipse at 65% 80%, rgba(0,0,0,0.30) 0%, transparent 45%);
+  border-radius:inherit;
+}
+.egg-shape::after{
+  content:'';position:absolute;bottom:-18px;left:10%;right:10%;height:28px;
+  background:radial-gradient(ellipse,rgba(15,37,53,0.35) 0%,transparent 70%);
+  filter:blur(8px);border-radius:50%;
+}
+.egg-label{font-family:'Lora',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,0.5);z-index:1;letter-spacing:0.05em}
+.egg-core{font-family:'Lora',serif;font-size:19px;font-weight:700;color:var(--white);z-index:1;text-align:center;padding:0 20px;line-height:1.35}
+.egg-gold{color:var(--gold)}
+.egg-ring{
+  position:absolute;width:340px;height:400px;
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  border:1px solid rgba(90,175,150,0.20);
+  box-shadow:0 0 20px rgba(58,140,116,0.08);
+}
+.egg-ring-2{width:390px;height:460px;border-color:rgba(58,140,116,0.08);box-shadow:none}
+.egg-layers{display:flex;flex-direction:column;gap:16px;margin-top:40px}
+.egg-layer{
+  display:flex;align-items:flex-start;gap:14px;
+  background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
+  border-radius:16px;padding:18px 20px;
+  border:none;
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.82),
+    inset -2px -2px 6px rgba(210,165,90,0.18),
+    inset 3px 0px 14px rgba(58,140,116,0.09),
+    8px 14px 28px rgba(160,138,108,0.40),
+    -4px -6px 18px rgba(70,155,175,0.18),
+    0 2px 4px rgba(160,138,108,0.12);
+}
+.egg-layer-dot{
+  width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px;
+}
+.egg-layer-title{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:2px}
+.egg-layer-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* WHO WE SERVE */
+#who-we-serve{background:linear-gradient(160deg, #f0ece6 0%, #e8edf0 100%)}
+.serve-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:20px}
+.serve-scroll{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.serve-card{
+  background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
+  border-radius:20px;padding:32px 28px;
+  border:none;
+  transition:transform 0.28s ease, box-shadow 0.28s ease;
+  cursor:default;
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.82),
+    inset -2px -2px 6px rgba(210,165,90,0.18),
+    inset 3px 0px 14px rgba(58,140,116,0.09),
+    8px 14px 28px rgba(160,138,108,0.40),
+    -4px -6px 18px rgba(70,155,175,0.18),
+    0 2px 4px rgba(160,138,108,0.12);
+}
+.serve-card:hover{
+  transform:translateY(-7px) rotateX(2deg);
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.88),
+    inset -2px -2px 6px rgba(210,165,90,0.22),
+    inset 3px 0px 14px rgba(58,140,116,0.12),
+    12px 22px 42px rgba(160,138,108,0.50),
+    -5px -8px 24px rgba(70,155,175,0.24),
+    0 2px 4px rgba(160,138,108,0.14);
+}
+.serve-card-icon{
+  width:48px;height:48px;border-radius:14px;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  box-shadow:
+    inset 1px 1px 4px rgba(255,255,255,0.75),
+    inset -1px -1px 3px rgba(210,165,90,0.15),
+    3px 5px 10px rgba(160,138,108,0.28),
+    -2px -2px 6px rgba(70,155,175,0.14);
+}
+.serve-card-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.serve-card-desc{font-size:14px;font-weight:300;color:var(--muted);line-height:1.65}
+
+/* OUTCOMES — numbered like Sunday Best */
+#outcomes{background:var(--teal-pale)}
+.outcomes-inner{margin-top:70px;display:flex;flex-direction:column;gap:0}
+.outcome-row{
+  display:grid;grid-template-columns:80px 1fr auto;
+  gap:30px;align-items:center;
+  padding:40px 0;border-bottom:0.5px solid rgba(58,140,116,0.25);
+}
+.outcome-num{
+  font-family:'Lora',serif;font-size:48px;font-weight:700;
+  color:rgba(58,140,116,0.25);line-height:1;
+}
+.outcome-text h3{font-size:22px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.outcome-text p{font-size:15px;font-weight:300;color:var(--muted);max-width:480px;line-height:1.65}
+.outcome-tag{
+  background:var(--white);color:var(--teal);
+  font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
+  padding:8px 16px;border-radius:40px;white-space:nowrap;
+}
+
+/* TEACHER COPILOT */
+#teacher-copilot{background:var(--navy)}
+.copilot-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.copilot-left .section-eyebrow{color:var(--teal-light)}
+.copilot-left .section-h2{color:var(--white)}
+.copilot-left .section-lead{color:rgba(255,255,255,0.6)}
+.copilot-features{margin-top:40px;display:flex;flex-direction:column;gap:0}
+.copilot-feat{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:20px 0;border-bottom:0.5px solid rgba(255,255,255,0.08);
+}
+.copilot-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px}
+.copilot-feat-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:3px}
+.copilot-feat-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6}
+.copilot-right{display:flex;flex-direction:column;gap:12px}
+.copilot-card{
+  background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);
+  border-radius:14px;padding:24px 22px;
+}
+.copilot-card-label{
+  font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--teal-light);margin-bottom:10px;
+}
+.copilot-card-code{
+  font-family:'Courier New',monospace;font-size:18px;color:var(--gold);
+  font-weight:600;margin-bottom:6px;
+}
+.copilot-card-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.55}
+
+/* COPILOT STAT BLOCK (replaces cards) */
+.copilot-stat-block{
+  display:flex;flex-direction:column;gap:0;
+  border:none;
+  border-radius:24px;padding:40px 36px;
+  background:linear-gradient(145deg, rgba(40,95,120,0.25) 0%, rgba(10,25,38,0.55) 100%);
+  box-shadow:
+    inset 2px 3px 8px rgba(90,175,150,0.14),
+    inset -3px -3px 10px rgba(232,168,32,0.10),
+    inset 1px 1px 4px rgba(255,255,255,0.06),
+    8px 16px 32px rgba(10,25,38,0.55),
+    -3px -5px 16px rgba(40,110,120,0.18),
+    0 2px 4px rgba(10,25,38,0.25);
+}
+.copilot-stat-row{
+  display:flex;align-items:center;gap:24px;
+  padding:28px 0;
+}
+.copilot-big-num{
+  font-family:'Lora',serif;font-size:64px;font-weight:700;
+  color:var(--gold);line-height:1;flex-shrink:0;min-width:80px;
+}
+.copilot-big-label{
+  font-size:15px;font-weight:300;color:rgba(255,255,255,0.65);
+  line-height:1.55;
+}
+.copilot-divider{height:0.5px;background:rgba(255,255,255,0.08);margin:0}
+.copilot-pilot-tag{
+  display:flex;align-items:center;gap:10px;padding:24px 0 8px;
+  font-size:14px;font-weight:400;color:rgba(255,255,255,0.5);
+  letter-spacing:0.01em;
+}
+.copilot-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--teal-light);
+  flex-shrink:0;animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(0.85)}
+}
+.copilot-cta{
+  display:inline-block;margin-top:16px;
+  color:var(--gold);font-size:14px;font-weight:500;
+  border-bottom:1px solid rgba(232,168,32,0.4);padding-bottom:2px;
+  transition:color 0.2s,border-color 0.2s;width:fit-content;
+}
+.copilot-cta:hover{color:var(--white);border-color:var(--white)}
+
+/* CONSULTATION */
+#consultation{background:linear-gradient(160deg, #f0ece6 0%, #e8edf0 100%)}
+.consult-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:60px}
+.consult-credential{
+  background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
+  border-radius:24px;padding:40px;border:none;
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.82),
+    inset -2px -2px 6px rgba(210,165,90,0.18),
+    inset 3px 0px 14px rgba(58,140,116,0.09),
+    8px 14px 28px rgba(160,138,108,0.40),
+    -4px -6px 18px rgba(70,155,175,0.18),
+    0 2px 4px rgba(160,138,108,0.12);
+}
+.consult-tag{
+  display:inline-block;background:var(--gold-pale);color:var(--gold-dark);
+  font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
+  padding:6px 14px;border-radius:40px;margin-bottom:22px;
+}
+.consult-name{font-family:'Lora',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.consult-role{font-size:14px;color:var(--muted);margin-bottom:24px}
+.consult-facts{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.consult-fact{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--charcoal);font-weight:300;line-height:1.55}
+.consult-fact::before{content:'→';color:var(--teal);font-size:13px;flex-shrink:0;margin-top:2px}
+.consult-right .section-h2{margin-bottom:20px}
+.consult-right .section-lead{margin-bottom:36px}
+.consult-what{display:flex;flex-direction:column;gap:14px}
+.consult-what-item{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:18px;
+  background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
+  border-radius:14px;border:none;
+}
+.consult-what-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:7px}
+.consult-what-text{font-size:14px;font-weight:300;color:var(--charcoal);line-height:1.6}
+.consult-what-text strong{font-weight:500;color:var(--navy)}
+
+/* BELIEF */
+#belief{background:var(--navy);padding:120px 6%;text-align:center}
+.belief-inner{max-width:760px;margin:0 auto}
+.belief-pre{font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:var(--teal-light);margin-bottom:28px;display:block}
+.belief-quote{
+  font-family:'Lora',serif;font-size:clamp(28px,4vw,48px);
+  font-style:italic;font-weight:400;color:var(--white);
+  line-height:1.35;margin-bottom:48px;
+}
+.belief-quote span{color:var(--gold)}
+.belief-subs{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.belief-sub{
+  font-size:13px;font-weight:300;color:rgba(255,255,255,0.45);
+  display:flex;align-items:center;gap:8px;
+}
+.belief-sub::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--teal-light);flex-shrink:0}
+
+/* ROLLING BELIEVERS */
+#believers{background:var(--cream);padding:100px 6%}
+.believers-header{margin-bottom:60px}
+.believers-list{display:flex;flex-direction:column;gap:0}
+.believer-row{
+  display:flex;align-items:baseline;gap:0;flex-wrap:wrap;
+  padding:32px 0;border-bottom:0.5px solid var(--border);
+  font-family:'Lora',serif;font-size:clamp(20px,2.5vw,30px);
+  font-weight:400;color:rgba(28,61,80,0.45);
+  transition:color 0.3s;
+}
+.believer-row:hover{color:var(--navy)}
+.believer-plain{margin-right:0.22em}
+.believer-row em{font-style:italic;color:var(--teal)}
+.believer-arrow{margin-left:auto;font-size:20px;opacity:0;transition:opacity 0.3s;color:var(--teal)}
+.believer-row:hover .believer-arrow{opacity:1}
+
+/* CTA BAND */
+#cta-band{
+  background:var(--gold);padding:100px 6%;
+  display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
+}
+.cta-band-left .section-eyebrow{color:var(--gold-dark)}
+.cta-band-h2{
+  font-family:'Lora',serif;font-size:clamp(28px,3.5vw,44px);
+  font-weight:700;color:var(--navy);letter-spacing:-0.5px;line-height:1.15;
+}
+.btn-dark{
+  background:var(--navy);color:var(--white);
+  padding:18px 38px;border-radius:40px;
+  font-size:16px;font-weight:500;
+  transition:background 0.2s,transform 0.15s;display:inline-block;white-space:nowrap;
+}
+.btn-dark:hover{background:var(--charcoal);transform:translateY(-1px)}
+
+/* FOOTER */
+footer{
+  background:var(--navy-dark);padding:60px 6% 36px;
+}
+.footer-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:40px;flex-wrap:wrap;padding-bottom:48px;
+  border-bottom:0.5px solid rgba(255,255,255,0.08);
+}
+.footer-logo{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.footer-logo img{width:36px;height:36px;border-radius:50%;object-fit:cover;background:var(--white);box-shadow:0 0 0 3px var(--white)}
+.footer-wordmark{font-family:'Lora',serif;font-size:18px;font-weight:700;color:var(--white)}
+.footer-tagline{font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);max-width:240px;line-height:1.65}
+.footer-links h4{font-family:'Lora',serif;font-size:13px;font-weight:500;color:rgba(255,255,255,0.45);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px}
+.footer-links ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);transition:color 0.2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:28px;flex-wrap:wrap;gap:12px;
+}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3)}
+.footer-mission{font-size:12px;font-style:italic;color:rgba(255,255,255,0.25);font-family:'Lora',serif}
+
+/* ── CLAY HOVER TRANSITIONS ── */
+.hero-card{transition:transform 0.25s ease,box-shadow 0.25s ease;}
+.hero-card:hover{
+  transform:translateY(-4px) rotateX(1deg);
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.88),
+    inset -2px -2px 6px rgba(210,165,90,0.22),
+    inset 3px 0px 14px rgba(58,140,116,0.12),
+    12px 22px 42px rgba(160,138,108,0.50),
+    -5px -8px 24px rgba(70,155,175,0.24),
+    0 2px 4px rgba(160,138,108,0.14);
+}
+.egg-layer{transition:transform 0.2s ease,box-shadow 0.2s ease;}
+.egg-layer:hover{
+  transform:translateX(6px);
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.88),
+    inset -2px -2px 6px rgba(210,165,90,0.22),
+    inset 3px 0px 14px rgba(58,140,116,0.12),
+    12px 22px 42px rgba(160,138,108,0.50),
+    -5px -8px 24px rgba(70,155,175,0.24),
+    0 2px 4px rgba(160,138,108,0.14);
+}
+
+.consult-what-item{
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.82),
+    inset -2px -2px 6px rgba(210,165,90,0.18),
+    inset 3px 0px 14px rgba(58,140,116,0.09),
+    8px 14px 28px rgba(160,138,108,0.40),
+    -4px -6px 18px rgba(70,155,175,0.18),
+    0 2px 4px rgba(160,138,108,0.12);
+  transition:transform 0.2s ease,box-shadow 0.2s ease;
+}
+.consult-what-item:hover{
+  transform:translateX(4px);
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.88),
+    inset -2px -2px 6px rgba(210,165,90,0.22),
+    inset 3px 0px 14px rgba(58,140,116,0.12),
+    12px 22px 42px rgba(160,138,108,0.50),
+    -5px -8px 24px rgba(70,155,175,0.24),
+    0 2px 4px rgba(160,138,108,0.14);
+}
+
+/* ── MOBILE NAV DRAWER ── */
+.nav-drawer{
+  display:none;position:fixed;top:70px;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);
+  z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:36px;
+  border-top:0.5px solid var(--border);
+}
+.nav-drawer.open{display:flex}
+.nav-drawer a{font-family:'Lora',serif;font-size:24px;font-weight:500;color:var(--navy);transition:color 0.2s}
+.nav-drawer a:hover{color:var(--teal)}
+.nav-drawer .drawer-cta{
+  background:var(--navy);color:var(--white)!important;
+  padding:14px 32px;border-radius:40px;font-family:'Outfit',sans-serif;font-size:16px!important;
+}
+
+/* ── DESKTOP (1200px+) ── */
+@media(min-width:1200px){
+  nav{padding:0 8%}
+  #hero{padding:140px 8% 100px;gap:100px}
+  section{padding:110px 8%}
+  #belief{padding:130px 8%}
+  #cta-band{padding:110px 8%}
+  footer{padding:70px 8% 40px}
+}
+
+/* ── TABLET (601–1024px) ── */
+@media(max-width:1024px) and (min-width:601px){
+  nav{padding:0 5%}
+  .nav-links li:nth-child(1),
+  .nav-links li:nth-child(3){display:none}
+  #hero{grid-template-columns:1fr;padding:120px 5% 80px;gap:0}
+  .hero-right{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px;
+  }
+  .hero-stat-pair{display:grid;grid-template-columns:1fr 1fr;grid-column:1/-1}
+  .gap-grid{grid-template-columns:1fr;gap:40px}
+  .gap-pull{position:static}
+  .egg-layout{grid-template-columns:1fr;gap:40px}
+  .egg-visual{justify-content:flex-start;padding-left:20px}
+  .copilot-layout{grid-template-columns:1fr;gap:48px}
+  .consult-layout{grid-template-columns:1fr;gap:40px}
+  .serve-scroll{grid-template-columns:repeat(2,1fr);gap:16px}
+  .outcome-row{grid-template-columns:60px 1fr;gap:20px}
+  .outcome-tag{display:none}
+  #cta-band{flex-direction:column;gap:28px;text-align:center}
+  section{padding:80px 5%}
+  #belief{padding:100px 5%}
+  #cta-band{padding:80px 5%}
+  footer{padding:60px 5% 32px}
+  .footer-top{flex-direction:column;gap:36px}
+}
+
+/* ── MOBILE (≤600px) ── */
+@media(max-width:600px){
+  nav{padding:0 4%}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  #hero{
+    grid-template-columns:1fr;padding:100px 4% 60px;
+    min-height:auto;gap:32px;
+  }
+  .hero-h1{font-size:36px;letter-spacing:-1px}
+  .hero-verbatim{font-size:16px}
+  .hero-right{
+    display:flex;flex-direction:column;gap:12px;width:100%;
+  }
+  .hero-stat-pair{grid-template-columns:1fr 1fr}
+  .hero-stat{padding:16px 12px}
+  .hero-stat-num{font-size:28px}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:14px}
+  .btn-primary{width:100%;text-align:center;padding:14px 24px}
+
+  section{padding:64px 4%}
+  #belief{padding:80px 4%}
+  #cta-band{padding:64px 4%;flex-direction:column;gap:24px;text-align:center}
+  footer{padding:48px 4% 28px}
+
+  .section-h2{font-size:28px;letter-spacing:-0.5px}
+  .section-lead{font-size:16px}
+
+  .gap-grid{grid-template-columns:1fr;gap:32px}
+  .gap-pull{position:static;border-radius:14px;padding:32px 24px}
+  .gap-pull-quote{font-size:19px}
+  .gap-pull-stat-num{font-size:34px}
+
+  .egg-layout{grid-template-columns:1fr;gap:32px}
+  .egg-visual{display:flex;justify-content:center;transform:scale(0.75);margin:-40px 0}
+
+  .serve-scroll{grid-template-columns:1fr;gap:12px}
+  .serve-card{padding:24px 20px}
+
+  .outcome-row{
+    grid-template-columns:48px 1fr;gap:12px;padding:28px 0;
+  }
+  .outcome-num{font-size:34px}
+  .outcome-text h3{font-size:17px}
+  .outcome-tag{display:none}
+
+  .copilot-layout{grid-template-columns:1fr;gap:36px}
+  .copilot-left .section-h2{font-size:28px}
+
+  .consult-layout{grid-template-columns:1fr;gap:28px}
+  .consult-credential{padding:28px 22px}
+
+  .believers-list .believer-row{font-size:17px;padding:20px 0}
+  .believer-arrow{display:none}
+
+  .footer-top{flex-direction:column;gap:32px}
+  .cta-band-h2{font-size:26px}
+  .btn-dark{width:100%;text-align:center;padding:16px 24px}
+
+  .marquee-item{font-size:11px;padding:0 24px}
+}
+
+/* SCROLL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+.reveal-delay-3{transition-delay:0.3s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="data:image/jpeg;base64,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" alt="SageGap logo"/>
+    <span class="nav-wordmark">Sage<span>Gap</span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#the-gap">The Gap</a></li>
+    <li><a href="#who-we-serve">Who We Serve</a></li>
+    <li><a href="#teacher-copilot">Teacher Copilot</a></li>
+    <li><a href="#consultation">Consultation</a></li>
+    <li><a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank" class="nav-cta">Book a Consult</a></li>
+  
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleDrawer()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#the-gap" onclick="closeDrawer()">Why SageGap</a>
+  <a href="#canonical-egg" onclick="closeDrawer()">The Canonical Egg</a>
+  <a href="#who-we-serve" onclick="closeDrawer()">Who We Serve</a>
+  <a href="#teacher-copilot" onclick="closeDrawer()">Teacher Copilot</a>
+  <a href="#consultation" onclick="closeDrawer()">Consultation</a>
+  <a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank" class="drawer-cta" onclick="closeDrawer()">Book a Consultation</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Family-First Academic Systems</div>
+    <h1 class="hero-h1">
+      Your child's<br/>
+      learning story<br/>
+      <em>belongs to you.</em>
+    </h1>
+    <p class="hero-verbatim">
+      "The story of a child's learning belongs to the family that lives it."
+    </p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank" class="btn-primary">Book a Consultation</a>
+      <a href="#the-gap" class="btn-ghost">See how it works →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-bar" style="background:var(--teal)"></div>
+      <div class="hero-card-label" style="color:var(--teal)">The Canonical Egg</div>
+      <div class="hero-card-value">Your child's data, owned by your family — forever.</div>
+      <div class="hero-card-sub">Not owned by the school. Not owned by the district. Yours.</div>
+    </div>
+    <div class="hero-stat-pair">
+      <div class="hero-stat">
+        <span class="hero-stat-num">7.5M</span>
+        <span class="hero-stat-label">students receive special education services in the US</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">1 in 5</span>
+        <span class="hero-stat-label">children has a learning or attention challenge</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-bar" style="background:var(--gold)"></div>
+      <div class="hero-card-label" style="color:var(--gold-dark)">IEP Consultation</div>
+      <div class="hero-card-value">Walk into every meeting knowing more than you did before.</div>
+      <div class="hero-card-sub">With a practitioner who has sat on both sides of that table.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Family Data Sovereignty</span>
+    <span class="marquee-item">IEP Navigation</span>
+    <span class="marquee-item">Special Education Support</span>
+    <span class="marquee-item">The Canonical Egg</span>
+    <span class="marquee-item">Teacher Copilot</span>
+    <span class="marquee-item">Multilingual Learners</span>
+    <span class="marquee-item">Title I Schools</span>
+    <span class="marquee-item">Proficiency Instrument</span>
+    <span class="marquee-item">Family-First Platform</span>
+    <span class="marquee-item">Family Data Sovereignty</span>
+    <span class="marquee-item">IEP Navigation</span>
+    <span class="marquee-item">Special Education Support</span>
+    <span class="marquee-item">The Canonical Egg</span>
+    <span class="marquee-item">Teacher Copilot</span>
+    <span class="marquee-item">Multilingual Learners</span>
+    <span class="marquee-item">Title I Schools</span>
+    <span class="marquee-item">Proficiency Instrument</span>
+    <span class="marquee-item">Family-First Platform</span>
+  </div>
+</div>
+
+<!-- THE GAP -->
+<section id="the-gap">
+  <span class="section-eyebrow reveal">Why SageGap Exists</span>
+  <h2 class="section-h2 reveal">There is a gap between<br/><em>what families know</em><br/>and what they have a right to.</h2>
+  <div class="gap-grid">
+    <div class="gap-statements">
+      <div class="gap-stmt reveal">
+        <span class="gap-num">01</span>
+        <p class="gap-stmt-text"><strong>IEP meetings are not designed for families.</strong> They are designed for compliance. Parents are handed documents they've never seen and asked to sign at the end of a 45-minute meeting.</p>
+      </div>
+      <div class="gap-stmt reveal reveal-delay-1">
+        <span class="gap-num">02</span>
+        <p class="gap-stmt-text"><strong>A child's records do not follow them the way they should.</strong> Every school transition, every new teacher, starts from scratch. The family holds the history — but rarely the tools to use it.</p>
+      </div>
+      <div class="gap-stmt reveal reveal-delay-2">
+        <span class="gap-num">03</span>
+        <p class="gap-stmt-text"><strong>Teachers want to differentiate. Systems don't give them time.</strong> The gap between what a child needs and what an overloaded teacher can build costs real learning, every day.</p>
+      </div>
+      <div class="gap-stmt reveal reveal-delay-3">
+        <span class="gap-num">04</span>
+        <p class="gap-stmt-text"><strong>Multilingual families navigate this in a second language.</strong> The complexity of special education law lands on families already carrying the weight of cultural and linguistic distance.</p>
+      </div>
+    </div>
+    <div class="gap-pull reveal">
+      <p class="gap-pull-quote">
+        "Families don't need to be fixed.<br/>They need to be<br/><span>equipped.</span>"
+      </p>
+      <p style="font-size:14px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.7">SageGap was built from the inside — by someone who spent nearly two decades in Title I inclusion classrooms, who navigated IEP processes as a parent, and who knows that the families showing up to those meetings love their children fiercely and deserve a system that honors that.</p>
+      <div class="gap-pull-stat">
+        <span class="gap-pull-stat-num">~20</span>
+        <span class="gap-pull-stat-label">years in Title I inclusion classrooms — the foundation SageGap is built on</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CANONICAL EGG -->
+<section id="canonical-egg">
+  <span class="section-eyebrow reveal">The Canonical Egg</span>
+  <h2 class="section-h2 reveal">One place. One story.<br/><em>Owned by your family.</em></h2>
+  <p class="section-lead reveal">Most platforms store your child's data for institutional convenience. The Canonical Egg is different — it's a longitudinal, family-owned record of your child's learning journey that travels with them, grows with them, and belongs to no one but you.</p>
+  <div class="egg-layout">
+    <div class="egg-visual reveal" aria-hidden="true">
+      <div class="egg-ring egg-ring-2"></div>
+      <div class="egg-ring"></div>
+      <div class="egg-shape">
+        <span class="egg-label">your child's</span>
+        <span class="egg-core">Learning<br/>Record<br/><span class="egg-gold">Your Family.<br/>Your Archive.</span></span>
+      </div>
+    </div>
+    <div>
+      <div class="egg-layers">
+        <div class="egg-layer reveal">
+          <div class="egg-layer-dot" style="background:var(--teal)"></div>
+          <div>
+            <div class="egg-layer-title">Longitudinal by design</div>
+            <div class="egg-layer-desc">Every evaluation, every goal, every accommodation — captured in sequence so patterns become visible and progress is undeniable.</div>
+          </div>
+        </div>
+        <div class="egg-layer reveal reveal-delay-1">
+          <div class="egg-layer-dot" style="background:var(--gold)"></div>
+          <div>
+            <div class="egg-layer-title">Family-owned, not institution-owned</div>
+            <div class="egg-layer-desc">Your child's data isn't an institutional asset. The Canonical Egg asserts family sovereignty at every layer of the architecture.</div>
+          </div>
+        </div>
+        <div class="egg-layer reveal reveal-delay-2">
+          <div class="egg-layer-dot" style="background:var(--navy)"></div>
+          <div>
+            <div class="egg-layer-title">Human-confirmed truth</div>
+            <div class="egg-layer-desc">Nothing becomes canonical record without a family member confirming it. AI can process — only you can authorize.</div>
+          </div>
+        </div>
+        <div class="egg-layer reveal reveal-delay-3">
+          <div class="egg-layer-dot" style="background:var(--teal-light)"></div>
+          <div>
+            <div class="egg-layer-title">Feeds intelligent systems as AI advances</div>
+            <div class="egg-layer-desc">The richest, most personal data about your child's learning is yours — and it becomes more valuable as AI tools grow more capable of using it to help them.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section id="who-we-serve">
+  <div class="serve-header">
+    <div>
+      <span class="section-eyebrow reveal">Who We Serve</span>
+      <h2 class="section-h2 reveal">Built for every person<br/><em>in a child's corner.</em></h2>
+    </div>
+    <p class="section-lead reveal" style="max-width:340px;font-size:15px">SageGap serves the full ecosystem — because children are best served when the people around them are connected, informed, and equipped.</p>
+  </div>
+  <div class="serve-scroll">
+    <div class="serve-card reveal">
+      <div class="serve-card-icon" style="background:var(--teal-pale)">🏠</div>
+      <div class="serve-card-title">Families &amp; Guardians</div>
+      <p class="serve-card-desc">Navigate IEPs, own your child's records, and walk into every school meeting with the knowledge and confidence you deserve.</p>
+    </div>
+    <div class="serve-card reveal reveal-delay-1">
+      <div class="serve-card-icon" style="background:var(--gold-pale)">✏️</div>
+      <div class="serve-card-title">Classroom Teachers</div>
+      <p class="serve-card-desc">The Teacher Copilot calibrates instruction to every student's proficiency level — with integrated supports built in, not bolted on.</p>
+    </div>
+    <div class="serve-card reveal reveal-delay-2">
+      <div class="serve-card-icon" style="background:#EEF0FA">🎓</div>
+      <div class="serve-card-title">Special Education Teachers</div>
+      <p class="serve-card-desc">Compliance-ready documentation, IEP-aligned tools, and systems that honor the complexity of your work without multiplying your paperwork.</p>
+    </div>
+    <div class="serve-card reveal">
+      <div class="serve-card-icon" style="background:var(--teal-pale)">💬</div>
+      <div class="serve-card-title">School Counselors</div>
+      <p class="serve-card-desc">Shared language, shared data, shared outcomes — connecting the full support team around each child's documented journey.</p>
+    </div>
+    <div class="serve-card reveal reveal-delay-1">
+      <div class="serve-card-icon" style="background:var(--gold-pale)">🌐</div>
+      <div class="serve-card-title">Multilingual Families</div>
+      <p class="serve-card-desc">Special education law is hard enough in one language. SageGap meets families where they are, with clarity, not compliance-speak.</p>
+    </div>
+    <div class="serve-card reveal reveal-delay-2">
+      <div class="serve-card-icon" style="background:#F5EEF5)">🤝</div>
+      <div class="serve-card-title">Community Partners</div>
+      <p class="serve-card-desc">Therapists, advocates, social workers — anyone who serves the child connects to the same trusted, family-authorized record.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section id="outcomes">
+  <span class="section-eyebrow reveal">What Changes</span>
+  <h2 class="section-h2 reveal">What families experience<br/><em>when SageGap is in their corner.</em></h2>
+  <div class="outcomes-inner">
+    <div class="outcome-row reveal">
+      <div class="outcome-num">01</div>
+      <div class="outcome-text">
+        <h3>Families walk into IEP meetings prepared</h3>
+        <p>No more signing documents you've never seen. No more nodding through jargon. You arrive knowing your rights, your child's data, and your options.</p>
+      </div>
+      <span class="outcome-tag">IEP Readiness</span>
+    </div>
+    <div class="outcome-row reveal">
+      <div class="outcome-num">02</div>
+      <div class="outcome-text">
+        <h3>A child's record survives every transition</h3>
+        <p>New school, new grade, new teacher — the Canonical Egg holds the full story so no child has to start over just because a building changed.</p>
+      </div>
+      <span class="outcome-tag">Data Continuity</span>
+    </div>
+    <div class="outcome-row reveal">
+      <div class="outcome-num">03</div>
+      <div class="outcome-text">
+        <h3>Teachers reach every learner — not just the median</h3>
+        <p>The Teacher Copilot builds instruction from proficiency up, with supports and complexity controls that move with the student, not against them.</p>
+      </div>
+      <span class="outcome-tag">Instructional Equity</span>
+    </div>
+    <div class="outcome-row reveal">
+      <div class="outcome-num">04</div>
+      <div class="outcome-text">
+        <h3>Families become advocates, not bystanders</h3>
+        <p>When a family understands their child's data, they stop waiting for the system to act and start leading the conversation. That shift changes everything.</p>
+      </div>
+      <span class="outcome-tag">Family Agency</span>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHER COPILOT -->
+<section id="teacher-copilot" style="padding:100px 6%">
+  <div class="copilot-layout">
+    <div class="copilot-left">
+      <span class="section-eyebrow">Teacher Copilot</span>
+      <h2 class="section-h2">AI-powered instruction<br/><em>built for real classrooms.</em></h2>
+      <p class="section-lead">The Proficiency Instrument is the only tool that calibrates task design, integrated supports, and complexity controls simultaneously — from a single proficiency input.</p>
+      <div class="copilot-features">
+        <div class="copilot-feat">
+          <div class="copilot-feat-dot"></div>
+          <div>
+            <div class="copilot-feat-title">The calibrate() function</div>
+            <div class="copilot-feat-desc">One input. Cascading outputs. Task design, scaffolds, and complexity — all calibrated to where the student actually is.</div>
+          </div>
+        </div>
+        <div class="copilot-feat">
+          <div class="copilot-feat-dot"></div>
+          <div>
+            <div class="copilot-feat-title">129 skill atom architecture</div>
+            <div class="copilot-feat-desc">Built for Indiana Grade 7 Mathematics with 24 standards and PLD-tagged example items. Precision at the skill level.</div>
+          </div>
+        </div>
+        <div class="copilot-feat">
+          <div class="copilot-feat-dot"></div>
+          <div>
+            <div class="copilot-feat-title">Source-verified outputs</div>
+            <div class="copilot-feat-desc">A Verification Layer links every output to its instructional source — so teachers know, and families can ask.</div>
+          </div>
+        </div>
+        <div class="copilot-feat">
+          <div class="copilot-feat-dot"></div>
+          <div>
+            <div class="copilot-feat-title">Role-Based Copilot Stack</div>
+            <div class="copilot-feat-desc">Different tools for different roles — teacher of record, paraeducator, specialist — all centered on the same child's data.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copilot-right">
+      <div class="copilot-stat-block">
+        <div class="copilot-stat-row">
+          <span class="copilot-big-num">129</span>
+          <span class="copilot-big-label">skill atoms mapped to Indiana Grade 7 Math standards</span>
+        </div>
+        <div class="copilot-divider"></div>
+        <div class="copilot-stat-row">
+          <span class="copilot-big-num">24</span>
+          <span class="copilot-big-label">standards covered with PLD-tagged example items</span>
+        </div>
+        <div class="copilot-divider"></div>
+        <div class="copilot-stat-row">
+          <span class="copilot-big-num">1</span>
+          <span class="copilot-big-label">input. Cascading task design, scaffolds &amp; complexity — simultaneously.</span>
+        </div>
+        <div class="copilot-divider"></div>
+        <div class="copilot-pilot-tag">
+          <span class="copilot-dot"></span>
+          Pilot cohort now forming — 2 to 3 classroom teachers
+        </div>
+        <a href="#" class="copilot-cta" onclick="openPilotModal();return false;">Join the pilot →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION -->
+<section id="consultation">
+  <span class="section-eyebrow reveal">IEP Consultation</span>
+  <h2 class="section-h2 reveal">You don't have to navigate this<br/><em>alone.</em></h2>
+  <div class="consult-layout">
+    <div class="consult-credential reveal">
+      <div class="consult-tag">Your Consultant</div>
+      <div class="consult-name">David Johnson III</div>
+      <div class="consult-role">Founder, SageGap Academic Systems</div>
+      <div class="consult-facts">
+        <div class="consult-fact">Nearly 20 years as a Title I inclusion classroom teacher at MSD of Wayne Township, Indiana</div>
+        <div class="consult-fact">Navigated IEP processes as both an educator who wrote them and a parent who signed them</div>
+        <div class="consult-fact">Built SageGap from direct proximity to the families the system most often fails</div>
+        <div class="consult-fact">Holds a practitioner's knowledge of IDEA, special education law, and how schools actually make decisions</div>
+      </div>
+      <a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank" class="btn-primary" style="display:inline-block">Book a Consultation →</a>
+    </div>
+    <div class="consult-right">
+      <p class="section-lead">SageGap's consultation is not legal advice. It is something more useful — the informed perspective of someone who has been on both sides of the IEP table, who knows what schools are required to do, and who will help you show up ready.</p>
+      <div class="consult-what" style="margin-top:32px">
+        <div class="consult-what-item reveal">
+          <div class="consult-what-dot"></div>
+          <div class="consult-what-text"><strong>IEP review and plain-language interpretation</strong> — understanding what your child's document actually says and what it legally commits to.</div>
+        </div>
+        <div class="consult-what-item reveal reveal-delay-1">
+          <div class="consult-what-dot"></div>
+          <div class="consult-what-text"><strong>Meeting preparation</strong> — knowing your rights, your questions, and your non-negotiables before you walk in the room.</div>
+        </div>
+        <div class="consult-what-item reveal reveal-delay-2">
+          <div class="consult-what-dot"></div>
+          <div class="consult-what-text"><strong>Evaluation results interpretation</strong> — what the scores mean, what they don't mean, and what they should trigger.</div>
+        </div>
+        <div class="consult-what-item reveal reveal-delay-3">
+          <div class="consult-what-dot"></div>
+          <div class="consult-what-text"><strong>Advocacy strategy</strong> — how to ask for what your child needs in language the system is structured to respond to.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BELIEF -->
+<section id="belief">
+  <div class="belief-inner">
+    <span class="belief-pre">The SageGap Covenant</span>
+    <p class="belief-quote">
+      "The story of a child's learning<br/>
+      belongs to the <span>family</span><br/>
+      that lives it."
+    </p>
+    <div class="belief-subs">
+      <span class="belief-sub">Family data sovereignty</span>
+      <span class="belief-sub">Informed advocacy</span>
+      <span class="belief-sub">Equitable instruction</span>
+      <span class="belief-sub">Human-confirmed truth</span>
+      <span class="belief-sub">Partnership over compliance</span>
+    </div>
+  </div>
+</section>
+
+<!-- ROLLING BELIEVERS -->
+<section id="believers">
+  <div class="believers-header">
+    <span class="section-eyebrow">SageGap is for families who</span>
+  </div>
+  <div class="believers-list">
+    <div class="believer-row"><span class="believer-plain">believe their child's story</span><em>deserves to be told fully</em><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">want to walk into IEP meetings</span><em>prepared, not overwhelmed</em><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">know their child is more than</span><em>a test score or a label</em><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">refuse to let a school transition</span><em>erase what was built</em><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">believe advocacy and love</span><em>can work together</em><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">are ready to own</span><em>their child's data</em><span class="believer-arrow">→</span></div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div id="cta-band">
+  <div class="cta-band-left">
+    <span class="section-eyebrow">Ready to start</span>
+    <h2 class="cta-band-h2">Your child's story<br/>starts with one conversation.</h2>
+  </div>
+  <a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank" class="btn-dark">Book an IEP Consultation</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <img src="data:image/jpeg;base64,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" alt="SageGap"/>
+        <span class="footer-wordmark">SageGap</span>
+      </div>
+      <p class="footer-tagline">Academic Systems built for families. Instruction built for every child. Data owned by the people who matter most.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="#the-gap">Why SageGap</a></li>
+        <li><a href="#canonical-egg">The Canonical Egg</a></li>
+        <li><a href="#who-we-serve">Who We Serve</a></li>
+        <li><a href="#teacher-copilot">Teacher Copilot</a></li>
+        <li><a href="#consultation">IEP Consultation</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank">Book a Consultation</a></li>
+        <li><a href="mailto:hello@sagegap.com">hello@sagegap.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 SageGap Academic Systems. All rights reserved.</span>
+    <span class="footer-mission">"The story of a child's learning belongs to the family that lives it."</span>
+  </div>
+</footer>
+
+<script>
+function toggleDrawer(){
+  var d=document.getElementById('navDrawer');
+  var h=document.getElementById('hamburger');
+  var open=d.classList.toggle('open');
+  h.style.opacity=open?'0.5':'1';
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeDrawer(){
+  document.getElementById('navDrawer').classList.remove('open');
+  document.getElementById('hamburger').style.opacity='1';
+  document.body.style.overflow='';
+}
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:0.10});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+window.addEventListener('scroll',function(){
+  var nav=document.querySelector('nav');
+  nav.style.boxShadow=window.scrollY>40?'0 2px 20px rgba(28,61,80,0.10)':'none';
+});
+window.addEventListener('resize',function(){
+  if(window.innerWidth>768){closeDrawer()}
+});
+</script>
+
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  TEACHER COPILOT PILOT — FORMSPREE SETUP (2 min)        ║
+  ║                                                          ║
+  ║  1. Go to https://formspree.io and create a free account ║
+  ║  2. Click "New Form" — name it "Teacher Copilot Pilot"   ║
+  ║  3. Set the destination email to: david@sagegap.com      ║
+  ║  4. Copy your unique form ID (looks like: xyzabcde)      ║
+  ║  5. Replace YOUR_FORMSPREE_ID below with that ID         ║
+  ║  6. Formspree will send a confirmation to david@sagegap  ║
+  ║     — click it to activate                               ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+
+<!-- PILOT MODAL -->
+<div id="pilotModal" class="pilot-modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="pilot-modal-box" role="dialog" aria-modal="true" aria-labelledby="pilotModalTitle">
+
+    <button class="pilot-modal-close" onclick="closePilotModal()" aria-label="Close">✕</button>
+
+    <div class="pilot-modal-eyebrow">Teacher Copilot</div>
+    <h2 class="pilot-modal-title" id="pilotModalTitle">Join the Pilot Cohort</h2>
+    <p class="pilot-modal-lead">We're forming a group of 2–3 classroom teachers to shape the first version of the Teacher Copilot. Tell us about yourself and we'll be in touch.</p>
+
+    <!-- SUCCESS STATE -->
+    <div class="pilot-success" id="pilotSuccess">
+      <div class="pilot-success-icon">✓</div>
+      <h3 class="pilot-success-title">You're on the list.</h3>
+      <p class="pilot-success-body">Thank you for applying — we've received your information and will be in touch as we finalize the Teacher Copilot pilot cohort. Expect to hear from us at the email you provided.</p>
+      <button class="pilot-btn-close" onclick="closePilotModal()">Close</button>
+    </div>
+
+    <!-- FORM STATE -->
+    <form
+      id="pilotForm"
+      action="https://formspree.io/f/xdabadpk"
+      method="POST"
+      onsubmit="handlePilotSubmit(event)"
+    >
+      <!-- Formspree honeypot spam filter -->
+      <input type="text" name="_gotcha" style="display:none"/>
+      <!-- Route replies to david@sagegap.com -->
+      <input type="hidden" name="_replyto" value="david@sagegap.com"/>
+      <input type="hidden" name="_subject" value="Teacher Copilot Pilot Application"/>
+
+      <div class="pilot-field-group">
+        <div class="pilot-field">
+          <label class="pilot-label" for="pilotName">Full Name <span aria-hidden="true">*</span></label>
+          <input
+            class="pilot-input"
+            type="text"
+            id="pilotName"
+            name="name"
+            placeholder="Your full name"
+            required
+            autocomplete="name"
+          />
+        </div>
+        <div class="pilot-field">
+          <label class="pilot-label" for="pilotEmail">Email Address <span aria-hidden="true">*</span></label>
+          <input
+            class="pilot-input"
+            type="email"
+            id="pilotEmail"
+            name="email"
+            placeholder="your@school.edu"
+            required
+            autocomplete="email"
+          />
+        </div>
+      </div>
+
+      <div class="pilot-field">
+        <label class="pilot-label" for="pilotSchool">School &amp; District</label>
+        <input
+          class="pilot-input"
+          type="text"
+          id="pilotSchool"
+          name="school_district"
+          placeholder="e.g. MSD of Wayne Township, Indianapolis"
+          autocomplete="organization"
+        />
+      </div>
+
+      <div class="pilot-field">
+        <label class="pilot-label" for="pilotRole">Your Role <span aria-hidden="true">*</span></label>
+        <select class="pilot-input pilot-select" id="pilotRole" name="role" required>
+          <option value="" disabled selected>Select your primary role</option>
+          <option value="General Education Teacher">General Education Teacher</option>
+          <option value="Special Education Teacher">Special Education Teacher</option>
+          <option value="Instructional Coach">Instructional Coach</option>
+          <option value="Department Head">Department Head</option>
+          <option value="School Administrator">School Administrator</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="pilot-field">
+        <label class="pilot-label" for="pilotGrade">Grade Level(s) You Teach</label>
+        <input
+          class="pilot-input"
+          type="text"
+          id="pilotGrade"
+          name="grade_levels"
+          placeholder="e.g. Grade 7 Math, 6–8 Special Ed"
+        />
+      </div>
+
+      <div class="pilot-field">
+        <label class="pilot-label" for="pilotWhy">Why do you want to join the pilot? <span aria-hidden="true">*</span></label>
+        <textarea
+          class="pilot-input pilot-textarea"
+          id="pilotWhy"
+          name="why_join"
+          placeholder="Tell us what you're hoping to get out of the Teacher Copilot pilot…"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+
+      <div class="pilot-form-footer">
+        <p class="pilot-privacy">Your information goes only to SageGap. We do not share or sell applicant data.</p>
+        <button type="submit" class="pilot-submit" id="pilotSubmitBtn">
+          <span id="pilotBtnText">Apply for the Pilot</span>
+          <span id="pilotBtnSpinner" class="pilot-spinner" style="display:none"></span>
+        </button>
+      </div>
+
+      <div class="pilot-error" id="pilotError" style="display:none">
+        Something went wrong. Please email <a href="mailto:david@sagegap.com">david@sagegap.com</a> directly.
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<style>
+/* ── PILOT MODAL ── */
+.pilot-modal-overlay{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(15,37,53,0.72);
+  backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;
+  padding:20px;
+  animation:fadeInOverlay 0.25s ease;
+}
+.pilot-modal-overlay.open{display:flex}
+@keyframes fadeInOverlay{from{opacity:0}to{opacity:1}}
+
+.pilot-modal-box{
+  position:relative;
+  background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
+  border-radius:24px;
+  padding:48px 44px;
+  width:100%;max-width:580px;
+  max-height:90vh;overflow-y:auto;
+  box-shadow:
+    inset 2px 3px 8px rgba(255,255,255,0.82),
+    inset -2px -2px 6px rgba(210,165,90,0.18),
+    inset 3px 0px 14px rgba(58,140,116,0.09),
+    16px 32px 60px rgba(15,37,53,0.45),
+    -6px -10px 28px rgba(70,155,175,0.15);
+  animation:slideUpModal 0.3s cubic-bezier(0.34,1.4,0.64,1);
+}
+@keyframes slideUpModal{
+  from{opacity:0;transform:translateY(24px) scale(0.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+.pilot-modal-close{
+  position:absolute;top:20px;right:20px;
+  background:none;border:none;cursor:pointer;
+  font-size:16px;color:var(--muted);
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.15s,color 0.15s;
+}
+.pilot-modal-close:hover{background:rgba(28,61,80,0.08);color:var(--navy)}
+
+.pilot-modal-eyebrow{
+  font-size:11px;font-weight:500;letter-spacing:0.13em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:10px;
+}
+.pilot-modal-title{
+  font-family:'Lora',serif;font-size:28px;font-weight:700;
+  color:var(--navy);margin-bottom:12px;letter-spacing:-0.4px;
+}
+.pilot-modal-lead{
+  font-size:15px;font-weight:300;color:var(--muted);
+  line-height:1.65;margin-bottom:28px;
+}
+
+/* FIELDS */
+.pilot-field-group{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pilot-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.pilot-label{
+  font-size:12px;font-weight:500;color:var(--navy);
+  letter-spacing:0.03em;
+}
+.pilot-label span{color:var(--teal)}
+.pilot-input{
+  font-family:'Outfit',sans-serif;font-size:14px;font-weight:300;
+  color:var(--charcoal);
+  background:rgba(255,255,255,0.65);
+  border:0.5px solid rgba(58,140,116,0.20);
+  border-radius:10px;padding:11px 14px;
+  outline:none;
+  transition:border-color 0.2s,box-shadow 0.2s,background 0.2s;
+  box-shadow:inset 1px 1px 4px rgba(255,255,255,0.6),inset -1px -1px 3px rgba(210,165,90,0.08);
+  width:100%;
+}
+.pilot-input:focus{
+  border-color:var(--teal);
+  background:rgba(255,255,255,0.85);
+  box-shadow:
+    inset 1px 1px 4px rgba(255,255,255,0.8),
+    0 0 0 3px rgba(58,140,116,0.12);
+}
+.pilot-select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233A8C74' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.pilot-textarea{resize:vertical;min-height:80px;line-height:1.55}
+
+/* FORM FOOTER */
+.pilot-form-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;margin-top:8px;flex-wrap:wrap;
+}
+.pilot-privacy{font-size:11px;color:var(--muted);font-weight:300;line-height:1.5;max-width:260px}
+.pilot-submit{
+  background:var(--navy);color:var(--white);
+  border:none;cursor:pointer;
+  padding:13px 28px;border-radius:40px;
+  font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:background 0.2s,transform 0.15s,box-shadow 0.2s;
+  box-shadow:4px 8px 18px rgba(15,37,53,0.30);
+  white-space:nowrap;
+}
+.pilot-submit:hover{background:var(--teal);transform:translateY(-1px);box-shadow:4px 10px 22px rgba(58,140,116,0.30)}
+.pilot-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+
+/* SPINNER */
+.pilot-spinner{
+  width:16px;height:16px;border-radius:50%;
+  border:2px solid rgba(255,255,255,0.3);
+  border-top-color:var(--white);
+  animation:spin 0.7s linear infinite;
+  flex-shrink:0;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ERROR */
+.pilot-error{
+  margin-top:14px;font-size:13px;color:#c0392b;
+  background:rgba(192,57,43,0.06);border-radius:8px;padding:10px 14px;
+}
+.pilot-error a{color:#c0392b;text-decoration:underline}
+
+/* SUCCESS */
+.pilot-success{display:none;text-align:center;padding:20px 0}
+.pilot-success-icon{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--teal);color:var(--white);
+  font-size:24px;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;
+  box-shadow:4px 8px 20px rgba(58,140,116,0.35);
+}
+.pilot-success-title{font-family:'Lora',serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.pilot-success-body{font-size:15px;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:28px;max-width:380px;margin-left:auto;margin-right:auto}
+.pilot-btn-close{
+  background:var(--navy);color:var(--white);border:none;cursor:pointer;
+  padding:12px 28px;border-radius:40px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;
+  transition:background 0.2s;
+}
+.pilot-btn-close:hover{background:var(--teal)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .pilot-modal-box{padding:36px 24px}
+  .pilot-field-group{grid-template-columns:1fr}
+  .pilot-form-footer{flex-direction:column;align-items:flex-start}
+  .pilot-submit{width:100%;justify-content:center}
+  .pilot-modal-title{font-size:24px}
+}
+</style>
+
+<script>
+function openPilotModal(){
+  document.getElementById('pilotModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(function(){
+    document.getElementById('pilotName').focus();
+  },320);
+}
+function closePilotModal(){
+  document.getElementById('pilotModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleOverlayClick(e){
+  if(e.target===document.getElementById('pilotModal')){closePilotModal()}
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){closePilotModal()}
+});
+
+async function handlePilotSubmit(e){
+  e.preventDefault();
+  var btn=document.getElementById('pilotSubmitBtn');
+  var txt=document.getElementById('pilotBtnText');
+  var spin=document.getElementById('pilotBtnSpinner');
+  var err=document.getElementById('pilotError');
+  var form=document.getElementById('pilotForm');
+  var success=document.getElementById('pilotSuccess');
+
+  btn.disabled=true;
+  txt.style.display='none';
+  spin.style.display='inline-block';
+  err.style.display='none';
+
+  try{
+    var res=await fetch(form.action,{
+      method:'POST',
+      body:new FormData(form),
+      headers:{Accept:'application/json'}
+    });
+    if(res.ok){
+      form.style.display='none';
+      success.style.display='block';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(ex){
+    err.style.display='block';
+    btn.disabled=false;
+    txt.style.display='inline';
+    spin.style.display='none';
+  }
+}
+</script>
+
+</body>
+</html>
