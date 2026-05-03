@@ -695,6 +695,100 @@ footer{
 .reveal-delay-2{transition-delay:0.2s}
 .reveal-delay-3{transition-delay:0.3s}
 
+/* ── CONVICTION SECTION ── */
+#conviction{
+  background:linear-gradient(145deg, #22485e 0%, #1a3a4c 50%, #0f2535 100%);
+  padding:100px 6%;position:relative;overflow:hidden;
+}
+#conviction::before{
+  content:'';position:absolute;top:-120px;left:-80px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(58,140,116,0.13) 0%,transparent 65%);
+  pointer-events:none;
+}
+#conviction::after{
+  content:'';position:absolute;bottom:-80px;right:-60px;
+  width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(233,168,32,0.09) 0%,transparent 65%);
+  pointer-events:none;
+}
+.conviction-inner{
+  max-width:1100px;margin:0 auto;position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+}
+.conviction-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:22px;
+}
+.conviction-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);flex-shrink:0}
+.conviction-h2{
+  font-family:'Lora',serif;font-size:clamp(28px,3.2vw,44px);font-weight:700;
+  color:#eee8dc;line-height:1.12;letter-spacing:-0.5px;margin-bottom:22px;
+}
+.conviction-h2 em{font-style:italic;color:var(--teal-light)}
+.conviction-body{
+  font-size:17px;font-weight:300;line-height:1.8;
+  color:rgba(238,232,220,0.65);margin-bottom:28px;
+}
+.conviction-pullquote{
+  border-left:3px solid var(--gold);border-radius:0;
+  padding:18px 22px;
+  background:rgba(255,255,255,0.05);
+  margin-bottom:36px;
+}
+.conviction-pullquote p{
+  font-family:'Lora',serif;font-style:italic;
+  font-size:16px;line-height:1.7;
+  color:rgba(238,232,220,0.85);margin-bottom:8px;
+}
+.conviction-pullquote span{
+  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--gold);display:block;
+}
+.conviction-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:500;color:var(--gold);
+  border-bottom:1px solid rgba(233,168,32,0.4);padding-bottom:2px;
+  transition:color 0.2s,border-color 0.2s;
+}
+.conviction-cta:hover{color:var(--white);border-color:var(--white)}
+.conviction-obligations-label{
+  font-size:10px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;
+  color:rgba(238,232,220,0.35);margin-bottom:20px;
+  padding-bottom:14px;border-bottom:0.5px solid rgba(255,255,255,0.08);
+}
+.conviction-obligation{
+  display:flex;gap:18px;padding:20px 0;
+  border-bottom:0.5px solid rgba(255,255,255,0.07);
+  transition:opacity 0.2s;
+}
+.conviction-obligation:last-child{border-bottom:none;padding-bottom:0}
+.conviction-obligation:hover .conviction-ob-body{color:rgba(238,232,220,0.85)}
+.conviction-ob-num{
+  font-family:'Lora',serif;font-style:italic;font-size:14px;
+  color:var(--gold);opacity:0.75;min-width:22px;padding-top:2px;flex-shrink:0;
+}
+.conviction-ob-title{font-size:15px;font-weight:500;color:#eee8dc;margin-bottom:4px}
+.conviction-ob-body{
+  font-size:13px;font-weight:300;line-height:1.65;
+  color:rgba(238,232,220,0.5);transition:color 0.2s;
+}
+@media(min-width:1200px){#conviction{padding:110px 8%}}
+@media(max-width:1024px) and (min-width:601px){
+  #conviction{padding:80px 5%}
+  .conviction-inner{grid-template-columns:1fr;gap:48px}
+  .conviction-h2{font-size:30px}
+}
+@media(max-width:600px){
+  #conviction{padding:64px 4%}
+  .conviction-inner{grid-template-columns:1fr;gap:36px}
+  .conviction-h2{font-size:26px;letter-spacing:-0.3px}
+  .conviction-body{font-size:16px}
+  .conviction-pullquote{padding:14px 16px}
+  .conviction-pullquote p{font-size:15px}
+}
+
 /* HOW IT WORKS */
 .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
 .how-step{
@@ -960,6 +1054,58 @@ footer{
       <div class="gap-pull-stat">
         <span class="gap-pull-stat-num">~20</span>
         <span class="gap-pull-stat-label">years in Title I inclusion classrooms — the foundation SageGap is built on</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVICTION -->
+<section id="conviction">
+  <div class="conviction-inner">
+    <div>
+      <div class="conviction-eyebrow reveal">Why We Built This</div>
+      <h2 class="conviction-h2 reveal">
+        You are the keeper of the truth<br/>
+        <em>the institution cannot hold.</em>
+      </h2>
+      <p class="conviction-body reveal">
+        Systems aren't built to remember your child. They're built for efficiency, compliance, and the priorities of whoever holds authority this year. The family that shows up informed, documented, and prepared isn't just better off — they are the correction the system needs but rarely supports.
+      </p>
+      <div class="conviction-pullquote reveal">
+        <p>"Families don't need to be fixed. They need to be equipped — and they need a record that doesn't disappear when the year ends or the teacher changes."</p>
+        <span>The conviction behind SageGap</span>
+      </div>
+      <a href="#canonical-egg" class="conviction-cta reveal">See how we built for this &nbsp;→</a>
+    </div>
+    <div class="reveal">
+      <p class="conviction-obligations-label">The Canonical Obligation</p>
+      <div class="conviction-obligation">
+        <span class="conviction-ob-num">I.</span>
+        <div>
+          <p class="conviction-ob-title">Remember what is true</p>
+          <p class="conviction-ob-body">Every goal, every promise, every evaluation — preserved so no transition, no new case manager, and no change in district leadership can erase what you know to be real.</p>
+        </div>
+      </div>
+      <div class="conviction-obligation">
+        <span class="conviction-ob-num">II.</span>
+        <div>
+          <p class="conviction-ob-title">Speak with evidence</p>
+          <p class="conviction-ob-body">Your knowledge, translated into language the system is required to engage — documented, dated, and in your hands before every meeting.</p>
+        </div>
+      </div>
+      <div class="conviction-obligation">
+        <span class="conviction-ob-num">III.</span>
+        <div>
+          <p class="conviction-ob-title">Endure across time</p>
+          <p class="conviction-ob-body">The system counts on attrition. SageGap is the infrastructure of endurance — carrying what you can't hold in your head through years of transitions and changing faces.</p>
+        </div>
+      </div>
+      <div class="conviction-obligation">
+        <span class="conviction-ob-num">IV.</span>
+        <div>
+          <p class="conviction-ob-title">Stay centered on the child</p>
+          <p class="conviction-ob-body">When every stakeholder optimizes for something other than your child, your presence and your record is the correction the room requires.</p>
+        </div>
       </div>
     </div>
   </div>
