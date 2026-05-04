@@ -256,7 +256,7 @@ section{padding:100px 6%}
   box-shadow:0 0 20px rgba(58,140,116,0.08);
 }
 .egg-ring-2{width:390px;height:460px;border-color:rgba(58,140,116,0.08);box-shadow:none}
-.egg-layers{display:flex;flex-direction:column;gap:16px;margin-top:40px;width:100%;max-width:100%;}
+.egg-layers{display:flex;flex-direction:column;gap:16px;margin-top:40px;width:100%;max-width:100%;overflow:clip;}
 .egg-layer{
   display:flex;align-items:flex-start;gap:14px;
   background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
@@ -266,9 +266,9 @@ section{padding:100px 6%}
     inset 2px 3px 8px rgba(255,255,255,0.82),
     inset -2px -2px 6px rgba(210,165,90,0.18),
     inset 3px 0px 14px rgba(58,140,116,0.09),
-    8px 14px 28px rgba(160,138,108,0.40),
-    -4px -6px 18px rgba(70,155,175,0.18),
-    0 2px 4px rgba(160,138,108,0.12);
+    4px 8px 18px rgba(160,138,108,0.35),
+    -2px -4px 10px rgba(70,155,175,0.14),
+    0 2px 4px rgba(160,138,108,0.10);
 }
 .egg-layer-dot{
   width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px;
@@ -854,7 +854,7 @@ footer{
   .hero-actions{flex-direction:column;align-items:flex-start;gap:14px}
   .btn-primary{width:100%;text-align:center;padding:14px 24px}
 
-  section{padding:64px 4%}
+  section{padding:64px 5%}
   #belief{padding:80px 4%}
   #cta-band{padding:64px 4%;flex-direction:column;gap:24px;text-align:center}
   footer{padding:48px 4% 28px}
@@ -1098,7 +1098,7 @@ footer{
   .hero-stat-num{font-size:26px}
   .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
   .btn-primary,.btn-dark{width:100%;text-align:center;padding:14px 20px}
-  section{padding:56px 4%}
+  section{padding:56px 5%}
   #belief{padding:72px 4%}
   #cta-band{padding:56px 4%;flex-direction:column;gap:20px;text-align:center}
   footer{padding:44px 4% 24px}
@@ -2216,7 +2216,7 @@ window.addEventListener('resize',function(){
   .hero-stat-num{font-size:26px}
   .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
   .btn-primary,.btn-dark{width:100%;text-align:center;padding:14px 20px}
-  section{padding:56px 4%}
+  section{padding:56px 5%}
   #belief{padding:72px 4%}
   #cta-band{padding:56px 4%;flex-direction:column;gap:20px;text-align:center}
   footer{padding:44px 4% 24px}
