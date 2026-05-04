@@ -12,6 +12,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden}
+body{overflow-x:hidden}
 :root{
   --navy:#1C3D50;
   --navy-dark:#0F2535;
@@ -36,7 +38,7 @@
   --clay-shadow-cool: rgba(140,170,185,0.30);
 }
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--charcoal);font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--charcoal);font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Lora',serif;line-height:1.15}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
@@ -208,7 +210,7 @@ section{padding:100px 6%}
 .gap-pull-stat-label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;display:block}
 
 /* CANONICAL EGG */
-#canonical-egg{background:var(--cream);overflow:clip}
+#canonical-egg{background:var(--cream)}
 .egg-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
 .egg-visual{
   position:relative;display:flex;align-items:center;justify-content:center;
@@ -256,7 +258,7 @@ section{padding:100px 6%}
   box-shadow:0 0 20px rgba(58,140,116,0.08);
 }
 .egg-ring-2{width:390px;height:460px;border-color:rgba(58,140,116,0.08);box-shadow:none}
-.egg-layers{display:flex;flex-direction:column;gap:16px;margin-top:40px;width:100%;max-width:100%;overflow:clip;}
+.egg-layers{display:flex;flex-direction:column;gap:16px;margin-top:40px}
 .egg-layer{
   display:flex;align-items:flex-start;gap:14px;
   background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
@@ -266,9 +268,9 @@ section{padding:100px 6%}
     inset 2px 3px 8px rgba(255,255,255,0.82),
     inset -2px -2px 6px rgba(210,165,90,0.18),
     inset 3px 0px 14px rgba(58,140,116,0.09),
-    4px 8px 18px rgba(160,138,108,0.35),
-    -2px -4px 10px rgba(70,155,175,0.14),
-    0 2px 4px rgba(160,138,108,0.10);
+    8px 14px 28px rgba(160,138,108,0.40),
+    -4px -6px 18px rgba(70,155,175,0.18),
+    0 2px 4px rgba(160,138,108,0.12);
 }
 .egg-layer-dot{
   width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px;
@@ -276,72 +278,17 @@ section{padding:100px 6%}
 .egg-layer-title{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:2px}
 .egg-layer-desc{font-size:13px;color:var(--muted);line-height:1.5}
 
-/* WHO WE SERVE — family-first hierarchy */
+/* WHO WE SERVE */
 #who-we-serve{background:linear-gradient(160deg, #f0ece6 0%, #e8edf0 100%)}
-.serve-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;flex-wrap:wrap;gap:20px}
-
-/* ── Primary featured card ── */
-.serve-primary-wrap{margin-bottom:24px;}
-.serve-card-primary{
-  background:linear-gradient(145deg, #edf0ec 0%, #e2ecee 100%);
-  border-radius:24px;padding:48px 52px;
-  border:none;position:relative;overflow:hidden;
-  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
-  box-shadow:
-    inset 2px 3px 8px rgba(255,255,255,0.88),
-    inset -2px -2px 6px rgba(58,140,116,0.12),
-    inset 3px 0px 16px rgba(58,140,116,0.10),
-    10px 18px 36px rgba(140,118,98,0.38),
-    -5px -7px 22px rgba(58,155,175,0.16),
-    0 2px 4px rgba(140,118,98,0.10);
-  transition:transform 0.28s ease,box-shadow 0.28s ease;
-  cursor:default;
-}
-.serve-card-primary::before{
-  content:'';position:absolute;top:0;left:0;bottom:0;width:5px;
-  background:linear-gradient(180deg,var(--teal) 0%,var(--teal-light) 100%);
-  border-radius:24px 0 0 24px;
-}
-.serve-card-primary:hover{
-  transform:translateY(-4px);
-  box-shadow:
-    inset 2px 3px 8px rgba(255,255,255,0.92),
-    inset -2px -2px 6px rgba(58,140,116,0.16),
-    14px 24px 48px rgba(140,118,98,0.46),
-    -6px -9px 28px rgba(58,155,175,0.20),
-    0 2px 4px rgba(140,118,98,0.12);
-}
-.serve-card-primary .serve-card-icon{
-  width:60px;height:60px;border-radius:18px;
-  display:flex;align-items:center;justify-content:center;font-size:26px;
-  background:var(--teal-pale);margin-bottom:0;
-  box-shadow:inset 1px 1px 4px rgba(255,255,255,0.75),3px 5px 12px rgba(58,140,116,0.22);
-  flex-shrink:0;
-}
-.serve-card-primary .serve-card-title{
-  font-family:'Lora',serif;font-size:22px;font-weight:700;
-  color:var(--navy);margin-bottom:10px;line-height:1.2;
-}
-.serve-card-primary .serve-card-desc{
-  font-size:16px;font-weight:300;color:var(--muted);line-height:1.7;max-width:580px;
-}
-.serve-primary-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:var(--teal);color:var(--white);
-  font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
-  padding:5px 14px;border-radius:40px;margin-bottom:14px;
-}
-.serve-primary-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.6);}
-
-/* ── Supporting cards grid ── */
-.serve-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+.serve-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:20px}
+.serve-scroll{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
 .serve-card{
   background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
-  border-radius:20px;padding:28px 26px;
+  border-radius:20px;padding:32px 28px;
   border:none;
-  transition:transform 0.28s ease,box-shadow 0.28s ease;
+  transition:transform 0.28s ease, box-shadow 0.28s ease;
   cursor:default;
   box-shadow:
     inset 2px 3px 8px rgba(255,255,255,0.82),
@@ -352,7 +299,7 @@ section{padding:100px 6%}
     0 2px 4px rgba(160,138,108,0.12);
 }
 .serve-card:hover{
-  transform:translateY(-5px) rotateX(1.5deg);
+  transform:translateY(-7px) rotateX(2deg);
   box-shadow:
     inset 2px 3px 8px rgba(255,255,255,0.88),
     inset -2px -2px 6px rgba(210,165,90,0.22),
@@ -362,22 +309,16 @@ section{padding:100px 6%}
     0 2px 4px rgba(160,138,108,0.14);
 }
 .serve-card-icon{
-  width:44px;height:44px;border-radius:13px;margin-bottom:16px;
-  display:flex;align-items:center;justify-content:center;font-size:19px;
+  width:48px;height:48px;border-radius:14px;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
   box-shadow:
     inset 1px 1px 4px rgba(255,255,255,0.75),
     inset -1px -1px 3px rgba(210,165,90,0.15),
     3px 5px 10px rgba(160,138,108,0.28),
     -2px -2px 6px rgba(70,155,175,0.14);
 }
-.serve-card-title{font-family:'Lora',serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
-.serve-card-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.65}
-.serve-card-scenario{
-  font-size:12px;font-style:italic;color:var(--teal);
-  margin-top:10px;padding-top:10px;
-  border-top:0.5px solid rgba(58,140,116,0.18);
-  line-height:1.5;
-}
+.serve-card-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.serve-card-desc{font-size:14px;font-weight:300;color:var(--muted);line-height:1.65}
 
 /* OUTCOMES — numbered like Sunday Best */
 #outcomes{background:var(--teal-pale)}
@@ -530,169 +471,25 @@ section{padding:100px 6%}
 }
 .belief-sub::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--teal-light);flex-shrink:0}
 
-/* ── BELIEVERS 3-ACT JOURNEY ── */
-#believers{ position:relative; overflow:clip; }
-
-/* 2 full acts (600vh) + Act 3 hold only (0.72×300=216vh) = 816vh
-   Pin releases exactly as Act 3 begins fading — page scrolls stage away */
-#believers-track{
-  height:816vh;
-  position:relative;
-  background:linear-gradient(160deg,#0d2030 0%,#1a3a4c 100%);
+/* ROLLING BELIEVERS */
+#believers{background:var(--cream);padding:100px 6%}
+#believers .section-eyebrow{font-size:18px;letter-spacing:0.13em}
+.believers-header{margin-bottom:60px}
+.believers-list{display:flex;flex-direction:column;gap:0}
+.believer-row{
+  display:flex;align-items:baseline;gap:0;flex-wrap:wrap;
+  padding:32px 0;border-bottom:0.5px solid var(--border);
+  font-family:'Lora',serif;font-size:clamp(20px,2.5vw,30px);
+  font-weight:400;color:rgba(28,61,80,0.45);
+  transition:color 0.3s;
 }
-#believers-stage{
-  position:sticky;
-  top:0;
-  height:100vh;
-  width:100%;
-  background:linear-gradient(160deg,#0d2030 0%,#1a3a4c 100%);
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-/* Ambient glow */
-#believers-glow{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 60% 50% at 30% 40%, rgba(58,140,116,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 70% 65%, rgba(233,168,32,0.06) 0%, transparent 70%);
-  pointer-events:none;
-}
-/* Faint background decorative shapes */
-#believers-deco{
-  position:absolute;inset:0;pointer-events:none;overflow:hidden;
-}
-.b-deco-card{
-  position:absolute;
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:12px;
-  background:rgba(255,255,255,0.03);
-  will-change:transform;
-}
-/* Eyebrow */
-#believers-eyebrow{
-  position:absolute;top:104px;left:0;right:0;
-  text-align:center;
-  font-size:17px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;
-  color:var(--teal-light);opacity:1;
-  padding:0 20px;
-}
-/* Act progress bar */
-#believers-acts{
-  position:absolute;bottom:44px;left:50%;transform:translateX(-50%);
-  display:flex;gap:0;align-items:center;
-  max-width:calc(100vw - 40px);
-}
-.b-act-step{
-  display:flex;align-items:center;gap:0;
-}
-.b-act-label{
-  font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
-  color:rgba(255,255,255,0.25);transition:color 0.4s;padding:0 4px;
-}
-.b-act-label.active{color:var(--gold);}
-.b-act-dot{
-  width:5px;height:5px;border-radius:50%;
-  background:rgba(255,255,255,0.18);
-  margin:0 6px;flex-shrink:0;
-  transition:background 0.4s,transform 0.4s;
-}
-.b-act-dot.active{background:var(--gold);transform:scale(1.6);}
-.b-act-connector{
-  width:36px;height:1px;
-  background:rgba(255,255,255,0.1);
-  flex-shrink:0;
-  position:relative;
-}
-.b-act-connector::after{
-  content:'→';
-  position:absolute;right:-4px;top:50%;transform:translateY(-50%);
-  font-size:9px;color:rgba(255,255,255,0.15);
-}
-/* Statement container */
-.b-statement{
-  position:absolute;top:56%;left:50%;
-  transform:translate(-50%,-50%);
-  width:90%;max-width:960px;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  opacity:0;will-change:opacity,transform;pointer-events:none;
-}
-.b-act-tag{
-  font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
-  color:rgba(255,255,255,0.35);margin-bottom:20px;
-  display:flex;align-items:center;gap:6px;
-}
-.b-act-tag::before,.b-act-tag::after{
-  content:'';display:block;width:24px;height:1px;
-  background:rgba(255,255,255,0.18);
-}
-.b-part1{
-  font-family:'Lora',serif;
-  font-size:clamp(32px,6vw,82px);
-  font-weight:700;color:var(--white);
-  line-height:1.08;letter-spacing:-1.5px;display:block;
-  will-change:opacity,transform;
-}
-.b-ellipsis{
-  display:flex;align-items:center;gap:16px;margin-top:28px;height:22px;
-}
-.b-dot{
-  width:9px;height:9px;border-radius:50%;background:var(--gold);
-  display:block;will-change:opacity,transform;
-}
-.b-part2{
-  font-family:'Lora',serif;
-  font-size:clamp(24px,4.2vw,58px);
-  font-weight:400;font-style:italic;
-  color:var(--teal-light);line-height:1.15;letter-spacing:-0.5px;
-  margin-top:22px;display:block;will-change:opacity,transform;
-}
-/* Context anchor pills */
-.b-context{
-  display:flex;gap:8px;flex-wrap:wrap;justify-content:center;
-  margin-top:24px;
-  opacity:0;will-change:opacity,transform;
-}
-.b-context-pill{
-  font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
-  color:rgba(255,255,255,0.5);
-  border:1px solid rgba(255,255,255,0.15);
-  padding:5px 13px;border-radius:40px;
-  background:rgba(255,255,255,0.05);
-}
-/* Scroll cue */
-#believers-cue{
-  position:absolute;bottom:40px;right:48px;
-  display:flex;align-items:center;gap:8px;
-  font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
-  color:rgba(255,255,255,0.2);font-weight:300;
-  opacity:1;transition:opacity 0.6s;
-}
-#believers-cue.hidden{opacity:0}
-.b-cue-arrow{
-  width:18px;height:18px;
-  border-right:1.5px solid rgba(255,255,255,0.2);
-  border-bottom:1.5px solid rgba(255,255,255,0.2);
-  transform:rotate(45deg);margin-top:-5px;
-}
-@media(max-width:1024px){
-  .b-part1{font-size:clamp(26px,5vw,56px);letter-spacing:-1px}
-  .b-part2{font-size:clamp(20px,3.8vw,42px)}
-  #believers-eyebrow{top:90px;font-size:15px}
-}
-@media(max-width:600px){
-  .b-part1{font-size:clamp(22px,7.5vw,36px);letter-spacing:-0.5px}
-  .b-part2{font-size:clamp(17px,5.5vw,26px);margin-top:14px}
-  .b-ellipsis{gap:10px;margin-top:18px}
-  .b-dot{width:7px;height:7px}
-  #believers-cue{display:none}
-  #believers-eyebrow{font-size:12px;top:82px;letter-spacing:0.1em}
-  .b-context{gap:6px}
-  .b-context-pill{font-size:10px;padding:4px 10px}
-  .b-act-connector{width:20px}
-  .b-act-label{font-size:9px}
-}
+.believer-row:hover{color:var(--navy)}
+.believer-row:hover .believer-plain{font-size:calc(clamp(20px,2.5vw,30px) * 1.10);color:var(--navy)}
+.believer-plain{margin-right:0.22em;display:inline-block;transition:font-size 0.25s ease,color 0.3s}
+.believer-row em{font-style:italic;color:var(--teal)}
+.believer-arrow{margin-left:auto;font-size:20px;opacity:0;transition:opacity 0.3s;color:var(--teal)}
+.believer-row:hover .believer-arrow{opacity:1}
+.believer-ellipsis{font-family:'Lora',serif;font-style:italic;color:var(--teal);margin-left:0.05em}
 
 /* CTA BAND */
 #cta-band{
@@ -819,10 +616,10 @@ footer{
   .gap-grid{grid-template-columns:1fr;gap:40px}
   .gap-pull{position:static}
   .egg-layout{grid-template-columns:1fr;gap:40px}
-  .egg-visual{justify-content:center;padding-left:0}
+  .egg-visual{justify-content:flex-start;padding-left:20px}
   .copilot-layout{grid-template-columns:1fr;gap:48px}
   .consult-layout{grid-template-columns:1fr;gap:40px}
-  .serve-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .serve-scroll{grid-template-columns:repeat(2,1fr);gap:16px}
   .outcome-row{grid-template-columns:60px 1fr;gap:20px}
   .outcome-tag{display:none}
   #cta-band{flex-direction:column;gap:28px;text-align:center}
@@ -831,6 +628,13 @@ footer{
   #cta-band{padding:80px 5%}
   footer{padding:60px 5% 32px}
   .footer-top{flex-direction:column;gap:36px}
+
+  /* New sections — tablet */
+  .how-steps{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .use-cases-grid{grid-template-columns:1fr 1fr}
+  .mid-cta{flex-direction:column;align-items:flex-start}
+
 }
 
 /* ── MOBILE (≤600px) ── */
@@ -854,7 +658,7 @@ footer{
   .hero-actions{flex-direction:column;align-items:flex-start;gap:14px}
   .btn-primary{width:100%;text-align:center;padding:14px 24px}
 
-  section{padding:64px 5%}
+  section{padding:64px 4%}
   #belief{padding:80px 4%}
   #cta-band{padding:64px 4%;flex-direction:column;gap:24px;text-align:center}
   footer{padding:48px 4% 28px}
@@ -870,11 +674,8 @@ footer{
   .egg-layout{grid-template-columns:1fr;gap:32px}
   .egg-visual{display:flex;justify-content:center;transform:scale(0.75);margin:-40px 0}
 
-  .serve-grid{grid-template-columns:1fr;gap:14px}
-  .serve-card{padding:22px 18px}
-  .serve-card-primary{grid-template-columns:1fr;gap:16px;padding:28px 24px}
-  .serve-card-primary .serve-card-title{font-size:18px}
-  .serve-card-primary .serve-card-desc{font-size:14px}
+  .serve-scroll{grid-template-columns:1fr;gap:12px}
+  .serve-card{padding:24px 20px}
 
   .outcome-row{
     grid-template-columns:48px 1fr;gap:12px;padding:28px 0;
@@ -889,14 +690,31 @@ footer{
   .consult-layout{grid-template-columns:1fr;gap:28px}
   .consult-credential{padding:28px 22px}
 
-  /* believers responsive handled by parallax CSS */
-
+  .believers-list .believer-row{font-size:17px;padding:20px 0}
+  .believer-arrow{display:none}
 
   .footer-top{flex-direction:column;gap:32px}
   .cta-band-h2{font-size:26px}
   .btn-dark{width:100%;text-align:center;padding:16px 24px}
 
   .marquee-item{font-size:11px;padding:0 24px}
+
+  /* New sections — mobile */
+  .how-steps{grid-template-columns:1fr;gap:14px}
+  .how-step{padding:24px 18px}
+  .trust-grid{grid-template-columns:1fr;gap:12px}
+  .trust-item{padding:22px 18px}
+  .use-cases-grid{grid-template-columns:1fr;gap:14px}
+  .use-case-card{padding:22px 18px}
+  .mid-cta{flex-direction:column;padding:22px 18px;gap:14px}
+  .mid-cta-text{font-size:18px}
+  .hero-sub{font-size:16px}
+
+
+  .egg-visual{display:none}
+  .egg-layout{grid-template-columns:1fr;gap:0}
+  .egg-layers{margin-top:0;gap:12px}
+  .egg-layer{padding:16px 18px}
 }
 
 /* SCROLL ANIMATIONS */
@@ -906,232 +724,55 @@ footer{
 .reveal-delay-2{transition-delay:0.2s}
 .reveal-delay-3{transition-delay:0.3s}
 
-/* ── CONVICTION SECTION ── */
-#conviction{
-  background:linear-gradient(145deg, #22485e 0%, #1a3a4c 50%, #0f2535 100%);
-  padding:100px 6%;position:relative;overflow:hidden;
-}
-#conviction::before{
-  content:'';position:absolute;top:-120px;left:-80px;
-  width:500px;height:500px;border-radius:50%;
-  background:radial-gradient(circle,rgba(58,140,116,0.13) 0%,transparent 65%);
-  pointer-events:none;
-}
-#conviction::after{
-  content:'';position:absolute;bottom:-80px;right:-60px;
-  width:380px;height:380px;border-radius:50%;
-  background:radial-gradient(circle,rgba(233,168,32,0.09) 0%,transparent 65%);
-  pointer-events:none;
-}
-.conviction-inner{
-  max-width:1100px;margin:0 auto;position:relative;z-index:2;
-  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
-}
-.conviction-eyebrow{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:22px;
-}
-.conviction-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--gold);flex-shrink:0}
-.conviction-h2{
-  font-family:'Lora',serif;font-size:clamp(28px,3.2vw,44px);font-weight:700;
-  color:#eee8dc;line-height:1.12;letter-spacing:-0.5px;margin-bottom:22px;
-}
-.conviction-h2 em{font-style:italic;color:var(--teal-light)}
-.conviction-body{
-  font-size:17px;font-weight:300;line-height:1.8;
-  color:rgba(238,232,220,0.65);margin-bottom:28px;
-}
-.conviction-pullquote{
-  border-left:3px solid var(--gold);border-radius:0;
-  padding:18px 22px;
-  background:rgba(255,255,255,0.05);
-  margin-bottom:36px;
-}
-.conviction-pullquote p{
-  font-family:'Lora',serif;font-style:italic;
-  font-size:16px;line-height:1.7;
-  color:rgba(238,232,220,0.85);margin-bottom:8px;
-}
-.conviction-pullquote span{
-  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--gold);display:block;
-}
-.conviction-cta{
-  display:inline-flex;align-items:center;gap:8px;
-  font-size:14px;font-weight:500;color:var(--gold);
-  border-bottom:1px solid rgba(233,168,32,0.4);padding-bottom:2px;
-  transition:color 0.2s,border-color 0.2s;
-}
-.conviction-cta:hover{color:var(--white);border-color:var(--white)}
-.conviction-obligations-label{
-  font-size:10px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;
-  color:rgba(238,232,220,0.35);margin-bottom:20px;
-  padding-bottom:14px;border-bottom:0.5px solid rgba(255,255,255,0.08);
-}
-.conviction-obligation{
-  display:flex;gap:18px;padding:20px 0;
-  border-bottom:0.5px solid rgba(255,255,255,0.07);
-  transition:opacity 0.2s;
-}
-.conviction-obligation:last-child{border-bottom:none;padding-bottom:0}
-.conviction-obligation:hover .conviction-ob-body{color:rgba(238,232,220,0.85)}
-.conviction-ob-num{
-  font-family:'Lora',serif;font-style:italic;font-size:14px;
-  color:var(--gold);opacity:0.75;min-width:22px;padding-top:2px;flex-shrink:0;
-}
-.conviction-ob-title{font-size:15px;font-weight:500;color:#eee8dc;margin-bottom:4px}
-.conviction-ob-body{
-  font-size:13px;font-weight:300;line-height:1.65;
-  color:rgba(238,232,220,0.5);transition:color 0.2s;
-}
-@media(min-width:1200px){#conviction{padding:110px 8%}}
-@media(max-width:1024px) and (min-width:601px){
-  #conviction{padding:80px 5%}
-  .conviction-inner{grid-template-columns:1fr;gap:48px}
-  .conviction-h2{font-size:30px}
-}
-@media(max-width:600px){
-  #conviction{padding:64px 4%}
-  .conviction-inner{grid-template-columns:1fr;gap:36px}
-  .conviction-h2{font-size:26px;letter-spacing:-0.3px}
-  .conviction-body{font-size:16px}
-  .conviction-pullquote{padding:14px 16px}
-  .conviction-pullquote p{font-size:15px}
-}
+/* ── NEW SECTIONS ── */
+.hero-sub{font-size:18px;font-weight:300;color:var(--charcoal);line-height:1.75;max-width:500px;margin-bottom:24px}
 
-/* HOW IT WORKS */
 .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
 .how-step{
   background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);
   border-radius:20px;padding:36px 28px;
-  box-shadow:
-    inset 2px 3px 8px rgba(255,255,255,0.82),
-    inset -2px -2px 6px rgba(210,165,90,0.18),
-    8px 14px 28px rgba(160,138,108,0.40),
-    -4px -6px 18px rgba(70,155,175,0.18);
+  box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),inset -2px -2px 6px rgba(210,165,90,0.18),8px 14px 28px rgba(160,138,108,0.40),-4px -6px 18px rgba(70,155,175,0.18);
   transition:transform 0.25s ease;
 }
-.how-step:hover{transform:translateY(-5px)}
+.how-step:hover{transform:translateY(-4px)}
 .how-step-num{font-family:'Lora',serif;font-size:52px;font-weight:700;color:rgba(58,140,116,0.15);line-height:1;margin-bottom:12px}
-.how-step-icon{font-size:28px;margin-bottom:12px}
-.how-step-title{font-family:'Lora',serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3}
+.how-step-icon{font-size:26px;margin-bottom:10px}
+.how-step-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
 .how-step-desc{font-size:15px;font-weight:300;color:var(--muted);line-height:1.7}
-.mid-cta{
-  display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);
-  border-radius:20px;padding:32px 40px;flex-wrap:wrap;gap:20px;
-  box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.30);
-}
+.mid-cta{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);border-radius:20px;padding:32px 40px;flex-wrap:wrap;gap:20px;box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.30)}
 .mid-cta-text{font-family:'Lora',serif;font-size:22px;font-weight:600;color:var(--navy)}
 
-/* TRUST */
 .trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.trust-item{
-  background:linear-gradient(145deg,rgba(40,95,120,0.25) 0%,rgba(10,25,38,0.55) 100%);
-  border-radius:20px;padding:32px 28px;
-  box-shadow:inset 2px 3px 8px rgba(90,175,150,0.14),8px 16px 32px rgba(10,25,38,0.55);
-  transition:transform 0.2s ease;
-}
+.trust-item{background:linear-gradient(145deg,rgba(40,95,120,0.25) 0%,rgba(10,25,38,0.55) 100%);border-radius:20px;padding:32px 28px;box-shadow:inset 2px 3px 8px rgba(90,175,150,0.14),8px 16px 32px rgba(10,25,38,0.55);transition:transform 0.2s ease}
 .trust-item:hover{transform:translateY(-4px)}
 .trust-icon{font-size:20px;color:var(--teal-light);font-weight:700;margin-bottom:12px;display:block}
 .trust-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--white);margin-bottom:8px}
 .trust-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.7}
 
-/* USE CASES */
 .use-cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
-.use-case-card{
-  background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);
-  border-radius:20px;padding:32px 28px;
-  box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.40),-4px -6px 18px rgba(70,155,175,0.18);
-  transition:transform 0.25s ease;
-}
-.use-case-card:hover{transform:translateY(-5px)}
+.use-case-card{background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);border-radius:20px;padding:32px 28px;box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.40),-4px -6px 18px rgba(70,155,175,0.18);transition:transform 0.25s ease}
+.use-case-card:hover{transform:translateY(-4px)}
 .use-case-tag{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:40px;margin-bottom:14px}
 .use-case-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3}
 .use-case-desc{font-size:14px;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:16px}
-.use-case-outcome{font-size:13px;font-weight:500;color:var(--teal);padding-top:14px;border-top:0.5px solid rgba(58,140,116,0.2);line-height:1.5}
+.use-case-outcome{font-size:13px;font-weight:500;color:var(--teal);padding-top:14px;border-top:0.5px solid rgba(58,140,116,0.2)}
 
-/* RESPONSIVE — CONSOLIDATED */
-@media(min-width:1200px){
-  nav{padding:0 8%}
-  #hero{padding:140px 8% 100px}
-  section{padding:110px 8%}
-  #belief{padding:130px 8%}
-  #cta-band{padding:110px 8%}
-  footer{padding:70px 8% 40px}
-}
+/* ── RESPONSIVE ADDITIONS (appended, not replacing) ── */
+/* Tablet additions for new sections */
 @media(max-width:1024px) and (min-width:601px){
-  nav{padding:0 5%}
-  #hero{grid-template-columns:1fr;padding:120px 5% 80px;gap:0}
-  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
-  .hero-stat-pair{grid-column:1/-1}
-  .gap-grid,.egg-layout,.copilot-layout,.consult-layout{grid-template-columns:1fr;gap:40px}
-  .gap-pull{position:static}
-  .egg-visual{display:none}
   .how-steps{grid-template-columns:1fr 1fr}
   .trust-grid{grid-template-columns:1fr 1fr}
   .use-cases-grid{grid-template-columns:1fr 1fr}
-  .serve-grid{grid-template-columns:repeat(2,1fr)}
-  .outcome-row{grid-template-columns:60px 1fr;gap:20px}
-  .outcome-tag{display:none}
-  #cta-band{flex-direction:column;gap:28px;text-align:center}
-  section{padding:80px 5%}
-  #belief{padding:100px 5%}
-  #cta-band{padding:80px 5%}
-  footer{padding:60px 5% 32px}
-  .footer-top{flex-direction:column;gap:36px}
   .mid-cta{flex-direction:column;align-items:flex-start}
-  .nav-links li:nth-child(2),.nav-links li:nth-child(4){display:none}
 }
-@media(max-width:600px){
-  nav{padding:0 4%}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  #hero{grid-template-columns:1fr;padding:100px 4% 60px;min-height:auto;gap:24px}
-  .hero-h1{font-size:32px;letter-spacing:-0.5px}
-  .hero-sub{font-size:16px}
-  .hero-verbatim{font-size:15px}
-  .hero-right{display:flex;flex-direction:column;gap:12px;width:100%}
-  .hero-stat-pair{grid-template-columns:1fr 1fr}
-  .hero-stat{padding:14px 10px}
-  .hero-stat-num{font-size:26px}
-  .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
-  .btn-primary,.btn-dark{width:100%;text-align:center;padding:14px 20px}
-  section{padding:56px 5%}
-  #belief{padding:72px 4%}
-  #cta-band{padding:56px 4%;flex-direction:column;gap:20px;text-align:center}
-  footer{padding:44px 4% 24px}
-  .section-h2{font-size:26px}
-  .section-lead{font-size:16px}
-  .gap-grid{grid-template-columns:1fr;gap:28px}
-  .gap-pull{position:static;border-radius:14px;padding:28px 20px}
-  .gap-pull-quote{font-size:17px}
-  .egg-layout{grid-template-columns:1fr}
-  .egg-visual{transform:scale(0.72);margin:-36px 0}
-  .how-steps{grid-template-columns:1fr;gap:14px}
-  .how-step{padding:24px 18px}
-  .trust-grid{grid-template-columns:1fr;gap:12px}
-  .trust-item{padding:22px 18px}
-  .use-cases-grid{grid-template-columns:1fr;gap:14px}
-  .use-case-card{padding:22px 18px}
-  .serve-grid{grid-template-columns:1fr;gap:14px}
-  .outcome-row{grid-template-columns:44px 1fr;gap:10px;padding:20px 0}
-  .outcome-tag{display:none}
-  .copilot-layout{grid-template-columns:1fr;gap:28px}
-  .consult-layout{grid-template-columns:1fr;gap:20px}
-  .consult-credential{padding:22px 18px}
-  .mid-cta{flex-direction:column;padding:22px 18px;gap:14px}
-  .mid-cta-text{font-size:18px}
+/* Mobile additions for new sections only */
 
 
-  .footer-top{flex-direction:column;gap:24px}
-  .cta-band-h2{font-size:24px}
-  .marquee-item{font-size:11px;padding:0 18px}
-  .pilot-modal-box{padding:28px 18px}
-  .pilot-field-group{grid-template-columns:1fr}
-  .pilot-form-footer{flex-direction:column;align-items:stretch}
-  .pilot-submit{width:100%;justify-content:center}
+@media(max-width:1024px) and (min-width:601px){
+  .how-steps{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .use-cases-grid{grid-template-columns:1fr 1fr}
+  .mid-cta{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
@@ -1254,7 +895,7 @@ footer{
       </div>
       <div class="gap-stmt reveal reveal-delay-3">
         <span class="gap-num">04</span>
-        <p class="gap-stmt-text"><strong>You are expected to advocate without full information.</strong> The system moves fast. Jargon is everywhere. And the families who need the most support are often the least equipped to navigate it alone.</p>
+        <p class="gap-stmt-text"><strong>You are expected to advocate without full information.</strong> The system moves fast. Jargon is everywhere. Families who need the most support are often the least equipped to navigate it alone.</p>
       </div>
     </div>
     <div class="gap-pull reveal">
@@ -1265,58 +906,6 @@ footer{
       <div class="gap-pull-stat">
         <span class="gap-pull-stat-num">~20</span>
         <span class="gap-pull-stat-label">years in Title I inclusion classrooms — the foundation SageGap is built on</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONVICTION -->
-<section id="conviction">
-  <div class="conviction-inner">
-    <div>
-      <div class="conviction-eyebrow reveal">Why We Built This</div>
-      <h2 class="conviction-h2 reveal">
-        You are the keeper of the truth<br/>
-        <em>the institution cannot hold.</em>
-      </h2>
-      <p class="conviction-body reveal">
-        Systems aren't built to remember your child. They're built for efficiency, compliance, and the priorities of whoever holds authority this year. The family that shows up informed, documented, and prepared isn't just better off — they are the correction the system needs but rarely supports.
-      </p>
-      <div class="conviction-pullquote reveal">
-        <p>"Families don't need to be fixed. They need to be equipped — and they need a record that doesn't disappear when the year ends or the teacher changes."</p>
-        <span>The conviction behind SageGap</span>
-      </div>
-      <a href="#canonical-egg" class="conviction-cta reveal">See how we built for this &nbsp;→</a>
-    </div>
-    <div class="reveal">
-      <p class="conviction-obligations-label">The Canonical Obligation</p>
-      <div class="conviction-obligation">
-        <span class="conviction-ob-num">I.</span>
-        <div>
-          <p class="conviction-ob-title">Remember what is true</p>
-          <p class="conviction-ob-body">Every goal, every promise, every evaluation — preserved so no transition, no new case manager, and no change in district leadership can erase what you know to be real.</p>
-        </div>
-      </div>
-      <div class="conviction-obligation">
-        <span class="conviction-ob-num">II.</span>
-        <div>
-          <p class="conviction-ob-title">Speak with evidence</p>
-          <p class="conviction-ob-body">Your knowledge, translated into language the system is required to engage — documented, dated, and in your hands before every meeting.</p>
-        </div>
-      </div>
-      <div class="conviction-obligation">
-        <span class="conviction-ob-num">III.</span>
-        <div>
-          <p class="conviction-ob-title">Endure across time</p>
-          <p class="conviction-ob-body">The system counts on attrition. SageGap is the infrastructure of endurance — carrying what you can't hold in your head through years of transitions and changing faces.</p>
-        </div>
-      </div>
-      <div class="conviction-obligation">
-        <span class="conviction-ob-num">IV.</span>
-        <div>
-          <p class="conviction-ob-title">Stay centered on the child</p>
-          <p class="conviction-ob-body">When every stakeholder optimizes for something other than your child, your presence and your record is the correction the room requires.</p>
-        </div>
       </div>
     </div>
   </div>
@@ -1376,48 +965,40 @@ footer{
   <div class="serve-header">
     <div>
       <span class="section-eyebrow reveal">Who We Serve</span>
-      <h2 class="section-h2 reveal">Built around<br/><em>the family at the center.</em></h2>
+      <h2 class="section-h2 reveal">Built for every person<br/><em>in a child's corner.</em></h2>
     </div>
-    <p class="section-lead reveal" style="max-width:340px;font-size:15px">Every person in a child's corner matters — but one relationship holds the record, carries the history, and shows up at every table.</p>
+    <p class="section-lead reveal" style="max-width:340px;font-size:15px">SageGap serves the full ecosystem — because children are best served when the people around them are connected, informed, and equipped.</p>
   </div>
-
-  <!-- PRIMARY: Families -->
-  <div class="serve-primary-wrap reveal">
-    <div class="serve-card-primary">
-      <div>
-        <span class="serve-primary-badge">Primary audience</span>
-        <div class="serve-card-title">Families carrying the full story</div>
-        <p class="serve-card-desc">For parents and guardians who are tired of starting over every time someone asks, "Can you explain what's going on?" SageGap gives you one place where everything is connected — IEPs, evaluations, transitions, goals — and it stays yours no matter what changes around it.</p>
-      </div>
-      <div class="serve-card-icon" style="background:var(--teal-pale);font-size:28px;">🏠</div>
-    </div>
-  </div>
-
-  <!-- SUPPORTING GRID -->
-  <div class="serve-grid">
+  <div class="serve-scroll">
     <div class="serve-card reveal">
+      <div class="serve-card-icon" style="background:var(--teal-pale)">🏠</div>
+      <div class="serve-card-title">Families &amp; Guardians</div>
+      <p class="serve-card-desc">Navigate IEPs, own your child's records, and walk into every school meeting with the knowledge and confidence you deserve.</p>
+    </div>
+    <div class="serve-card reveal reveal-delay-1">
+      <div class="serve-card-icon" style="background:var(--gold-pale)">✏️</div>
+      <div class="serve-card-title">Classroom Teachers</div>
+      <p class="serve-card-desc">The Teacher Copilot calibrates instruction to every student's proficiency level — with integrated supports built in, not bolted on.</p>
+    </div>
+    <div class="serve-card reveal reveal-delay-2">
+      <div class="serve-card-icon" style="background:#EEF0FA">🎓</div>
+      <div class="serve-card-title">Special Education Teachers</div>
+      <p class="serve-card-desc">Compliance-ready documentation, IEP-aligned tools, and systems that honor the complexity of your work without multiplying your paperwork.</p>
+    </div>
+    <div class="serve-card reveal">
+      <div class="serve-card-icon" style="background:var(--teal-pale)">💬</div>
+      <div class="serve-card-title">School Counselors</div>
+      <p class="serve-card-desc">Shared language, shared data, shared outcomes — connecting the full support team around each child's documented journey.</p>
+    </div>
+    <div class="serve-card reveal reveal-delay-1">
       <div class="serve-card-icon" style="background:var(--gold-pale)">🌐</div>
-      <div class="serve-card-title">Multilingual families navigating two systems at once</div>
-      <p class="serve-card-desc">Special education law is hard enough in one language. SageGap helps you preserve meaning across language, school terminology, and documentation — without relying on whoever explains it last.</p>
-      <p class="serve-card-scenario">"The school sent three documents. None of them were in Spanish."</p>
+      <div class="serve-card-title">Multilingual Families</div>
+      <p class="serve-card-desc">Special education law is hard enough in one language. SageGap meets families where they are, with clarity, not compliance-speak.</p>
     </div>
-    <div class="serve-card reveal reveal-delay-1">
-      <div class="serve-card-icon" style="background:#EEF0FA">🤲</div>
-      <div class="serve-card-title">Foster and kinship caregivers stepping in mid-story</div>
-      <p class="serve-card-desc">When a child moves, SageGap ensures the next caring adult understands what has already happened — and what matters now. No child should have to start over just because a placement changed.</p>
-      <p class="serve-card-scenario">"She came to us with a folder, but no context."</p>
-    </div>
-    <div class="serve-card reveal">
-      <div class="serve-card-icon" style="background:var(--teal-pale)">✏️</div>
-      <div class="serve-card-title">Teachers &amp; IEP support teams</div>
-      <p class="serve-card-desc">The Teacher Copilot calibrates instruction to every student's actual proficiency — with integrated supports built in. And when families share their record, you start from context instead of zero.</p>
-      <p class="serve-card-scenario">"Every year I get the same child and none of the history."</p>
-    </div>
-    <div class="serve-card reveal reveal-delay-1">
-      <div class="serve-card-icon" style="background:#F5EEF5">🤝</div>
-      <div class="serve-card-title">Advocates, counselors &amp; community partners</div>
-      <p class="serve-card-desc">Therapists, social workers, and independent advocates connect to the same family-authorized record — shared on the family's terms, not the institution's timeline.</p>
-      <p class="serve-card-scenario">"I only had 20 minutes before the meeting started."</p>
+    <div class="serve-card reveal reveal-delay-2">
+      <div class="serve-card-icon" style="background:#F5EEF5)">🤝</div>
+      <div class="serve-card-title">Community Partners</div>
+      <p class="serve-card-desc">Therapists, advocates, social workers — anyone who serves the child connects to the same trusted, family-authorized record.</p>
     </div>
   </div>
 </section>
@@ -1473,19 +1054,19 @@ footer{
       <div class="how-step-num">01</div>
       <div class="how-step-icon">&#128194;</div>
       <h3 class="how-step-title">Upload &amp; connect your records</h3>
-      <p class="how-step-desc">Upload IEPs, evaluations, report cards, medical documents, and therapy notes. SageGap organizes everything into a single, searchable timeline &mdash; your child's complete story in one place.</p>
+      <p class="how-step-desc">Upload IEPs, evaluations, report cards, medical documents, and therapy notes. SageGap organizes everything into a single, searchable timeline.</p>
     </div>
     <div class="how-step reveal reveal-delay-1">
       <div class="how-step-num">02</div>
       <div class="how-step-icon">&#128274;</div>
       <h3 class="how-step-title">Your family controls everything</h3>
-      <p class="how-step-desc">You decide what enters the record. You decide who sees it. Nothing becomes official without your confirmation. The system works for you &mdash; not for the institution.</p>
+      <p class="how-step-desc">You decide what enters the record. You decide who sees it. Nothing becomes official without your confirmation.</p>
     </div>
     <div class="how-step reveal reveal-delay-2">
       <div class="how-step-num">03</div>
       <div class="how-step-icon">&#128161;</div>
       <h3 class="how-step-title">Smart analysis surfaces insights you can act on</h3>
-      <p class="how-step-desc">SageGap analyzes your child's longitudinal record and surfaces patterns, gaps, and trends &mdash; so you walk into every IEP meeting, transition, or evaluation already knowing what the data shows.</p>
+      <p class="how-step-desc">SageGap analyzes your child's longitudinal record and surfaces patterns, gaps, and trends — so you walk into every IEP meeting already knowing what the data shows.</p>
     </div>
   </div>
   <div class="mid-cta reveal">
@@ -1497,28 +1078,28 @@ footer{
 <!-- TRUST -->
 <section id="trust" style="background:var(--navy)">
   <span class="section-eyebrow reveal" style="color:var(--teal-light)">Your data. Your rules. Always.</span>
-  <h2 class="section-h2 reveal" style="color:var(--white)">SageGap is built on one<br/><em style="color:var(--gold)">non-negotiable principle.</em></h2>
-  <p class="section-lead reveal" style="color:rgba(255,255,255,0.6);margin-bottom:56px">Your family's data belongs to your family. Here is exactly how we protect it.</p>
+  <h2 class="section-h2 reveal" style="color:var(--white)">Built on one<br/><em style="color:var(--gold)">non-negotiable principle.</em></h2>
+  <p class="section-lead reveal" style="color:rgba(255,255,255,0.6);margin-bottom:52px">Your family's data belongs to your family. Here is exactly how we protect it.</p>
   <div class="trust-grid">
     <div class="trust-item reveal">
       <div class="trust-icon">&#10003;</div>
       <h3 class="trust-title">You control what enters</h3>
-      <p class="trust-desc">Nothing is added to your child's canonical record without explicit family confirmation. The system can process and suggest &mdash; only you can authorize.</p>
+      <p class="trust-desc">Nothing is added to your child's record without explicit family confirmation. The system can process and suggest — only you can authorize.</p>
     </div>
     <div class="trust-item reveal reveal-delay-1">
       <div class="trust-icon">&#10003;</div>
       <h3 class="trust-title">You control who sees it</h3>
-      <p class="trust-desc">You grant access. You revoke it. Teachers, therapists, advocates &mdash; no one sees your child's record without your permission, every time.</p>
+      <p class="trust-desc">You grant access. You revoke it. Teachers, therapists, advocates — no one sees your child's record without your permission.</p>
     </div>
     <div class="trust-item reveal reveal-delay-2">
       <div class="trust-icon">&#10003;</div>
       <h3 class="trust-title">Your data is never sold</h3>
-      <p class="trust-desc">SageGap does not sell, license, or share your family's data with advertisers, data brokers, or third parties. Ever. Your child's story is not a product.</p>
+      <p class="trust-desc">SageGap does not sell, license, or share your family's data. Ever. Your child's story is not a product.</p>
     </div>
     <div class="trust-item reveal reveal-delay-3">
       <div class="trust-icon">&#10003;</div>
       <h3 class="trust-title">Your record survives every transition</h3>
-      <p class="trust-desc">New school. New district. New state. Your child's complete history travels with your family &mdash; not with the institution that created it.</p>
+      <p class="trust-desc">New school. New district. New state. Your child's complete history travels with your family — not with the institution that created it.</p>
     </div>
   </div>
 </section>
@@ -1531,19 +1112,19 @@ footer{
     <div class="use-case-card reveal">
       <div class="use-case-tag">IEP Management</div>
       <h3 class="use-case-title">The parent managing an IEP alone</h3>
-      <p class="use-case-desc">Maria's daughter has been receiving services for three years. Every meeting feels like starting over. SageGap gives her a complete timeline of every goal, every accommodation, every evaluation &mdash; so she walks in knowing exactly what was promised and what was delivered.</p>
+      <p class="use-case-desc">Maria's daughter has been receiving services for three years. Every meeting feels like starting over. SageGap gives her a complete timeline of every goal, every accommodation, every evaluation — so she walks in knowing what was promised and what was delivered.</p>
       <div class="use-case-outcome">&rarr; Walks in prepared. Advocates from evidence, not memory.</div>
     </div>
     <div class="use-case-card reveal reveal-delay-1">
       <div class="use-case-tag">School Transition</div>
       <h3 class="use-case-title">The family moving to a new district</h3>
-      <p class="use-case-desc">James transfers schools every 18 months. Each time, his records arrive late, incomplete, or not at all. His family uses SageGap to carry the complete picture &mdash; ensuring the next teacher starts informed, not from zero.</p>
+      <p class="use-case-desc">James transfers schools every 18 months. Each time, his records arrive late or not at all. His family uses SageGap to carry the complete picture — ensuring the next teacher starts informed, not from zero.</p>
       <div class="use-case-outcome">&rarr; No context lost. Progress protected across every transition.</div>
     </div>
     <div class="use-case-card reveal reveal-delay-2">
       <div class="use-case-tag">Coordinated Care</div>
       <h3 class="use-case-title">The child with school and medical needs</h3>
-      <p class="use-case-desc">Aiden sees a speech therapist, an occupational therapist, and a school psychologist. None of them talk to each other. SageGap connects the full picture so his family can see &mdash; and share &mdash; everything in one place.</p>
+      <p class="use-case-desc">Aiden sees a speech therapist, an occupational therapist, and a school psychologist. None of them talk to each other. SageGap connects the full picture so his family can see and share everything in one place.</p>
       <div class="use-case-outcome">&rarr; One record. Every provider. Coordinated care, finally.</div>
     </div>
   </div>
@@ -1674,90 +1255,18 @@ footer{
   </div>
 </section>
 
-<!-- BELIEVERS 3-ACT JOURNEY -->
+<!-- ROLLING BELIEVERS -->
 <section id="believers">
-  <div id="believers-track">
-    <div id="believers-stage">
-      <div id="believers-glow"></div>
-
-      <!-- Faint background deco shapes -->
-      <div id="believers-deco">
-        <div class="b-deco-card" style="width:180px;height:110px;top:12%;left:6%;transform:rotate(-8deg);"></div>
-        <div class="b-deco-card" style="width:140px;height:90px;bottom:18%;right:8%;transform:rotate(6deg);"></div>
-        <div class="b-deco-card" style="width:100px;height:70px;top:22%;right:14%;transform:rotate(-4deg);"></div>
-      </div>
-
-      <span id="believers-eyebrow">SageGap is for families who</span>
-
-      <!-- ACT 1 — The Problem -->
-      <div class="b-statement" id="bs-0">
-        <div class="b-act-tag">Act I &nbsp;·&nbsp; The Problem</div>
-        <span class="b-part1">Believe their child's story</span>
-        <div class="b-ellipsis">
-          <span class="b-dot" id="bd-0-0"></span>
-          <span class="b-dot" id="bd-0-1"></span>
-          <span class="b-dot" id="bd-0-2"></span>
-        </div>
-        <span class="b-part2" id="bp2-0">deserves to be told fully — not just the parts the system keeps.</span>
-        <div class="b-context" id="bctx-0">
-          <span class="b-context-pill">Records</span>
-          <span class="b-context-pill">Context</span>
-          <span class="b-context-pill">History</span>
-        </div>
-      </div>
-
-      <!-- ACT 2 — The Shift -->
-      <div class="b-statement" id="bs-1">
-        <div class="b-act-tag">Act II &nbsp;·&nbsp; The Shift</div>
-        <span class="b-part1">Want to walk into IEP meetings</span>
-        <div class="b-ellipsis">
-          <span class="b-dot" id="bd-1-0"></span>
-          <span class="b-dot" id="bd-1-1"></span>
-          <span class="b-dot" id="bd-1-2"></span>
-        </div>
-        <span class="b-part2" id="bp2-1">knowing more than they did before — not less.</span>
-        <div class="b-context" id="bctx-1">
-          <span class="b-context-pill">IEP preparation</span>
-          <span class="b-context-pill">Rights &amp; options</span>
-        </div>
-      </div>
-
-      <!-- ACT 3 — The Outcome -->
-      <div class="b-statement" id="bs-2">
-        <div class="b-act-tag">Act III &nbsp;·&nbsp; The Outcome</div>
-        <span class="b-part1">Are ready to own</span>
-        <div class="b-ellipsis">
-          <span class="b-dot" id="bd-2-0"></span>
-          <span class="b-dot" id="bd-2-1"></span>
-          <span class="b-dot" id="bd-2-2"></span>
-        </div>
-        <span class="b-part2" id="bp2-2">their child's data, their child's record, their child's future.</span>
-        <div class="b-context" id="bctx-2">
-          <span class="b-context-pill">Family sovereignty</span>
-          <span class="b-context-pill">Whole-child view</span>
-        </div>
-      </div>
-
-      <!-- Labeled act progress -->
-      <div id="believers-acts">
-        <div class="b-act-step">
-          <span class="b-act-dot" id="bpip-0"></span>
-          <span class="b-act-label" id="blbl-0">Story</span>
-        </div>
-        <div class="b-act-connector"></div>
-        <div class="b-act-step">
-          <span class="b-act-dot" id="bpip-1"></span>
-          <span class="b-act-label" id="blbl-1">Control</span>
-        </div>
-        <div class="b-act-connector"></div>
-        <div class="b-act-step">
-          <span class="b-act-dot" id="bpip-2"></span>
-          <span class="b-act-label" id="blbl-2">Confidence</span>
-        </div>
-      </div>
-
-      <div id="believers-cue"><span>scroll</span><span class="b-cue-arrow"></span></div>
-    </div>
+  <div class="believers-header">
+    <span class="section-eyebrow">SageGap is for families who</span>
+  </div>
+  <div class="believers-list">
+    <div class="believer-row"><span class="believer-plain">believe their child's story</span><em>deserves to be told fully</em><span class="believer-ellipsis">.</span><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">want to walk into IEP meetings</span><em>prepared, not overwhelmed</em><span class="believer-ellipsis">.</span><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">know their child is more than</span><em>a test score or a label</em><span class="believer-ellipsis">.</span><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">refuse to let a school transition</span><em>erase what was built</em><span class="believer-ellipsis">.</span><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">believe advocacy and love</span><em>can work together</em><span class="believer-ellipsis">.</span><span class="believer-arrow">→</span></div>
+    <div class="believer-row"><span class="believer-plain">are ready to own</span><em>their child's data</em><span class="believer-ellipsis">.</span><span class="believer-arrow">→</span></div>
   </div>
 </section>
 
@@ -1765,13 +1274,12 @@ footer{
 <div id="cta-band">
   <div class="cta-band-left">
     <span class="section-eyebrow">Early access is now open</span>
-    <h2 class="cta-band-h2">Build your child's<br/>learning record.</h2>
-    <p style="font-size:15px;font-weight:300;color:rgba(28,61,80,0.7);margin-top:10px;max-width:340px;line-height:1.65">One place. One story. Owned by your family.</p>
+    <h2 class="cta-band-h2">Own your child's story.<br/>Start today.</h2>
   </div>
   <div style="display:flex;flex-direction:column;gap:12px;align-items:center">
-    <a href="#" onclick="openWaitlistModal();return false;" class="btn-dark">Start Your Child's Record</a>
-    <a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank" style="font-size:13px;color:var(--navy);border-bottom:1px solid rgba(28,61,80,0.4);padding-bottom:1px">Or book an IEP consultation →</a>
-  </div>
+  <a href="#" onclick="openWaitlistModal();return false;" class="btn-dark">Join the Waitlist</a>
+  <a href="https://calendly.com/davidjohnson-iep/iep-consultation" target="_blank" style="font-size:13px;color:var(--navy);border-bottom:1px solid rgba(28,61,80,0.4);padding-bottom:1px">Or book an IEP consultation →</a>
+</div>
 </div>
 
 <!-- FOOTER -->
@@ -2118,138 +1626,65 @@ window.addEventListener('resize',function(){
   .pilot-modal-title{font-size:24px}
 }
 
-/* HOW IT WORKS */
+/* ── NEW SECTIONS ── */
+.hero-sub{font-size:18px;font-weight:300;color:var(--charcoal);line-height:1.75;max-width:500px;margin-bottom:24px}
+
 .how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
 .how-step{
   background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);
   border-radius:20px;padding:36px 28px;
-  box-shadow:
-    inset 2px 3px 8px rgba(255,255,255,0.82),
-    inset -2px -2px 6px rgba(210,165,90,0.18),
-    8px 14px 28px rgba(160,138,108,0.40),
-    -4px -6px 18px rgba(70,155,175,0.18);
+  box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),inset -2px -2px 6px rgba(210,165,90,0.18),8px 14px 28px rgba(160,138,108,0.40),-4px -6px 18px rgba(70,155,175,0.18);
   transition:transform 0.25s ease;
 }
-.how-step:hover{transform:translateY(-5px)}
+.how-step:hover{transform:translateY(-4px)}
 .how-step-num{font-family:'Lora',serif;font-size:52px;font-weight:700;color:rgba(58,140,116,0.15);line-height:1;margin-bottom:12px}
-.how-step-icon{font-size:28px;margin-bottom:12px}
-.how-step-title{font-family:'Lora',serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3}
+.how-step-icon{font-size:26px;margin-bottom:10px}
+.how-step-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:8px;line-height:1.3}
 .how-step-desc{font-size:15px;font-weight:300;color:var(--muted);line-height:1.7}
-.mid-cta{
-  display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);
-  border-radius:20px;padding:32px 40px;flex-wrap:wrap;gap:20px;
-  box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.30);
-}
+.mid-cta{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);border-radius:20px;padding:32px 40px;flex-wrap:wrap;gap:20px;box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.30)}
 .mid-cta-text{font-family:'Lora',serif;font-size:22px;font-weight:600;color:var(--navy)}
 
-/* TRUST */
 .trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.trust-item{
-  background:linear-gradient(145deg,rgba(40,95,120,0.25) 0%,rgba(10,25,38,0.55) 100%);
-  border-radius:20px;padding:32px 28px;
-  box-shadow:inset 2px 3px 8px rgba(90,175,150,0.14),8px 16px 32px rgba(10,25,38,0.55);
-  transition:transform 0.2s ease;
-}
+.trust-item{background:linear-gradient(145deg,rgba(40,95,120,0.25) 0%,rgba(10,25,38,0.55) 100%);border-radius:20px;padding:32px 28px;box-shadow:inset 2px 3px 8px rgba(90,175,150,0.14),8px 16px 32px rgba(10,25,38,0.55);transition:transform 0.2s ease}
 .trust-item:hover{transform:translateY(-4px)}
 .trust-icon{font-size:20px;color:var(--teal-light);font-weight:700;margin-bottom:12px;display:block}
 .trust-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--white);margin-bottom:8px}
 .trust-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.7}
 
-/* USE CASES */
 .use-cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
-.use-case-card{
-  background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);
-  border-radius:20px;padding:32px 28px;
-  box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.40),-4px -6px 18px rgba(70,155,175,0.18);
-  transition:transform 0.25s ease;
-}
-.use-case-card:hover{transform:translateY(-5px)}
+.use-case-card{background:linear-gradient(145deg,#f0ede7 0%,#e8ecee 100%);border-radius:20px;padding:32px 28px;box-shadow:inset 2px 3px 8px rgba(255,255,255,0.82),8px 14px 28px rgba(160,138,108,0.40),-4px -6px 18px rgba(70,155,175,0.18);transition:transform 0.25s ease}
+.use-case-card:hover{transform:translateY(-4px)}
 .use-case-tag{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:40px;margin-bottom:14px}
 .use-case-title{font-family:'Lora',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:10px;line-height:1.3}
 .use-case-desc{font-size:14px;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:16px}
-.use-case-outcome{font-size:13px;font-weight:500;color:var(--teal);padding-top:14px;border-top:0.5px solid rgba(58,140,116,0.2);line-height:1.5}
+.use-case-outcome{font-size:13px;font-weight:500;color:var(--teal);padding-top:14px;border-top:0.5px solid rgba(58,140,116,0.2)}
 
-/* RESPONSIVE — CONSOLIDATED */
-@media(min-width:1200px){
-  nav{padding:0 8%}
-  #hero{padding:140px 8% 100px}
-  section{padding:110px 8%}
-  #belief{padding:130px 8%}
-  #cta-band{padding:110px 8%}
-  footer{padding:70px 8% 40px}
-}
+/* ── RESPONSIVE ADDITIONS (appended, not replacing) ── */
+/* Tablet additions for new sections */
 @media(max-width:1024px) and (min-width:601px){
-  nav{padding:0 5%}
-  #hero{grid-template-columns:1fr;padding:120px 5% 80px;gap:0}
-  .hero-right{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
-  .hero-stat-pair{grid-column:1/-1}
-  .gap-grid,.egg-layout,.copilot-layout,.consult-layout{grid-template-columns:1fr;gap:40px}
-  .gap-pull{position:static}
-  .egg-visual{display:none}
   .how-steps{grid-template-columns:1fr 1fr}
   .trust-grid{grid-template-columns:1fr 1fr}
   .use-cases-grid{grid-template-columns:1fr 1fr}
-  .serve-grid{grid-template-columns:repeat(2,1fr)}
-  .outcome-row{grid-template-columns:60px 1fr;gap:20px}
-  .outcome-tag{display:none}
-  #cta-band{flex-direction:column;gap:28px;text-align:center}
-  section{padding:80px 5%}
-  #belief{padding:100px 5%}
-  #cta-band{padding:80px 5%}
-  footer{padding:60px 5% 32px}
-  .footer-top{flex-direction:column;gap:36px}
   .mid-cta{flex-direction:column;align-items:flex-start}
-  .nav-links li:nth-child(2),.nav-links li:nth-child(4){display:none}
 }
+/* Mobile additions for new sections only */
 @media(max-width:600px){
-  nav{padding:0 4%}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  #hero{grid-template-columns:1fr;padding:100px 4% 60px;min-height:auto;gap:24px}
-  .hero-h1{font-size:32px;letter-spacing:-0.5px}
-  .hero-sub{font-size:16px}
-  .hero-verbatim{font-size:15px}
-  .hero-right{display:flex;flex-direction:column;gap:12px;width:100%}
-  .hero-stat-pair{grid-template-columns:1fr 1fr}
-  .hero-stat{padding:14px 10px}
-  .hero-stat-num{font-size:26px}
-  .hero-actions{flex-direction:column;align-items:stretch;gap:12px}
-  .btn-primary,.btn-dark{width:100%;text-align:center;padding:14px 20px}
-  section{padding:56px 5%}
-  #belief{padding:72px 4%}
-  #cta-band{padding:56px 4%;flex-direction:column;gap:20px;text-align:center}
-  footer{padding:44px 4% 24px}
-  .section-h2{font-size:26px}
-  .section-lead{font-size:16px}
-  .gap-grid{grid-template-columns:1fr;gap:28px}
-  .gap-pull{position:static;border-radius:14px;padding:28px 20px}
-  .gap-pull-quote{font-size:17px}
-  .egg-layout{grid-template-columns:1fr}
-  .egg-visual{transform:scale(0.72);margin:-36px 0}
   .how-steps{grid-template-columns:1fr;gap:14px}
   .how-step{padding:24px 18px}
   .trust-grid{grid-template-columns:1fr;gap:12px}
   .trust-item{padding:22px 18px}
   .use-cases-grid{grid-template-columns:1fr;gap:14px}
   .use-case-card{padding:22px 18px}
-  .serve-grid{grid-template-columns:1fr;gap:14px}
-  .outcome-row{grid-template-columns:44px 1fr;gap:10px;padding:20px 0}
-  .outcome-tag{display:none}
-  .copilot-layout{grid-template-columns:1fr;gap:28px}
-  .consult-layout{grid-template-columns:1fr;gap:20px}
-  .consult-credential{padding:22px 18px}
   .mid-cta{flex-direction:column;padding:22px 18px;gap:14px}
   .mid-cta-text{font-size:18px}
+  .hero-sub{font-size:16px}
+}
 
-
-  .footer-top{flex-direction:column;gap:24px}
-  .cta-band-h2{font-size:24px}
-  .marquee-item{font-size:11px;padding:0 18px}
-  .pilot-modal-box{padding:28px 18px}
-  .pilot-field-group{grid-template-columns:1fr}
-  .pilot-form-footer{flex-direction:column;align-items:stretch}
-  .pilot-submit{width:100%;justify-content:center}
+@media(max-width:1024px) and (min-width:601px){
+  .how-steps{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .use-cases-grid{grid-template-columns:1fr 1fr}
+  .mid-cta{flex-direction:column;align-items:flex-start}
 }
 </style>
 
@@ -2351,7 +1786,7 @@ async function handlePilotSubmit(e){
       </div>
       <div class="pilot-field">
         <label class="pilot-label" for="wlSituation">Tell us briefly about your child's situation <span>*</span></label>
-        <textarea class="pilot-input pilot-textarea" id="wlSituation" name="situation" placeholder="e.g. My son has an IEP for dyslexia. We just moved districts and are starting over..." rows="3" required></textarea>
+        <textarea class="pilot-input pilot-textarea" id="wlSituation" name="situation" placeholder="e.g. My son has an IEP for dyslexia and we just moved districts..." rows="3" required></textarea>
       </div>
       <div class="pilot-form-footer">
         <p class="pilot-privacy">Your information is used only to contact you about SageGap. We never sell or share your data.</p>
@@ -2360,9 +1795,7 @@ async function handlePilotSubmit(e){
           <span id="wlBtnSpinner" class="pilot-spinner" style="display:none"></span>
         </button>
       </div>
-      <div class="pilot-error" id="waitlistError" style="display:none">
-        Something went wrong. Please email <a href="mailto:david@sagegap.com">david@sagegap.com</a> directly.
-      </div>
+      <div class="pilot-error" id="waitlistError" style="display:none">Something went wrong. Please email <a href="mailto:david@sagegap.com">david@sagegap.com</a> directly.</div>
     </form>
   </div>
 </div>
@@ -2378,158 +1811,16 @@ function closeWaitlistModal(){
 }
 async function handleWaitlistSubmit(e){
   e.preventDefault();
-  var btn=document.getElementById('wlSubmitBtn');
-  var txt=document.getElementById('wlBtnText');
-  var spin=document.getElementById('wlBtnSpinner');
-  var err=document.getElementById('waitlistError');
-  var form=document.getElementById('waitlistForm');
-  var success=document.getElementById('waitlistSuccess');
+  var btn=document.getElementById('wlSubmitBtn'),txt=document.getElementById('wlBtnText'),
+      spin=document.getElementById('wlBtnSpinner'),err=document.getElementById('waitlistError'),
+      form=document.getElementById('waitlistForm'),success=document.getElementById('waitlistSuccess');
   btn.disabled=true;txt.style.display='none';spin.style.display='inline-block';err.style.display='none';
   try{
     var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
     if(res.ok){form.style.display='none';success.style.display='block';}
-    else{throw new Error('error');}
-  }catch(ex){
-    err.style.display='block';btn.disabled=false;txt.style.display='inline';spin.style.display='none';
-  }
+    else{throw new Error();}
+  }catch(ex){err.style.display='block';btn.disabled=false;txt.style.display='inline';spin.style.display='none';}
 }
-</script>
-
-<script>
-/* ── BELIEVERS 3-ACT ENGINE ──
- * 3 statements × 300vh = 900vh track.
- * localP = globalProgress * N - i
- * negative=upcoming, 0-1=active, >1=past
- */
-(function () {
-  'use strict';
-  var N = 3;
-  var T_GHOST_START = -0.22, T_GHOST_END = -0.02;
-  var T_IN_START = 0.00,     T_IN_END    =  0.13;
-  var T_DOT1 = 0.17, T_DOT2 = 0.24, T_DOT3 = 0.31;
-  var T_P2_START = 0.36,  T_P2_END   = 0.46;
-  var T_CTX_START = 0.50, T_CTX_END  = 0.60;
-  var T_HOLD_END = 0.72;
-  var GHOST_OPACITY = 0.16, GHOST_Y_START = 90, GHOST_Y_END = 32, EXIT_Y = -52;
-  // After unpin, Act 3 fades as stage scrolls this many px above viewport top
-  var UNPIN_FADE_PX = 0;
-
-  var track, stage, cue, statements, actDots, actLabels;
-
-  function el(id){ return document.getElementById(id); }
-  function clamp(v,lo,hi){ return v<lo?lo:v>hi?hi:v; }
-  function norm(v,a,b){ return clamp((v-a)/(b-a),0,1); }
-  function ease(t){ return t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2; }
-
-  function init(){
-    track=el('believers-track');
-    stage=el('believers-stage');
-    cue=el('believers-cue');
-    statements=[]; actDots=[]; actLabels=[];
-    for(var i=0;i<N;i++){
-      statements.push({wrap:el('bs-'+i),p2:el('bp2-'+i),ctx:el('bctx-'+i),
-        dots:[el('bd-'+i+'-0'),el('bd-'+i+'-1'),el('bd-'+i+'-2')]});
-      actDots.push(el('bpip-'+i));
-      actLabels.push(el('blbl-'+i));
-    }
-    UNPIN_FADE_PX = window.innerHeight * 0.45;
-    window.addEventListener('scroll',onScroll,{passive:true});
-    window.addEventListener('resize',function(){
-      UNPIN_FADE_PX = window.innerHeight * 0.45;
-      onScroll();
-    },{passive:true});
-    onScroll();
-  }
-
-  function getGP(){
-    if(!track) return 0;
-    var rect=track.getBoundingClientRect();
-    var total=track.offsetHeight-window.innerHeight;
-    return total>0?clamp(-rect.top/total,0,1):0;
-  }
-
-  // How far Act 3 has faded after the pin releases.
-  // stage.getBoundingClientRect().top goes negative as stage scrolls away.
-  function getUnpinFade(){
-    if(!stage) return 0;
-    var t=stage.getBoundingClientRect().top;
-    if(t>=0) return 0;
-    return clamp(-t/UNPIN_FADE_PX,0,1);
-  }
-
-  function onScroll(){
-    if(!track) return;
-    var gp=getGP(), actF=gp*N, active=clamp(Math.floor(actF),0,N-1);
-    var unpinned=(gp>=1);
-    var unpinFade=unpinned?getUnpinFade():0;
-
-    if(gp>0.015){cue&&cue.classList.add('hidden');}
-    else{cue&&cue.classList.remove('hidden');}
-
-    for(var p=0;p<N;p++){
-      var ia=(p===active)||(unpinned&&p===N-1);
-      if(actDots[p])  actDots[p].className='b-act-dot'+(ia?' active':'');
-      if(actLabels[p])actLabels[p].className='b-act-label'+(ia?' active':'');
-    }
-
-    for(var i=0;i<N;i++){
-      var s=statements[i]; if(!s||!s.wrap) continue;
-      var isLast=(i===N-1);
-      var lp=actF-i;
-      var wOp,wY,pOp,pY,cOp,cY,d0,d1,d2;
-      d0=d1=d2=0; pOp=0;pY=24;cOp=0;cY=16;
-
-      // ── Act 3 post-unpin: opacity driven by stage scrolling away ──
-      if(isLast&&unpinned){
-        wOp=1-ease(unpinFade);
-        wY=0;
-        d0=d1=d2=1; pOp=wOp; pY=0; cOp=wOp; cY=0;
-
-      }else if(lp<=T_GHOST_START){
-        wOp=0;wY=GHOST_Y_START;
-      }else if(lp<=T_GHOST_END){
-        var t=ease(norm(lp,T_GHOST_START,T_GHOST_END));
-        wOp=t*GHOST_OPACITY;wY=GHOST_Y_START+t*(GHOST_Y_END-GHOST_Y_START);
-      }else if(lp<=T_IN_START){
-        wOp=GHOST_OPACITY;wY=GHOST_Y_END;
-      }else if(lp<=T_IN_END){
-        var t=ease(norm(lp,T_IN_START,T_IN_END));
-        wOp=GHOST_OPACITY+t*(1-GHOST_OPACITY);wY=GHOST_Y_END*(1-t);
-      }else if(lp<=T_HOLD_END){
-        wOp=1;wY=0;
-        d0=ease(norm(lp,T_DOT1,T_DOT1+0.05));
-        d1=ease(norm(lp,T_DOT2,T_DOT2+0.05));
-        d2=ease(norm(lp,T_DOT3,T_DOT3+0.05));
-        pOp=ease(norm(lp,T_P2_START+0.04,T_P2_END+0.04));
-        pY=(1-ease(norm(lp,T_P2_START,T_P2_END)))*40;
-        cOp=ease(norm(lp,T_CTX_START,T_CTX_END));
-        cY=(1-cOp)*16;
-      }else if(lp<=1.0 && !isLast){
-        // Exit fade for Acts 0 and 1 only — Act 3 exits via unpin branch
-        var t=ease(norm(lp,T_HOLD_END,1.0));
-        wOp=1-t;wY=t*EXIT_Y;d0=d1=d2=1;pOp=1-t;pY=0;cOp=1-t;cY=0;
-      }else if(!isLast){
-        wOp=0;wY=EXIT_Y;pOp=0;pY=0;cOp=0;cY=0;d0=d1=d2=0;
-      }else{
-        // Act 3 while pinned and past hold — stay fully visible until unpin
-        wOp=1;wY=0;d0=d1=d2=1;pOp=1;pY=0;cOp=1;cY=0;
-      }
-
-      s.wrap.style.opacity=wOp;
-      s.wrap.style.transform='translate(-50%, calc(-50% + '+wY+'px))';
-      s.p2.style.opacity=pOp;
-      s.p2.style.transform='translateY('+pY+'px)';
-      if(s.ctx){s.ctx.style.opacity=cOp;s.ctx.style.transform='translateY('+cY+'px)';}
-      s.dots[0].style.opacity=d0;s.dots[0].style.transform='scale('+(0.3+d0*0.7)+')';
-      s.dots[1].style.opacity=d1;s.dots[1].style.transform='scale('+(0.3+d1*0.7)+')';
-      s.dots[2].style.opacity=d2;s.dots[2].style.transform='scale('+(0.3+d2*0.7)+')';
-    }
-  }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',init);
-  }else{init();}
-})();
 </script>
 </body>
 </html>
