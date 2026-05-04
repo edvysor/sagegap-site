@@ -12,8 +12,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{overflow-x:hidden}
-body{overflow-x:hidden}
 :root{
   --navy:#1C3D50;
   --navy-dark:#0F2535;
@@ -210,7 +208,7 @@ section{padding:100px 6%}
 .gap-pull-stat-label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;display:block}
 
 /* CANONICAL EGG */
-#canonical-egg{background:var(--cream)}
+#canonical-egg{background:var(--cream);overflow:clip}
 .egg-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px}
 .egg-visual{
   position:relative;display:flex;align-items:center;justify-content:center;
@@ -258,7 +256,7 @@ section{padding:100px 6%}
   box-shadow:0 0 20px rgba(58,140,116,0.08);
 }
 .egg-ring-2{width:390px;height:460px;border-color:rgba(58,140,116,0.08);box-shadow:none}
-.egg-layers{display:flex;flex-direction:column;gap:16px;margin-top:40px}
+.egg-layers{display:flex;flex-direction:column;gap:16px;margin-top:40px;width:100%;max-width:100%;}
 .egg-layer{
   display:flex;align-items:flex-start;gap:14px;
   background:linear-gradient(145deg, #f0ede7 0%, #e8ecee 100%);
@@ -533,13 +531,14 @@ section{padding:100px 6%}
 .belief-sub::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--teal-light);flex-shrink:0}
 
 /* ── BELIEVERS 3-ACT JOURNEY ── */
-#believers{ position:relative; }
+#believers{ position:relative; overflow:clip; }
 
 /* 2 full acts (600vh) + Act 3 hold only (0.72×300=216vh) = 816vh
    Pin releases exactly as Act 3 begins fading — page scrolls stage away */
 #believers-track{
   height:816vh;
   position:relative;
+  background:linear-gradient(160deg,#0d2030 0%,#1a3a4c 100%);
 }
 #believers-stage{
   position:sticky;
@@ -820,7 +819,7 @@ footer{
   .gap-grid{grid-template-columns:1fr;gap:40px}
   .gap-pull{position:static}
   .egg-layout{grid-template-columns:1fr;gap:40px}
-  .egg-visual{justify-content:flex-start;padding-left:20px}
+  .egg-visual{justify-content:center;padding-left:0}
   .copilot-layout{grid-template-columns:1fr;gap:48px}
   .consult-layout{grid-template-columns:1fr;gap:40px}
   .serve-grid{grid-template-columns:repeat(2,1fr);gap:16px}
