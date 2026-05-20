@@ -340,82 +340,128 @@ section{padding:100px 6%}
   padding:8px 16px;border-radius:40px;white-space:nowrap;
 }
 
-/* TEACHER COPILOT */
-#teacher-copilot{background:var(--navy)}
-.copilot-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.copilot-left .section-eyebrow{color:var(--teal-light)}
-.copilot-left .section-h2{color:var(--white)}
-.copilot-left .section-lead{color:rgba(255,255,255,0.6)}
-.copilot-features{margin-top:40px;display:flex;flex-direction:column;gap:0}
-.copilot-feat{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:20px 0;border-bottom:0.5px solid rgba(255,255,255,0.08);
-}
-.copilot-feat-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:8px}
-.copilot-feat-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:3px}
-.copilot-feat-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6}
-.copilot-right{display:flex;flex-direction:column;gap:12px}
-.copilot-card{
-  background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);
-  border-radius:14px;padding:24px 22px;
-}
-.copilot-card-label{
-  font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--teal-light);margin-bottom:10px;
-}
-.copilot-card-code{
-  font-family:'Courier New',monospace;font-size:18px;color:var(--gold);
-  font-weight:600;margin-bottom:6px;
-}
-.copilot-card-desc{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.55}
 
-/* COPILOT STAT BLOCK (replaces cards) */
-.copilot-stat-block{
-  display:flex;flex-direction:column;gap:0;
-  border:none;
-  border-radius:24px;padding:40px 36px;
+
+/* THE RESEARCH */
+#the-research{background:var(--navy)}
+.research-layout{max-width:1100px;margin:0 auto}
+.research-intro{margin-bottom:64px}
+.research-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.research-pillar{
+  display:flex;flex-direction:column;gap:16px;
+  padding:36px 28px;border-radius:20px;
   background:linear-gradient(145deg, rgba(40,95,120,0.25) 0%, rgba(10,25,38,0.55) 100%);
+  border:0.5px solid rgba(90,175,150,0.08);
+  position:relative;overflow:hidden;
   box-shadow:
-    inset 2px 3px 8px rgba(90,175,150,0.14),
-    inset -3px -3px 10px rgba(232,168,32,0.10),
+    inset 2px 3px 8px rgba(90,175,150,0.10),
+    inset -2px -2px 6px rgba(232,168,32,0.06),
+    inset 1px 1px 4px rgba(255,255,255,0.04),
+    8px 14px 28px rgba(10,25,38,0.45),
+    -3px -5px 14px rgba(40,110,120,0.12),
+    0 2px 4px rgba(10,25,38,0.20);
+  transition:transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
+             box-shadow 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
+             border-color 0.4s ease;
+}
+/* Top shimmer edge */
+.research-pillar::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,
+    transparent 0%,
+    rgba(90,175,150,0.0) 10%,
+    rgba(90,175,150,0.35) 30%,
+    rgba(232,168,32,0.25) 55%,
+    rgba(90,175,150,0.35) 75%,
+    rgba(90,175,150,0.0) 90%,
+    transparent 100%
+  );
+  opacity:0.6;transition:opacity 0.4s ease;
+}
+/* Ambient corner glow */
+.research-pillar::after{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle, rgba(90,175,150,0.08) 0%, transparent 70%);
+  opacity:0;transition:opacity 0.5s ease;pointer-events:none;
+}
+.research-pillar:hover{
+  transform:translateY(-6px) rotateX(1.5deg);
+  border-color:rgba(90,175,150,0.18);
+  box-shadow:
+    inset 2px 3px 10px rgba(90,175,150,0.16),
+    inset -2px -2px 8px rgba(232,168,32,0.10),
+    inset 1px 1px 6px rgba(255,255,255,0.06),
+    12px 22px 42px rgba(10,25,38,0.55),
+    -5px -8px 24px rgba(40,110,120,0.20),
+    0 2px 6px rgba(10,25,38,0.25),
+    0 0 40px rgba(90,175,150,0.06);
+}
+.research-pillar:hover::before{opacity:1}
+.research-pillar:hover::after{opacity:1}
+
+/* Staggered entrance animation */
+.research-pillar.reveal{
+  opacity:0;transform:translateY(32px) scale(0.97);
+  transition:none;
+}
+.research-pillar.reveal.visible{
+  opacity:0;transform:translateY(32px) scale(0.97);
+}
+@keyframes pillarReveal{
+  from{opacity:0;transform:translateY(32px) scale(0.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.research-pillar.revealed{
+  animation:pillarReveal 0.6s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+.research-pillar.revealed:nth-child(2){animation-delay:0.12s}
+.research-pillar.revealed:nth-child(3){animation-delay:0.24s}
+
+.research-pillar-icon{
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  box-shadow:
     inset 1px 1px 4px rgba(255,255,255,0.06),
-    8px 16px 32px rgba(10,25,38,0.55),
-    -3px -5px 16px rgba(40,110,120,0.18),
-    0 2px 4px rgba(10,25,38,0.25);
+    inset -1px -1px 3px rgba(10,25,38,0.20),
+    3px 5px 12px rgba(10,25,38,0.30),
+    -2px -2px 8px rgba(40,110,120,0.10);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
-.copilot-stat-row{
-  display:flex;align-items:center;gap:24px;
-  padding:28px 0;
+.research-pillar:hover .research-pillar-icon{
+  transform:scale(1.08);
+  box-shadow:
+    inset 1px 1px 4px rgba(255,255,255,0.08),
+    inset -1px -1px 3px rgba(10,25,38,0.22),
+    4px 7px 16px rgba(10,25,38,0.35),
+    -2px -3px 10px rgba(40,110,120,0.14);
 }
-.copilot-big-num{
-  font-family:'Lora',serif;font-size:64px;font-weight:700;
-  color:var(--gold);line-height:1;flex-shrink:0;min-width:80px;
+.research-pillar-title{
+  font-family:'Lora',serif;font-size:20px;font-weight:600;color:var(--white);
+  transition:color 0.3s ease;
 }
-.copilot-big-label{
-  font-size:15px;font-weight:300;color:rgba(255,255,255,0.65);
-  line-height:1.55;
+.research-pillar:hover .research-pillar-title{
+  color:rgba(255,255,255,0.95);
 }
-.copilot-divider{height:0.5px;background:rgba(255,255,255,0.08);margin:0}
-.copilot-pilot-tag{
-  display:flex;align-items:center;gap:10px;padding:24px 0 8px;
-  font-size:14px;font-weight:400;color:rgba(255,255,255,0.5);
-  letter-spacing:0.01em;
+.research-pillar-body{
+  font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.7;
+  transition:color 0.3s ease;
 }
-.copilot-dot{
-  width:8px;height:8px;border-radius:50%;background:var(--teal-light);
-  flex-shrink:0;animation:pulse 2s ease-in-out infinite;
+.research-pillar:hover .research-pillar-body{
+  color:rgba(255,255,255,0.7);
 }
-@keyframes pulse{
-  0%,100%{opacity:1;transform:scale(1)}
-  50%{opacity:0.5;transform:scale(0.85)}
+
+/* Thesis closer */
+.research-thesis{
+  display:flex;align-items:center;gap:32px;
+  margin-top:64px;padding:0 8px;
 }
-.copilot-cta{
-  display:inline-block;margin-top:16px;
-  color:var(--gold);font-size:14px;font-weight:500;
-  border-bottom:1px solid rgba(232,168,32,0.4);padding-bottom:2px;
-  transition:color 0.2s,border-color 0.2s;width:fit-content;
+.research-thesis-line{flex:1;height:0.5px;background:rgba(255,255,255,0.12)}
+.research-thesis-text{
+  font-family:'Lora',serif;font-size:18px;font-style:italic;
+  color:rgba(255,255,255,0.7);line-height:1.7;
+  max-width:680px;text-align:center;
 }
-.copilot-cta:hover{color:var(--white);border-color:var(--white)}
 
 /* CONSULTATION */
 #consultation{background:linear-gradient(160deg, #f0ece6 0%, #e8edf0 100%)}
@@ -617,7 +663,6 @@ footer{
   .gap-pull{position:static}
   .egg-layout{grid-template-columns:1fr;gap:40px}
   .egg-visual{justify-content:flex-start;padding-left:20px}
-  .copilot-layout{grid-template-columns:1fr;gap:48px}
   .consult-layout{grid-template-columns:1fr;gap:40px}
   .serve-scroll{grid-template-columns:repeat(2,1fr);gap:16px}
   .outcome-row{grid-template-columns:60px 1fr;gap:20px}
@@ -634,6 +679,8 @@ footer{
   .trust-grid{grid-template-columns:1fr 1fr}
   .use-cases-grid{grid-template-columns:1fr 1fr}
   .mid-cta{flex-direction:column;align-items:flex-start}
+  .research-pillars{grid-template-columns:1fr;gap:20px}
+  .research-thesis{flex-direction:column;gap:20px;text-align:center}
 
 }
 
@@ -684,11 +731,14 @@ footer{
   .outcome-text h3{font-size:17px}
   .outcome-tag{display:none}
 
-  .copilot-layout{grid-template-columns:1fr;gap:36px}
-  .copilot-left .section-h2{font-size:28px}
-
   .consult-layout{grid-template-columns:1fr;gap:28px}
   .consult-credential{padding:28px 22px}
+
+  .research-pillars{grid-template-columns:1fr;gap:16px}
+  .research-pillar{padding:28px 22px}
+  .research-pillar-title{font-size:18px}
+  .research-thesis{flex-direction:column;gap:16px;margin-top:48px}
+  .research-thesis-text{font-size:16px}
 
   .believers-list .believer-row{font-size:17px;padding:20px 0}
   .believer-arrow{display:none}
@@ -1084,7 +1134,7 @@ footer{
   <ul class="nav-links">
     <li><a href="#the-gap">The Gap</a></li>
     <li><a href="#who-we-serve">Who We Serve</a></li>
-    <li><a href="#teacher-copilot">Teacher Copilot</a></li>
+    <li><a href="#the-research">The Research</a></li>
     <li><a href="#consultation">Consultation</a></li>
     <li><a href="#" onclick="openWaitlistModal();return false;" class="nav-cta">Get Early Access</a></li>
   
@@ -1099,7 +1149,7 @@ footer{
   <a href="#the-gap" onclick="closeDrawer()">Why SageGap</a>
   <a href="#canonical-egg" onclick="closeDrawer()">The Canonical Egg</a>
   <a href="#who-we-serve" onclick="closeDrawer()">Who We Serve</a>
-  <a href="#teacher-copilot" onclick="closeDrawer()">Teacher Copilot</a>
+  <a href="#the-research" onclick="closeDrawer()">The Research</a>
   <a href="#consultation" onclick="closeDrawer()">Consultation</a>
   <a href="#" onclick="openWaitlistModal();closeDrawer();return false;" class="drawer-cta">Get Early Access</a>
 </div>
@@ -1155,19 +1205,19 @@ footer{
     <span class="marquee-item">IEP Navigation</span>
     <span class="marquee-item">Special Education Support</span>
     <span class="marquee-item">The Canonical Egg</span>
-    <span class="marquee-item">Teacher Copilot</span>
+    <span class="marquee-item">Longitudinal Record</span>
     <span class="marquee-item">Multilingual Learners</span>
     <span class="marquee-item">Title I Schools</span>
-    <span class="marquee-item">Proficiency Instrument</span>
+    <span class="marquee-item">Transition-Proof Data</span>
     <span class="marquee-item">Family-First Platform</span>
     <span class="marquee-item">Family Data Sovereignty</span>
     <span class="marquee-item">IEP Navigation</span>
     <span class="marquee-item">Special Education Support</span>
     <span class="marquee-item">The Canonical Egg</span>
-    <span class="marquee-item">Teacher Copilot</span>
+    <span class="marquee-item">Longitudinal Record</span>
     <span class="marquee-item">Multilingual Learners</span>
     <span class="marquee-item">Title I Schools</span>
-    <span class="marquee-item">Proficiency Instrument</span>
+    <span class="marquee-item">Transition-Proof Data</span>
     <span class="marquee-item">Family-First Platform</span>
   </div>
 </div>
@@ -1353,11 +1403,11 @@ footer{
 
     <div class="sg-persona-card reveal reveal-delay-2" style="background:var(--navy);border-color:transparent">
       <div class="sg-card-tag" style="background:rgba(90,175,150,0.2);color:var(--teal-light)">Educators</div>
-      <p class="sg-persona-quote" style="color:rgba(255,255,255,0.85);border-left-color:var(--gold)">"My most complex students come to me with the least documentation."</p>
+      <p class="sg-persona-quote" style="color:rgba(255,255,255,0.85);border-left-color:var(--gold)">"My most complex students come to me with the least documentation. Every transition erases what I need most."</p>
       <div class="sg-persona-name" style="color:var(--gold)">The Informed Teacher</div>
       <div class="sg-persona-situation" style="color:rgba(255,255,255,0.45)">Title I inclusion &amp; special education teachers</div>
-      <p class="sg-persona-outcome" style="color:rgba(255,255,255,0.6);border-top-color:rgba(255,255,255,0.1)">The Teacher Copilot calibrates instruction to where each student actually is — with supports built in, not added later.</p>
-      <a href="#teacher-copilot" class="sg-persona-cta" style="color:var(--gold)">See Teacher Copilot →</a>
+      <p class="sg-persona-outcome" style="color:rgba(255,255,255,0.6);border-top-color:rgba(255,255,255,0.1)">When families own a complete record and choose to share it, teachers receive what institutions have never provided — a child's full story, present on the first day.</p>
+      <a href="#the-research" class="sg-persona-cta" style="color:var(--gold)">See the research →</a>
     </div>
 
   </div>
@@ -1387,10 +1437,10 @@ footer{
     <div class="outcome-row reveal">
       <div class="outcome-num">03</div>
       <div class="outcome-text">
-        <h3>Teachers reach every learner — not just the median</h3>
+        <h3>Teachers receive what transitions have always erased</h3>
         
       </div>
-      <span class="outcome-tag">Instructional Equity</span>
+      <span class="outcome-tag">Instructional Context</span>
     </div>
     <div class="outcome-row reveal">
       <div class="outcome-num">04</div>
@@ -1530,68 +1580,42 @@ footer{
   </div>
 </section>
 
-<!-- TEACHER COPILOT -->
-<section id="teacher-copilot" style="padding:100px 6%">
-  <div class="copilot-layout">
-    <div class="copilot-left">
-      <span class="section-eyebrow">Teacher Copilot</span>
-      <h2 class="section-h2">Intelligent instruction tools<br/><em>built for real classrooms.</em></h2>
-      <p class="section-lead">The Proficiency Instrument is the only tool that calibrates task design, integrated supports, and complexity controls simultaneously — from a single proficiency input.</p>
-      <div class="copilot-features">
-        <div class="copilot-feat">
-          <div class="copilot-feat-dot"></div>
-          <div>
-            <div class="copilot-feat-title">The calibrate() function</div>
-            <div class="copilot-feat-desc">One input. Cascading outputs. Task design, scaffolds, and complexity — all calibrated to where the student actually is.</div>
-          </div>
-        </div>
-        <div class="copilot-feat">
-          <div class="copilot-feat-dot"></div>
-          <div>
-            <div class="copilot-feat-title">129 skill atom architecture</div>
-            <div class="copilot-feat-desc">Built for Indiana Grade 7 Mathematics with 24 standards and PLD-tagged example items. Precision at the skill level.</div>
-          </div>
-        </div>
-        <div class="copilot-feat">
-          <div class="copilot-feat-dot"></div>
-          <div>
-            <div class="copilot-feat-title">Source-verified outputs</div>
-            <div class="copilot-feat-desc">A Verification Layer links every output to its instructional source — so teachers know, and families can ask.</div>
-          </div>
-        </div>
-        <div class="copilot-feat">
-          <div class="copilot-feat-dot"></div>
-          <div>
-            <div class="copilot-feat-title">Role-Based Copilot Stack</div>
-            <div class="copilot-feat-desc">Different tools for different roles — teacher of record, paraeducator, specialist — all centered on the same child's data.</div>
-          </div>
-        </div>
-      </div>
+<!-- THE RESEARCH -->
+<section id="the-research" style="background:var(--navy);padding:100px 6%">
+  <div class="research-layout">
+    <div class="research-intro">
+      <span class="section-eyebrow" style="color:var(--teal-light)">The Research</span>
+      <h2 class="section-h2" style="color:var(--white)">Family sovereignty doesn't just help families.<br/><em style="color:var(--gold)">It transforms what's possible in every classroom.</em></h2>
+      <p class="section-lead" style="color:rgba(255,255,255,0.6);max-width:620px">Decades of research point to the same conclusion: when families are truly engaged, everything improves — for students, for teachers, and for the quality of instruction itself. The problem has never been willingness. It's been the absence of a shared record that makes engagement actionable.</p>
     </div>
-    <div class="copilot-right">
-      <div class="copilot-stat-block">
-        <div class="copilot-stat-row">
-          <span class="copilot-big-num">129</span>
-          <span class="copilot-big-label">skill atoms mapped to Indiana Grade 7 Math standards</span>
-        </div>
-        <div class="copilot-divider"></div>
-        <div class="copilot-stat-row">
-          <span class="copilot-big-num">24</span>
-          <span class="copilot-big-label">standards covered with PLD-tagged example items</span>
-        </div>
-        <div class="copilot-divider"></div>
-        <div class="copilot-stat-row">
-          <span class="copilot-big-num">1</span>
-          <span class="copilot-big-label">input. Cascading task design, scaffolds &amp; complexity — simultaneously.</span>
-        </div>
-        <div class="copilot-divider"></div>
-        <div class="copilot-pilot-tag">
-          <span class="copilot-dot"></span>
-          Pilot cohort now forming — 2 to 3 classroom teachers
-        </div>
-        <a href="#" class="copilot-cta" onclick="openPilotModal();return false;">Join the pilot →</a>
+    <div class="research-pillars">
+
+      <div class="research-pillar reveal">
+        <div class="research-pillar-icon" style="background:rgba(58,140,116,0.15);color:var(--teal-light)">📈</div>
+        <h3 class="research-pillar-title">Children do better when families are in the loop</h3>
+        <p class="research-pillar-body">This isn't opinion — it's one of the most replicated findings in education. When families are genuinely engaged, children earn better grades, stay in school longer, enroll in more challenging programs, and are more likely to continue their education after high school. The effect holds across income levels, across languages, across every school type studied.</p>
       </div>
+
+      <div class="research-pillar reveal reveal-delay-1">
+        <div class="research-pillar-icon" style="background:rgba(232,168,32,0.15);color:var(--gold)">🛡️</div>
+        <h3 class="research-pillar-title">Teachers burn out when the connection breaks</h3>
+        <p class="research-pillar-body">Family engagement doesn't need to be extraordinary — but when it drops below a critical threshold, teacher burnout spikes sharply and unpredictably. The tension between parents and teachers that drives so much stress isn't a people problem. It's an information problem. When both sides are working from incomplete pictures, friction is inevitable.</p>
+      </div>
+
+      <div class="research-pillar reveal reveal-delay-2">
+        <div class="research-pillar-icon" style="background:rgba(58,140,116,0.15);color:var(--teal-light)">🎯</div>
+        <h3 class="research-pillar-title">Instruction suffers without family context</h3>
+        <p class="research-pillar-body">Without what families know about their children, teachers operate from a thin, incomplete understanding of each student. Schools invest in training families to engage — but rarely build the capacity for teachers to receive and act on that engagement. The information families carry is one of the most underused resources in education.</p>
+      </div>
+
     </div>
+
+    <div class="research-thesis reveal">
+      <div class="research-thesis-line"></div>
+      <p class="research-thesis-text">Schools tell families to "be involved." Families try. But the artifact that turns involvement into intelligence — a complete record the family owns and the teacher can draw from — has never existed. <strong style="color:var(--gold)">Until now.</strong></p>
+      <div class="research-thesis-line"></div>
+    </div>
+
   </div>
 </section>
 
@@ -1688,7 +1712,7 @@ footer{
         <img src="data:image/jpeg;base64,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" alt="SageGap"/>
         <span class="footer-wordmark">SageGap</span>
       </div>
-      <p class="footer-tagline">Academic Systems built for families. Instruction built for every child. Data owned by the people who matter most.</p>
+      <p class="footer-tagline">Academic Systems built for families. Better outcomes for every stakeholder. Data owned by the people who matter most.</p>
     </div>
     <div class="footer-links">
       <h4>Navigate</h4>
@@ -1696,7 +1720,7 @@ footer{
         <li><a href="#the-gap">Why SageGap</a></li>
         <li><a href="#canonical-egg">The Canonical Egg</a></li>
         <li><a href="#who-we-serve">Who We Serve</a></li>
-        <li><a href="#teacher-copilot">Teacher Copilot</a></li>
+        <li><a href="#the-research">The Research</a></li>
         <li><a href="#consultation">IEP Consultation</a></li>
       </ul>
     </div>
@@ -1731,6 +1755,10 @@ var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible')}});
 },{threshold:0.10});
 document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+var pillarObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');pillarObs.unobserve(e.target)}});
+},{threshold:0.15});
+document.querySelectorAll('.research-pillar').forEach(function(el){pillarObs.observe(el)});
 window.addEventListener('scroll',function(){
   var nav=document.querySelector('nav');
   nav.style.boxShadow=window.scrollY>40?'0 2px 20px rgba(28,61,80,0.10)':'none';
@@ -1740,144 +1768,10 @@ window.addEventListener('resize',function(){
 });
 </script>
 
-<!--
-  ╔══════════════════════════════════════════════════════════╗
-  ║  TEACHER COPILOT PILOT — FORMSPREE SETUP (2 min)        ║
-  ║                                                          ║
-  ║  1. Go to https://formspree.io and create a free account ║
-  ║  2. Click "New Form" — name it "Teacher Copilot Pilot"   ║
-  ║  3. Set the destination email to: david@sagegap.com      ║
-  ║  4. Copy your unique form ID (looks like: xyzabcde)      ║
-  ║  5. Replace YOUR_FORMSPREE_ID below with that ID         ║
-  ║  6. Formspree will send a confirmation to david@sagegap  ║
-  ║     — click it to activate                               ║
-  ╚══════════════════════════════════════════════════════════╝
--->
 
-<!-- PILOT MODAL -->
-<div id="pilotModal" class="pilot-modal-overlay" onclick="handleOverlayClick(event)">
-  <div class="pilot-modal-box" role="dialog" aria-modal="true" aria-labelledby="pilotModalTitle">
-
-    <button class="pilot-modal-close" onclick="closePilotModal()" aria-label="Close">✕</button>
-
-    <div class="pilot-modal-eyebrow">Teacher Copilot</div>
-    <h2 class="pilot-modal-title" id="pilotModalTitle">Join the Pilot Cohort</h2>
-    <p class="pilot-modal-lead">We're forming a group of 2–3 classroom teachers to shape the first version of the Teacher Copilot. Tell us about yourself and we'll be in touch.</p>
-
-    <!-- SUCCESS STATE -->
-    <div class="pilot-success" id="pilotSuccess">
-      <div class="pilot-success-icon">✓</div>
-      <h3 class="pilot-success-title">You're on the list.</h3>
-      <p class="pilot-success-body">Thank you for applying — we've received your information and will be in touch as we finalize the Teacher Copilot pilot cohort. Expect to hear from us at the email you provided.</p>
-      <button class="pilot-btn-close" onclick="closePilotModal()">Close</button>
-    </div>
-
-    <!-- FORM STATE -->
-    <form
-      id="pilotForm"
-      action="https://formspree.io/f/xdabadpk"
-      method="POST"
-      onsubmit="handlePilotSubmit(event)"
-    >
-      <!-- Formspree honeypot spam filter -->
-      <input type="text" name="_gotcha" style="display:none"/>
-      <!-- Route replies to david@sagegap.com -->
-      <input type="hidden" name="_replyto" value="david@sagegap.com"/>
-      <input type="hidden" name="_subject" value="Teacher Copilot Pilot Application"/>
-
-      <div class="pilot-field-group">
-        <div class="pilot-field">
-          <label class="pilot-label" for="pilotName">Full Name <span aria-hidden="true">*</span></label>
-          <input
-            class="pilot-input"
-            type="text"
-            id="pilotName"
-            name="name"
-            placeholder="Your full name"
-            required
-            autocomplete="name"
-          />
-        </div>
-        <div class="pilot-field">
-          <label class="pilot-label" for="pilotEmail">Email Address <span aria-hidden="true">*</span></label>
-          <input
-            class="pilot-input"
-            type="email"
-            id="pilotEmail"
-            name="email"
-            placeholder="your@school.edu"
-            required
-            autocomplete="email"
-          />
-        </div>
-      </div>
-
-      <div class="pilot-field">
-        <label class="pilot-label" for="pilotSchool">School &amp; District</label>
-        <input
-          class="pilot-input"
-          type="text"
-          id="pilotSchool"
-          name="school_district"
-          placeholder="e.g. Indianapolis Public Schools, Indiana"
-          autocomplete="organization"
-        />
-      </div>
-
-      <div class="pilot-field">
-        <label class="pilot-label" for="pilotRole">Your Role <span aria-hidden="true">*</span></label>
-        <select class="pilot-input pilot-select" id="pilotRole" name="role" required>
-          <option value="" disabled selected>Select your primary role</option>
-          <option value="General Education Teacher">General Education Teacher</option>
-          <option value="Special Education Teacher">Special Education Teacher</option>
-          <option value="Instructional Coach">Instructional Coach</option>
-          <option value="Department Head">Department Head</option>
-          <option value="School Administrator">School Administrator</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="pilot-field">
-        <label class="pilot-label" for="pilotGrade">Grade Level(s) You Teach</label>
-        <input
-          class="pilot-input"
-          type="text"
-          id="pilotGrade"
-          name="grade_levels"
-          placeholder="e.g. Grade 7 Math, 6–8 Special Ed"
-        />
-      </div>
-
-      <div class="pilot-field">
-        <label class="pilot-label" for="pilotWhy">Why do you want to join the pilot? <span aria-hidden="true">*</span></label>
-        <textarea
-          class="pilot-input pilot-textarea"
-          id="pilotWhy"
-          name="why_join"
-          placeholder="Tell us what you're hoping to get out of the Teacher Copilot pilot…"
-          rows="3"
-          required
-        ></textarea>
-      </div>
-
-      <div class="pilot-form-footer">
-        <p class="pilot-privacy">Your information goes only to SageGap. We do not share or sell applicant data.</p>
-        <button type="submit" class="pilot-submit" id="pilotSubmitBtn">
-          <span id="pilotBtnText">Apply for the Pilot</span>
-          <span id="pilotBtnSpinner" class="pilot-spinner" style="display:none"></span>
-        </button>
-      </div>
-
-      <div class="pilot-error" id="pilotError" style="display:none">
-        Something went wrong. Please email <a href="mailto:david@sagegap.com">david@sagegap.com</a> directly.
-      </div>
-    </form>
-
-  </div>
-</div>
 
 <style>
-/* ── PILOT MODAL ── */
+/* ── MODAL STYLES ── */
 .pilot-modal-overlay{
   display:none;position:fixed;inset:0;z-index:999;
   background:rgba(15,37,53,0.72);
@@ -2214,59 +2108,6 @@ window.addEventListener('resize',function(){
 }
 </style>
 
-<script>
-function openPilotModal(){
-  document.getElementById('pilotModal').classList.add('open');
-  document.body.style.overflow='hidden';
-  setTimeout(function(){
-    document.getElementById('pilotName').focus();
-  },320);
-}
-function closePilotModal(){
-  document.getElementById('pilotModal').classList.remove('open');
-  document.body.style.overflow='';
-}
-function handleOverlayClick(e){
-  if(e.target===document.getElementById('pilotModal')){closePilotModal()}
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){closePilotModal()}
-});
-
-async function handlePilotSubmit(e){
-  e.preventDefault();
-  var btn=document.getElementById('pilotSubmitBtn');
-  var txt=document.getElementById('pilotBtnText');
-  var spin=document.getElementById('pilotBtnSpinner');
-  var err=document.getElementById('pilotError');
-  var form=document.getElementById('pilotForm');
-  var success=document.getElementById('pilotSuccess');
-
-  btn.disabled=true;
-  txt.style.display='none';
-  spin.style.display='inline-block';
-  err.style.display='none';
-
-  try{
-    var res=await fetch(form.action,{
-      method:'POST',
-      body:new FormData(form),
-      headers:{Accept:'application/json'}
-    });
-    if(res.ok){
-      form.style.display='none';
-      success.style.display='block';
-    } else {
-      throw new Error('Server error');
-    }
-  } catch(ex){
-    err.style.display='block';
-    btn.disabled=false;
-    txt.style.display='inline';
-    spin.style.display='none';
-  }
-}
-</script>
 
 
 <!-- WAITLIST MODAL -->
