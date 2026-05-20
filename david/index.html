@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>David Johnson III — SageGap</title>
+<meta name="description" content="Founder & Architect at SageGap — Every child's learning story deserves continuity. Connect with David.">
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="David Johnson III — SageGap">
+<meta property="og:description" content="Founder & Architect at SageGap. Every child's learning story deserves continuity.">
+<meta property="og:url" content="https://sagegap.com/david">
+<meta property="og:image" content="https://sagegap.com/david/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="SageGap">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="David Johnson III — SageGap">
+<meta name="twitter:description" content="Founder & Architect at SageGap. Every child's learning story deserves continuity.">
+<meta name="twitter:image" content="https://sagegap.com/david/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --serif: 'Cormorant Garamond', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  --sans: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --teal: #5bbfb5;
+  --gold: #d4a843;
+  --gold-text: #ba7517;
+  --green-dark: #0f6e56;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-tertiary: #888;
+  --border: rgba(0,0,0,0.09);
+  --surface: #f8f7f5;
+  --white: #ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:#f0efeb;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:2rem 1rem 4rem}
+.card{max-width:380px;width:100%;background:var(--white);border-radius:24px;border:0.5px solid var(--border);overflow:hidden;box-shadow:0 2px 32px rgba(0,0,0,0.07),0 0 0 0.5px rgba(0,0,0,0.04)}
+.cover{height:84px;background:linear-gradient(115deg,#5bbfb5 0%,#a8d4b0 45%,#e8c56a 100%);position:relative}
+.cover-fade{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,var(--white) 100%)}
+.hero-row{display:flex;align-items:flex-end;justify-content:space-between;padding:0 1.75rem;margin-top:-46px;margin-bottom:1rem;position:relative;z-index:2}
+.avatar-frame{width:90px;height:90px;border-radius:50%;border:3px solid var(--white);overflow:hidden;flex-shrink:0;outline:1px solid rgba(91,191,181,0.28);position:relative;background:var(--white)}
+.avatar-frame img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+.avail-dot{width:12px;height:12px;border-radius:50%;background:#4ade80;border:2.5px solid var(--white);position:absolute;bottom:4px;right:4px}
+.monogram{width:62px;height:62px;border-radius:50%;background:var(--white);border:0.5px solid #d4d2cc;outline:4px solid var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex-shrink:0;margin-bottom:4px;position:relative}
+.mono-outer{position:absolute;inset:-5px;border-radius:50%;border:0.5px solid rgba(0,0,0,0.07);pointer-events:none}
+.mono-dj{font-family:var(--serif);font-size:20px;font-weight:400;font-style:normal;color:var(--text-primary);letter-spacing:0.04em;line-height:1}
+.mono-iii{font-family:var(--serif);font-size:9px;font-weight:300;font-style:normal;color:var(--text-tertiary);letter-spacing:0.22em;line-height:1;padding-left:0.22em}
+.header{padding:0 1.75rem 1.5rem;text-align:center;border-bottom:0.5px solid var(--border)}
+.name{font-family:var(--serif);font-size:28px;font-weight:400;font-style:normal;color:var(--text-primary);letter-spacing:0.025em;line-height:1.15;margin-bottom:6px}
+.title-line{display:flex;align-items:center;justify-content:center;gap:7px;margin-bottom:1.25rem}
+.title-text{font-size:10.5px;font-weight:400;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:0.13em;font-family:var(--sans)}
+.sep{width:2px;height:2px;border-radius:50%;background:#ccc}
+.org{font-size:10.5px;font-weight:500;color:var(--green-dark);text-transform:uppercase;letter-spacing:0.13em;font-family:var(--sans)}
+.rule{width:28px;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--gold));margin:0 auto 1.25rem;border-radius:2px}
+.truth{font-family:var(--serif);font-size:17px;font-style:italic;font-weight:300;color:var(--text-secondary);line-height:1.7;max-width:230px;margin:0 auto}
+.actions{padding:1.5rem 1.5rem 0;display:flex;flex-direction:column;gap:8px}
+.btn-primary{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:13px;border-radius:12px;background:linear-gradient(115deg,#5bbfb5 0%,#7dcba8 50%,#d4a843 100%);color:#fff;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0.02em;border:none;cursor:pointer;transition:opacity 0.18s}
+.btn-primary:hover{opacity:0.88}
+.btn-exchange{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:12px;border-radius:12px;background:transparent;color:var(--text-primary);font-family:var(--sans);font-size:13px;font-weight:500;border:0.5px solid #c8c6c0;cursor:pointer;transition:border-color 0.18s,background 0.18s}
+.btn-exchange:hover{border-color:#999;background:var(--surface)}
+.btn-ghost{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;padding:11px;border-radius:12px;background:transparent;color:var(--text-tertiary);font-family:var(--sans);font-size:12.5px;font-weight:400;border:0.5px solid #e4e2dc;cursor:pointer;transition:border-color 0.18s,color 0.18s}
+.btn-ghost:hover{border-color:#bbb;color:var(--text-secondary)}
+.toast{display:none;align-items:center;justify-content:center;gap:7px;padding:10px 14px;border-radius:10px;background:#f0fdf4;border:0.5px solid #86efac;color:#166534;font-size:12.5px;font-weight:500;font-family:var(--sans)}
+.toast.on{display:flex}
+.crm-badge{display:flex;align-items:center;justify-content:center;gap:5px;font-size:10px;color:var(--text-tertiary);padding:6px 0 0;letter-spacing:0.03em;font-family:var(--sans)}
+.pulse-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.connect{padding:1.5rem}
+.connect-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.14em;color:var(--text-tertiary);margin-bottom:10px;padding-left:2px;font-family:var(--sans)}
+.links{display:flex;flex-direction:column;gap:5px}
+.lnk{display:flex;align-items:center;gap:11px;padding:10px 11px;border-radius:10px;background:var(--surface);border:0.5px solid #e4e2dc;text-decoration:none;cursor:pointer;transition:border-color 0.15s}
+.lnk:hover{border-color:#bbb}
+.lnk-icon{width:30px;height:30px;border-radius:7px;background:var(--white);border:0.5px solid #e4e2dc;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;font-family:var(--sans)}
+.lnk-icon.teal{color:var(--teal);border-color:rgba(91,191,181,0.3)}
+.lnk-icon.gold{color:var(--gold-text);border-color:rgba(186,117,23,0.25)}
+.lnk-text{flex:1;min-width:0}
+.lnk-title{font-size:12.5px;font-weight:500;color:var(--text-primary);font-family:var(--sans)}
+.lnk-sub{font-size:11px;color:var(--text-tertiary);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--sans)}
+.lnk-arr{color:#ccc;font-size:16px;flex-shrink:0;line-height:1}
+.about{margin:0 1.5rem 1.5rem;padding:1rem 1.125rem;border-radius:12px;background:var(--surface);border:0.5px solid #e4e2dc;border-left:2px solid var(--teal)}
+.about p{font-family:var(--serif);font-size:14px;font-weight:300;line-height:1.85;color:var(--text-secondary)}
+.about strong{font-weight:500;font-style:normal;color:var(--text-primary);font-family:var(--sans);font-size:12px}
+.foot{padding:0.875rem 1.5rem 1.25rem;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid var(--border)}
+.foot-brand{font-family:var(--serif);font-style:italic;font-size:13px;font-weight:300;color:var(--text-secondary);letter-spacing:0.02em}
+.foot-url{font-family:monospace;font-size:10px;color:var(--text-tertiary);letter-spacing:0.03em}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.38);z-index:100;align-items:flex-end;justify-content:center}
+.overlay.on{display:flex}
+.drawer{background:var(--white);border-radius:20px 20px 0 0;border-top:0.5px solid var(--border);width:100%;max-width:480px;padding:1.5rem 1.5rem 2.5rem;animation:slideUp 0.26s cubic-bezier(0.32,0.72,0,1) both}
+@keyframes slideUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.drawer-handle{width:28px;height:3px;border-radius:2px;background:#ddd;margin:0 auto 1.25rem}
+.drawer-title{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--text-primary);margin-bottom:4px;text-align:center}
+.drawer-sub{font-size:12px;color:var(--text-tertiary);font-family:var(--sans);text-align:center;margin-bottom:1.25rem;line-height:1.6}
+.field{margin-bottom:10px}
+.field-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-tertiary);margin-bottom:4px;display:block;font-family:var(--sans)}
+.field input,.field textarea{width:100%;padding:9px 11px;border-radius:9px;border:0.5px solid #ccc;background:var(--surface);color:var(--text-primary);font-family:var(--sans);font-size:13px;outline:none;resize:none;transition:border-color 0.15s}
+.field input:focus,.field textarea:focus{border-color:var(--teal)}
+.field textarea{height:64px;line-height:1.6}
+.submit-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border-radius:12px;background:linear-gradient(115deg,#5bbfb5 0%,#7dcba8 50%,#d4a843 100%);color:#fff;font-family:var(--sans);font-size:13px;font-weight:500;border:none;cursor:pointer;margin-top:4px;transition:opacity 0.18s}
+.submit-btn:hover{opacity:0.88}
+.submit-btn:disabled{opacity:0.5;cursor:not-allowed}
+.cancel-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:9px;border-radius:12px;background:transparent;color:var(--text-tertiary);font-family:var(--sans);font-size:12.5px;border:none;cursor:pointer;margin-top:4px}
+.confirm{display:none;text-align:center;padding:0.5rem 0}
+.confirm.on{display:block}
+.confirm-icon{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--gold));display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:#fff;font-size:22px}
+.confirm-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--text-primary);margin-bottom:6px}
+.confirm-body{font-size:12.5px;font-weight:300;color:var(--text-secondary);line-height:1.7;margin-bottom:1.25rem;font-family:var(--sans)}
+.confirm-close{display:flex;align-items:center;justify-content:center;width:100%;padding:11px;border-radius:12px;background:var(--surface);border:0.5px solid #e4e2dc;color:var(--text-secondary);font-family:var(--sans);font-size:13px;cursor:pointer}
+.qr-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.38);z-index:100;align-items:flex-end;justify-content:center}
+.qr-overlay.on{display:flex}
+.qr-drawer{background:var(--white);border-radius:20px 20px 0 0;border-top:0.5px solid var(--border);width:100%;max-width:480px;padding:1.5rem 1.5rem 2.5rem;animation:slideUp 0.26s cubic-bezier(0.32,0.72,0,1) both;text-align:center}
+.qr-title{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--text-primary);margin-bottom:4px}
+.qr-sub{font-size:12px;color:var(--text-tertiary);font-family:var(--sans);margin-bottom:1.25rem;line-height:1.6}
+.qr-canvas-wrap{display:inline-block;padding:16px;background:var(--white);border-radius:16px;border:0.5px solid var(--border);box-shadow:0 2px 16px rgba(0,0,0,0.06);margin-bottom:1.25rem}
+.qr-canvas-wrap img{display:block}
+.qr-url{font-family:monospace;font-size:11px;color:var(--text-tertiary);letter-spacing:0.03em;margin-bottom:1.25rem}
+.qr-actions{display:flex;gap:8px}
+.qr-actions button{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:11px;border-radius:12px;font-family:var(--sans);font-size:12.5px;cursor:pointer;transition:all 0.18s}
+.qr-copy{background:linear-gradient(115deg,#5bbfb5 0%,#7dcba8 50%,#d4a843 100%);color:#fff;font-weight:500;border:none}
+.qr-copy:hover{opacity:0.88}
+.qr-close{background:var(--surface);border:0.5px solid #e4e2dc;color:var(--text-secondary);font-weight:400}
+.qr-close:hover{border-color:#bbb}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="cover"><div class="cover-fade"></div></div>
+
+  <div class="hero-row">
+    <div class="avatar-frame">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAC0ALQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9U6KKKACiiigAoopKAFpKBS0AJRilqC8vbfT7WW5up47a3iXdJLM4REHqSeB+NAE20egoIB7V4T40/bf+DPgmSWGfxlb6rcxttMOjRPeHP+8g2f8Aj1cbZ/8ABSX4QXVyInPiC2BOPMl0slfr8rk/pU80V1KUW9kfVAUDoBRj3NebfD39o/4a/FKdbfw34w02+vmwBYySGC5z6eVIFY/gDXpOc073J2Dke9GfwpaKYBRSY9KAfwNAC0UUUAFFFFABRRRQAUUUUAFFFJQAUUtFACUE4pa+JP28/wBqTUvDd6nwp8D3rWmvXsAk1jU4WxJZQOMrEh/hkdeS3VVIxywImUlFXZUYuTsje/aa/b+0T4WXl34Y8EQweKPFcJMVxcklrGwfnKsVP72QY5RSAP4mB4r89PiX8X/HHxk1BZ/F/iW91lS3mJas222i/wByFcIv5Z9zUVh4SaNFt41GF4yvr/Wt/TPhvNKpL4IPHOTk141XHRWlz3qGWzaTaOE07Sy6mMRqCMMFb8OlTzaLK9wWTAXGRwQMjt/+qvYLf4epDGXOTjAztzj6U658ERKVVWdsc4cEjPrntXmPGXdz2Y5fZWPD73T8ECZN235hkfcPsfWvc/gr+2n8T/gzPBby6lJ4u8OR4DaTrMjSMiDtDPy6cdM7l/2a5TV/AbghlUMASfr9fauZ1Dw3LB/DhgMEDkfWuyjjF3PPr5e+x+vnwF/aN8H/ALQ3hs6j4buzHfW4UX+k3WFurNj0DKOqnBw65U465yB6lX4XeFfFXiX4O+MLHxh4XvZNN1K0kwHHMcqfxRSLn5o26FT+GCAa/YH9nP47aV+0J8M7LxPp6C0uwTb6hp5bc1pcqAWTPdSCGVu6sO+RXuU6qqK6PnatKVJ2Z6fQwyKWitjAaCR1/OnUh5pB8px27UAOooooAKKKKACiikNABRilpKACloooAyPF3iS08G+FtX17UG2WOl2kt7Oc4+SNC7foK/FaPxPf+P8AxZ4g8V6o5k1XXLt7qUsfub2ztHso2qB6KK/TP/goJ4ifQP2W/FMMbmOXVJLXTgVOCVkmXePxRXH41+YvhJQ0Vvng5we2a8vHVHGFkexltNSqczPQfDGi+bglTxwPc+teoaB4aICllLDHVu/4VieD7KORFdl+7yPWvWdHjVbdMAJz+PtXynLzu7PuU1TjoU7Tw4giUbCKqXPhVNpxHjryBXWiNtgyxz/OozHIEABDEHkkVuopK1jL2kjyzVvCvlI2Ez+FefeI9BESu+wq3PUV9B3cSvCd3lyq3TjrXAeJ7CDa+UwCCOucVi4cmqNeZTVmfPusWAFtLFIPlcEEfyNewf8ABOr4my/D34+nwpPOV0rxTA1r5bvhVuolaSFvqQJE99w9K858YWq2pYHgtXD+H/EUvgr4keH/ABHC/ly6ZqdreBhwf3cqsfzAI/GvcwNV3sfMZnRXLc/dUdKWmRSLNGrowZGG5WHQg9KdX0R8qLSEZoooARTzg9adTWGRx1pVbcAaAFooooAKSg9KWgAoopKAFoopKAPk/wD4KWI8n7PliijKnX7Xd+EcxH64r86fDJKCNSuDuzkHrX6Z/wDBQjR5dT/Zp1e4iRn/ALOvrO7baOQvmiNj+Akr8z7KaDSyjXDiG3jGWY/nXjY9N2SPeyySV2z3XwpP5dpH8xjJHI4NeqaCJJY0O84K+g/DFfOOgfFXQAsJuEkhRT/rH5zx169PevV/D3xh8L3jeTZ38ckgAPl5w31Ge30rwlQqR1kj6X61Sn7sZHrAhLdXz+HIpskGVJIBZTnFUrXX7W5tvNikUjA5DZqxBqscihS4BPzNk8gHtS5ki1FtXKV/DII8oQfwwK848Ru6vIG2g5xwD/n/APXXSeMfiVonh1kjv7xYkDEsUOc47Y615L4m+M3g+6mkFvcfbJWBO0dP51TpzqK8UR7enSdps4/xvIGuGDcAHI+leW64nnM7ZIO0nGfQV3WueIbDxC7NbMsEg+7CW5Ye1chq9s4R5EUmRkZce+OK7MLFwkk9zzcZONSDcdj9wfh5eNqPgHw3dtktPplrKc9ctCp/rXQ1heA9OfSPBPh+xkXZJa6fbwMp7FYlUj9K3K+pR8cLRRSUALTB8r47H+dPqObIj3DqvzCgCSikBBAI5BooAO9LSDpS0AFJS0UAFFFFAHzX+3p8ZD8LPglqWnppceoS+JLS900TXDEQ2y/ZnYyMByx6YGR3OeK/NXXpdN01rW0S00/VkW3jlnu7kNcxyM0YOY1JC4wc5I7jiv07/bo8K2/iL4AajdTQLNJpN5bXseRnHziJvwKStmvyxn8JXU3h+4uvMeVfPW2RU/hRY8Jnv91QP+A+9ebiaqg+WXXY9PD0pVI3g/Uh1ibwo2nDzhJDcbgxNrsjI46cLx9P0rkI1tTc3Utlb36mBgJXkOGhbJHOVGDkEV3vgHwVb6Wbia/s7mZbiNo2LDcHRuoIIP8AjXU/8IdaPZTWOnWEkNnOVMxmdsMF+6Dnk47VxqpBJpts9KNCo7NJL8zzvRvG3iXQ59PuLfXb4aSbhY7iOTA4Jx97HH1x2p2u/HPx9fajYWCaytnb3iyPBeeUSQiuVyT35HYV6RdfCtbvw9BYpET9smRETPGAe/tk5+imtDxt+z1pGi6TpU2iySq9qqwu07bvl3Bty/3fmAyB2JrD2+H0Uor7js+r4hpyjJ2XS54bqF7Pq0jRX95qGsXjnBkfamfoMHH5mrGiN4et0aNxKLhCCUguF3KSMg7SoJ454zmvTz8PLjQ9ch1CzjeSWFvMSSJsMFIyMdulZN/4K8PrLNdTJcC6ZXVY5VLCPf8Ae2gjg9h1x2xXRGpTcbbehyyo1FK9k/U4HVruCa5juLS9YleYy8cTgEDuCmc1sfCPxvc6T8StGvNcj0LXbfS70XY02V3hkvNsLSxFo1z8gcJntnggisBfA9zb6ydouJbdmwodMs3oPc11UHw+bw94+1lZtj3DeXbIwXoqoNwx2JbIP+7TVWEFa930MZUZ1JLSyvqfrv8AsufG+7+PvwzbxHfadb6bdw389jIlpIzxPs2kMpbno4BB7g16/XkP7J3w/X4b/APwpppCi4ubc6jOU6eZOfNx+AZR+FevV7FO7gubc8OryqpJQ2uFFFFaGQUUUUARQE7Nv90lef0/TFFU7u8NjcOMr8+H5+mP6UUAaC/dH0paQHIHaloAKSlooAKKKKAOK+NHhmDxj8KfFej3LSJFc6dNhovvKyqXUj1+ZRx3r8ofh1rttaXdxZalam602+VRMsZxJEeCrpnjIPb/ACf2RcBlIIyCOQe9fkB8ZfDa/Dn42+MNEji8mC21OVoIwMBYXYSR4HoEdR+FeRmNPngmezllRKbgz0O38LeHJwos/FFu0ZGTFfQvC6+3Ix+RrYOg+FdAshPqPiewEWeIrdXmkc9gFUHms/wZq1p/Z0cflxu4X7xGaXUEttQkMhZGjKlYto6Hua+eSvuz672bto/yLGm2j3etWVuYvJtpZMxo3LAdtx9cE8DgZPWu2+IeiWs3hsiDrF8jZ7//AFuK8VtT4h0i4kH26W+KN5kKySDCc8AcZH51d1z4heJNfsBZNZpaIcDznYEg9/rVcj7XDnUXbsbukzafpUcZ8QXEekWRUBbwo7oCegcKCV5P3hxz2q/qHhLw1ewJcw+KtIZHGVILHI+gGa8v0m31C5u3k1vUZbyJflW1kxtH4V1OkamnhqaOGVAdPuGxbMpyVbHMZH549aVpLS5Kgnqnp8hms6Z4X8N+XqSXsuvalC263gigaKBHH8TM2Ccew61598NvD03xK+KWlaTcSmObWNRjgeaIY2b3+Yj0wucfQVtfEjxRBJNsRgHHGBjrivcf+CdHw2svEvijXvGN/CZG0Ro4LAE/IJpEbexHcqmAPTefauzCUnUmebjpxoQutz7/ANOsYdLsLaztl8u3t41ijT0VQAo/ICrNFFfVnxgUlLRQAUUUUAZOq2MlzcKyngLj9TRWhNcpCwViAcZooAlUYApaQUtABSUtFABSUtFABX57/wDBR74aPpfjDQvG1rCRbapD9gu5AMgTxgmMn/ejyP8AtnX6D14X+2ReeG5/g9daBrcbXOpa3KLbRraEgTNeKC6OuegQKSx9CR1YCsa0PaQcTehU9nUUj83fDmq3EWiSCOVod7xQvKpxsVidzZ7Hgjn1rctPHtpeXcNtZSG72KFxCM+WBxg+lefeGNeW2uZLeUn7Ncrsc9l7qw+hrp7jwVpV4jPDHsmc5kMbYY/j+fB4r5rkjFtSPs41J1EuRnfW01/9nmLXthpzsMRebL5r9T82Fz2xwRXPz+G7cWTLqPi7zoMt5ckMTNIWOMsScDqBgDtmm+E/DOiaLIx1NhcwspG2S4kiKntxkfzrcFv8PrPbN9j027KtkJPfPKB7Y3EV1RjG2kjRUk/i/M4HVfEVvpskwk8Qwyqd2xbmAp245Gefes218WnW9M1W2u0lVYowYpomLISPmUqfbArX1fw/p2ras7wW1sFdvkEcWI0H5DJpniG9s9FEarDG8CKcq3WUjoT681jJwvaOrMpwcHdPRHOeNrgvrUihvnCoZFHQOVGR+dfpx+wv8P5PAn7P2ky3MRivdblk1WQOMMFfCxZ/7Zop/wCBV+Znw2s7XxV8UfD9hq6yXNlfarAt7HHks0bSDeB9Vz0r9pvDuoaZq2g6feaNNBcaTPAj2stsR5bREDZtx2xivTwVPlXMfPZhW55JGhS0UV6h44UlLSUALRRRQBh63Gz3a7QCAg649TRWokSSPK7KDluM+wA/mDRQBP3paSigBaKKSgBaK4D4ofHfwN8HbQy+KfEFtYTld0dih826l9NsK5Y/XGPevj34lf8ABSPVtVmurPwD4eTS7ZMj+1daxJMfQpCp2qf95m+lAH2P8YfjL4b+CPhGbXvEV2EXlLWziIM93JjiONSeT6noBySK/Pqy+M2uftD/ALTHgzWNXEVtZ2d262mmRHdHaw+W7MM/xMx27mPXHQAAV4Z48+IHiT4ma9/afivV7jWNQ2kCS5b5YkznYigBVHfCgZNdt+z7eLYfFPwlgbpJbmWNm28LuhfH0rSKE9Dhfih4TfwH8SfE3h/aUfT7tlCHvC3zxOPYqR+RrW8DeIIxELe5k2Ox2qx/iz2/TrX0F+3n8JJZdO0r4n6Pb5ubCIW2qhBzLbDlXI7lCSfoT6V8n2Udnrq28wkaMAhg8fUnuD7GvncRSUZ8ktu59Phq0pQVSGrW6PcbfSbi8tw2yK4iP3S5HFY3/CAw2F411FY2sbsfvbuPwGPeuPTxVf6Np5Mcju+Qpbzg4RQMkg9O/A61Wj+LE1xFLBLIVnUcLIclBuGMnuf6iudUKkdj0Pr1F/Fud1rWzSNOlmmljhK8bQ3P5V5P4l1Ztaul2btqfdzkZ9/pUeratf8AiK8imnmKwlZGV88yZGNuPqR+Gag+zR6RZ7vmO1T95txHtn0qvZqiry3MJVpYqVo/Cup6b+yrog1P48eErRQXktpm1CVhyFSMdSe2SygV7b+yp+15F8GtXvPAPjN3Phf+0Jms9QGWOm75WyrL1MW7J45XceCOmd/wT88ATz2PiX4gXiEHUP8ARLHIxi3izkj2Z2P/AHwK+XviOdvirUJogGjkvLgq2edplf8AlXuYWFqd31PnMXNSq2WyP3IsNQtdVsoLyyuIru0nQSRTwOHSRSMhlYcEH1FWK/HD4IftYePvggkdpouopd6Mz7pNI1JDNbhu7Jghoyep2kAnkg19z/CX/goF4J8aw21v4ogl8I6hJ8vnPmeyY/8AXQDKc/31AHrXTY4z6ooqrpmqWes2MN7p93BfWcy7o7i2kEkbj1VgSDVmkAtNZgiknoBmnUxhuIX8TQARJsjUHrjn696KfRQAU13WNSzEKoGSTwAKdXAfHX4Vw/GX4Zav4Ye5eyuLhPMtblXZRHOvKFsdUPRh6E98UAcj8Vv2w/hn8KEmhutcTW9WQcaZoxFxLn0Zgdif8CbPtXxZ8XP2/wD4h+OzPZ+G1i8F6VISim0PmXjKfWYj5T/uAH3r5+8Q+BtX8KeIL7RtVtHs9TsJzDNbvxscHB4HBHcEcEYIzmm2mmi1v4oZEGXXcGDcfeAP860URXKbQXWs6g89xNcXV7Md8k8srO7nP3mY5JP1NbB077JEkbKcIQWLc5OeAfqatNFqOg30rWcf9oWuPmjUiOZeSARn5XGOxI+vapEv4buJ5wyyKMEjmM7zjIKnnI44pNdho5+S3KiaabKoB9/oevau2+D18YfHGh3LKImj1WDKqOAC+zB/A1yWoPJqIaJUZIot23fyzOB1A7nGfYVueCSsOoKsW7fFcQTFkOACrqTk9T0+lXzJNIVtD9SLTRbPxj4NuNLv4kmtZ4WjkWTG0gjBB9sZr8qvjL8I9Q/Z2+JE+gS75NBvM3OjX2dyTwk/cDDguh+Ujr0Pev0d8Ra3c6fFp2mQSgQu8s1wo6su8qgPtwx/Ktyy0TR/FPhmTTNZ0621fS5WbzbS9gWaPkddrA4PuMH3rkxFFVo2Z1YbEPDy5lsflVbSrcM0bEMp5wwyKtDQLW5fzmto2kGDuKjOfWvfP2n/ANl6D4Xxp4t8HrJJ4XmlEU9nIxdrGQnC4Y8tEx4GeVOASQQa8W0to3hIZdrY6e9fNVVUoS5WfW0pUsTFTSuMSwhtgdxJOMdc49qxF0HUPiN4x0fwjosby3uq3SWcaxgnaCfnc+yrlifQVtX8nlROyoRweTxX2r+yf8IE+DPgGbxLrWnRx+NtaUyJ58Q8+wtm/wBXESeVLAB2Xg5IB6VphKLr1NehljKyw9LTdntnhjwPp3wr+Gtvoumoq2un23kbVIJUKvQ46HjNfk9c2w1u1urmP/lpLJMnzdCWJx7V+jml3bQeJ9du7i8Yxz6NeFo2f5X2JuyR3K4zn3Nfnf4dtVbSbaVHO+RVyNmCAcdfUfSvq1aKsfG6t3OTtJPLnHmcDO1wV6GtyxuXs3DMD5Q4YFiNh7EVp6n4fXUpfNSNkLHI2ABW49apIWtYgJocyoQhj273kHQbV7+mfpSejBHpXw7+LPi74X3qX/hPWrvSklwz2wffbSHuGibKn64z719e/Cj/AIKF6fe+VY/ELSTpU2dn9q6YjSQH3eI5df8AgO76Cvg3Q7G7jicyw+VDIxaGEspdQP72PlGfQE/WtDy/tN7cJkCGIhCR1BIz0P8AnmnZMLn7IeEvHPh/x5paaj4e1iz1izcZ820lD7fZh1U+xANba88+tfn7+wt8ENR13xi3ja+e4tNG0ttkAjdo/tlxjocH5kQHJB4JKjkZFfoJWb0GFFFFIAooooA+av2tv2Zl+KFmvivw/Dt8UWEeJYYxzfQqOBgdZF/h9R8vOFx+cfiK2mgMKoHR42+f5MFOx49ckV+2NfK37Vn7JKfEK0v/ABJ4RhSDX3TddWCfKt4Qc706Yk9R0br9771JgfCljEL0wSsiRJNCh82T52BIGePXIrH1ix4gnJZfJyu5x85G7sO3I71s6TcXTad9klheznsJningZCsiNkEqVPQjkY68VXum8uEiGNi5JCvIM4z79M5FPW9h6WMa/BHmsyCFWG7cRmR//wBZzVzwfby3MdzApEcqgrGgIHUcEnv2pk9mI8zn965Gc+h/nWj4JIg1cGQFQ6kFiOnQrj9Kq1kTe595aBJ/wl9r4VvVGV1HSIZM/wC2xJYfgc16ZoWkNp9sbdshgcZ964f9nq2W5+FXhy4cpJNaQsqFR0Akbg89RyK9lezWUCVB94Z4ph6nJeIfDlp4k8Palo2oRkWmo272suORhhjOD3BwR7ivzL8R+GJ/Cuv3mmXqGO7s5ngmQj+JWIP59R9RX6xRWqXkTqQN46ivjf8AbY+F403VNN8ZWqYhuiLO9AHAlUZic/7ygqfdB615GY0eeCqLdfkexlddU6jpS2f5nnX7LfhTSfEfxe0qLURGxsoJr62gmQOkkyAFdwPB25LgeqCvtLXtLN/D5K5YsSd2cliepJrxb9kj4VHQPDUni/UotuoaqmyzVhzFbZ+99XPP+6F9a+h7WISzdOBWuApOnRV1q9TLMKqq13y7LQ+fPifCfCuk+L7toyfsPhrUFQDrveHaMfXNfC2n6ZJpEFrDKkiqkYchhynGBxX6G/tE2bzeANbe38tXuEEVwWXJaPeuVU54zgD6V8Ja1Hu1JwozGP4WPQDp+Ga9F7HllLy/LVCASp4MsPQnqdwog06OEyzxqjyf8tNnO7HQHHPr7VqSQiORBkiUYztyD/8AXrMtb+G7YQ2aSXlzk4eElEJz0LHj8uaeq2D1JRGGWXKeU21VC/wkZyfx/KvTP2bPgpqfxp1p7KHzbbSlmM1/egfLDHnAC/7RAIUfUngGrnwW+BGv/HK9+zWqmxsI5M3mqOCY4Bj7o/vt6Dv3wMmv0c+Gfw10P4T+ELHw7oFt5FlbIAZH5kmfHMjt3Y/kOgwABUN20KNbwv4Z07wd4fsNF0m2W006yiEMMS84A7k9yTkknkkk1qUUVABRRRQAUUUUAFFFFAHi3x0/Zh8P/F+0ury2WPRvEsgB/tCOPKzlR8omUfe9N3UcdQMV8GfET4N+JvhhqEtjrmmywuwKx3eN0M47GNxxjgccYzyBX6uVn674f03xPpk2natYwajZSj54LiMOp98HoffqKdwPx8jtzcMygE7fm4+6Pqe1M0xUtNRwo3hXHzMMKvpgfn+VfdPxO/Ya07UjLd+DL8abJyw02+JaHPXCuMso46EN16ivk/x18FfHHw21921zw/eW1g+4C6iTzLbpx+8XKj6Eg0/i3Fex9bfsw6p9o+HQiz/qrqePHTgsHH/oVe96VJvtIwewr5L/AGRtYc6fr+nyHbJFNDcbfQMpU/8AoAr6t0p8QYz3qlsPc0fK8uUSxjnoR61y3xR8E6T8SPCl1oOrK5sLto2fyjhwUdX4PYnbj6Ma6Zp/LAPvWddRy3l9Gybim7b8vb/PNKVraq5KbjJNMzDZpEsMFvEsMEShI4oxhUUcBR7ACtS0shBEznritCWxSLZgc1HckCFgOMiqRSd9T50/aNvTF8NbyNWw8t5DGB6jcWI/8dr4l1LZe3reWArJwVHBwOcg/wBDX1r+0m13q40jRbO2nuZp795ljgjZ2bZGRwAMnl64P4efsVeOvG10bzWoo/CunyHJa9y05B6lYhyD/vlal7iT0PDLO3ndSApkLsCVK856/d9elfSXwK/Yy1fxY9rq/i5JdB0UfOliBtubgHpwRmMe7ZPoO9fUfww/Zw8G/C/yLm1sv7T1eLkalfgSSIf+mY6J+HPvXqXSlzMDN8N+GtL8IaNbaVo1lFp+n267Y4IRgD39ST3J5PetOiipGFFFFABRRRQAUUUUAFFFFABRRRQAU1kV1KsAykYIPQ0UUAc/H8PfDdvf3F5baNZ2d3cqFmntYhE0oByN23G7B9c0690+LTMNGN4I+6wAH/joFFFNAZNxetJldiIM/wAOfXHc1p25Fvbl1AJHrRRWhmyOG/a6kVGijGe65yOB71txafGVRmLHjPGF/UAGiis7lodaaZaWRZre2ihd/vMiAM31PU1Z6UUUhi0UUUAFFFFABRRRQAUUUUAf/9k=" alt="David Johnson III">
+      <div class="avail-dot"></div>
+    </div>
+    <div class="monogram">
+      <span class="mono-dj">DJ</span>
+      <span class="mono-iii">III</span>
+      <div class="mono-outer"></div>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="name">David Johnson III</div>
+    <div class="title-line">
+      <span class="title-text">Founder &amp; Architect</span>
+      <div class="sep"></div>
+      <span class="org">SageGap</span>
+    </div>
+    <div class="rule"></div>
+    <p class="truth">Every child&rsquo;s learning story<br>deserves continuity.</p>
+  </div>
+
+  <div class="actions">
+    <div id="toast" class="toast">&#10003;&nbsp; Contact saved to your phone</div>
+    <button class="btn-primary" onclick="doSave()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Save contact
+    </button>
+    <button class="btn-exchange" onclick="openDrawer()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4m0 0L3 8m4-4l4 4"/><path d="M17 8v12m0 0l4-4m-4 4l-4-4"/></svg>
+      Exchange contact
+    </button>
+    <button class="btn-ghost" id="sharebtn" onclick="doShare()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      Share this card
+    </button>
+    <div class="crm-badge">
+      <span class="pulse-dot"></span>
+      Responses sync to Google Sheets
+    </div>
+  </div>
+
+  <div class="connect">
+    <div class="connect-label">Connect</div>
+    <div class="links">
+
+      <a class="lnk" href="https://www.linkedin.com/in/david-johnson-iii" target="_blank">
+        <div class="lnk-icon teal">in</div>
+        <div class="lnk-text">
+          <div class="lnk-title">LinkedIn</div>
+          <div class="lnk-sub">linkedin.com/in/david-johnson-iii</div>
+        </div>
+        <span class="lnk-arr">›</span>
+      </a>
+
+      <a class="lnk" href="mailto:david@sagegap.com">
+        <div class="lnk-icon gold">@</div>
+        <div class="lnk-text">
+          <div class="lnk-title">Email</div>
+          <div class="lnk-sub">david@sagegap.com</div>
+        </div>
+        <span class="lnk-arr">›</span>
+      </a>
+
+      <a class="lnk" href="https://sagegap.com" target="_blank">
+        <div class="lnk-icon teal">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="lnk-text">
+          <div class="lnk-title">SageGap</div>
+          <div class="lnk-sub">sagegap.com</div>
+        </div>
+        <span class="lnk-arr">›</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="about">
+    <p><strong>SageGap</strong> is a family-centered educational platform built on a simple conviction &mdash; families, not institutions, should own their child&rsquo;s longitudinal learning record. Built by a 16-year classroom educator. Designed for every family.</p>
+  </div>
+
+  <div class="foot">
+    <span class="foot-brand">SageGap</span>
+    <span class="foot-url">sagegap.com/david</span>
+  </div>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="drawer">
+    <div class="drawer-handle"></div>
+    <div id="form-view">
+      <div class="drawer-title">Let&rsquo;s stay connected</div>
+      <p class="drawer-sub">Leave your details and David will follow up personally.</p>
+      <div class="field">
+        <label class="field-label">Your name</label>
+        <input type="text" id="f-name" placeholder="First and last name" autocomplete="name">
+      </div>
+      <div class="field">
+        <label class="field-label">Email address</label>
+        <input type="email" id="f-email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="field">
+        <label class="field-label">Company or organization</label>
+        <input type="text" id="f-company" placeholder="Where do you work?">
+      </div>
+      <div class="field">
+        <label class="field-label">How we met / a note</label>
+        <textarea id="f-note" placeholder="e.g. We met at the EdTech Summit&hellip;"></textarea>
+      </div>
+      <button class="submit-btn" id="submit-btn" onclick="doSubmit()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Send my details
+      </button>
+      <button class="cancel-btn" onclick="closeDrawer()">Cancel</button>
+    </div>
+    <div class="confirm" id="confirm-view">
+      <div class="confirm-icon">&#10003;</div>
+      <div class="confirm-title">Thank you.</div>
+      <p class="confirm-body">Your details have been received. David will be in touch soon &mdash; usually within 24 hours.</p>
+      <button class="confirm-close" onclick="closeDrawer()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="qr-overlay" id="qrOverlay" onclick="if(event.target===this)closeQR()">
+  <div class="qr-drawer">
+    <div class="drawer-handle"></div>
+    <div class="qr-title">Scan to connect</div>
+    <p class="qr-sub">Point any phone camera at the code below.</p>
+    <div class="qr-canvas-wrap"><img id="qrImg" width="200" height="200" alt="QR Code for sagegap.com/david" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAklEQVR4AewaftIAAASwSURBVO3BwY1cAXYEweRDe1H+m1Z2ULwJwrIO89Uc9Cwy4tfvP5D0V4ek6ZA0HZKmQ9J0SJoOSdMhaTokTYek6ZA0HZKmQ9J0SJpePJSEn64tf5OEJ9qyJOGJtixJWNryTkn46dryVYek6ZA0HZKmQ9J0SJoOSdOLf6AtnyIJ3yUJS1verS1PJGFpy1e15VMk4Z0OSdMhaTokTYek6ZA0HZKmF98sCe/Wlp8sCe/Wlk+QhHdry3c5JE2HpOmQNB2SpkPSdEiaXug/tGVJwhNJeLe26N86JE2HpOmQNB2SpkPSdEiaXug/JOE7tWVJwpKEpS36/zskTYek6ZA0HZKmQ9J0SJpefLO2fLq2fKckLG1ZkvDp2vKTHZKmQ9J0SJoOSdMhaTokTS/+gST8ZElY2rIkYWnLf6sk/Lc6JE2HpOmQNB2SpkPSdEiafv3+A/1zSXi3tixJeKIt+l+HpOmQNB2SpkPSdEiaXjyUhKUtTyThJ2vLu7XlibYsSViS8DdteSIJS1uWJLxbW77qkDQdkqZD0nRImg5J0yFp+vX7D94sCU+05RMkYWnLkoSfri1flYRP0ZZ3OiRNh6TpkDQdkqZD0nRImn79/oMPkYTv1JavSsLSlieS8ERbliQsbVmS8E5tWZKwtOWJJCxt+apD0nRImg5J0yFpOiRNh6TpxQ/RliUJS1uWJHxVW75TW5YkLG1ZkrC05W+SsLTl3ZLwCQ5J0yFpOiRNh6TpkDQdkqYXDyVhacuShCeSsLRlScLSlr9JwpKEpS3fqS1LEpa2fIK2vFsS3umQNB2SpkPSdEiaDknTIWl68UHasiThibYsSfibtnyntixJeLckLG35m7Y8kYSlLU8kYWnLOx2SpkPSdEiaDknTIWk6JE0v/oEkvFtbliQ80ZavSsJP15YlCV/VlieS8G5JWNryVYek6ZA0HZKmQ9J0SJoOSdOLf6AtTyTh3dryVUl4oi1LEpa2PJGEpS1LEr6qLUsSlrYsSXiiLUsS3umQNB2SpkPSdEiaDknTIWn69fsPHkjC0pbvlIR3asuShCfasiThibYsSfh0bVmS8ERb3umQNB2SpkPSdEiaDknTIWl68VBbPkVb3ikJS1uWJCxJeKItT7RlScLSlndKwk92SJoOSdMhaTokTYek6cVDSfjp2vLpkvBEW94pCUtb3q0tTyRhactXHZKmQ9J0SJoOSdMhaTokTS/+gbZ8iiR8grY8kYSlLUsS3qktnyIJ3+WQNB2SpkPSdEiaDknTIWl68c2S8G5t+S5JWNryRBKWtixJeLckfLq2fJdD0nRImg5J0yFpOiRNh6Tphb6kLU8kYWnLE21ZkrC0ZUnCV7XlOyXhibZ81SFpOiRNh6TpkDQdkqZD0vRC/6EtSxKWtrxbEpa2LG15p7Y8kYSf7JA0HZKmQ9J0SJoOSdMhaXrxzdqi/ysJS1u+U1v+Jgnv1pYlCZ/gkDQdkqZD0nRImg5J0yFpevEPJOEnS8LSlifasiThOyVhactXteWJJCxteSIJ73RImg5J0yFpOiRNh6TpkDT9+v0Hkv7qkDQdkqZD0nRImg5J0yFpOiRNh6TpkDQdkqZD0nRImv4H+NqIdQFVvQAAAAAASUVORK5CYII="></div>
+    <div class="qr-url">sagegap.com/david</div>
+    <div class="qr-actions">
+      <button class="qr-copy" id="qrCopyBtn" onclick="copyQRLink()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy link
+      </button>
+      <button class="qr-close" onclick="closeQR()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/27659603/4odp7ce/';
+
+function openDrawer() {
+  document.getElementById('overlay').classList.add('on');
+  document.getElementById('form-view').style.display = 'block';
+  document.getElementById('confirm-view').classList.remove('on');
+}
+
+function closeDrawer() {
+  document.getElementById('overlay').classList.remove('on');
+  ['f-name','f-email','f-company','f-note'].forEach(function(id) {
+    var el = document.getElementById(id);
+    el.value = ''; el.style.borderColor = '';
+  });
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = false;
+  btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send my details';
+}
+
+function doSubmit() {
+  var name = document.getElementById('f-name').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  var company = document.getElementById('f-company').value.trim();
+  var note = document.getElementById('f-note').value.trim();
+  var valid = true;
+  if (!name) { document.getElementById('f-name').style.borderColor = '#f87171'; valid = false; }
+  if (!email) { document.getElementById('f-email').style.borderColor = '#f87171'; valid = false; }
+  if (!valid) return;
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = 'Sending&hellip;';
+  var payload = {
+    name: name, email: email,
+    company: company || '—', note: note || '—',
+    timestamp: new Date().toLocaleString('en-US', {timeZone: 'America/Indiana/Indianapolis'}),
+    source: 'sagegap.com/david'
+  };
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  }).then(function() { showConfirm(); }).catch(function() { showConfirm(); });
+}
+
+function showConfirm() {
+  document.getElementById('form-view').style.display = 'none';
+  document.getElementById('confirm-view').classList.add('on');
+}
+
+function doSave() {
+  var vcf = [
+    'BEGIN:VCARD', 'VERSION:3.0',
+    'FN:David Johnson III', 'N:Johnson;David;;;III',
+    'ORG:SageGap', 'TITLE:Founder & Architect',
+    'EMAIL;TYPE=WORK:david@sagegap.com',
+    'URL:https://sagegap.com',
+    'URL;TYPE=LinkedIn:https://www.linkedin.com/in/david-johnson-iii',
+    'NOTE:sagegap.com/david',
+    'END:VCARD'
+  ].join('\n');
+  var blob = new Blob([vcf], {type: 'text/vcard'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'David_Johnson_III.vcf';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+  var t = document.getElementById('toast');
+  t.classList.add('on');
+  setTimeout(function() { t.classList.remove('on'); }, 2600);
+}
+
+function doShare() {
+  document.getElementById('qrOverlay').classList.add('on');
+}
+
+function closeQR() {
+  document.getElementById('qrOverlay').classList.remove('on');
+}
+
+function copyQRLink() {
+  var btn = document.getElementById('qrCopyBtn');
+  var url = 'https://sagegap.com/david';
+  if (navigator.share) {
+    navigator.share({title: 'David Johnson III — SageGap', url: url});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(url);
+    btn.innerHTML = '&#10003; Copied!';
+    setTimeout(function() {
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy link';
+    }, 2200);
+  }
+}
+
+
+</script>
+</body>
+</html>
