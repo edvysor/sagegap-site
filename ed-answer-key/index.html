@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Ed Answer Key is the conversation arm of SageGap, a podcast for teachers, families, and education leaders exploring the questions that shape student success." />
+  <meta property="og:title" content="The Ed Answer Key | A SageGap Podcast" />
+  <meta property="og:description" content="Teachers. Families. Answers. Practical conversations at the intersection of teaching, family engagement, student support, and educational clarity." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#e22b2b" />
+  <title>The Ed Answer Key | A SageGap Podcast</title>
+
+  <!-- Font: intentionally limited to one family for speed, polish, and brand discipline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #0a0a0d;
+      --ink-2: #19191f;
+      --paper: #fffaf5;
+      --white: #ffffff;
+      --red: #ed1c24;
+      --red-deep: #b70e16;
+      --red-soft: #fff0f1;
+      --cream: #fff6ec;
+      --line: rgba(10,10,13,.12);
+      --muted: rgba(10,10,13,.64);
+      --muted-light: rgba(255,255,255,.68);
+      --max: 1180px;
+      --radius-lg: 32px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+      --shadow: 0 24px 80px rgba(10,10,13,.14);
+      --shadow-soft: 0 18px 42px rgba(10,10,13,.08);
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(237,28,36,.16), transparent 26rem),
+        radial-gradient(circle at 94% 4%, rgba(237,28,36,.12), transparent 22rem),
+        linear-gradient(180deg, #fffaf5 0%, #fff 48%, #fff8f0 100%);
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      opacity: .26;
+      background-image:
+        linear-gradient(rgba(10,10,13,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10,10,13,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; border-radius: 99px; }
+    .section-title {
+      margin: 10px 0 14px;
+      font-size: clamp(2rem, 4.3vw, 4.25rem);
+      line-height: .96;
+      letter-spacing: -.065em;
+      max-width: 820px;
+    }
+    .section-copy { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.12rem); max-width: 690px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      border: 1px solid transparent;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--red); color: white; box-shadow: 0 16px 34px rgba(237,28,36,.26); }
+    .btn-primary:hover { background: #ff2730; box-shadow: 0 20px 46px rgba(237,28,36,.32); }
+    .btn-dark { background: var(--ink); color: white; box-shadow: 0 16px 34px rgba(10,10,13,.18); }
+    .btn-ghost { background: rgba(255,255,255,.74); border-color: var(--line); color: var(--ink); backdrop-filter: blur(16px); }
+    .btn-ghost:hover { background: white; border-color: rgba(10,10,13,.24); }
+    .btn-small { min-height: 40px; padding: 0 16px; font-size: .88rem; }
+
+    .announcement {
+      background: var(--ink);
+      color: var(--muted-light);
+      font-size: .82rem;
+    }
+    .announcement .wrap {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .announcement strong { color: white; }
+    .announcement a { color: white; text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); text-underline-offset: 4px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(20px);
+      background: rgba(255,250,245,.82);
+      border-bottom: 1px solid rgba(10,10,13,.08);
+    }
+    .site-header .wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 205px;
+    }
+    .mark {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: var(--red);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      letter-spacing: -.08em;
+      box-shadow: 0 10px 28px rgba(237,28,36,.22);
+      position: relative;
+      overflow: hidden;
+    }
+    .mark::before { content: ""; position: absolute; width: 16px; height: 28px; border-radius: 999px; background: white; left: 10px; top: 10px; opacity: .95; }
+    .mark::after { content: ""; position: absolute; width: 22px; height: 6px; background: white; left: 21px; bottom: 12px; border-radius: 99px; box-shadow: -10px 0 0 white, 10px 0 0 white; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.05; }
+    .brand-text span:first-child { font-weight: 900; letter-spacing: -.04em; }
+    .brand-text span:last-child { color: var(--muted); font-size: .76rem; font-weight: 700; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border: 1px solid rgba(10,10,13,.08);
+      background: rgba(255,255,255,.68);
+      border-radius: 999px;
+      box-shadow: 0 10px 28px rgba(10,10,13,.05);
+    }
+    .nav a { padding: 10px 13px; border-radius: 999px; color: rgba(10,10,13,.68); font-size: .9rem; font-weight: 800; }
+    .nav a:hover { color: var(--ink); background: var(--red-soft); }
+    .menu-btn { display: none; }
+
+    .hero { padding: clamp(48px, 7vw, 92px) 0 64px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center;
+    }
+    .hero h1 {
+      margin: 16px 0 18px;
+      font-size: clamp(3.2rem, 9vw, 7.8rem);
+      line-height: .9;
+      letter-spacing: .012em;
+      max-width: 860px;
+    }
+    .hero h1 .red { color: var(--red); }
+    .hero p.lede { max-width: 680px; font-size: clamp(1.08rem, 2.05vw, 1.38rem); color: rgba(10,10,13,.72); margin: 0 0 28px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 30px; }
+    .proof-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 760px;
+    }
+    .proof-pill {
+      padding: 9px 13px;
+      border: 1px solid rgba(10,10,13,.1);
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      color: rgba(10,10,13,.7);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+    .hero-card {
+      min-height: 560px;
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 72% 24%, rgba(255,255,255,.18), transparent 14rem),
+        linear-gradient(145deg, #15151b, #050507 70%);
+      color: white;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      right: -22%; top: 10%;
+      width: 70%; aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--red);
+      filter: blur(2px);
+      opacity: .92;
+      z-index: -1;
+    }
+    .cover-art {
+      height: 100%;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 34px;
+    }
+    .presented {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.78);
+      font-size: .78rem;
+      font-weight: 800;
+      backdrop-filter: blur(10px);
+    }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 6px rgba(237,28,36,.2); }
+    .cover-center { margin: auto 0; }
+    .cover-kicker { color: rgba(255,255,255,.62); text-transform: uppercase; letter-spacing: .24em; font-weight: 900; font-size: .68rem; }
+    .cover-title { font-size: clamp(2.5rem, 5vw, 5rem); line-height: .86; letter-spacing: -.08em; font-weight: 900; margin: 16px 0 14px; max-width: 480px; }
+    .cover-title span { color: var(--red); text-shadow: 0 0 34px rgba(237,28,36,.28); }
+    .cover-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .metric { padding: 18px 16px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.08); border-radius: 18px; backdrop-filter: blur(14px); }
+    .metric b { display: block; font-size: 1.2rem; line-height: 1; }
+    .metric span { color: rgba(255,255,255,.56); font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+
+    .listen-rail { transform: translateY(22px); padding-bottom: 72px; position: relative; z-index: 2; }
+    .listen-panel {
+      border-radius: var(--radius-lg);
+      background: white;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(10,10,13,.08);
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+    .listen-intro { padding: 18px; border-radius: 20px; background: var(--ink); color: white; }
+    .listen-intro b { display: block; font-size: 1.1rem; letter-spacing: -.03em; }
+    .listen-intro span { color: rgba(255,255,255,.62); font-size: .86rem; }
+    .platform {
+      border: 1px solid rgba(10,10,13,.1);
+      border-radius: 20px;
+      padding: 18px 12px;
+      min-height: 104px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      background: #fff;
+      font-weight: 900;
+      font-size: .88rem;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
+    }
+    .platform:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(10,10,13,.1); border-color: rgba(237,28,36,.24); }
+    .platform svg { width: 26px; height: 26px; color: var(--red); }
+    .platform small { color: var(--muted); font-weight: 800; font-size: .68rem; }
+
+    .section { padding: clamp(74px, 9vw, 124px) 0; }
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(36px, 6vw, 80px);
+      align-items: start;
+    }
+    .dark-band {
+      background: var(--ink);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .dark-band::before {
+      content: "";
+      position: absolute;
+      width: 52rem; height: 52rem;
+      border-radius: 50%;
+      right: -22rem; top: -20rem;
+      background: radial-gradient(circle, rgba(237,28,36,.34), transparent 65%);
+    }
+    .dark-band .section-copy, .dark-band .card p, .dark-band .quote p { color: rgba(255,255,255,.68); }
+    .dark-band .section-title { color: white; }
+    .card-stack { display: grid; gap: 14px; position: relative; z-index: 1; }
+    .insight-card {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      border-radius: 24px;
+      padding: 24px;
+      backdrop-filter: blur(14px);
+    }
+    .insight-card h3 { margin: 0 0 6px; font-size: 1.1rem; letter-spacing: -.03em; }
+    .insight-card p { margin: 0; font-size: .96rem; }
+    .quote {
+      margin-top: 28px;
+      padding: 24px;
+      border-left: 5px solid var(--red);
+      background: rgba(255,255,255,.06);
+      border-radius: 0 24px 24px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .quote p { margin: 0; font-size: 1.03rem; }
+
+    .question-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 38px;
+    }
+    .question-card {
+      min-height: 310px;
+      border-radius: 28px;
+      border: 1px solid rgba(10,10,13,.1);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 16px 38px rgba(10,10,13,.06);
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+    }
+    .question-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+    .question-card::after { content: attr(data-word); position: absolute; right: -10px; bottom: -18px; font-size: 6.4rem; font-weight: 900; letter-spacing: -.12em; color: rgba(237,28,36,.08); }
+    .question-card .num { color: var(--red); font-weight: 900; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; }
+    .question-card h3 { margin: 46px 0 12px; font-size: clamp(1.55rem, 3vw, 2.7rem); line-height: .9; letter-spacing: -.07em; }
+    .question-card p { color: var(--muted); margin: 0; position: relative; z-index: 2; }
+
+    .featured-shell {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .feature-cover {
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(237,28,36,.94), rgba(183,14,22,.98)),
+        radial-gradient(circle at top right, rgba(255,255,255,.35), transparent 20rem);
+      color: white;
+      padding: clamp(28px, 4vw, 48px);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-soft);
+    }
+    .feature-cover .episode-label { font-weight: 900; letter-spacing: .18em; text-transform: uppercase; font-size: .75rem; color: rgba(255,255,255,.72); }
+    .feature-cover h3 { margin: 0; font-size: clamp(2rem, 5vw, 4.65rem); line-height: .88; letter-spacing: -.08em; max-width: 540px; }
+    .feature-copy {
+      border-radius: var(--radius-lg);
+      background: white;
+      border: 1px solid rgba(10,10,13,.09);
+      padding: clamp(28px, 4vw, 46px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--shadow-soft);
+    }
+    .feature-copy h3 { margin: 0 0 14px; font-size: clamp(1.8rem, 3.5vw, 3rem); line-height: 1; letter-spacing: -.065em; }
+    .feature-copy p { color: var(--muted); font-size: 1.03rem; margin: 0 0 24px; }
+
+    .conversation-section { background: linear-gradient(180deg,#f8f5f0 0%,#f3efe9 100%); }
+    .episodes-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+    .episodes-head .section-copy { max-width: 760px; margin-top: 15px; }
+    .conversation-actions { display: flex; gap: 10px; flex: 0 0 auto; padding-bottom: 4px; }
+    .conversation-arrow { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(10,10,13,.16); background: rgba(255,255,255,.72); display: grid; place-items: center; font-size: 1.1rem; color: var(--ink); transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease); }
+    .conversation-arrow:hover { transform: translateY(-2px); background: white; border-color: rgba(10,10,13,.28); }
+    .conversation-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 26px; }
+    .conversation-track::-webkit-scrollbar { display: none; }
+    .conversation-card { position: relative; flex: 0 0 clamp(238px, 24vw, 324px); min-height: 390px; border-radius: 30px; overflow: hidden; scroll-snap-align: start; border: 1px solid rgba(10,10,13,.10); outline: none; cursor: pointer; box-shadow: 0 12px 32px rgba(10,10,13,.06); transition: transform .28s var(--ease), box-shadow .28s var(--ease); }
+    .conversation-card:hover,.conversation-card:focus,.conversation-card:focus-within,.conversation-card.is-active { transform: translateY(-7px); box-shadow: 0 28px 70px rgba(10,10,13,.15); }
+    .conversation-rest,.conversation-reveal { position: absolute; inset: 0; padding: 25px; display: flex; flex-direction: column; transition: opacity .24s var(--ease), transform .3s var(--ease); }
+    .conversation-rest { justify-content: space-between; opacity: 1; transform: scale(1); }
+    .conversation-number { margin: auto 0; font-size: clamp(4.8rem, 8vw, 7.5rem); line-height: .78; letter-spacing: -.1em; font-weight: 900; opacity: .14; }
+    .conversation-rest h3 { margin: 0; font-size: 1.36rem; line-height: 1.02; letter-spacing: -.05em; max-width: 250px; }
+    .conversation-meta { display: flex; justify-content: space-between; gap: 10px; font-size: .67rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .conversation-reveal { justify-content: flex-end; background: var(--ink); color: white; opacity: 0; transform: scale(.96); }
+    .conversation-reveal .conversation-meta { margin-bottom: auto; color: rgba(255,255,255,.58); }
+    .conversation-reveal h3 { margin: 24px 0 12px; color: white; font-size: 1.5rem; line-height: 1.02; letter-spacing: -.05em; }
+    .conversation-reveal p { color: rgba(255,255,255,.68); font-size: .92rem; line-height: 1.48; margin: 0 0 22px; }
+    .conversation-reveal a { display: inline-flex; gap: 8px; align-items: center; color: white; font-weight: 900; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; }
+    .conversation-card:hover .conversation-rest,.conversation-card:focus .conversation-rest,.conversation-card:focus-within .conversation-rest,.conversation-card.is-active .conversation-rest { opacity: 0; transform: scale(1.04); }
+    .conversation-card:hover .conversation-reveal,.conversation-card:focus .conversation-reveal,.conversation-card:focus-within .conversation-reveal,.conversation-card.is-active .conversation-reveal { opacity: 1; transform: scale(1); }
+    .tone-cream { background: #efe8dc; color: var(--ink); }
+    .tone-paper { background: #fffdf8; color: var(--ink); }
+    .tone-red { background: var(--red); color: white; border-color: transparent; }
+    .tone-red .conversation-number { opacity: .23; }
+    .tone-black { background: var(--ink); color: white; border-color: transparent; }
+    .tone-black .conversation-number { color: var(--red); opacity: .38; }
+    .conversation-footer { border-top: 1px solid rgba(10,10,13,.10); padding-top: 20px; display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+    .conversation-footer > span { font-weight: 900; letter-spacing: .08em; text-transform: uppercase; font-size: .72rem; color: var(--muted); }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .about-main, .host-card {
+      background: white;
+      border: 1px solid rgba(10,10,13,.1);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 4vw, 48px);
+      box-shadow: var(--shadow-soft);
+    }
+    .about-main p, .host-card p { color: var(--muted); font-size: 1.02rem; }
+    .host-card { background: var(--ink); color: white; position: relative; overflow: hidden; }
+    .host-card::after { content: "DJ"; position: absolute; right: -14px; bottom: -38px; font-size: 11rem; line-height: 1; font-weight: 900; letter-spacing: -.12em; color: rgba(237,28,36,.25); }
+    .host-card h3 { font-size: clamp(2rem, 4vw, 3.4rem); margin: 4px 0 10px; line-height: .92; letter-spacing: -.08em; }
+    .host-card p { color: rgba(255,255,255,.68); position: relative; z-index: 1; }
+
+    .cta-band { padding: 0 0 clamp(76px, 8vw, 116px); }
+    .cta-card {
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255,255,255,.22), transparent 16rem),
+        linear-gradient(135deg, var(--red), #99000a);
+      color: white;
+      padding: clamp(34px, 6vw, 70px);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      box-shadow: 0 26px 80px rgba(237,28,36,.24);
+    }
+    .cta-card h2 { margin: 0 0 12px; font-size: clamp(2.1rem, 5vw, 5rem); line-height: .88; letter-spacing: -.09em; max-width: 820px; }
+    .cta-card p { margin: 0; max-width: 660px; color: rgba(255,255,255,.78); font-size: 1.06rem; }
+    .cta-card .btn { background: white; color: var(--red); }
+
+    footer { background: var(--ink); color: rgba(255,255,255,.62); padding: 54px 0 34px; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr repeat(3, .65fr); gap: 34px; }
+    footer h4 { color: white; margin: 0 0 12px; letter-spacing: -.03em; }
+    footer a { display: block; color: rgba(255,255,255,.58); margin: 8px 0; font-size: .92rem; }
+    footer a:hover { color: white; }
+    .footer-brand-line { margin: 14px 0 0; max-width: 360px; }
+    .fine-print { border-top: 1px solid rgba(255,255,255,.1); margin-top: 34px; padding-top: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .86rem; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .split, .featured-shell, .about-panel, .cta-card { grid-template-columns: 1fr; }
+      .hero-card, .cover-art { min-height: 470px; }
+      .listen-panel { grid-template-columns: repeat(2, 1fr); }
+      .listen-intro { grid-column: 1 / -1; }
+      .question-grid { grid-template-columns: 1fr; }
+      .episodes-head { align-items: start; flex-direction: column; } .conversation-actions{align-self:flex-end;margin-top:-4px}.conversation-card{flex-basis:min(82vw,310px);min-height:360px}.conversation-footer{align-items:flex-start;flex-direction:column}
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav { display: none; position: absolute; top: 78px; left: 20px; right: 20px; flex-direction: column; border-radius: 24px; align-items: stretch; padding: 12px; }
+      .nav.is-open { display: flex; }
+      .nav a { text-align: center; }
+      .menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 14px; border: 1px solid rgba(10,10,13,.1); background: white; font-weight: 900; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .announcement .wrap { align-items: flex-start; flex-direction: column; padding: 10px 0; }
+      .site-header .wrap { min-height: 70px; }
+      .brand-text span:last-child { display: none; }
+      .hero { padding-top: 42px; }
+      .hero h1 { font-size: clamp(3.2rem, 16vw, 5.2rem); letter-spacing: .006em; }
+      .hero-actions .btn { width: 100%; }
+      .cover-meta { grid-template-columns: 1fr; }
+      .listen-panel { grid-template-columns: 1fr; }
+      .listen-rail { padding-bottom: 58px; }
+      .platform { min-height: 86px; flex-direction: row; justify-content: flex-start; padding: 16px 18px; }
+      .section { padding: 76px 0; }
+      .feature-cover { min-height: 340px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    }
+</style>
+</head>
+<body>
+  <div class="announcement">
+    <div class="wrap">
+      <span><strong>The Ed Answer Key</strong> is now the conversation arm of SageGap.</span>
+      <a href="/" target="_blank" rel="noopener">Explore SageGap</a>
+    </div>
+  </div>
+
+  <header class="site-header" aria-label="Site header">
+    <div class="wrap">
+      <a class="brand-lockup" href="#top" aria-label="The Ed Answer Key home">
+        <!-- Replace this CSS mark with the official logo image if available: <img src="assets/ed-answer-key-logo.png" alt="The Ed Answer Key" /> -->
+        <span class="mark" aria-hidden="true"></span>
+        <span class="brand-text"><span>The Ed Answer Key</span><span>The conversation arm of SageGap</span></span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="#listen">Listen</a>
+        <a href="#mission">Mission</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#about">About</a>
+        <a href="/" target="_blank" rel="noopener">SageGap</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Presented by SageGap</span>
+          <h1 id="hero-title">Teachers.<br>Families.<br><span class="red">Answers.</span></h1>
+          <p class="lede">The Ed Answer Key is the conversation arm of SageGap, where teachers, families, and education leaders explore the questions that shape student success.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#listen">Listen Now</a>
+            <a class="btn btn-ghost" href="#mission">See the Connection</a>
+          </div>
+          <div class="proof-strip" aria-label="Podcast positioning">
+            <span class="proof-pill">Family engagement</span>
+            <span class="proof-pill">Teacher insight</span>
+            <span class="proof-pill">Student support</span>
+            <span class="proof-pill">Educational clarity</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Podcast brand card">
+          <div class="cover-art">
+            <span class="presented"><span class="pulse"></span> A SageGap Podcast</span>
+            <div class="cover-center">
+              <p class="cover-kicker">The podcast home for</p>
+              <div class="cover-title">The Ed<br><span>Answer</span><br>Key</div>
+            </div>
+            <div class="cover-meta">
+              <div class="metric"><b>50+</b><span>Episodes</span></div>
+              <div class="metric"><b>3</b><span>Audiences</span></div>
+              <div class="metric"><b>1</b><span>Mission</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="listen-rail" id="listen" aria-labelledby="listen-title">
+      <div class="wrap">
+        <div class="listen-panel">
+          <div class="listen-intro">
+            <b id="listen-title">Listen where you already are.</b>
+            <span>The website is the home base. The podcast lives on the platforms families and educators already use.</span>
+          </div>
+          <!-- Spotify public show page. -->
+          <a class="platform" href="https://open.spotify.com/show/1nI3c3wb9c8AM3nR69lkrk" target="_blank" rel="noopener" aria-label="Listen on Spotify">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.52 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.38-1.32 9.78-.66 13.5 1.62.36.18.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.3c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.72 1.62.54.3.72 1.02.42 1.56-.3.42-1.02.6-1.56.3z"/></svg>
+            Spotify <small>Stream</small>
+          </a>
+          <a class="platform" href="https://podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627" target="_blank" rel="noopener" aria-label="Listen on Apple Podcasts">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm0 5.2a5.3 5.3 0 0 1 3.1 9.6c-.3.2-.7.1-.9-.2-.2-.3-.1-.7.2-.9a4 4 0 1 0-4.8 0c.3.2.4.6.2.9-.2.3-.6.4-.9.2A5.3 5.3 0 0 1 12 5.2zm0 2.6a2.7 2.7 0 0 1 1.4 5l-.6 5.3c-.1.5-.4.8-.8.8s-.8-.3-.8-.8l-.6-5.3a2.7 2.7 0 0 1 1.4-5z"/></svg>
+            Apple <small>Subscribe</small>
+          </a>
+          <a class="platform" href="https://www.youtube.com/@edanskey/videos" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.75 15.5v-7l6.3 3.5-6.3 3.5z"/></svg>
+            YouTube <small>Watch</small>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-band" id="mission" aria-labelledby="connection-title">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">The SageGap connection</span>
+          <h2 class="section-title" id="connection-title">A podcast home built for clarity, trust, and action.</h2>
+          <p class="section-copy">The Ed Answer Key gives families and educators a place to hear the real questions of school life spoken plainly. SageGap extends that conversation into practical support, clearer language, and tools that help students move forward.</p>
+          <div class="quote"><p>“Every episode begins with a question families and educators recognize, then points toward the clarity students deserve.”</p></div>
+        </div>
+        <div class="card-stack">
+          <article class="insight-card"><h3>The Conversation</h3><p>Stories, questions, and practical educator insight help listeners name what is happening in schools with more confidence and less confusion.</p></article>
+          <article class="insight-card"><h3>The Bridge</h3><p>SageGap connects those conversations to clearer next steps for families, teachers, and school communities.</p></article>
+          <article class="insight-card"><h3>The Purpose</h3><p>The goal is simple: turn education language into shared understanding, and shared understanding into better support for students.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="questions-title">
+      <div class="wrap">
+        <span class="eyebrow">What / How / Why</span>
+        <h2 class="section-title" id="questions-title">Built around the questions schools rarely answer clearly enough.</h2>
+        <p class="section-copy">School life creates questions that do not fit neatly into a handbook. The Ed Answer Key makes room for the what, the how, and the why, then turns them into conversations families and educators can use.</p>
+        <div class="question-grid">
+          <article class="question-card" data-word="What"><span class="num">01 / What</span><h3>The real challenges</h3><p>IEPs, behavior plans, family communication, academic gaps, teacher strain, and the confusing space between school systems and family understanding.</p></article>
+          <article class="question-card" data-word="How"><span class="num">02 / How</span><h3>Practical strategies</h3><p>Concrete language, classroom-tested insight, and family-facing explanations that help people move from concern to action.</p></article>
+          <article class="question-card" data-word="Why"><span class="num">03 / Why</span><h3>Shared understanding</h3><p>Because students move forward faster when families and educators are looking at the same information with the same clarity.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured" aria-labelledby="featured-title">
+      <div class="wrap">
+        <span class="eyebrow">Featured episode</span>
+        <div class="featured-shell">
+          <div class="feature-cover">
+            <span class="episode-label">Start here</span>
+            <h3>When We Know Better, We Do Better</h3>
+            <span class="episode-label">Building a Future for All Children</span>
+          </div>
+          <div class="feature-copy">
+            <h3 id="featured-title">A signature episode for the SageGap mission.</h3>
+            <p>A practical conversation about what becomes possible when educators, families, and communities share clearer language, stronger supports, and a deeper commitment to student success.</p>
+            <!-- Replace with direct episode URL when available. -->
+            <a class="btn btn-primary" href="https://feeds.libsyn.com/494513/rss" target="_blank" rel="noopener">Listen to the episode</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section conversation-section" id="episodes" aria-labelledby="episodes-title">
+      <div class="wrap">
+        <div class="episodes-head">
+          <div>
+            <span class="eyebrow">Latest conversations</span>
+            <h2 class="section-title" id="episodes-title">Choose a conversation. Find the question that meets you where you are.</h2>
+            <p class="section-copy">Each card opens into context when you hover, focus, or tap. The goal is simple: make it easy to understand why an episode matters before you press play.</p>
+          </div>
+          <div class="conversation-actions">
+            <button class="conversation-arrow" id="conversationPrev" type="button" aria-label="Previous conversations">←</button>
+            <button class="conversation-arrow" id="conversationNext" type="button" aria-label="Next conversations">→</button>
+          </div>
+        </div>
+        <div class="conversation-track" id="conversationTrack" aria-label="Featured Ed Answer Key conversations">
+          <article class="conversation-card tone-cream" tabindex="0">
+            <div class="conversation-rest"><div class="conversation-meta"><span>Ep. 413</span><span>5 min</span></div><div class="conversation-number">413</div><h3>The Eighth Wonder: A Sisterhood That Lasts</h3></div>
+            <div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 413</span><span>5 min</span></div><h3>The Eighth Wonder: A Sisterhood That Lasts</h3><p>A celebration of lifelong friendship, memory, and the invisible support systems that shape schools and families.</p><a href="https://feeds.libsyn.com/494513/rss" target="_blank" rel="noopener">Listen <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="conversation-card tone-red" tabindex="0">
+            <div class="conversation-rest"><div class="conversation-meta"><span>Ep. 412</span><span>6 min</span></div><div class="conversation-number">412</div><h3>Cowgirls, Educators, and Healers</h3></div>
+            <div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 412</span><span>6 min</span></div><h3>Cowgirls, Educators, and Healers</h3><p>Childhood dreams revisited through the lens of purpose, care, and the lives educators build along the way.</p><a href="https://feeds.libsyn.com/494513/rss" target="_blank" rel="noopener">Listen <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="conversation-card tone-black" tabindex="0">
+            <div class="conversation-rest"><div class="conversation-meta"><span>Ep. 411</span><span>6 min</span></div><div class="conversation-number">411</div><h3>Socks, Fidgets, &amp; Pink Flowers</h3></div>
+            <div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 411</span><span>6 min</span></div><h3>Socks, Fidgets, &amp; Pink Flowers</h3><p>Hilarious memories from school days and what small moments reveal about the lasting imprint of education.</p><a href="https://feeds.libsyn.com/494513/rss" target="_blank" rel="noopener">Listen <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="conversation-card tone-paper" tabindex="0">
+            <div class="conversation-rest"><div class="conversation-meta"><span>Ep. 410</span><span>6 min</span></div><div class="conversation-number">410</div><h3>When We Know Better, We Do Better</h3></div>
+            <div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 410</span><span>6 min</span></div><h3>When We Know Better, We Do Better</h3><p>A future-facing conversation about clarity, care, and building better systems for every child.</p><a href="https://feeds.libsyn.com/494513/rss" target="_blank" rel="noopener">Listen <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="conversation-card tone-red" tabindex="0">
+            <div class="conversation-rest"><div class="conversation-meta"><span>Series</span><span>Short form</span></div><div class="conversation-number">FAM</div><h3>Teacher Insight for Families</h3></div>
+            <div class="conversation-reveal"><div class="conversation-meta"><span>Series</span><span>Short form</span></div><h3>Teacher Insight for Families</h3><p>Plain-language conversations that help families understand school expectations, learning needs, and the questions worth asking next.</p><a href="https://feeds.libsyn.com/494513/rss" target="_blank" rel="noopener">Explore the series <span aria-hidden="true">→</span></a></div>
+          </article>
+        </div>
+        <div class="conversation-footer"><span>Teachers. Families. Answers.</span><a class="btn btn-ghost" href="https://feeds.libsyn.com/494513/rss" target="_blank" rel="noopener">View all episodes</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap about-panel">
+        <article class="about-main">
+          <span class="eyebrow">About</span>
+          <h2 class="section-title" id="about-title">The public conversation behind the SageGap mission.</h2>
+          <p>The Ed Answer Key was created to make education conversations more useful, more honest, and more accessible. It brings together teacher insight, family perspective, and practical strategies that can help students move forward.</p>
+          <p>Under SageGap, the podcast becomes more than an archive. It becomes an engine for language, trust, community, and clarity.</p>
+        </article>
+        <aside class="host-card">
+          <span class="eyebrow">Created & hosted by</span>
+          <h3>David Johnson</h3>
+          <p>Middle school mathematics educator, parent, and founder of SageGap Academic Systems. David builds tools at the intersection of family engagement, student support, and educational clarity.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="wrap cta-card">
+        <div>
+          <h2 id="cta-title">Find the answer key in the conversation.</h2>
+          <p>Start with the podcast. Follow the questions. Then connect the insights back to SageGap’s larger work: helping families and schools move from information to understanding to action.</p>
+        </div>
+        <a class="btn" href="#listen">Start Listening</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand-lockup" href="#top"><span class="mark" aria-hidden="true"></span><span class="brand-text"><span>The Ed Answer Key</span><span>The conversation arm of SageGap</span></span></a>
+          <p class="footer-brand-line">Teachers. Families. Answers. Practical conversations that help turn educational confusion into clarity.</p>
+        </div>
+        <div><h4>Listen</h4><a href="https://open.spotify.com/show/1nI3c3wb9c8AM3nR69lkrk" target="_blank" rel="noopener">Spotify</a><a href="https://podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627" target="_blank" rel="noopener">Apple Podcasts</a><a href="https://www.youtube.com/@edanskey/videos" target="_blank" rel="noopener">YouTube</a></div>
+        <div><h4>Explore</h4><a href="#mission">SageGap Connection</a><a href="#episodes">Episodes</a><a href="#about">About</a><a href="/" target="_blank" rel="noopener">SageGap</a></div>
+        <div><h4>Connect</h4><a href="mailto:hello@sagegap.com">hello@sagegap.com</a><a href="https://www.instagram.com/edanskey/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@edanskey/videos" target="_blank" rel="noopener">YouTube</a></div>
+      </div>
+      <div class="fine-print"><span>©2026 The Ed Answer Key · The conversation arm of SageGap</span><span>Designed for sagegap.com/ed-answer-key</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('siteNav');
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+    nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+    }));
+
+    const conversationTrack = document.getElementById('conversationTrack');
+    document.getElementById('conversationPrev')?.addEventListener('click', () => conversationTrack?.scrollBy({left: -340, behavior: 'smooth'}));
+    document.getElementById('conversationNext')?.addEventListener('click', () => conversationTrack?.scrollBy({left: 340, behavior: 'smooth'}));
+    document.querySelectorAll('.conversation-card').forEach(card => {
+      card.addEventListener('click', event => {
+        if(event.target.closest('a,button')) return;
+        document.querySelectorAll('.conversation-card').forEach(other => { if(other !== card) other.classList.remove('is-active'); });
+        card.classList.toggle('is-active');
+      });
+      card.addEventListener('keydown', event => {
+        if(event.key === 'Enter' || event.key === ' '){ event.preventDefault(); card.classList.toggle('is-active'); }
+        if(event.key === 'Escape') card.classList.remove('is-active');
+      });
+    });
+  </script>
+</body>
+</html>
