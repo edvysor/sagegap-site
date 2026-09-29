@@ -601,6 +601,168 @@
     .feature-copy h3 { margin: 0 0 14px; font-size: clamp(1.8rem, 3.5vw, 3rem); line-height: 1; letter-spacing: -.065em; }
     .feature-copy p { color: var(--muted); font-size: 1.03rem; margin: 0 0 24px; }
 
+    /* Signature episode: elevated listening experience */
+    .feature-cover {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .feature-cover > * { position: relative; z-index: 2; }
+    .feature-cover::after {
+      content: "410";
+      position: absolute;
+      right: clamp(18px, 3vw, 42px);
+      bottom: clamp(8px, 1.5vw, 24px);
+      z-index: 1;
+      font-size: clamp(7rem, 15vw, 13rem);
+      line-height: .76;
+      font-weight: 900;
+      letter-spacing: -.1em;
+      color: rgba(255,255,255,.075);
+      text-shadow: 0 1px 0 rgba(255,255,255,.025);
+      pointer-events: none;
+      user-select: none;
+    }
+    .signature-trigger {
+      width: 100%;
+      cursor: pointer;
+    }
+    .signature-player-shell {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: translateY(18px) scale(.99);
+      margin: 0;
+      transition: max-height .56s var(--ease), opacity .34s var(--ease), transform .56s var(--ease), margin .56s var(--ease);
+    }
+    .signature-player-shell.is-open {
+      max-height: 520px;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      margin: 18px 0 0;
+    }
+    .signature-player {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(250px,.85fr) minmax(360px,1.55fr);
+      gap: clamp(24px, 4vw, 48px);
+      align-items: center;
+      min-height: 250px;
+      padding: clamp(28px, 4vw, 48px);
+      border-radius: 34px;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 86% 16%, rgba(237,28,36,.26), transparent 22rem),
+        radial-gradient(circle at 12% 90%, rgba(237,28,36,.10), transparent 18rem),
+        linear-gradient(140deg,#121217,#060608 72%);
+      border: 1px solid rgba(255,255,255,.11);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 8px 18px rgba(10,10,13,.11),
+        0 34px 82px rgba(10,10,13,.22),
+        0 70px 150px rgba(10,10,13,.16);
+    }
+    .signature-player::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255,255,255,.065);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+    .signature-player::after {
+      content: "410";
+      position: absolute;
+      left: 28px;
+      bottom: -18px;
+      font-size: clamp(7rem, 14vw, 11rem);
+      line-height: .8;
+      font-weight: 900;
+      letter-spacing: -.1em;
+      color: rgba(237,28,36,.055);
+      pointer-events: none;
+    }
+    .signature-player-copy, .signature-player-frame { position: relative; z-index: 1; }
+    .signature-player-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      color: rgba(255,255,255,.58);
+      font-size: .7rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .signature-player-kicker::before {
+      content: "";
+      width: 9px; height: 9px; border-radius: 50%; background: var(--red);
+      box-shadow: 0 0 22px rgba(237,28,36,.7);
+    }
+    .signature-player h3 {
+      margin: 0 0 10px;
+      color: white;
+      font-size: clamp(1.8rem, 3.2vw, 3rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+      max-width: 620px;
+    }
+    .signature-player-meta {
+      margin: 0;
+      color: rgba(255,255,255,.62);
+      font-size: .88rem;
+      line-height: 1.55;
+    }
+    .signature-player-frame {
+      min-width: 0;
+      padding: 10px;
+      border-radius: 24px;
+      background:
+        linear-gradient(145deg,rgba(237,28,36,.12),rgba(255,255,255,.035)),
+        #101014;
+      border: 1px solid rgba(255,255,255,.09);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 18px 42px rgba(0,0,0,.24);
+      overflow: hidden;
+    }
+    .signature-player-viewport {
+      position: relative;
+      height: 158px;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #170000;
+    }
+    .signature-player-viewport iframe {
+      position: absolute;
+      inset: 0 auto auto 0;
+      display: block;
+      width: 100%;
+      height: 175px;
+      border: 0;
+      border-radius: 16px;
+      background: #170000;
+    }
+    .signature-player-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 3;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.07);
+      color: white;
+      display: grid; place-items: center;
+      cursor: pointer;
+      transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+    }
+    .signature-player-close:hover, .signature-player-close:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(237,28,36,.20);
+      border-color: rgba(237,28,36,.55);
+      outline: none;
+    }
+
     .conversation-section { background: linear-gradient(180deg,#f8f5f0 0%,#f3efe9 100%); }
     .episodes-head {
       display: flex;
@@ -741,6 +903,8 @@
       .listen-intro { grid-column: 1 / -1; }
       .question-grid { grid-template-columns: 1fr; }
       .episodes-head { align-items: start; flex-direction: column; } .conversation-actions{align-self:flex-end;margin-top:-4px}.conversation-card{flex-basis:min(82vw,310px);min-height:360px}.conversation-footer{align-items:flex-start;flex-direction:column}
+      .signature-player { grid-template-columns: 1fr; }
+      .signature-player-shell.is-open { max-height: 700px; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .nav { display: none; position: absolute; top: 78px; left: 20px; right: 20px; flex-direction: column; border-radius: 24px; align-items: stretch; padding: 12px; }
       .nav.is-open { display: flex; }
@@ -756,6 +920,10 @@
       .hero { padding-top: 42px; }
       .hero h1 { font-size: clamp(3.2rem, 16vw, 5.2rem); letter-spacing: .006em; }
       .hero-actions .btn { width: 100%; }
+      .signature-player { padding: 20px; border-radius: 26px; }
+      .signature-player-shell.is-open { max-height: 760px; }
+      .signature-player-viewport { height: 158px; }
+      .signature-player h3 { font-size: 1.6rem; padding-right: 38px; }
       .hero-card { width: min(100%, 470px); border-radius: 6.1%; }
       .cover-meta { left: 6.9%; right: 6.9%; bottom: 5.8%; gap: 2.3%; }
       .metric { height: clamp(82px, 24vw, 104px); border-radius: 16px; }
@@ -1204,8 +1372,22 @@
           <div class="feature-copy">
             <h3 id="featured-title">A signature episode for the SageGap mission.</h3>
             <p>A practical conversation about what becomes possible when educators, families, and communities share clearer language, stronger supports, and a deeper commitment to student success.</p>
-            <!-- Replace with direct episode URL when available. -->
-            <a class="btn btn-primary" href="https://podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627" target="_blank" rel="noopener">Listen to the episode</a>
+            <button class="btn btn-primary signature-trigger" id="signatureTrigger" type="button" aria-expanded="false" aria-controls="signaturePlayerShell">Listen to the signature episode</button>
+          </div>
+        </div>
+        <div class="signature-player-shell" id="signaturePlayerShell" aria-live="polite">
+          <div class="signature-player" role="region" aria-label="Signature episode player">
+            <button class="signature-player-close" id="signaturePlayerClose" type="button" aria-label="Close signature episode player">×</button>
+            <div class="signature-player-copy">
+              <span class="signature-player-kicker">Signature listening room · Episode 410</span>
+              <h3>When We Know Better, We Do Better: Building a Future for All Children</h3>
+              <p class="signature-player-meta">5 min · The Ed Answer Key · A signature conversation for the SageGap mission.</p>
+            </div>
+            <div class="signature-player-frame">
+              <div class="signature-player-viewport">
+                <iframe id="signaturePlayerFrame" title="Apple Podcasts signature episode player" loading="lazy" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1237,9 +1419,9 @@
             <div class="conversation-rest"><div class="conversation-meta"><span>Ep. 411</span><span>6 min</span></div><div class="conversation-number">411</div><h3>Socks, Fidgets, &amp; Pink Flowers</h3></div>
             <div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 411</span><span>6 min</span></div><h3>Socks, Fidgets, &amp; Pink Flowers</h3><p>Hilarious memories from school days and what small moments reveal about the lasting imprint of education.</p><button class="conversation-listen" type="button">Listen <span aria-hidden="true">→</span></button></div>
           </article>
-          <article class="conversation-card tone-paper" tabindex="0" data-apple-episode="1000682022301" data-episode-title="When We Know Better, We Do Better: Building a Future for All Children" data-episode-number="410" data-episode-duration="5 min">
-            <div class="conversation-rest"><div class="conversation-meta"><span>Ep. 410</span><span>6 min</span></div><div class="conversation-number">410</div><h3>When We Know Better, We Do Better</h3></div>
-            <div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 410</span><span>6 min</span></div><h3>When We Know Better, We Do Better</h3><p>A future-facing conversation about clarity, care, and building better systems for every child.</p><button class="conversation-listen" type="button">Listen <span aria-hidden="true">→</span></button></div>
+          <article class="conversation-card tone-paper" tabindex="0" data-apple-episode="1000681299090" data-episode-title="Public vs. Private: The Pressure of Standardized Testing" data-episode-number="409" data-episode-duration="5 min">
+            <div class="conversation-rest"><div class="conversation-meta"><span>Ep. 409</span><span>5 min</span></div><div class="conversation-number">409</div><h3>Public vs. Private: The Pressure of Standardized Testing</h3></div>
+            <div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 409</span><span>5 min</span></div><h3>Public vs. Private: The Pressure of Standardized Testing</h3><p>A conversation about accountability, flexibility, and what standardized testing asks of public, private, and charter schools.</p><button class="conversation-listen" type="button">Listen <span aria-hidden="true">→</span></button></div>
           </article>
           <article class="conversation-card tone-red" tabindex="0">
             <div class="conversation-rest"><div class="conversation-meta"><span>Series</span><span>Short form</span></div><div class="conversation-number">FAM</div><h3>Teacher Insight for Families</h3></div>
@@ -1343,6 +1525,40 @@
     document.getElementById('conversationNext')?.addEventListener('click', () => conversationTrack?.scrollBy({left: 340, behavior: 'smooth'}));
 
 
+    const signatureTrigger = document.getElementById('signatureTrigger');
+    const signaturePlayerShell = document.getElementById('signaturePlayerShell');
+    const signaturePlayerFrame = document.getElementById('signaturePlayerFrame');
+    const signaturePlayerClose = document.getElementById('signaturePlayerClose');
+    const signatureEpisodeSrc = 'https://embed.podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627?i=1000682022301';
+
+    const closeSignaturePlayer = () => {
+      signaturePlayerShell?.classList.remove('is-open');
+      signatureTrigger?.setAttribute('aria-expanded','false');
+      if(signatureTrigger) signatureTrigger.textContent = 'Listen to the signature episode';
+      if(signaturePlayerFrame) signaturePlayerFrame.src = '';
+    };
+
+    const openSignaturePlayer = () => {
+      episodePlayerShell?.classList.remove('is-open');
+      document.querySelectorAll('.conversation-card').forEach(card => card.classList.remove('is-playing'));
+      if(episodePlayerFrame) episodePlayerFrame.src = '';
+      if(signaturePlayerFrame && signaturePlayerFrame.src !== signatureEpisodeSrc) signaturePlayerFrame.src = signatureEpisodeSrc;
+      signaturePlayerShell?.classList.add('is-open');
+      signatureTrigger?.setAttribute('aria-expanded','true');
+      if(signatureTrigger) signatureTrigger.textContent = 'Close the signature player';
+      requestAnimationFrame(() => signaturePlayerShell?.scrollIntoView({behavior:'smooth',block:'nearest'}));
+    };
+
+    signatureTrigger?.addEventListener('click', () => {
+      if(signaturePlayerShell?.classList.contains('is-open')) closeSignaturePlayer();
+      else openSignaturePlayer();
+    });
+    signaturePlayerClose?.addEventListener('click', closeSignaturePlayer);
+
+    document.addEventListener('keydown', event => {
+      if(event.key === 'Escape' && signaturePlayerShell?.classList.contains('is-open')) closeSignaturePlayer();
+    });
+
     const episodePlayerShell = document.getElementById('episodePlayerShell');
     const episodePlayerFrame = document.getElementById('episodePlayerFrame');
     const episodePlayerTitle = document.getElementById('episodePlayerTitle');
@@ -1353,6 +1569,7 @@
     const openEpisodePlayer = card => {
       const episodeId = card?.dataset.appleEpisode;
       if(!episodeId || !episodePlayerShell || !episodePlayerFrame) return;
+      closeSignaturePlayer();
       document.querySelectorAll('.conversation-card').forEach(other => other.classList.toggle('is-playing', other === card));
       episodePlayerTitle.textContent = card.dataset.episodeTitle || 'The Ed Answer Key';
       const ep = card.dataset.episodeNumber ? `Episode ${card.dataset.episodeNumber}` : 'Featured episode';
