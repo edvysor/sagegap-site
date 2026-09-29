@@ -780,24 +780,66 @@
     .conversation-card { position: relative; flex: 0 0 clamp(238px, 24vw, 324px); min-height: 390px; border-radius: 30px; overflow: hidden; scroll-snap-align: start; border: 1px solid rgba(10,10,13,.10); outline: none; cursor: pointer; box-shadow: 0 12px 32px rgba(10,10,13,.06); transition: transform .28s var(--ease), box-shadow .28s var(--ease); }
     .conversation-card:hover,.conversation-card:focus,.conversation-card:focus-within,.conversation-card.is-active { transform: translateY(-7px); box-shadow: 0 28px 70px rgba(10,10,13,.15); }
     .conversation-rest,.conversation-reveal { position: absolute; inset: 0; padding: 25px; display: flex; flex-direction: column; transition: opacity .24s var(--ease), transform .3s var(--ease); }
-    .conversation-rest { justify-content: space-between; opacity: 1; transform: scale(1); }
-    .conversation-rest::after {
+    .conversation-rest {
+      justify-content: space-between;
+      opacity: 1;
+      transform: scale(1);
+      --conversation-mark-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20180%20120%27%3E%0A%20%20%20%20%3Crect%20x%3D%278%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2724%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2740%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2756%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2772%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2788%27%20y%3D%278%27%20width%3D%2710%27%20height%3D%27104%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27104%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27120%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27136%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27152%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27168%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3C/svg%3E");
+      --conversation-mark-opacity: .20;
+      --conversation-mark-width: 118px;
+      --conversation-mark-height: 78px;
+      --conversation-mark-shift: 0px;
+    }
+    .conversation-rest::after,
+    .conversation-reveal::after {
       content: "";
       position: absolute;
-      right: 20px;
-      top: 56px;
-      width: 84px;
-      height: 84px;
-      background: url('favicon-512x512.png') center / contain no-repeat;
-      opacity: .075;
+      right: 18px;
+      top: 58px;
+      width: var(--conversation-mark-width);
+      height: var(--conversation-mark-height);
+      background: var(--conversation-mark-image) center / contain no-repeat;
+      opacity: var(--conversation-mark-opacity);
       pointer-events: none;
+      transform: translateY(var(--conversation-mark-shift)) scale(1);
+      transition: transform .28s var(--ease), opacity .28s var(--ease), filter .28s var(--ease);
     }
-    .conversation-rest > * { position: relative; z-index: 1; }
-    .tone-red .conversation-rest::after, .tone-black .conversation-rest::after { filter: brightness(0) invert(1); opacity: .13; }
+    .conversation-rest > *,
+    .conversation-reveal > * { position: relative; z-index: 1; }
+    .tone-cream .conversation-rest,
+    .tone-paper .conversation-rest {
+      --conversation-mark-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20180%20120%27%3E%0A%20%20%20%20%3Crect%20x%3D%278%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2724%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2740%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2756%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2772%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2788%27%20y%3D%278%27%20width%3D%2710%27%20height%3D%27104%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27104%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27120%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27136%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27152%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27168%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23ED1C24%27/%3E%0A%20%20%20%20%3C/svg%3E");
+      --conversation-mark-opacity: .16;
+    }
+    .tone-red .conversation-rest {
+      --conversation-mark-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20180%20120%27%3E%0A%20%20%20%20%3Crect%20x%3D%278%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2724%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2740%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2756%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2772%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2788%27%20y%3D%278%27%20width%3D%2710%27%20height%3D%27104%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27104%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27120%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27136%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27152%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27168%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3C/svg%3E");
+      --conversation-mark-opacity: .22;
+    }
+    .tone-black .conversation-rest {
+      --conversation-mark-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20180%20120%27%3E%0A%20%20%20%20%3Crect%20x%3D%278%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2724%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2740%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2756%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2772%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2788%27%20y%3D%278%27%20width%3D%2710%27%20height%3D%27104%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27104%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27120%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27136%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27152%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27168%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23FFFFFF%27/%3E%0A%20%20%20%20%3C/svg%3E");
+      --conversation-mark-opacity: .18;
+    }
+    .conversation-reveal {
+      justify-content: flex-end;
+      background: var(--ink);
+      color: white;
+      opacity: 0;
+      transform: scale(.96);
+      --conversation-mark-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20180%20120%27%3E%0A%20%20%20%20%3Crect%20x%3D%278%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2724%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2740%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2756%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2772%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%2788%27%20y%3D%278%27%20width%3D%2710%27%20height%3D%27104%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27104%27%20y%3D%2721%27%20width%3D%2710%27%20height%3D%2778%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27120%27%20y%3D%2746%27%20width%3D%2710%27%20height%3D%2728%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27136%27%20y%3D%2731%27%20width%3D%2710%27%20height%3D%2758%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27152%27%20y%3D%2743%27%20width%3D%2710%27%20height%3D%2734%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3Crect%20x%3D%27168%27%20y%3D%2753%27%20width%3D%2710%27%20height%3D%2714%27%20rx%3D%275%27%20fill%3D%27%23FF4A4F%27/%3E%0A%20%20%20%20%3C/svg%3E");
+      --conversation-mark-opacity: .34;
+      --conversation-mark-width: 126px;
+      --conversation-mark-height: 84px;
+      --conversation-mark-shift: -2px;
+    }
+    .conversation-reveal::after {
+      right: 14px;
+      top: 52px;
+      filter: drop-shadow(0 10px 18px rgba(237,28,36,.12));
+    }
     .conversation-number { margin: auto 0; font-size: clamp(4.8rem, 8vw, 7.5rem); line-height: .78; letter-spacing: -.1em; font-weight: 900; opacity: .14; }
     .conversation-rest h3 { margin: 0; font-size: 1.36rem; line-height: 1.02; letter-spacing: -.05em; max-width: 250px; }
     .conversation-meta { display: flex; justify-content: space-between; gap: 10px; font-size: .67rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-    .conversation-reveal { justify-content: flex-end; background: var(--ink); color: white; opacity: 0; transform: scale(.96); }
+
     .conversation-reveal .conversation-meta { margin-bottom: auto; color: rgba(255,255,255,.58); }
     .conversation-reveal h3 { margin: 24px 0 12px; color: white; font-size: 1.5rem; line-height: 1.02; letter-spacing: -.05em; }
     .conversation-reveal p { color: rgba(255,255,255,.68); font-size: .92rem; line-height: 1.48; margin: 0 0 22px; }
