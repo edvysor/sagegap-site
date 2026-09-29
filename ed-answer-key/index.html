@@ -989,17 +989,29 @@
       min-width:0;
       padding:8px;
       border-radius:20px;
-      background:rgba(255,255,255,.055);
+      background:
+        linear-gradient(145deg,rgba(237,28,36,.10),rgba(255,255,255,.035)),
+        #111116;
       border:1px solid rgba(255,255,255,.08);
       box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 14px 34px rgba(0,0,0,.20);
+      overflow:hidden;
+    }
+    .episode-player-viewport{
+      position:relative;
+      height:158px;
+      overflow:hidden;
+      border-radius:14px;
+      background:#170000;
     }
     .episode-player-frame iframe{
+      position:absolute;
+      inset:0 auto auto 0;
       display:block;
       width:100%;
       height:175px;
       border:0;
       border-radius:14px;
-      background:white;
+      background:#170000;
     }
     .episode-player-close{
       position:absolute;
@@ -1056,6 +1068,7 @@
     }
     @media(max-width:520px){
       .episode-player{border-radius:24px;padding:16px}
+      .episode-player-viewport{height:158px}
       .episode-player-frame iframe{height:175px}
       .episode-player h3{font-size:1.35rem}
     }
@@ -1242,7 +1255,9 @@
               <p class="episode-player-meta" id="episodePlayerMeta">Choose Listen on any featured conversation to play it here without leaving the site.</p>
             </div>
             <div class="episode-player-frame">
-              <iframe id="episodePlayerFrame" title="Apple Podcasts episode player" loading="lazy" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+              <div class="episode-player-viewport">
+                <iframe id="episodePlayerFrame" title="Apple Podcasts episode player" loading="lazy" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe>
+              </div>
             </div>
           </div>
         </div>
