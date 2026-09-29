@@ -1,15 +1,14 @@
-# SageGap favicon correction
+# SageGap + Ed Answer Key navigation symmetry update
 
-Root site:
-- `/favicon.ico` = SageGap blue/teal mark
-- `/favicon-32x32.png` = SageGap
-- `/apple-touch-icon.png` = SageGap
+Internal brand navigation now stays in the same browser tab:
 
-Ed Answer Key:
-- `/ed-answer-key/favicon.ico` = red Ed Answer Key mark
-- `/ed-answer-key/favicon-32x32.png` = Ed Answer Key
-- `/ed-answer-key/apple-touch-icon.png` = Ed Answer Key
+- SageGap -> Ed Answer Key: `/ed-answer-key/`
+- Ed Answer Key -> SageGap: `/`
 
-Both HTML files use explicit absolute paths with cache-busting query strings.
+The external-link arrow was removed from SageGap's Ed Answer Key navigation because Ed Answer Key is an internal SageGap property.
 
-Do not delete the existing `david/` folder from the GitHub repository.
+External services such as Apple Podcasts, Spotify, YouTube, Instagram, and Calendly still open in a new tab.
+
+The root SageGap favicon remains the blue/teal SageGap icon. The nested Ed Answer Key page retains its red favicon.
+
+When uploading to GitHub, upload the contents of this package into the repository root. Do not delete the existing `david/` folder.
