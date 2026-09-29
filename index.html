@@ -10,6 +10,9 @@
 <meta content="website" property="og:type"/>
 <meta content="#17384b" name="theme-color"/>
 <title>SageGap | Your Child's Complete Learning Record, Owned by Your Family</title>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -180,8 +183,28 @@
     .impact-row b{display:block;color:var(--navy);font-size:.94rem;margin-bottom:3px}.impact-row span{display:block;color:var(--muted);font-size:.83rem;line-height:1.48}
     .story-note{margin-top:20px;font-size:.75rem;color:rgba(32,35,34,.52);line-height:1.55}
 
-    .solution-head{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(34px,6vw,78px);align-items:end;margin-bottom:44px}
-    .solution-head .section-copy{justify-self:end}
+    .solution-head{display:grid;grid-template-columns:.88fr 1.12fr;gap:clamp(40px,6vw,84px);align-items:start;margin-bottom:54px}
+    .solution-head .section-copy{justify-self:start;max-width:600px}
+    .canonical-intro{display:grid;gap:24px;align-content:start;min-width:0}
+    .canonical-visual{position:relative;min-height:392px;display:grid;place-items:center;isolation:isolate;overflow:hidden;border-radius:38px;background:linear-gradient(145deg,rgba(255,255,255,.74),rgba(247,244,238,.34));border:1px solid rgba(23,56,75,.08);box-shadow:0 26px 70px rgba(15,37,53,.08),inset 0 1px 0 rgba(255,255,255,.92)}
+    .canonical-visual::before{content:"";position:absolute;width:28rem;height:28rem;border-radius:50%;background:radial-gradient(circle,rgba(58,140,116,.18) 0%,rgba(58,140,116,.07) 38%,transparent 68%);top:-9rem;right:-7rem;z-index:-2}
+    .canonical-visual::after{content:"";position:absolute;inset:18px;border-radius:28px;border:1px solid rgba(23,56,75,.06);pointer-events:none}
+    .canonical-connectors{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.9}
+    .canonical-connectors path{fill:none;stroke:rgba(58,140,116,.24);stroke-width:1.35;stroke-linecap:round;stroke-dasharray:3 7}
+    .canonical-connectors circle{fill:rgba(58,140,116,.55)}
+    .record-chip{position:absolute;display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.86);border:1px solid rgba(23,56,75,.10);box-shadow:0 12px 30px rgba(15,37,53,.08);backdrop-filter:blur(12px);color:var(--navy);font-size:.74rem;font-weight:700;letter-spacing:.01em;white-space:nowrap;transition:transform .28s var(--ease),box-shadow .28s var(--ease),border-color .28s var(--ease)}
+    .record-chip::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(58,140,116,.10)}
+    .canonical-visual:hover .record-chip{box-shadow:0 16px 34px rgba(15,37,53,.12);border-color:rgba(58,140,116,.18)}
+    .chip-academic{left:7%;top:18%}.chip-evaluations{right:7%;top:18%}.chip-development{left:5%;bottom:21%}.chip-supports{right:6%;bottom:21%}
+    .egg-shell{position:relative;width:250px;height:306px;border-radius:52% 48% 46% 54% / 62% 62% 38% 38%;background:linear-gradient(155deg,#214d66 0%,#17384b 50%,#102a3b 100%);color:white;padding:30px 26px 28px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;box-shadow:0 32px 70px rgba(15,37,53,.22),0 10px 24px rgba(15,37,53,.14),inset 0 1px 0 rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.10);z-index:2}
+    .egg-shell::before{content:"";position:absolute;inset:12px;border-radius:inherit;border:1px solid rgba(255,255,255,.09);pointer-events:none}
+    .egg-shell::after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(58,140,116,.28),transparent 68%);top:72px;right:-42px;pointer-events:none}
+    .egg-confirm{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);font-size:.64rem;font-weight:700;color:rgba(255,255,255,.78);position:relative;z-index:1}
+    .egg-confirm i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(233,168,32,.10)}
+    .egg-core{position:relative;z-index:1}.egg-core strong{display:block;font-family:'Lora',Georgia,serif;font-size:2.05rem;line-height:1.02;letter-spacing:-.035em;margin-bottom:10px}.egg-core span{display:block;color:rgba(255,255,255,.60);font-size:.78rem;line-height:1.45;max-width:170px;margin:0 auto}
+    .egg-traits{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}.egg-traits span{font-size:.58rem;font-weight:700;letter-spacing:.03em;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);color:rgba(255,255,255,.72)}
+    .canonical-caption{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;color:rgba(23,56,75,.54);font-size:.68rem;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+    .canonical-caption i{width:42px;height:1px;background:linear-gradient(90deg,rgba(58,140,116,.15),var(--teal),rgba(58,140,116,.15));position:relative}.canonical-caption i::after{content:"";position:absolute;right:-1px;top:-2px;width:5px;height:5px;border-top:1px solid var(--teal);border-right:1px solid var(--teal);transform:rotate(45deg)}
     .bento{display:grid;grid-template-columns:1.3fr .7fr;gap:14px}
     .bento-col{display:grid;gap:14px}
     .bento-card{border-radius:var(--radius-lg);border:1px solid var(--line);background:white;box-shadow:0 16px 44px rgba(23,56,75,.055);padding:clamp(24px,3.2vw,38px);position:relative;overflow:hidden}
@@ -289,7 +312,7 @@
     @media(max-width:1080px){
       .nav{display:none}.menu-btn{display:inline-flex;align-items:center;justify-content:center}.header-actions .btn-ghost{display:none}
       .hero-grid,.gap-grid,.solution-head,.journey-grid,.trust-grid,.consult-card{grid-template-columns:1fr}
-      .solution-head .section-copy{justify-self:start}.journey-sticky{position:static}
+      .solution-head .section-copy{justify-self:start}.canonical-intro{max-width:720px}.canonical-visual{min-height:380px}.journey-sticky{position:static}
       .audience-grid{grid-template-columns:1fr 1fr}.product-grid{grid-template-columns:1fr}.record-shell{min-height:660px}.record-window{min-height:612px}
       .footer-grid{grid-template-columns:1fr 1fr}.cta-card{grid-template-columns:1fr}.cta-card .btn{justify-self:start}
       .mobile-nav{display:none;position:absolute;top:calc(100% + 8px);left:20px;right:20px;background:rgba(255,253,249,.88);border:1px solid rgba(255,255,255,.8);border-radius:22px;padding:12px;box-shadow:0 22px 60px rgba(23,56,75,.14);backdrop-filter:blur(24px) saturate(1.3);-webkit-backdrop-filter:blur(24px) saturate(1.3);pointer-events:auto}.mobile-nav.open{display:grid}.mobile-nav a{padding:12px;border-radius:14px;font-weight:600;color:var(--navy)}.mobile-nav a:hover{background:var(--teal-pale)}.mobile-nav .mobile-extension{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(23,56,75,.07);margin-top:4px;padding-top:14px;color:rgba(23,56,75,.72)}
@@ -298,7 +321,7 @@
     @media(max-width:760px){
       .wrap{width:min(var(--max),calc(100% - 28px))}.announcement .wrap{padding:9px 0;line-height:1.35}.header-inner{min-height:64px}.brand-copy span{display:none}.header-actions .btn-primary{display:none}
       .hero{padding-top:44px}.hero h1{font-size:clamp(3rem,15vw,5rem)}.hero-actions .btn{width:100%} .record-shell{padding:14px;border-radius:28px;min-height:760px}.record-window{padding:18px;min-height:732px}.record-domain-grid{display:grid;grid-auto-flow:column;grid-auto-columns:78%;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 1px 8px;scrollbar-width:none}.record-domain-grid::-webkit-scrollbar{display:none}.record-domain{scroll-snap-align:start;min-height:198px}.record-foot{grid-template-columns:1fr;gap:8px}.record-metric{padding-top:10px}.record-explore-label span:last-child{display:none}.principles-panel{grid-template-columns:1fr}.principles{transform:translateY(18px)}
-      .bento{grid-template-columns:1fr}.audience-grid,.trust-panel{grid-template-columns:1fr}.aud-card{min-height:330px}.aud-rest h3{font-size:2.2rem}.aud-rest p{font-size:1.05rem}.aud-detail p{font-size:1.08rem}.footer-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.modal-head,.modal-body{padding-left:22px;padding-right:22px}
+      .canonical-visual{min-height:420px}.egg-shell{width:224px;height:282px;padding:26px 22px 24px}.egg-core strong{font-size:1.8rem}.record-chip{font-size:.66rem;padding:9px 11px}.chip-academic{left:4%;top:16%}.chip-evaluations{right:4%;top:16%}.chip-development{left:3%;bottom:19%}.chip-supports{right:3%;bottom:19%}.canonical-caption{bottom:20px}.bento{grid-template-columns:1fr}.audience-grid,.trust-panel{grid-template-columns:1fr}.aud-card{min-height:330px}.aud-rest h3{font-size:2.2rem}.aud-rest p{font-size:1.05rem}.aud-detail p{font-size:1.08rem}.footer-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.modal-head,.modal-body{padding-left:22px;padding-right:22px}
     }
   
     @media(max-width:900px){
@@ -310,6 +333,156 @@
       html{scroll-behavior:auto}
       *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
     }
+
+
+    /* =========================================================
+       ELEVATION SYSTEM v32
+       Layered depth: contact shadow + ambient shadow + edge light
+       ========================================================= */
+    :root{
+      --elev-1:
+        inset 0 1px 0 rgba(255,255,255,.92),
+        inset 0 -1px 0 rgba(23,56,75,.025),
+        0 2px 4px rgba(13,37,51,.025),
+        0 9px 20px rgba(13,37,51,.05),
+        0 24px 52px rgba(13,37,51,.07);
+      --elev-2:
+        inset 0 1px 0 rgba(255,255,255,.96),
+        inset 0 -1px 0 rgba(23,56,75,.035),
+        0 3px 7px rgba(13,37,51,.04),
+        0 15px 34px rgba(13,37,51,.075),
+        0 34px 78px rgba(13,37,51,.095);
+      --elev-3:
+        inset 0 1px 0 rgba(255,255,255,.98),
+        0 4px 10px rgba(13,37,51,.055),
+        0 20px 46px rgba(13,37,51,.10),
+        0 48px 112px rgba(13,37,51,.13);
+      --elev-dark:
+        inset 0 1px 0 rgba(255,255,255,.11),
+        inset 0 -1px 0 rgba(0,0,0,.18),
+        0 4px 9px rgba(0,0,0,.14),
+        0 18px 40px rgba(8,27,38,.22),
+        0 44px 104px rgba(8,27,38,.24);
+      --elev-colored:
+        inset 0 1px 0 rgba(255,255,255,.22),
+        inset 0 -1px 0 rgba(0,0,0,.10),
+        0 4px 9px rgba(20,76,60,.14),
+        0 18px 40px rgba(35,102,83,.18),
+        0 42px 96px rgba(35,102,83,.20);
+      --elev-hover:
+        inset 0 1px 0 rgba(255,255,255,1),
+        inset 0 -1px 0 rgba(23,56,75,.03),
+        0 5px 10px rgba(13,37,51,.05),
+        0 20px 42px rgba(13,37,51,.10),
+        0 42px 92px rgba(13,37,51,.12);
+    }
+
+    /* Floating navigation surface */
+    .header-inner{
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.94),
+        0 3px 7px rgba(13,37,51,.035),
+        0 14px 34px rgba(13,37,51,.075),
+        0 30px 70px rgba(13,37,51,.085);
+    }
+
+    /* Level 3: primary product and story surfaces */
+    .principles-panel,
+    .story-shell,
+    .canonical-visual,
+    .consult-card{
+      box-shadow:var(--elev-3);
+    }
+    .record-shell,
+    .story-quote-card,
+    .egg-shell{
+      box-shadow:var(--elev-dark);
+    }
+    .cta-card{
+      box-shadow:var(--elev-colored);
+    }
+
+    /* Level 2: main cards */
+    .bento-card,
+    .step,
+    .aud-card,
+    .product-card,
+    .trust-card,
+    .story-impact{
+      box-shadow:var(--elev-2);
+    }
+
+    /* Level 1: nested cards and floating chips */
+    .impact-row,
+    .record-chip,
+    .principle{
+      box-shadow:var(--elev-1);
+    }
+    .record-window,
+    .record-row,
+    .gap-card,
+    .consult-proof-item{
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        inset 0 -1px 0 rgba(0,0,0,.09),
+        0 3px 8px rgba(0,0,0,.055),
+        0 14px 28px rgba(0,0,0,.075);
+    }
+
+    /* Interactive surfaces gain one elevation level, not a new visual identity */
+    .bento-card,
+    .step,
+    .product-card,
+    .trust-card,
+    .impact-row,
+    .record-chip{
+      transition:
+        transform .28s var(--ease),
+        box-shadow .28s var(--ease),
+        border-color .28s var(--ease);
+      will-change:transform;
+    }
+    .bento-card:hover,
+    .step:hover,
+    .product-card:hover,
+    .trust-card:hover,
+    .impact-row:hover,
+    .record-chip:hover{
+      transform:translateY(-3px);
+      box-shadow:var(--elev-hover);
+      border-color:rgba(58,140,116,.18);
+    }
+    .aud-card:hover,.aud-card:focus,.aud-card:focus-within,.aud-card.is-active{
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,1),
+        0 6px 12px rgba(13,37,51,.055),
+        0 26px 54px rgba(23,56,75,.13),
+        0 52px 108px rgba(23,56,75,.15);
+    }
+
+    @media(max-width:760px){
+      .header-inner,
+      .principles-panel,.story-shell,.canonical-visual,.consult-card,
+      .bento-card,.step,.aud-card,.product-card,.trust-card,.story-impact{
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,.88),
+          0 2px 5px rgba(13,37,51,.035),
+          0 11px 26px rgba(13,37,51,.07),
+          0 24px 56px rgba(13,37,51,.08);
+      }
+      .record-shell,.story-quote-card,.egg-shell{
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,.10),
+          0 3px 7px rgba(0,0,0,.13),
+          0 16px 34px rgba(8,27,38,.20),
+          0 30px 66px rgba(8,27,38,.20);
+      }
+    }
+    @media(prefers-reduced-motion:reduce){
+      .bento-card,.step,.product-card,.trust-card,.impact-row,.record-chip{transition:none}
+      .bento-card:hover,.step:hover,.product-card:hover,.trust-card:hover,.impact-row:hover,.record-chip:hover{transform:none}
+    }
+
 </style>
 </head>
 <body>
@@ -441,7 +614,7 @@
 </section>
 <section aria-labelledby="record-title" class="section" id="record">
 <div class="wrap">
-<div class="solution-head reveal"><div><span class="eyebrow">The Canonical Egg</span><h2 class="section-title" id="record-title">One record. Every document. A source of truth your family can carry forward.</h2></div><p class="section-copy">SageGap's Canonical Egg is the family-controlled learning record: a longitudinal archive that keeps academic, developmental, and related support information connected without turning the child into a dashboard.</p></div>
+<div class="solution-head reveal"><div><span class="eyebrow">The Canonical Egg</span><h2 class="section-title" id="record-title">One record. Every document. A source of truth your family can carry forward.</h2></div><div class="canonical-intro"><div class="canonical-visual" role="img" aria-label="Academic, evaluation, developmental, and support records connect into one family-confirmed trusted record"><svg class="canonical-connectors" aria-hidden="true" viewBox="0 0 620 392" preserveAspectRatio="none"><path d="M126 98 C190 112 216 138 242 166"></path><path d="M494 98 C430 112 404 138 378 166"></path><path d="M118 294 C184 276 214 248 242 224"></path><path d="M502 294 C436 276 406 248 378 224"></path><circle cx="242" cy="166" r="3"></circle><circle cx="378" cy="166" r="3"></circle><circle cx="242" cy="224" r="3"></circle><circle cx="378" cy="224" r="3"></circle></svg><span class="record-chip chip-academic">Academic records</span><span class="record-chip chip-evaluations">Evaluations &amp; IEPs</span><span class="record-chip chip-development">Development</span><span class="record-chip chip-supports">Services &amp; supports</span><div class="egg-shell"><span class="egg-confirm"><i></i>Family confirmed</span><div class="egg-core"><strong>One trusted record</strong><span>Context stays connected across years, meetings, providers, and transitions.</span></div><div class="egg-traits"><span>Longitudinal</span><span>Portable</span><span>Permission-based</span></div></div><div class="canonical-caption"><span>Records enter</span><i></i><span>Context stays</span></div></div><p class="section-copy">SageGap's Canonical Egg is the family-controlled learning record: a longitudinal archive that keeps academic, developmental, and related support information connected without turning the child into a dashboard.</p></div></div>
 <div class="bento">
 <article class="bento-card primary reveal"><span class="bento-kicker">A living record</span><h3>Context accumulates instead of disappearing.</h3><p>Every goal, evaluation, accommodation, progress point, and relevant support can be placed in sequence, making patterns easier to see and transitions easier to navigate.</p><div class="timeline"><div class="time-row"><span class="time-dot">1</span><span><b>Capture</b><span>Add the records your family already receives.</span></span></div><div class="time-row"><span class="time-dot">2</span><span><b>Confirm</b><span>Your family decides what becomes part of the canonical record.</span></span></div><div class="time-row"><span class="time-dot">3</span><span><b>Connect</b><span>Related goals, services, evaluations, and outcomes sit in context.</span></span></div><div class="time-row"><span class="time-dot">4</span><span><b>Carry forward</b><span>The record moves with the family, not the institution.</span></span></div></div></article>
 <div class="bento-col">

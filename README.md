@@ -1,9 +1,9 @@
-# SageGap website package v10
+SageGap website package v32
 
 GitHub Pages structure:
+- index.html serves the SageGap homepage.
+- ed-answer-key/index.html serves /ed-answer-key/.
+- .nojekyll keeps the deployment as a static site.
+- CNAME preserves the sagegap.com custom domain.
 
-- `index.html` serves the SageGap homepage.
-- `ed-answer-key/index.html` serves `/ed-answer-key/`.
-- `.nojekyll` keeps the deployment as a static site.
-
-Version 10 fixes the Family Record progressive-reveal cards so hover, keyboard focus, and tap states keep all explanatory copy and status labels inside the rounded card boundary at desktop, intermediate, and mobile widths.
+Version 32 introduces a shared elevation system across SageGap and The Ed Answer Key. Rounded containers now use layered contact shadows, ambient shadows, and upper-edge highlights to create a restrained three-dimensional floating effect while preserving each site's existing brand character and interaction patterns.
