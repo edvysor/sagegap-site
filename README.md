@@ -1,9 +1,15 @@
-SageGap website package v32
+# SageGap favicon correction
 
-GitHub Pages structure:
-- index.html serves the SageGap homepage.
-- ed-answer-key/index.html serves /ed-answer-key/.
-- .nojekyll keeps the deployment as a static site.
-- CNAME preserves the sagegap.com custom domain.
+Root site:
+- `/favicon.ico` = SageGap blue/teal mark
+- `/favicon-32x32.png` = SageGap
+- `/apple-touch-icon.png` = SageGap
 
-Version 32 introduces a shared elevation system across SageGap and The Ed Answer Key. Rounded containers now use layered contact shadows, ambient shadows, and upper-edge highlights to create a restrained three-dimensional floating effect while preserving each site's existing brand character and interaction patterns.
+Ed Answer Key:
+- `/ed-answer-key/favicon.ico` = red Ed Answer Key mark
+- `/ed-answer-key/favicon-32x32.png` = Ed Answer Key
+- `/ed-answer-key/apple-touch-icon.png` = Ed Answer Key
+
+Both HTML files use explicit absolute paths with cache-busting query strings.
+
+Do not delete the existing `david/` folder from the GitHub repository.
