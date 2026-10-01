@@ -1,15 +1,18 @@
-# Ed Answer Key v50 favicon update
+# Ed Answer Key v51.3.8
 
-The newly supplied red audio-disc artwork is now the canonical Ed Answer Key favicon.
+This build returns the About section to the exact v50 geometry and proportions while replacing only the old dimensional icon in the horizontal signature with the current flat micro mark.
 
-Generated:
-- favicon.ico
-- favicon-32x32.png
-- favicon-512x512.png
-- apple-touch-icon.png
-- favicon-source.png
+Preserved from v51.3.4:
+- header and footer identity
+- Listen identity
+- Episode 412 inverse watermark
+- FAM inverse watermark
+- favicon set
+- player and interaction behavior
 
-The Ed Answer Key HTML uses explicit `/ed-answer-key/` favicon paths with a new cache-busting version.
-The SageGap root favicon is unchanged.
-
-For GitHub, replace the contents of the existing `ed-answer-key/` directory with this package.
+About geometry restored from v50:
+- About/Host column ratio and spacing
+- About-card padding and headline/copy proportions
+- Host-card sizing and typography
+- horizontal signature canvas ratio (2083 x 658)
+- signature resting position and responsive behavior
