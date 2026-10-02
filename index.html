@@ -484,6 +484,411 @@
     }
 
 </style>
+
+<style id="sagegap-v41-mobile-canonical-fix">
+/* ============================================================
+   Mobile Canonical Egg refinement
+   Desktop/tablet composition stays intact.
+   On narrow screens, the illustration becomes a compact record
+   summary card with source chips in a clean responsive grid.
+   ============================================================ */
+@media (max-width: 760px) {
+  .canonical-intro {
+    gap: 18px;
+    max-width: none;
+  }
+
+  .canonical-visual {
+    min-height: 0 !important;
+    padding: 18px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    place-items: stretch;
+    border-radius: 30px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 82% 8%, rgba(58,140,116,.12), transparent 34%),
+      linear-gradient(150deg, rgba(255,255,255,.96), rgba(246,244,238,.88));
+    border: 1px solid rgba(23,56,75,.09);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.96),
+      0 8px 18px rgba(15,37,53,.055),
+      0 28px 62px rgba(15,37,53,.09);
+  }
+
+  .canonical-visual::before {
+    width: 19rem;
+    height: 19rem;
+    top: -9rem;
+    right: -7rem;
+    opacity: .72;
+  }
+
+  .canonical-visual::after {
+    inset: 10px;
+    border-radius: 22px;
+    border-color: rgba(23,56,75,.055);
+  }
+
+  .canonical-connectors,
+  .canonical-caption {
+    display: none !important;
+  }
+
+  .egg-shell {
+    order: -1;
+    grid-column: 1 / -1;
+    position: relative;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 228px;
+    padding: 22px 20px 20px !important;
+    border-radius: 26px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    transform: none !important;
+    background: linear-gradient(155deg,#214d66 0%,#17384b 52%,#102a3b 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.12),
+      0 7px 16px rgba(15,37,53,.10),
+      0 24px 48px rgba(15,37,53,.18) !important;
+  }
+
+  .egg-shell::before {
+    inset: 9px;
+    border-radius: 20px;
+  }
+
+  .egg-shell::after {
+    width: 190px;
+    height: 190px;
+    top: 20px;
+    right: -58px;
+    opacity: .72;
+  }
+
+  .egg-confirm {
+    padding: 8px 12px;
+    font-size: .72rem;
+  }
+
+  .egg-core strong {
+    font-size: clamp(1.9rem, 9vw, 2.45rem) !important;
+    line-height: 1.02;
+    margin-bottom: 8px;
+  }
+
+  .egg-core span {
+    max-width: 300px;
+    font-size: .91rem;
+    line-height: 1.48;
+    color: rgba(255,255,255,.68);
+  }
+
+  .egg-traits {
+    gap: 7px;
+  }
+
+  .egg-traits span {
+    padding: 7px 10px;
+    font-size: .67rem;
+    letter-spacing: .02em;
+    background: rgba(255,255,255,.08);
+  }
+
+  .record-chip,
+  .chip-academic,
+  .chip-evaluations,
+  .chip-development,
+  .chip-supports {
+    position: relative !important;
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+    padding: 12px 13px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: normal;
+    line-height: 1.22;
+    font-size: .76rem;
+    background: rgba(255,255,255,.94);
+    border-color: rgba(23,56,75,.09);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.98),
+      0 4px 10px rgba(15,37,53,.035),
+      0 12px 24px rgba(15,37,53,.06);
+    backdrop-filter: none;
+  }
+
+  .record-chip::before {
+    flex: 0 0 10px;
+  }
+
+  .canonical-visual:hover .record-chip {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.98),
+      0 4px 10px rgba(15,37,53,.035),
+      0 12px 24px rgba(15,37,53,.06);
+    border-color: rgba(23,56,75,.09);
+  }
+}
+
+@media (max-width: 430px) {
+  .canonical-visual {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 26px;
+  }
+
+  .canonical-visual::after {
+    inset: 8px;
+    border-radius: 19px;
+  }
+
+  .egg-shell {
+    grid-column: 1;
+    min-height: 0;
+    padding: 20px 16px 18px !important;
+    border-radius: 22px !important;
+    gap: 14px;
+  }
+
+  .egg-shell::before {
+    inset: 8px;
+    border-radius: 17px;
+  }
+
+  .egg-core strong {
+    font-size: clamp(1.8rem, 10.5vw, 2.2rem) !important;
+  }
+
+  .egg-core span {
+    font-size: .86rem;
+    max-width: 270px;
+  }
+
+  .egg-traits span {
+    font-size: .64rem;
+    padding: 6px 8px;
+  }
+
+  .record-chip {
+    min-height: 50px;
+    padding: 11px 12px;
+    border-radius: 15px;
+    font-size: .76rem;
+  }
+}
+</style>
+
+
+<style id="sagegap-v43-mobile-contained-ghost-egg">
+/* ============================================================
+   v43 Mobile Canonical Egg watermark refinement
+   Keeps the approved v41/v42 mobile composition, but makes the
+   ghost egg intentional, visible, and fully contained inside the
+   navy record card. Desktop/tablet above 760px remain unchanged.
+   ============================================================ */
+@media (max-width: 760px) {
+  .egg-shell {
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  /* Deliberate embossed Canonical Egg ghost. It is sized from the
+     card, not the viewport, and never escapes the navy surface. */
+  .egg-shell::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    right: auto;
+    width: min(48%, 164px);
+    height: min(82%, 202px);
+    transform: translate(-50%, -50%);
+    border-radius: 52% 48% 46% 54% / 62% 62% 38% 38%;
+    background:
+      radial-gradient(
+        ellipse at 50% 38%,
+        rgba(255,255,255,.075) 0%,
+        rgba(255,255,255,.040) 42%,
+        rgba(58,140,116,.030) 68%,
+        rgba(58,140,116,.012) 100%
+      );
+    border: 1.5px solid rgba(255,255,255,.18);
+    box-shadow:
+      inset 0 0 0 11px rgba(255,255,255,.025),
+      inset 0 0 0 23px rgba(58,140,116,.018),
+      inset 0 -18px 30px rgba(5,22,33,.08),
+      0 0 26px rgba(58,140,116,.085);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .egg-confirm,
+  .egg-core,
+  .egg-traits {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 430px) {
+  .egg-shell::after {
+    width: min(46%, 148px);
+    height: min(80%, 188px);
+    border-color: rgba(255,255,255,.17);
+    box-shadow:
+      inset 0 0 0 10px rgba(255,255,255,.023),
+      inset 0 0 0 20px rgba(58,140,116,.016),
+      inset 0 -14px 24px rgba(5,22,33,.07),
+      0 0 22px rgba(58,140,116,.075);
+  }
+}
+
+@media (max-width: 360px) {
+  .egg-shell::after {
+    width: min(44%, 132px);
+    height: min(76%, 170px);
+    border-color: rgba(255,255,255,.15);
+    box-shadow:
+      inset 0 0 0 8px rgba(255,255,255,.020),
+      inset 0 0 0 17px rgba(58,140,116,.014),
+      0 0 18px rgba(58,140,116,.060);
+  }
+}
+</style>
+
+
+<style id="sagegap-v45-mobile-ghost-egg-fill">
+/* ============================================================
+   v45 Mobile Canonical Egg fill refinement
+   Keeps the approved placement and progression from v44, but
+   makes the ghost egg more apparent through a softly filled,
+   translucent interior with rounded depth. The mark remains
+   contained inside the navy egg and visually recessed behind
+   the confirmation and trait pills.
+   ============================================================ */
+@media (max-width: 760px) {
+  .egg-shell {
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  /* More visible ghost: faint filled body, soft inner highlight,
+     subtle lower shadow, still clearly behind the content. */
+  .egg-shell::after {
+    border-color: rgba(255,255,255,.12) !important;
+    background:
+      radial-gradient(
+        ellipse at 50% 28%,
+        rgba(255,255,255,.16) 0%,
+        rgba(255,255,255,.10) 22%,
+        rgba(255,255,255,.06) 42%,
+        rgba(255,255,255,.028) 62%,
+        rgba(255,255,255,.012) 78%,
+        rgba(255,255,255,0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,.05) 0%,
+        rgba(255,255,255,.018) 34%,
+        rgba(8,25,37,.035) 66%,
+        rgba(5,18,27,.10) 100%
+      ) !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.07),
+      inset 0 0 0 14px rgba(255,255,255,.014),
+      inset 0 22px 34px rgba(255,255,255,.032),
+      inset 0 -26px 40px rgba(5,18,27,.16),
+      0 1px 0 rgba(255,255,255,.02) !important;
+    opacity: .84 !important;
+    filter: none;
+    z-index: 0 !important;
+  }
+
+  .egg-confirm,
+  .egg-core,
+  .egg-traits {
+    position: relative;
+    z-index: 3 !important;
+  }
+
+  .egg-confirm {
+    background: rgba(24,62,82,.94) !important;
+    border-color: rgba(255,255,255,.16) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.055),
+      0 5px 12px rgba(3,16,25,.11) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .egg-traits span {
+    background: rgba(24,62,82,.95) !important;
+    border-color: rgba(255,255,255,.14) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.045),
+      0 4px 10px rgba(3,16,25,.10) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+@media (max-width: 430px) {
+  .egg-shell::after {
+    border-color: rgba(255,255,255,.11) !important;
+    background:
+      radial-gradient(
+        ellipse at 50% 30%,
+        rgba(255,255,255,.145) 0%,
+        rgba(255,255,255,.092) 24%,
+        rgba(255,255,255,.052) 46%,
+        rgba(255,255,255,.022) 68%,
+        rgba(255,255,255,0) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,.045) 0%,
+        rgba(255,255,255,.016) 36%,
+        rgba(8,25,37,.032) 66%,
+        rgba(5,18,27,.09) 100%
+      ) !important;
+    opacity: .80 !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.06),
+      inset 0 0 0 12px rgba(255,255,255,.012),
+      inset 0 18px 28px rgba(255,255,255,.028),
+      inset 0 -22px 34px rgba(5,18,27,.145) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .egg-shell::after {
+    border-color: rgba(255,255,255,.10) !important;
+    opacity: .74 !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,.052),
+      inset 0 0 0 10px rgba(255,255,255,.010),
+      inset 0 15px 24px rgba(255,255,255,.022),
+      inset 0 -18px 28px rgba(5,18,27,.13) !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="announcement">
