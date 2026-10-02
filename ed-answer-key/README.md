@@ -1,39 +1,26 @@
-# The Ed Answer Key — Conversation Finder CF3.1 Release Candidate
+# The Ed Answer Key — CF3.3 Apple-native Conversation Finder Player
 
-This folder is the GitHub-ready static build for **The Ed Answer Key** Conversation Finder.
+Branch: `51.3.11-CF3.3-apple-native-player`
 
-## Runtime files
-- `index.html` — complete site and Conversation Finder interface
-- `conversations.json` — production episode, taxonomy, question, and recommendation data
-- `assets/brand-mark.png` — self-contained favicon/touch icon asset
+## What changed
+The Conversation Finder now uses the same Apple Podcasts embedded-player surface as the Signature Listening Room. The Ed Answer Key retains the listening-room shell, typography, metadata, spacing, close behavior, and Finder logic; Apple supplies the live episode artwork and playback interface.
 
-## Maintenance
-- `docs/PUBLISHING-WORKFLOW.md` — Episode 57+ editorial and publishing workflow
-- `docs/episode-intake-template.json` — structured intake template for a new episode
-- `scripts/validate-conversations.py` — structural validator for `conversations.json`
+### Episode resolution
+The RSS catalog remains canonical. On `Listen Now`, the static GitHub site resolves the selected conversation to Apple Podcasts in this order:
+1. Known cached Apple episode ID when available.
+2. Apple show lookup matched by the RSS GUID / Apple `episodeGuid`.
+3. Normalized episode-title match.
+4. Per-episode Apple Search API fallback.
 
-## Validate before deployment
-From this directory:
+The lookup uses JSONP so it works from a static GitHub Pages deployment without a backend or CORS dependency. Resolved IDs are cached for the browser session.
 
-```bash
-python scripts/validate-conversations.py conversations.json
-```
+## Behavior retained
+- 7 top-level Finder areas and 21 guided questions.
+- 55 Finder-eligible conversations.
+- One Start Here + 2–3 Also worth hearing recommendations per question.
+- Finder state stays independent from listening state. Changing topics/questions/recommendations does not replace an open player.
+- The player changes only after an explicit `Listen Now`.
+- Opening the Signature Listening Room closes the Finder player, and vice versa.
 
-Expected result:
-
-```text
-PASS
-areas=7 questions=21 finderEligible=55
-```
-
-## Deployment
-This is a static site. Keep `index.html` and `conversations.json` in the same directory. The Finder loads `./conversations.json` over HTTP/HTTPS and contains an identical embedded fallback for local-file viewing.
-
-If this folder lives inside the SageGap repository as `/ed-answer-key/`, GitHub Pages/Cloudflare can serve it at the corresponding `/ed-answer-key/` path without a framework build step.
-
-## Release state
-Branch/build: `51.3.11-CF3.1-QA-validated`.
-
-`PLAYER-001` from CF3.0 is patched: closing the Finder audio player clears its cached catalog ID, and reopening the same episode reloads its RSS audio source.
-
-The production data has passed structural validation. Treat this commit as the **CF3.1 release candidate** until the final deployed-browser regression pass is completed on the hosted URL.
+## Rendering note
+Apple may block or partially render its iframe inside sandboxed preview environments. The authoritative visual test is the GitHub/Cloudflare-hosted page, where the Signature Listening Room already demonstrates the same embed pattern successfully.

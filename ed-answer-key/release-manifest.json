@@ -1,10 +1,11 @@
 {
-  "release": "51.3.11-CF3.1-QA-validated",
-  "releaseStatus": "release-candidate",
-  "runtime": {
-    "entrypoint": "index.html",
-    "data": "conversations.json",
-    "staticAsset": "assets/brand-mark.png"
+  "branch": "51.3.11-CF3.3-apple-native-player",
+  "stage": 8,
+  "baseline": "51.3.11-CF3.2-branded-player",
+  "player": {
+    "finder": "Apple Podcasts episode iframe",
+    "signature": "Apple Podcasts episode iframe",
+    "resolution": "RSS GUID \u2192 Apple episodeGuid; title/search fallback"
   },
   "counts": {
     "rssItems": 56,
@@ -13,30 +14,11 @@
     "visibleQuestions": 21,
     "recommendationClusters": 21
   },
-  "files": {
-    "index.html": {
-      "bytes": 987043,
-      "sha256": "3250363570c5b2e6eed1353ccc80b841e909cb34d8a4035daa011756581797e5"
-    },
-    "conversations.json": {
-      "bytes": 109403,
-      "sha256": "f27bb9146663d7115927b5c303cc4a35d54eb8cfe3422b6bb65fcae6479d9ac5"
-    },
-    "assets/brand-mark.png": {
-      "bytes": 55601,
-      "sha256": "217cdac5c41708effb8d612636b8e0235be8e7c3a36b1fb4a664dccc19af8ff4"
-    },
-    "docs/PUBLISHING-WORKFLOW.md": {
-      "bytes": 5588,
-      "sha256": "46ad065bbf30b1fe51dc7d6c8be7f3c5efd22b30f4527b6f93c71fe13928b88a"
-    },
-    "docs/episode-intake-template.json": {
-      "bytes": 655,
-      "sha256": "0cb1248ca9745f81a8f69c03949a8083e0a6d646e608f8f0c8e622ecadf8f45f"
-    },
-    "scripts/validate-conversations.py": {
-      "bytes": 1758,
-      "sha256": "59b0b1bad100a0d49b573a7f079edf8d1527c0258e34a74f17417c3361cdd149"
-    }
+  "knownAppleEpisodeIds": {
+    "TEAK-S04E09": "1000681299090",
+    "TEAK-S04E10": "1000682022301",
+    "TEAK-S04E11": "1000682739753",
+    "TEAK-S04E12": "1000683657197",
+    "TEAK-S04E13": "1000684696059"
   }
 }

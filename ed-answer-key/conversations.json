@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "branch": "51.3.11-CF3.1-QA-validated",
+  "branch": "51.3.11-CF3.3-apple-native-player",
   "stage": 8,
   "generatedFromStages": [
     1,
@@ -13,10 +13,11 @@
   "interactionModel": "TOPIC → QUESTION → CONVERSATION",
   "runtime": {
     "recommendationMode": "editorially-curated",
-    "playerSource": "rss-enclosure",
+    "playerSource": "apple-podcasts-embed",
     "finderStateIndependentFromPlayerState": true,
     "externalDataFile": "conversations.json",
-    "inlineFallbackEmbedded": true
+    "inlineFallbackEmbedded": true,
+    "appleEpisodeResolution": "RSS GUID first via Apple lookup JSONP; normalized title fallback; session cache."
   },
   "counts": {
     "rssItems": 56,
@@ -441,7 +442,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep_13.mp3?dest-id=4227653",
       "guid": "bc68d74d-d083-4502-b245-0e7b4c3caac4",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": "1000684696059"
     },
     "TEAK-S04E12": {
       "catalogId": "TEAK-S04E12",
@@ -471,7 +473,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep12.mp3?dest-id=4227653",
       "guid": "4dadc335-b7fa-48fe-b71e-39c21aec14f2",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": "1000683657197"
     },
     "TEAK-S04E11": {
       "catalogId": "TEAK-S04E11",
@@ -501,7 +504,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep_11.mp3?dest-id=4227653",
       "guid": "adac956d-6dc2-4d8b-9eb8-6896dd650387",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": "1000682739753"
     },
     "TEAK-S04E10": {
       "catalogId": "TEAK-S04E10",
@@ -541,7 +545,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep10.mp3?dest-id=4227653",
       "guid": "21c291f7-4420-45fc-a87a-25bd87bd0840",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": "1000682022301"
     },
     "TEAK-S04E09": {
       "catalogId": "TEAK-S04E09",
@@ -581,7 +586,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep9.mp3?dest-id=4227653",
       "guid": "cd4c4b4b-52fa-4556-866a-35f1bffaed29",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": "1000681299090"
     },
     "TEAK-S04E08": {
       "catalogId": "TEAK-S04E08",
@@ -620,7 +626,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep8.mp3?dest-id=4227653",
       "guid": "249bf1e8-bea9-4711-ad3a-cd8b310a221b",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S04E07": {
       "catalogId": "TEAK-S04E07",
@@ -662,7 +669,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep7.mp3?dest-id=4227653",
       "guid": "4011bb44-ca6b-4c98-be63-e9a6ea3fda74",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S04E06": {
       "catalogId": "TEAK-S04E06",
@@ -701,7 +709,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP6.mp3?dest-id=4227653",
       "guid": "68012a95-1429-48b4-bbb5-5b02a154dfbf",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S04E05": {
       "catalogId": "TEAK-S04E05",
@@ -733,7 +742,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP5.mp3?dest-id=4227653",
       "guid": "7d2430d5-6f0c-472d-9c50-1ba131cd4d96",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S04E04": {
       "catalogId": "TEAK-S04E04",
@@ -764,7 +774,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP4.mp3?dest-id=4227653",
       "guid": "e0d395c6-1af6-411e-a5bd-bd64b55d37fb",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S04E03": {
       "catalogId": "TEAK-S04E03",
@@ -797,7 +808,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP3.mp3?dest-id=4227653",
       "guid": "367eed30-17b8-483b-a1e6-580cff43423f",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S04E02": {
       "catalogId": "TEAK-S04E02",
@@ -828,7 +840,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP2.mp3?dest-id=4227653",
       "guid": "bdda6af2-b66b-4a56-84bd-7d99e37b1068",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S04E01": {
       "catalogId": "TEAK-S04E01",
@@ -863,7 +876,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP1.mp3?dest-id=4227653",
       "guid": "507c9de5-2050-45a8-99bf-7533b21d1b82",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E16": {
       "catalogId": "TEAK-S03E16",
@@ -900,7 +914,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_EP6.mp3?dest-id=4227653",
       "guid": "d6714596-5eef-4481-808f-e9c6afd9b34c",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E15": {
       "catalogId": "TEAK-S03E15",
@@ -931,7 +946,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_EP5.mp3?dest-id=4227653",
       "guid": "76c921e2-3c41-4ffa-8cda-383cc3aa0231",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E14": {
       "catalogId": "TEAK-S03E14",
@@ -964,7 +980,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_BONUS_4.mp3?dest-id=4227653",
       "guid": "7a65dff1-8dd3-440f-8966-7fcc546a53a0",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E13": {
       "catalogId": "TEAK-S03E13",
@@ -1000,7 +1017,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_Bonus_Ep_3.mp3?dest-id=4227653",
       "guid": "c4f8ac92-20f6-4c63-9aba-ac678fc495fd",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E12": {
       "catalogId": "TEAK-S03E12",
@@ -1038,7 +1056,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_STUDIO_Episode_2.mp3?dest-id=4227653",
       "guid": "fa33593b-bdb6-48aa-9a4a-5384d03f4ae3",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E11": {
       "catalogId": "TEAK-S03E11",
@@ -1070,7 +1089,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pops_Bonus_Episode_1.mp3?dest-id=4227653",
       "guid": "8071528b-7f8a-4bb2-b39f-8b12bca830b7",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E10": {
       "catalogId": "TEAK-S03E10",
@@ -1104,7 +1124,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_310-Pops.mp3?dest-id=4227653",
       "guid": "32e24d2a-148c-4b75-acee-5c0e0d3cbf00",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E09": {
       "catalogId": "TEAK-S03E09",
@@ -1140,7 +1161,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_309.mp3?dest-id=4227653",
       "guid": "e41331f1-737a-4d01-aeec-b5f360d73d38",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E08": {
       "catalogId": "TEAK-S03E08",
@@ -1170,7 +1192,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_308.mp3?dest-id=4227653",
       "guid": "5871f564-ca34-4b9c-a1d5-b966ba9f3a44",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E07": {
       "catalogId": "TEAK-S03E07",
@@ -1204,7 +1227,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_307.mp3?dest-id=4227653",
       "guid": "a07862af-3820-4431-8f76-6e66e5c4b655",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E06": {
       "catalogId": "TEAK-S03E06",
@@ -1242,7 +1266,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_306.mp3?dest-id=4227653",
       "guid": "a188386d-fe80-4ea8-b2aa-79124de3fb6a",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E05": {
       "catalogId": "TEAK-S03E05",
@@ -1281,7 +1306,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_305.mp3?dest-id=4227653",
       "guid": "e818208f-c887-4563-83eb-b70b9c87b4d5",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E04": {
       "catalogId": "TEAK-S03E04",
@@ -1319,7 +1345,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Episode_304.mp3?dest-id=4227653",
       "guid": "4dd303a0-ec8b-434d-8860-ce86ad3954a4",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E03": {
       "catalogId": "TEAK-S03E03",
@@ -1356,7 +1383,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_303.mp3?dest-id=4227653",
       "guid": "833c453c-4f9d-4750-9156-97861793fa88",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E02": {
       "catalogId": "TEAK-S03E02",
@@ -1394,7 +1422,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_302.mp3?dest-id=4227653",
       "guid": "7ee65ec5-0c01-451c-85cc-3328a99dc63e",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S03E01": {
       "catalogId": "TEAK-S03E01",
@@ -1433,7 +1462,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_301.mp3?dest-id=4227653",
       "guid": "66ba4d4c-8432-42ec-8f35-91b2a352b817",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E14": {
       "catalogId": "TEAK-S02E14",
@@ -1474,7 +1504,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.14.mp3?dest-id=4227653",
       "guid": "ef9e681b-657c-4778-b3c7-7fb949c8c928",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E13": {
       "catalogId": "TEAK-S02E13",
@@ -1511,7 +1542,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.13.mp3?dest-id=4227653",
       "guid": "0f2b3da0-de51-4bbb-ae7e-6666cf2f83e9",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E12": {
       "catalogId": "TEAK-S02E12",
@@ -1549,7 +1581,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.12.mp3?dest-id=4227653",
       "guid": "e292c44d-263f-46fd-bbfa-afc2d5d8ab98",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E11": {
       "catalogId": "TEAK-S02E11",
@@ -1587,7 +1620,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.11.mp3?dest-id=4227653",
       "guid": "7d0cb478-f367-4238-90cb-3ae66a55f345",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E10": {
       "catalogId": "TEAK-S02E10",
@@ -1625,7 +1659,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.10.mp3?dest-id=4227653",
       "guid": "272b5eba-3f4f-4db1-b67f-7ffb0f3eb04b",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E09": {
       "catalogId": "TEAK-S02E09",
@@ -1664,7 +1699,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.9.mp3?dest-id=4227653",
       "guid": "c99aeeb2-e3a0-4ced-bb79-a8723c191cec",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E08": {
       "catalogId": "TEAK-S02E08",
@@ -1701,7 +1737,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.8.mp3?dest-id=4227653",
       "guid": "4e240093-7e9c-42ce-9721-c4d3716d8d87",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E07": {
       "catalogId": "TEAK-S02E07",
@@ -1741,7 +1778,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.7.mp3?dest-id=4227653",
       "guid": "f8c14006-bc04-4129-918a-edb3a6fdd916",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E06": {
       "catalogId": "TEAK-S02E06",
@@ -1781,7 +1819,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.6.mp3?dest-id=4227653",
       "guid": "101c50b6-dd17-4e1a-8107-328906961b60",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E05": {
       "catalogId": "TEAK-S02E05",
@@ -1819,7 +1858,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.5.mp3?dest-id=4227653",
       "guid": "3215da11-c392-48c9-9832-dae0143cd1e7",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E04": {
       "catalogId": "TEAK-S02E04",
@@ -1852,7 +1892,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.4.mp3?dest-id=4227653",
       "guid": "34f062fe-dc08-4251-8997-d8b7a30a7a31",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E03": {
       "catalogId": "TEAK-S02E03",
@@ -1887,7 +1928,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.3.mp3?dest-id=4227653",
       "guid": "05f3c5d8-1dc7-4871-b03e-3ad26dfb5ca3",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E02": {
       "catalogId": "TEAK-S02E02",
@@ -1923,7 +1965,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.2c.mp3?dest-id=4227653",
       "guid": "962789d5-e83f-47ac-9847-cbdbcbbc2c42",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S02E01": {
       "catalogId": "TEAK-S02E01",
@@ -1960,7 +2003,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.1.mp3?dest-id=4227653",
       "guid": "25e8319f-4adc-4b05-ac30-7f577d2227f9",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E12": {
       "catalogId": "TEAK-S01E12",
@@ -1996,7 +2040,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_12.mp3?dest-id=4227653",
       "guid": "238e8a0b-00a3-4608-8633-968d8899f26f",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E11": {
       "catalogId": "TEAK-S01E11",
@@ -2033,7 +2078,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_11.mp3?dest-id=4227653",
       "guid": "1e4b4ee0-32e1-47ac-8ce7-ef06d2261b91",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E10": {
       "catalogId": "TEAK-S01E10",
@@ -2071,7 +2117,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_1.10.mp3?dest-id=4227653",
       "guid": "8cec58ab-1474-4291-b86e-51f6ad3e2534",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E09": {
       "catalogId": "TEAK-S01E09",
@@ -2110,7 +2157,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_1.9.mp3?dest-id=4227653",
       "guid": "1c8bac5f-dcea-4457-ab0d-3d1def47b829",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E08": {
       "catalogId": "TEAK-S01E08",
@@ -2149,7 +2197,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.8_RevLLPt3.mp3?dest-id=4227653",
       "guid": "f3b142c9-bc0b-4f8a-b96b-b1050d1d690a",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E07": {
       "catalogId": "TEAK-S01E07",
@@ -2185,7 +2234,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1-7_RevLLPt2.mp3?dest-id=4227653",
       "guid": "6c088f54-3fd2-4032-8c92-f308e8eecb05",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E06": {
       "catalogId": "TEAK-S01E06",
@@ -2222,7 +2272,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.6.1_Reversing_Learning_Loss.mp3?dest-id=4227653",
       "guid": "546f1803-c3dd-4bc1-9742-e4186bf1b8f7",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E05": {
       "catalogId": "TEAK-S01E05",
@@ -2257,7 +2308,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_1.5_Summer_Vacation.mp3?dest-id=4227653",
       "guid": "7fbeb6f5-c067-451e-844d-40e0de24fd11",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E04": {
       "catalogId": "TEAK-S01E04",
@@ -2291,7 +2343,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_1.4_From_Lockdown_Drills_to_Guns.mp3?dest-id=4227653",
       "guid": "b10655f9-3c3d-4e6b-ae74-d63198bd26c9",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E03": {
       "catalogId": "TEAK-S01E03",
@@ -2325,7 +2378,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.3_School_Climate_1.mp3?dest-id=4227653",
       "guid": "c7c9e73d-695a-4d63-aac3-dafa38cddc1f",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E02": {
       "catalogId": "TEAK-S01E02",
@@ -2362,7 +2416,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.2_Teacher_Autonomy_1.mp3?dest-id=4227653",
       "guid": "17e85f35-4ad5-4598-9a94-333640aa2256",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01E01": {
       "catalogId": "TEAK-S01E01",
@@ -2395,7 +2450,8 @@
       },
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.1_Are_Teachers_Respected_2.mp3?dest-id=4227653",
       "guid": "d805e17d-5d36-4dd0-a713-bb07888cfef1",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     },
     "TEAK-S01-TRAILER": {
       "catalogId": "TEAK-S01-TRAILER",
@@ -2424,12 +2480,22 @@
       "areaRoles": {},
       "audioUrl": "https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Promo_70.mp3?dest-id=4227653",
       "guid": "6c63cceb-30f2-4f7a-a3e4-6a981942ad57",
-      "sourceFeed": "https://feeds.libsyn.com/494513/rss"
+      "sourceFeed": "https://feeds.libsyn.com/494513/rss",
+      "appleEpisodeId": null
     }
   },
   "qa": {
     "status": "pending-rerun",
     "knownFix": "PLAYER-001: clear stale native-player catalog state on close and reload when src is missing.",
-    "validationScope": "21 question paths, recommendation promotion, player-state independence, disclosure controls, responsive layout, embedded fallback, and production-data integrity."
+    "validationScope": "21 question paths, recommendation promotion, player-state independence, disclosure controls, responsive layout, embedded fallback, and production-data integrity.",
+    "playerDesign": "CF3.2 branded custom audio player with editorial artwork and accessible controls"
+  },
+  "apple": {
+    "showId": "1724677627",
+    "showUrl": "https://podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627",
+    "embedBase": "https://embed.podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627?i=",
+    "lookupUrl": "https://itunes.apple.com/lookup?id=1724677627&entity=podcastEpisode&limit=200",
+    "searchUrl": "https://itunes.apple.com/search?media=podcast&entity=podcastEpisode&limit=25&term=",
+    "resolutionStrategy": "Known IDs → Apple show lookup by RSS episodeGuid → normalized episode title → per-episode Apple search fallback."
   }
 }

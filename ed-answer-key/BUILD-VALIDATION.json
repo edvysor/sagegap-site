@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "branch": "51.3.11-CF3.3-apple-native-player",
+  "areas": 7,
+  "questions": 21,
+  "finderEligible": 55,
+  "knownAppleIds": 5,
+  "inlineScriptsChecked": 2,
+  "missingRelativeAssets": [],
+  "validatorOutput": "PASS\nareas=7 questions=21 finderEligible=55",
+  "zipSha256": "f6973e7cbfca03ba454d766f0ac7991bbade575e57de2e8799f2a8db08b05049",
+  "zipBytes": 723975
+}
