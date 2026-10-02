@@ -1428,7 +1428,7 @@
       color: #ff343b;
     }
     footer .brand-subtitle {
-      color: rgba(255,255,255,.56);
+      color: rgba(255,255,255,.78);
     }
 
     @media (max-width: 720px) {
@@ -1647,7 +1647,7 @@ body{font-kerning:normal;text-rendering:optimizeLegibility;-webkit-font-smoothin
 .cta-card h2{font-size:clamp(2.35rem,5vw,4.8rem);letter-spacing:-.085em}
 footer{padding:58px 0 36px}
 footer .brand-symbol{filter:drop-shadow(0 9px 20px rgba(237,28,36,.20))}
-footer .brand-subtitle{color:rgba(255,255,255,.55)}
+footer .brand-subtitle{color:rgba(255,255,255,.78)}
 .footer-grid{gap:38px}
 .footer-brand-line{line-height:1.6}
 
@@ -1953,12 +1953,307 @@ footer .brand-subtitle{color:rgba(255,255,255,.55)}
 </style>
 
 
-<link rel="icon" type="image/x-icon" href="favicon-v5139.ico">
-<link rel="shortcut icon" type="image/x-icon" href="favicon-v5139.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-v5139-32x32.png">
-<link rel="icon" type="image/png" sizes="512x512" href="favicon-v5139-512x512.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-v5139.png">
+<link rel="icon" type="image/x-icon" href="assets/brand-mark.png">
+<link rel="shortcut icon" type="image/x-icon" href="assets/brand-mark.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand-mark.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/brand-mark.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/brand-mark.png">
 <meta name="theme-color" content="#ED1C24">
+
+<style id="eak-v51-3-11-footer-subtitle-fix">
+/* Footer-only cascade correction.
+   This selector intentionally outranks .brand-text > span:last-child
+   and the mobile .brand-subtitle display:none rule. */
+footer .brand-text > span.brand-subtitle{
+  display:block!important;
+  color:rgba(255,255,255,.78)!important;
+  opacity:1!important;
+  font-weight:650!important;
+}
+@media(max-width:720px){
+  footer .brand-text > span.brand-subtitle{
+    display:block!important;
+    color:rgba(255,255,255,.78)!important;
+    font-size:.66rem!important;
+    line-height:1.15!important;
+    margin-top:4px!important;
+  }
+}
+@media(max-width:520px){
+  footer .brand-text > span.brand-subtitle{
+    display:block!important;
+    font-size:.64rem!important;
+  }
+}
+</style>
+<style id="eak-conversation-finder-cf2-3">
+/* CF2.3 — reversible progressive Conversation Finder.
+   v51.3.11 identity/layout remains canonical everywhere outside #episodes. */
+.finder-section{padding-top:clamp(72px,8vw,112px)}
+.finder-head{margin-bottom:30px}
+.finder-head .section-copy{max-width:760px}
+.finder-shell{
+  border:1px solid rgba(10,10,13,.09);
+  border-radius:var(--radius-lg);
+  background:rgba(255,255,255,.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.94),
+    0 5px 12px rgba(10,10,13,.04),
+    0 22px 52px rgba(10,10,13,.085),
+    0 54px 108px rgba(10,10,13,.075);
+  padding:clamp(22px,3vw,36px);
+  overflow:hidden;
+  position:relative;
+  isolation:isolate;
+}
+.finder-shell::before{
+  content:"";position:absolute;width:30rem;height:30rem;border-radius:50%;
+  right:-18rem;top:-18rem;background:radial-gradient(circle,rgba(237,28,36,.10),transparent 68%);
+  z-index:-1;pointer-events:none
+}
+.finder-stage{
+  min-width:0;
+  border-radius:26px;
+  transition:background .34s var(--ease),border-color .34s var(--ease),box-shadow .34s var(--ease),opacity .34s var(--ease),transform .34s var(--ease),padding .34s var(--ease);
+}
+.finder-stage+.finder-stage{margin-top:12px}
+.finder-stage-top{
+  padding:22px 22px 24px;
+  background:#fff;
+  border:1px solid rgba(10,10,13,.095);
+  box-shadow:0 14px 34px rgba(10,10,13,.065),0 30px 70px rgba(10,10,13,.055);
+}
+.finder-stage-top.is-complete{
+  background:rgba(255,255,255,.74);
+  box-shadow:0 10px 24px rgba(10,10,13,.045);
+}
+.finder-stage-gated{
+  padding:17px 20px;
+  background:rgba(10,10,13,.025);
+  border:1px solid rgba(10,10,13,.055);
+  opacity:.52;
+}
+.finder-stage-gated.is-available{opacity:.68}
+.finder-stage-gated.is-active{
+  padding:22px;
+  background:#fff;
+  border-color:rgba(10,10,13,.10);
+  opacity:1;
+  transform:translateY(-1px);
+  box-shadow:0 14px 34px rgba(10,10,13,.06),0 34px 74px rgba(10,10,13,.055);
+}
+.finder-stage-gated.is-complete{
+  background:rgba(255,255,255,.72);
+  opacity:.78;
+  box-shadow:none;
+}
+.finder-stage-label{
+  display:flex;align-items:center;gap:10px;margin:0;width:100%;
+  color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+}
+.finder-stage-toggle{
+  appearance:none;border:0;background:transparent;padding:0;text-align:left;font:inherit;cursor:pointer;
+  color:inherit;letter-spacing:inherit;text-transform:inherit
+}
+.finder-stage-toggle:disabled{cursor:default}
+.finder-stage-toggle:not(:disabled):focus-visible{outline:2px solid rgba(237,28,36,.48);outline-offset:7px;border-radius:10px}
+.finder-stage-toggle:not(:disabled):hover strong{color:var(--ink)}
+.finder-stage-chevron{
+  flex:0 0 auto;margin-left:2px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;
+  font-style:normal;font-size:1rem;line-height:1;background:rgba(10,10,13,.05);color:rgba(10,10,13,.42);
+  transition:transform .28s var(--ease),background .28s var(--ease),color .28s var(--ease)
+}
+.finder-stage.is-active .finder-stage-chevron{transform:none;background:rgba(10,10,13,.09);color:var(--ink)}
+.finder-stage.is-complete .finder-stage-toggle:not(:disabled) .finder-stage-chevron{background:rgba(237,28,36,.09);color:var(--red)}
+.finder-stage-label span{
+  display:grid;place-items:center;width:28px;height:28px;border-radius:50%;
+  background:rgba(10,10,13,.10);color:rgba(10,10,13,.55);font-size:.65rem;letter-spacing:0;
+  transition:background .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease)
+}
+.finder-stage-top .finder-stage-label span,
+.finder-stage.is-active .finder-stage-label span{
+  background:var(--ink);color:white;box-shadow:0 7px 16px rgba(10,10,13,.12)
+}
+.finder-stage.is-complete .finder-stage-label span{background:var(--red);color:white}
+.finder-stage-top.is-active .finder-stage-label{margin-bottom:16px}
+.finder-stage-gated.is-active .finder-stage-label{margin-bottom:18px}
+.finder-topics{display:flex;flex-wrap:wrap;gap:10px}
+.finder-topic{
+  appearance:none;border:1px solid rgba(10,10,13,.11);background:rgba(255,255,255,.80);color:rgba(10,10,13,.72);
+  min-height:42px;padding:0 16px;border-radius:999px;font:inherit;font-size:.84rem;font-weight:800;cursor:pointer;
+  transition:transform .2s var(--ease),background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease)
+}
+.finder-topic:hover{transform:translateY(-2px);border-color:rgba(237,28,36,.24);background:white}
+.finder-topic[aria-pressed="true"]{background:var(--red);color:white;border-color:var(--red);box-shadow:0 10px 26px rgba(237,28,36,.20)}
+.finder-stage-body{display:grid;grid-template-rows:0fr;opacity:0;overflow:hidden;transition:grid-template-rows .44s var(--ease),opacity .30s ease,margin .44s var(--ease)}
+.finder-stage-body>.finder-stage-body-inner{min-height:0;overflow:hidden}
+.finder-stage.is-active .finder-stage-body{grid-template-rows:1fr;opacity:1;margin-top:2px}
+.finder-stage-top.is-complete{padding:17px 20px}
+.finder-question-intro{margin:2px 0 16px;color:var(--muted);font-size:.92rem;line-height:1.55}
+.finder-questions{display:grid;gap:9px}
+.finder-question{
+  width:100%;text-align:left;border:1px solid rgba(10,10,13,.095);background:rgba(255,255,255,.92);color:var(--ink);
+  border-radius:18px;padding:17px 18px 17px 54px;font:inherit;font-size:clamp(.96rem,1.20vw,1.04rem);line-height:1.34;
+  font-weight:750;letter-spacing:-.018em;cursor:pointer;position:relative;opacity:0;transform:translateY(-8px);
+  transition:transform .30s var(--ease),opacity .30s ease,border-color .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease)
+}
+.finder-stage.is-active .finder-question{opacity:1;transform:translateY(0)}
+.finder-stage.is-active .finder-question:nth-child(1){transition-delay:.04s}
+.finder-stage.is-active .finder-question:nth-child(2){transition-delay:.10s}
+.finder-stage.is-active .finder-question:nth-child(3){transition-delay:.16s}
+.finder-question::before{
+  content:attr(data-index);position:absolute;left:17px;top:50%;transform:translateY(-50%);
+  width:25px;height:25px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(10,10,13,.055);color:rgba(10,10,13,.44);font-size:.62rem;font-weight:900;letter-spacing:0
+}
+.finder-question:hover{transform:translateY(-2px)!important;background:white;border-color:rgba(10,10,13,.18);box-shadow:0 12px 28px rgba(10,10,13,.06)}
+.finder-question[aria-pressed="true"]{border-color:rgba(237,28,36,.64);background:#fff;box-shadow:inset 0 0 0 1px rgba(237,28,36,.14),0 14px 32px rgba(10,10,13,.06)}
+.finder-question[aria-pressed="true"]::before{background:var(--red);color:white}
+.finder-result{min-width:0}
+.finder-result-empty{display:none}
+.finder-primary{
+  border-radius:26px;background:var(--ink);color:white;padding:clamp(28px,3.4vw,42px);position:relative;overflow:hidden;
+  box-shadow:0 24px 62px rgba(10,10,13,.16);min-height:310px;display:flex;flex-direction:column
+}
+.finder-primary::after{
+  content:"";position:absolute;right:-4rem;top:-5rem;width:15rem;height:15rem;border-radius:50%;
+  background:radial-gradient(circle,rgba(237,28,36,.10),transparent 68%);pointer-events:none
+}
+.finder-primary-watermark{
+  position:absolute;right:24px;top:22px;width:76px;height:76px;object-fit:contain;border-radius:18px;
+  opacity:.13;filter:grayscale(1) brightness(2.3);pointer-events:none;z-index:1
+}
+.finder-primary-kicker{color:var(--red);font-size:.72rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.finder-primary-meta{margin-top:12px;color:rgba(255,255,255,.52);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;position:relative;z-index:1}
+.finder-primary h3{margin:auto 0 12px;max-width:15ch;font-size:clamp(2rem,3.8vw,3.7rem);line-height:.91;letter-spacing:-.07em;position:relative;z-index:1}
+.finder-primary p{margin:0 0 24px;max-width:58ch;color:rgba(255,255,255,.68);font-size:.96rem;position:relative;z-index:1}
+.finder-primary-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:relative;z-index:1}
+.finder-listen{border:0;background:var(--red);color:white;min-height:46px;padding:0 18px;border-radius:999px;font:inherit;font-size:.84rem;font-weight:900;cursor:pointer;box-shadow:0 14px 30px rgba(237,28,36,.22);transition:transform .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease)}
+.finder-listen:hover{transform:translateY(-2px);background:#ff2730;box-shadow:0 18px 36px rgba(237,28,36,.28)}
+.finder-related{margin-top:14px}
+.finder-related-label{display:block;margin:0 0 9px 4px;color:var(--muted);font-size:.70rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.finder-related-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.finder-related-card{appearance:none;width:100%;text-align:left;border:1px solid rgba(10,10,13,.10);background:rgba(255,255,255,.86);color:var(--ink);border-radius:18px;padding:15px 16px;cursor:pointer;transition:transform .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease),background .2s var(--ease)}
+.finder-related-card:hover{transform:translateY(-2px);background:white;border-color:rgba(237,28,36,.25);box-shadow:0 12px 28px rgba(10,10,13,.06)}
+.finder-related-card span{display:block;color:var(--red);font-size:.65rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+.finder-related-card small{display:block;margin-top:8px;color:rgba(10,10,13,.46);font-size:.68rem;font-weight:750}
+.finder-related-card strong{display:block;font-size:.88rem;line-height:1.22;letter-spacing:-.025em}
+.finder-footer{margin-top:30px}
+.finder-player-shell{margin-top:18px}
+.finder-stage-summary{margin-left:auto;color:rgba(10,10,13,.44);font-size:.72rem;font-weight:800;letter-spacing:-.01em;text-transform:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:min(42vw,420px)}
+.finder-stage.is-active .finder-stage-summary{color:rgba(10,10,13,.52)}
+.finder-stage.is-complete .finder-stage-summary{color:rgba(10,10,13,.56)}
+
+@media(max-width:720px){
+  .finder-shell{padding:18px;border-radius:26px}
+  .finder-stage-top,.finder-stage-gated.is-active{padding:19px}
+  .finder-stage-gated{padding:15px 17px}
+  .finder-related-grid{grid-template-columns:1fr}
+  .finder-stage-summary{display:none}
+}
+@media(max-width:520px){
+  .finder-topics{gap:8px}.finder-topic{min-height:40px;padding:0 13px;font-size:.78rem}
+  .finder-shell{padding:15px}.finder-stage{border-radius:22px}
+  .finder-primary{min-height:278px;border-radius:22px;padding:24px}.finder-primary h3{font-size:clamp(1.85rem,9vw,2.7rem)}
+  .finder-question{padding:16px 15px 16px 49px;border-radius:16px}
+  .finder-question::before{left:14px}
+}
+</style>
+<meta name="eak-branch" content="51.3.11-CF3.1-QA-validated">
+
+<style id="cf2-4-hover-watermark-refinement">
+/* CF2.4 — local Conversation Finder refinements only. */
+
+/* Allow chip/question hover elevation to render outside the animated
+   disclosure wrapper once a stage is fully active. */
+.finder-stage.is-active .finder-stage-body,
+.finder-stage.is-active .finder-stage-body > .finder-stage-body-inner{
+  overflow:visible!important;
+}
+.finder-topics{
+  padding:4px 2px 6px!important;
+}
+.finder-topic{
+  position:relative;
+  z-index:1;
+}
+.finder-topic:hover,
+.finder-topic:focus-visible{
+  z-index:3;
+}
+
+/* Primary recommendation brand watermark: same position, 140% scale,
+   and a restrained red-forward treatment instead of grayscale. */
+.finder-primary-watermark{
+  width:106px!important;
+  height:106px!important;
+  right:24px!important;
+  top:22px!important;
+  border-radius:22px!important;
+  opacity:.20!important;
+  filter:saturate(1.22) brightness(.94) contrast(1.04)!important;
+  mix-blend-mode:normal!important;
+}
+
+@media(max-width:720px){
+  .finder-primary-watermark{
+    width:94px!important;
+    height:94px!important;
+    right:18px!important;
+    top:18px!important;
+    opacity:.18!important;
+  }
+}
+</style>
+
+<style id="eak-conversation-finder-cf3-production-data">
+/* CF3.0 — production data integration only.
+   Canonical v51.3.11 identity and CF2.5 interaction grammar remain unchanged. */
+.finder-native-audio{
+  min-height:158px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:17px;
+  padding:22px 24px;
+  background:
+    radial-gradient(circle at 88% 18%,rgba(237,28,36,.20),transparent 12rem),
+    linear-gradient(145deg,#190709,#0c0c10 76%);
+}
+.finder-native-audio-label{
+  color:rgba(255,255,255,.62);
+  font-size:.67rem;
+  line-height:1.3;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+#episodePlayerAudio{
+  width:100%;
+  display:block;
+  accent-color:var(--red);
+  color-scheme:dark;
+}
+.finder-primary h3.is-long{
+  max-width:20ch;
+  font-size:clamp(1.72rem,3vw,3rem);
+  line-height:.96;
+}
+.finder-primary h3.is-very-long{
+  max-width:24ch;
+  font-size:clamp(1.48rem,2.5vw,2.5rem);
+  line-height:1;
+}
+.finder-related-grid.is-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:900px){
+  .finder-related-grid.is-three{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .finder-related-grid{grid-template-columns:1fr}
+  .finder-native-audio{padding:18px}
+}
+</style>
+
 </head>
 <body>
 <div class="announcement">
@@ -2103,59 +2398,57 @@ footer .brand-subtitle{color:rgba(255,255,255,.55)}
 </div>
 </div>
 </section>
-<section aria-labelledby="episodes-title" class="section conversation-section" id="episodes">
+<section aria-labelledby="episodes-title" class="section conversation-section finder-section" id="episodes">
 <div class="wrap">
-<div class="episodes-head">
+<div class="episodes-head finder-head">
 <div>
-<span class="eyebrow">Latest conversations</span>
+<span class="eyebrow">Conversation Finder</span>
 <h2 class="section-title" id="episodes-title">Choose a conversation. Find the question that meets you where you are.</h2>
-<p class="section-copy">Each card opens into context when you hover, focus, or tap. The goal is simple: make it easy to understand why an episode matters before you press play.</p>
-</div>
-<div class="conversation-actions">
-<button aria-label="Previous conversations" class="conversation-arrow" id="conversationPrev" type="button">←</button>
-<button aria-label="Next conversations" class="conversation-arrow" id="conversationNext" type="button">→</button>
+<p class="section-copy">Start with the area that feels closest. The next step opens only when you are ready for it.</p>
 </div>
 </div>
-<div aria-label="Featured Ed Answer Key conversations" class="conversation-track" id="conversationTrack">
-<article class="conversation-card tone-cream" data-apple-episode="1000684696059" data-episode-duration="5 min" data-episode-number="413" data-episode-title="The Eighth Wonder: A Sisterhood That Lasts" tabindex="0">
-<div class="conversation-rest"><div class="conversation-meta"><span>Ep. 413</span><span>5 min</span></div><div class="conversation-number">413</div><h3>The Eighth Wonder: A Sisterhood That Lasts</h3></div>
-<div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 413</span><span>5 min</span></div><h3>The Eighth Wonder: A Sisterhood That Lasts</h3><p>A celebration of lifelong friendship, memory, and the invisible support systems that shape schools and families.</p><button class="conversation-listen" type="button">Listen <span aria-hidden="true">→</span></button></div>
-</article>
-<article class="conversation-card tone-red" data-apple-episode="1000683657197" data-episode-duration="6 min" data-episode-number="412" data-episode-title="Cowgirls, Educators, and Healers: Childhood Dreams Revisited" tabindex="0">
-<div class="conversation-rest"><div class="conversation-meta"><span>Ep. 412</span><span>6 min</span></div><div class="conversation-number">412</div><h3>Cowgirls, Educators, and Healers</h3></div>
-<div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 412</span><span>6 min</span></div><h3>Cowgirls, Educators, and Healers</h3><p>Childhood dreams revisited through the lens of purpose, care, and the lives educators build along the way.</p><button class="conversation-listen" type="button">Listen <span aria-hidden="true">→</span></button></div>
-</article>
-<article class="conversation-card tone-black" data-apple-episode="1000682739753" data-episode-duration="6 min" data-episode-number="411" data-episode-title="Socks, Fidgets, &amp; Pink Flowers: Hilarious Memories from School Days" tabindex="0">
-<div class="conversation-rest"><div class="conversation-meta"><span>Ep. 411</span><span>6 min</span></div><div class="conversation-number">411</div><h3>Socks, Fidgets, &amp; Pink Flowers</h3></div>
-<div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 411</span><span>6 min</span></div><h3>Socks, Fidgets, &amp; Pink Flowers</h3><p>Hilarious memories from school days and what small moments reveal about the lasting imprint of education.</p><button class="conversation-listen" type="button">Listen <span aria-hidden="true">→</span></button></div>
-</article>
-<article class="conversation-card tone-paper" data-apple-episode="1000681299090" data-episode-duration="5 min" data-episode-number="409" data-episode-title="Public vs. Private: The Pressure of Standardized Testing" tabindex="0">
-<div class="conversation-rest"><div class="conversation-meta"><span>Ep. 409</span><span>5 min</span></div><div class="conversation-number">409</div><h3>Public vs. Private: The Pressure of Standardized Testing</h3></div>
-<div class="conversation-reveal"><div class="conversation-meta"><span>Ep. 409</span><span>5 min</span></div><h3>Public vs. Private: The Pressure of Standardized Testing</h3><p>A conversation about accountability, flexibility, and what standardized testing asks of public, private, and charter schools.</p><button class="conversation-listen" type="button">Listen <span aria-hidden="true">→</span></button></div>
-</article>
-<article class="conversation-card tone-red" data-series="fam" tabindex="0">
-<div class="conversation-rest"><div class="conversation-meta"><span>Series</span><span>Short form</span></div><div class="conversation-number">FAM</div><h3>Teacher Insight for Families</h3></div>
-<div class="conversation-reveal"><div class="conversation-meta"><span>Series</span><span>Short form</span></div><h3>Teacher Insight for Families</h3><p>Plain-language conversations that help families understand school expectations, learning needs, and the questions worth asking next.</p><a href="https://podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627" rel="noopener" target="_blank">Explore the series <span aria-hidden="true">→</span></a></div>
-</article>
+<div class="finder-shell" id="conversationFinder">
+<section class="finder-stage finder-stage-top is-active" id="finderStage1" aria-labelledby="finder-stage-1-label" aria-expanded="true">
+<button class="finder-stage-label finder-stage-toggle" id="finder-stage-1-label" type="button" aria-controls="finderTopicBody" aria-expanded="true"><span>01</span><strong>Choose the area</strong><em class="finder-stage-summary" id="finderTopicSummary"></em><i class="finder-stage-chevron" aria-hidden="true">+</i></button>
+<div class="finder-stage-body" id="finderTopicBody"><div class="finder-stage-body-inner">
+<div aria-label="Conversation topics" class="finder-topics" id="finderTopics" role="group"></div>
+</div></div>
+</section>
+<section class="finder-stage finder-stage-gated" id="finderStage2" aria-labelledby="finder-stage-2-label" aria-expanded="false">
+<button class="finder-stage-label finder-stage-toggle" id="finder-stage-2-label" type="button" aria-controls="finderQuestionBody" aria-expanded="false" disabled><span>02</span><strong>Recognize the question</strong><em class="finder-stage-summary" id="finderQuestionSummary"></em><i class="finder-stage-chevron" aria-hidden="true">+</i></button>
+<div class="finder-stage-body" id="finderQuestionBody"><div class="finder-stage-body-inner">
+<p class="finder-question-intro">Which question feels closest to what you are trying to understand?</p>
+<div aria-live="polite" class="finder-questions" id="finderQuestions"></div>
+</div></div>
+</section>
+<section class="finder-stage finder-stage-gated" id="finderStage3" aria-labelledby="finder-stage-3-label" aria-expanded="false">
+<button class="finder-stage-label finder-stage-toggle" id="finder-stage-3-label" type="button" aria-controls="finderResultBody" aria-expanded="false" disabled><span>03</span><strong>Begin with one conversation</strong><em class="finder-stage-summary" id="finderEpisodeSummary"></em><i class="finder-stage-chevron" aria-hidden="true">+</i></button>
+<div class="finder-stage-body" id="finderResultBody"><div class="finder-stage-body-inner">
+<div aria-live="polite" class="finder-result" id="finderResult"></div>
+</div></div>
+</section>
+<div aria-live="polite" class="episode-player-shell finder-player-shell" id="episodePlayerShell">
+  <div class="episode-player">
+    <button class="episode-player-close" id="episodePlayerClose" type="button" aria-label="Close episode player">×</button>
+    <div class="episode-player-copy">
+      <span class="episode-player-kicker">Now playing on The Ed Answer Key</span>
+      <h3 id="episodePlayerTitle"></h3>
+      <p class="episode-player-meta" id="episodePlayerMeta"></p>
+    </div>
+    <div class="episode-player-frame">
+      <div class="episode-player-viewport finder-audio-viewport">
+        <div class="finder-native-audio">
+          <span class="finder-native-audio-label">The Ed Answer Key · Conversation Player</span>
+          <audio id="episodePlayerAudio" controls preload="metadata"></audio>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div aria-live="polite" class="episode-player-shell" id="episodePlayerShell">
-<div aria-label="Now playing episode" class="episode-player" role="region">
-<button aria-label="Close episode player" class="episode-player-close" id="episodePlayerClose" type="button">×</button>
-<div class="episode-player-copy">
-<span class="episode-player-kicker">Now playing on The Ed Answer Key</span>
-<h3 id="episodePlayerTitle">Select an episode</h3>
-<p class="episode-player-meta" id="episodePlayerMeta">Choose Listen on any featured conversation to play it here without leaving the site.</p>
-</div>
-<div class="episode-player-frame">
-<div class="episode-player-viewport">
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" id="episodePlayerFrame" loading="lazy" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation" title="Apple Podcasts episode player"></iframe>
-</div>
-</div>
-</div>
-</div>
-<div class="conversation-footer"><span>Teachers. Families. Answers.</span><a class="btn btn-ghost" href="https://podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627" rel="noopener" target="_blank">View all episodes</a></div>
+<div class="conversation-footer finder-footer"><span>Teachers. Families. Answers.</span><a class="btn btn-ghost" href="https://podcasts.apple.com/us/podcast/the-ed-answer-key/id1724677627" rel="noopener" target="_blank">View all episodes</a></div>
 </div>
 </section>
+
 <section aria-labelledby="about-title" class="section" id="about">
 <div class="wrap about-panel">
 <article class="about-main">
@@ -2332,5 +2625,258 @@ footer .brand-subtitle{color:rgba(255,255,255,.55)}
       });
     });
   </script>
+<script type="application/json" id="eakConversationDataFallback">{"schemaVersion":"1.0","branch":"51.3.11-CF3.1-QA-validated","stage":8,"generatedFromStages":[1,2,3,4,5,6],"interactionModel":"TOPIC → QUESTION → CONVERSATION","runtime":{"recommendationMode":"editorially-curated","playerSource":"rss-enclosure","finderStateIndependentFromPlayerState":true,"externalDataFile":"conversations.json","inlineFallbackEmbedded":true},"counts":{"rssItems":56,"finderEligibleEpisodes":55,"areas":7,"visibleQuestions":21,"recommendationClusters":21},"areas":[{"id":"family-school","label":"Family & School","definition":"Conversations about families understanding, navigating, communicating with, choosing, and partnering with schools.","questionIds":["FS-Q1","FS-Q2","FS-Q3"]},{"id":"learning-classroom","label":"Learning & Classroom","definition":"Conversations about how learning happens and how classroom practices shape engagement, independence, understanding, and instruction.","questionIds":["LC-Q1","LC-Q2","LC-Q3"]},{"id":"student-support","label":"Student Support & Well-Being","definition":"Conversations about barriers, supports, safety, behavior, emotions, disability, language access, and other conditions affecting a student's ability to thrive.","questionIds":["SS-Q1","SS-Q2","SS-Q3"]},{"id":"teaching-educator-life","label":"Teaching & Educator Life","definition":"Conversations about becoming, being, and sustaining oneself as an educator.","questionIds":["TE-Q1","TE-Q2","TE-Q3"]},{"id":"assessment-accountability","label":"Assessment & Accountability","definition":"Conversations about standardized testing, measuring progress, equity in assessment, and the accountability purposes and limitations of testing.","questionIds":["AA-Q1","AA-Q2","AA-Q3"]},{"id":"school-systems-leadership","label":"School Systems & Leadership","definition":"Conversations about policies, leadership, professional systems, organizational decisions, and structures that shape what happens in schools.","questionIds":["SL-Q1","SL-Q2","SL-Q3"]},{"id":"community-identity-belonging","label":"Community, Identity & Belonging","definition":"Conversations about the relationships, histories, communities, values, and identities that shape educational experience and life beyond school.","questionIds":["CI-Q1","CI-Q2","CI-Q3"]}],"questions":{"FS-Q1":{"id":"FS-Q1","areaId":"family-school","displayOrder":1,"text":"How can families and schools work together when a child needs more support?","listenerIntent":"Recognizes a caregiver or educator looking for stronger partnership, communication, or coordinated support around a student.","boundary":"Not limited to formal plans; includes academic, emotional, social, and practical support.","startHere":"TEAK-S02E14","alsoWorthHearing":["TEAK-S04E07","TEAK-S01E07","TEAK-S03E06"],"clusterRationale":"A broad, practical conversation about the home-school connection makes the clearest entry point before moving into community partnership, formal student supports, or multilingual-family advocacy."},"FS-Q2":{"id":"FS-Q2","areaId":"family-school","displayOrder":2,"text":"What should I do when I don't understand what the school is telling me—or what my child needs?","listenerIntent":"Recognizes confusion about school language, services, procedures, expectations, or how to advocate effectively.","boundary":"Focus is navigation and understanding, not judging whether the school is right or wrong.","startHere":"TEAK-S01E06","alsoWorthHearing":["TEAK-S03E06","TEAK-S01E07","TEAK-S02E14"],"clusterRationale":"This episode begins from families navigating a complicated support system, making it the closest match to confusion about school processes, terminology, and what a child may need."},"FS-Q3":{"id":"FS-Q3","areaId":"family-school","displayOrder":3,"text":"How do I make sense of different school choices, expectations, and pressures?","listenerIntent":"Recognizes families comparing school environments or trying to understand why expectations and accountability can feel different.","boundary":"Covers public/private/charter and testing pressures without turning the Finder into a school-ranking tool.","startHere":"TEAK-S03E13","alsoWorthHearing":["TEAK-S04E09","TEAK-S03E16","TEAK-S01E12"],"clusterRationale":"The father-son public-versus-private conversation directly addresses school choice from both family and educator perspectives, with the companion episodes adding testing pressure, future-facing family concerns, and assessment context."},"LC-Q1":{"id":"LC-Q1","areaId":"learning-classroom","displayOrder":1,"text":"What actually helps students become more engaged and curious about learning?","listenerIntent":"Recognizes a listener trying to understand motivation, curiosity, relationships, classroom energy, and meaningful engagement.","boundary":"Focus is engagement with learning rather than discipline enforcement.","startHere":"TEAK-S03E08","alsoWorthHearing":["TEAK-S03E07","TEAK-S02E09","TEAK-S03E03"],"clusterRationale":"Curiosity is the most direct entry into engagement, while the companion conversations add enjoyment, teacher-student relationships, confidence, and a classroom culture where mistakes are safe."},"LC-Q2":{"id":"LC-Q2","areaId":"learning-classroom","displayOrder":2,"text":"How can teachers help students become more independent without leaving them unsupported?","listenerIntent":"Recognizes questions about productive struggle, confidence, mistakes, differentiation, scaffolding, and student dependency.","boundary":"Support remains present; the question is about moving students toward greater ownership.","startHere":"TEAK-S02E03","alsoWorthHearing":["TEAK-S03E03","TEAK-S03E04","TEAK-S02E09"],"clusterRationale":"The episode explicitly asks whether students have become too dependent on teachers and centers the move toward independence, with companions adding confidence, productive mistakes, resilience, and relationships."},"LC-Q3":{"id":"LC-Q3","areaId":"learning-classroom","displayOrder":3,"text":"What makes planning and collaboration actually improve what happens in the classroom?","listenerIntent":"Recognizes questions about lesson planning, co-planning, preparedness, collaboration, and adapting instruction to real students.","boundary":"Focus is the instructional work itself rather than district-level professional-development policy.","startHere":"TEAK-S03E09","alsoWorthHearing":["TEAK-S02E06","TEAK-S02E05","TEAK-S02E12"],"clusterRationale":"This is the clearest practical entry point on co-planning itself; the companion set adds inclusive co-planning, the planning-versus-autonomy balance, and the professional-learning structures that can make collaboration useful."},"SS-Q1":{"id":"SS-Q1","areaId":"student-support","displayOrder":1,"text":"What might be getting in the way when a student is struggling—even if the problem isn't academic?","listenerIntent":"Recognizes hidden barriers such as emotions, trauma, poverty, family circumstances, motivation, belonging, or unmet basic needs.","boundary":"The episode pool may include academic effects, but the underlying barrier is broader than content knowledge.","startHere":"TEAK-S02E01","alsoWorthHearing":["TEAK-S02E07","TEAK-S04E08","TEAK-S02E08"],"clusterRationale":"Starting with poverty, trauma, basic needs, and empathy makes the hidden-barriers question concrete; the companions broaden that lens to emotions, social needs, culture, communication, and trust."},"SS-Q2":{"id":"SS-Q2","areaId":"student-support","displayOrder":2,"text":"How are schools supposed to support students with IEPs, 504 plans, or language needs?","listenerIntent":"Recognizes listeners trying to understand formal supports, accommodations, multilingual access, differentiation, and family navigation.","boundary":"Combines related access/support needs without implying that disability services and multilingual services are the same.","startHere":"TEAK-S01E07","alsoWorthHearing":["TEAK-S01E06","TEAK-S01E08","TEAK-S03E06"],"clusterRationale":"The IEP/504 explainer is the strongest orientation to formal supports, followed by family navigation, implementation in classrooms, and a parallel look at language-access barriers for multilingual families."},"SS-Q3":{"id":"SS-Q3","areaId":"student-support","displayOrder":3,"text":"What should schools do when behavior, discipline, or safety starts affecting learning?","listenerIntent":"Recognizes concerns about behavior, discipline, structure, authority, safety, communication, and the learning environment.","boundary":"Does not prescribe a single discipline philosophy; it opens conversations about the trade-offs and conditions involved.","startHere":"TEAK-S01E09","alsoWorthHearing":["TEAK-S02E13","TEAK-S01E04","TEAK-S04E06"],"clusterRationale":"The discipline episode most directly addresses behavior and disciplinary strategy; the companions then add communication failures, physical safety, and the role of structure and boundaries."},"TE-Q1":{"id":"TE-Q1","areaId":"teaching-educator-life","displayOrder":1,"text":"What helps teachers stay effective without burning themselves out?","listenerIntent":"Recognizes workload, boundaries, time, well-being, school climate, and sustainability questions.","boundary":"Not simply self-care; includes working conditions and professional support.","startHere":"TEAK-S03E14","alsoWorthHearing":["TEAK-S01E03","TEAK-S01E05","TEAK-S02E11"],"clusterRationale":"Work-life balance and time management provide the most recognizable starting point, while the companion conversations surface school climate, invisible workload, and the importance of seeking professional support."},"TE-Q2":{"id":"TE-Q2","areaId":"teaching-educator-life","displayOrder":2,"text":"What should a new or growing educator understand about becoming good at this work?","listenerIntent":"Recognizes questions about preparation, feedback, mentorship, collaboration, mistakes, professional growth, and relationships.","boundary":"Applies to both early-career educators and experienced educators deliberately trying to improve.","startHere":"TEAK-S03E10","alsoWorthHearing":["TEAK-S02E11","TEAK-S02E12","TEAK-S02E10"],"clusterRationale":"The new-teacher episode gives direct entry-level advice, followed by conversations on asking for help, meaningful professional development, mentorship, peer observation, and teacher leadership."},"TE-Q3":{"id":"TE-Q3","areaId":"teaching-educator-life","displayOrder":3,"text":"Why does the teaching profession feel so different from what people outside schools imagine?","listenerIntent":"Recognizes gaps between public perception and the lived realities, demands, changes, rewards, and complexity of teaching.","boundary":"Explains the profession rather than asking the listener to take a pro- or anti-school position.","startHere":"TEAK-S01E01","alsoWorthHearing":["TEAK-S03E15","TEAK-S01E05","TEAK-S03E12"],"clusterRationale":"The inaugural episode directly examines public perceptions of teachers, then the companions contrast those perceptions with the profession's rewards, workload, and changes witnessed across a long teaching career."},"AA-Q1":{"id":"AA-Q1","areaId":"assessment-accountability","displayOrder":1,"text":"What does standardized testing actually tell us about student learning—and what does it miss?","listenerIntent":"Recognizes a listener trying to understand the usefulness and limitations of standardized assessment.","boundary":"Keeps the question descriptive rather than assuming tests are inherently good or bad.","startHere":"TEAK-S01E12","alsoWorthHearing":["TEAK-S03E02","TEAK-S04E09"],"clusterRationale":"This conversation is explicitly framed around the limitations and potential of standardized testing, making it the cleanest response to what tests reveal and what they leave out."},"AA-Q2":{"id":"AA-Q2","areaId":"assessment-accountability","displayOrder":2,"text":"How can testing be fair when students, schools, and circumstances are so different?","listenerIntent":"Recognizes equity, language, school-context, opportunity, and comparability concerns.","boundary":"Does not promise a single definition of fairness; it surfaces the relevant tensions.","startHere":"TEAK-S04E09","alsoWorthHearing":["TEAK-S03E02","TEAK-S01E12"],"clusterRationale":"The public/private/charter comparison makes differences in school context visible, while the companion episodes add language-barrier, equity, growth, and accountability considerations."},"AA-Q3":{"id":"AA-Q3","areaId":"assessment-accountability","displayOrder":3,"text":"Why do schools rely on standardized tests if educators know they have limitations?","listenerIntent":"Recognizes questions about accountability, comparability, growth, system-level decision making, and why standardized measures persist.","boundary":"Explains competing purposes without resolving the policy debate for the listener.","startHere":"TEAK-S03E02","alsoWorthHearing":["TEAK-S01E12","TEAK-S04E09"],"clusterRationale":"This episode most explicitly addresses why standardized assessments persist—baseline measurement, accountability, comparability, and tracking growth—while also acknowledging their limitations."},"SL-Q1":{"id":"SL-Q1","areaId":"school-systems-leadership","displayOrder":1,"text":"Why can good educators still feel stuck inside school policies and systems?","listenerIntent":"Recognizes friction created by curriculum requirements, policy, resources, accountability, staffing, and organizational constraints.","boundary":"Focuses on systems around educators rather than individual motivation or competence.","startHere":"TEAK-S01E02","alsoWorthHearing":["TEAK-S02E13","TEAK-S03E02","TEAK-S03E05"],"clusterRationale":"Teacher autonomy versus curriculum constraints is the clearest example of a capable educator operating inside a larger system; the companions add discipline policy, testing/accountability, and support-system gaps."},"SL-Q2":{"id":"SL-Q2","areaId":"school-systems-leadership","displayOrder":2,"text":"What kind of leadership actually helps teachers improve and students succeed?","listenerIntent":"Recognizes questions about coaching, mentorship, professional development, teacher leadership, support, and organizational culture.","boundary":"Leadership is broader than administrators alone and includes structures that help adults improve practice.","startHere":"TEAK-S02E10","alsoWorthHearing":["TEAK-S02E12","TEAK-S02E11","TEAK-S04E07"],"clusterRationale":"Mentorship, peer observation, instructional coaching, and teacher leadership make this the strongest leadership entry point, with companions on professional development, help-seeking culture, and wider school-community support."},"SL-Q3":{"id":"SL-Q3","areaId":"school-systems-leadership","displayOrder":3,"text":"Why do schools sometimes struggle to communicate clearly even when everyone is trying to help?","listenerIntent":"Recognizes mixed messages among administrators, teachers, support staff, and families, especially around services, discipline, or expectations.","boundary":"Does not assume bad faith; centers coordination, clarity, and information flow.","startHere":"TEAK-S02E13","alsoWorthHearing":["TEAK-S03E06","TEAK-S03E01","TEAK-S04E07"],"clusterRationale":"The episode centers mixed messages and transparency around school decisions, then the companions show communication challenges across multilingual families, educator teams, and family-school-community partnerships."},"CI-Q1":{"id":"CI-Q1","areaId":"community-identity-belonging","displayOrder":1,"text":"What makes a school or neighborhood feel like a community people carry with them for life?","listenerIntent":"Recognizes belonging, shared history, neighborhood institutions, friendship, faith, memory, and identity.","boundary":"Focus is the enduring meaning of community rather than nostalgia for its own sake.","startHere":"TEAK-S04E05","alsoWorthHearing":["TEAK-S04E01","TEAK-S04E13","TEAK-S04E04"],"clusterRationale":"School, friendship, faith, and community are explicitly presented as roots carried into adult life, with companion stories adding neighborhood-school legacy, enduring sisterhood, and service through Pomoja."},"CI-Q2":{"id":"CI-Q2","areaId":"community-identity-belonging","displayOrder":2,"text":"How do relationships with teachers, friends, family, and mentors shape who students become?","listenerIntent":"Recognizes the formative influence of relationships, role models, expectations, care, and shared experiences.","boundary":"Includes school and non-school relationships when they shape identity, purpose, or growth.","startHere":"TEAK-S04E01","alsoWorthHearing":["TEAK-S04E10","TEAK-S04E05","TEAK-S04E13"],"clusterRationale":"The School 26 story most directly shows families, educators, and community shaping identity and excellence, with companions emphasizing mentorship, formative relationships, faith, and lifelong friendship."},"CI-Q3":{"id":"CI-Q3","areaId":"community-identity-belonging","displayOrder":3,"text":"What can earlier generations teach us about building stronger communities for children today?","listenerIntent":"Recognizes listeners looking for lessons from intergenerational experience, service, mentorship, community institutions, and shared responsibility.","boundary":"Uses earlier experience as perspective, not as evidence that the past was uniformly better.","startHere":"TEAK-S04E10","alsoWorthHearing":["TEAK-S04E07","TEAK-S04E04","TEAK-S04E01"],"clusterRationale":"This conversation explicitly asks what today's children can gain from earlier community practices, while the companion set adds parent partnerships, service, and the neighborhood-school model that shaped the speakers."}},"episodes":{"TEAK-S04E13":{"catalogId":"TEAK-S04E13","libsynItemId":"34920715","number":"413","season":4,"episode":13,"episodeType":"full","finderEligible":true,"title":"The Eighth Wonder: A Sisterhood That Lasts","publishedUtc":"2025-01-20T13:23:00Z","duration":"04:10","centralIssue":"Enduring friendship, sisterhood, resilience, and community bonds","summary":"Growing up together in a close-knit Indianapolis community, these women reflect on the love, faith, and resilience that have cemented their sisterhood for nearly seven decades. With humor, gratitude, and faith, they discuss how they've navigated life's ups and downs together, creating a family bound by love rather than blood.","audiences":["Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":[],"facets":["Family Engagement","Community & Belonging","Faith & Values"],"areaRoles":{"community-identity-belonging":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep_13.mp3?dest-id=4227653","guid":"bc68d74d-d083-4502-b245-0e7b4c3caac4","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E12":{"catalogId":"TEAK-S04E12","libsynItemId":"34817545","number":"412","season":4,"episode":12,"episodeType":"full","finderEligible":true,"title":"Cowgirls, Educators, and Healers: Childhood Dreams Revisited","publishedUtc":"2025-01-12T12:21:00Z","duration":"05:36","centralIssue":"Childhood aspirations, career journeys, and how life paths evolve","summary":"In Cowgirls, Educators, and Healers: Childhood Dreams Revisited, these inspiring women share stories of their early aspirations, from becoming flight attendants and educators to pursuing careers in law and the medical field.","audiences":["Educators","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":[],"facets":["Educator Identity & Sustainability"],"areaRoles":{"community-identity-belonging":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep12.mp3?dest-id=4227653","guid":"4dadc335-b7fa-48fe-b71e-39c21aec14f2","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E11":{"catalogId":"TEAK-S04E11","libsynItemId":"34719890","number":"411","season":4,"episode":11,"episodeType":"full","finderEligible":true,"title":"Socks, Fidgets, & Pink Flowers: Hilarious Memories from School Days","publishedUtc":"2025-01-05T12:21:00Z","duration":"05:59","centralIssue":"School-day memories, identity, humor, and community connection","summary":"Growing up in a tight-knit Indianapolis community, these friends reflect on the fashion, nicknames, and unforgettable moments that shaped their childhood at School 26. They also reminisce about schoolyard antics, walking to basketball games, and the strict gym shoe inspections that were part of their daily lives.","audiences":["Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":[],"facets":["Community & Belonging","Mentorship & Relationships"],"areaRoles":{"community-identity-belonging":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep_11.mp3?dest-id=4227653","guid":"adac956d-6dc2-4d8b-9eb8-6896dd650387","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E10":{"catalogId":"TEAK-S04E10","libsynItemId":"34643020","number":"410","season":4,"episode":10,"episodeType":"full","finderEligible":true,"title":"When We Know Better, We Do Better: Building a Future for All Children","publishedUtc":"2024-12-29T12:21:00Z","duration":"05:27","centralIssue":"Mentorship, community support, and investing in the next generation","summary":"Raised in a tight-knit Indianapolis community—and shaped by the excellence of School 26—these remarkable women reunite to share their perspectives on what it truly means to invest in the next generation.","audiences":["School leaders","Educators","Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":["student-support","family-school"],"facets":["Teacher Growth & PD","Leadership & Policy","Community & Belonging","Mentorship & Relationships"],"areaRoles":{"family-school":"Supporting","student-support":"Supporting","community-identity-belonging":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep10.mp3?dest-id=4227653","guid":"21c291f7-4420-45fc-a87a-25bd87bd0840","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E09":{"catalogId":"TEAK-S04E09","libsynItemId":"34564840","number":"409","season":4,"episode":9,"episodeType":"full","finderEligible":true,"title":"Public vs. Private: The Pressure of Standardized Testing","publishedUtc":"2024-12-22T12:21:00Z","duration":"05:17","centralIssue":"Standardized testing pressure across public, private, and charter schooling","summary":"Raised in a close-knit Indianapolis neighborhood, these friends grew up under the guiding influence of School 26, a beacon of excellence that helped shape their perspectives on learning and community.","audiences":["Educators","Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"assessment-accountability","secondaryAreaIds":["family-school","school-systems-leadership"],"facets":["Family Engagement","Equity & Access","Assessment & Testing","School Choice","Community & Belonging"],"areaRoles":{"family-school":"Supporting","assessment-accountability":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep9.mp3?dest-id=4227653","guid":"cd4c4b4b-52fa-4556-866a-35f1bffaed29","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E08":{"catalogId":"TEAK-S04E08","libsynItemId":"34455455","number":"408","season":4,"episode":8,"episodeType":"full","finderEligible":true,"title":"Hungry for More: How Schools Support Social Needs","publishedUtc":"2024-12-15T12:41:00Z","duration":"04:30","centralIssue":"How schools respond to hunger, family contact, and other social needs","summary":"Raised in the heart of a tight-knit Indianapolis community, they fondly recall School 26—a beacon of excellence in their childhood—while shedding light on the pressing social needs that today's schools strive to meet.","audiences":["School leaders","Educators","Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"student-support","secondaryAreaIds":["family-school","school-systems-leadership"],"facets":["Family Engagement","Community & Belonging","Poverty & Basic Needs"],"areaRoles":{"family-school":"Supporting","student-support":"Anchor","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep8.mp3?dest-id=4227653","guid":"249bf1e8-bea9-4711-ad3a-cd8b310a221b","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E07":{"catalogId":"TEAK-S04E07","libsynItemId":"34328920","number":"407","season":4,"episode":7,"episodeType":"full","finderEligible":true,"title":"Communities in Action: The Power of Parent Partnerships","publishedUtc":"2024-12-08T12:21:00Z","duration":"05:25","centralIssue":"Parent partnerships, community involvement, and school leadership support","summary":"In Communities in Action: The Power of Parent Partnerships, we explore how dedicated leaders, caring teachers, and invested parents join forces to create an educational environment where every child can succeed.","audiences":["School leaders","Educators","Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"family-school","secondaryAreaIds":["community-identity-belonging","school-systems-leadership"],"facets":["Family Engagement","Equity & Access","Leadership & Policy","Community & Belonging","Student Engagement & Motivation","Mentorship & Relationships"],"areaRoles":{"family-school":"Anchor","school-systems-leadership":"Supporting","community-identity-belonging":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_Ep7.mp3?dest-id=4227653","guid":"4011bb44-ca6b-4c98-be63-e9a6ea3fda74","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E06":{"catalogId":"TEAK-S04E06","libsynItemId":"34214740","number":"406","season":4,"episode":6,"episodeType":"full","finderEligible":true,"title":"Structure, Compassion, and Faith: The Blueprint for Educational Success","publishedUtc":"2024-12-01T12:12:00Z","duration":"05:40","centralIssue":"Structure, discipline, compassion, faith, and responsibility in education","summary":"This episode takes a deep dive into the challenges facing today's teachers and parents. Hear how teachers can reclaim their role as leaders, how families can instill responsibility, and why faith and community support are more vital than ever.","audiences":["Educators","Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"student-support","secondaryAreaIds":["family-school","community-identity-belonging"],"facets":["Family Engagement","Discipline & Safety","Community & Belonging","Faith & Values"],"areaRoles":{"family-school":"Supporting","student-support":"Situational","community-identity-belonging":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP6.mp3?dest-id=4227653","guid":"68012a95-1429-48b4-bbb5-5b02a154dfbf","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E05":{"catalogId":"TEAK-S04E05","libsynItemId":"34032946","number":"405","season":4,"episode":5,"episodeType":"full","finderEligible":true,"title":"School, Friendship, and Faith: The Roots That Shaped Us","publishedUtc":"2024-11-24T11:50:00Z","duration":"04:18","centralIssue":"How school, family, friendship, and faith shape identity and purpose","summary":"In this episode, School, Friendship, and Faith: The Roots That Shaped Us, we dive into the heartfelt reflections of five lifelong friends whose 65-year bond is rooted in a foundation of family, education, and faith.","audiences":["Educators","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":[],"facets":["Family Engagement","Community & Belonging","Faith & Values"],"areaRoles":{"community-identity-belonging":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP5.mp3?dest-id=4227653","guid":"7d2430d5-6f0c-472d-9c50-1ba131cd4d96","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E04":{"catalogId":"TEAK-S04E04","libsynItemId":"33970037","number":"404","season":4,"episode":4,"episodeType":"full","finderEligible":true,"title":"Celebrating Togetherness: The Pomoja Story","publishedUtc":"2024-11-18T11:02:00Z","duration":"05:10","centralIssue":"Friendship, service, community action, and the Pomoja legacy","summary":"Through fundraisers for the Red Cross, organizing gifts for children in need, and hosting community events, their efforts created lasting change while strengthening their bond. Packed with laughter, nostalgia, and inspiration, this episode is a testament to the power of friendship, family, and community.","audiences":["Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":[],"facets":["Family Engagement","Community & Belonging"],"areaRoles":{"community-identity-belonging":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP4.mp3?dest-id=4227653","guid":"e0d395c6-1af6-411e-a5bd-bd64b55d37fb","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E03":{"catalogId":"TEAK-S04E03","libsynItemId":"33867632","number":"403","season":4,"episode":3,"episodeType":"full","finderEligible":true,"title":"Beyond the Classroom: The Power of Connection","publishedUtc":"2024-11-10T18:25:00Z","duration":"06:00","centralIssue":"Family bonds, parental guidance, community, and lifelong connection","summary":"In this heartwarming third installment of Ed Answer Key's special bonus series, \"Beyond the Classroom: The Power of Connection,\" listeners are invited to journey with five lifelong friends from Indianapolis.","audiences":["Educators","Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":[],"facets":["Family Engagement","Community & Belonging","Mentorship & Relationships"],"areaRoles":{"community-identity-belonging":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP3.mp3?dest-id=4227653","guid":"367eed30-17b8-483b-a1e6-580cff43423f","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E02":{"catalogId":"TEAK-S04E02","libsynItemId":"33755867","number":"402","season":4,"episode":2,"episodeType":"full","finderEligible":true,"title":"Forever Friends: The Ties That Bind","publishedUtc":"2024-11-03T12:00:00Z","duration":"05:23","centralIssue":"Lifelong friendship, faith, family, and neighborhood community","summary":"Through laughter and reflection, they share what it was like growing up in a neighborhood where faith, family, and friendship were central. From cherished moments at local spots like Joe's Fish Market to the unique experience of walking together to religious classes, each memory paints a vivid picture of the community that shaped them.","audiences":["Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":[],"facets":["Family Engagement","Community & Belonging","Faith & Values"],"areaRoles":{"community-identity-belonging":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP2.mp3?dest-id=4227653","guid":"bdda6af2-b66b-4a56-84bd-7d99e37b1068","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S04E01":{"catalogId":"TEAK-S04E01","libsynItemId":"33638562","number":"401","season":4,"episode":1,"episodeType":"full","finderEligible":true,"title":"Friendship, Family, and the Pursuit of Excellence: The Legacy of School 26","publishedUtc":"2024-10-29T09:37:00Z","duration":"05:57","centralIssue":"Neighborhood schools, Black educators, community, and the pursuit of excellence","summary":"As they reflect on growing up together, they share unforgettable memories and life lessons learned from their families, their community, and their teachers—all within the hallowed halls of their neighborhood school, School 26.","audiences":["Educators","Families","Community / general listeners"],"seriesArc":"Season 4 special bonus series — lifelong friends / School 26","primaryAreaId":"community-identity-belonging","secondaryAreaIds":["teaching-educator-life"],"facets":["Family Engagement","Community & Belonging"],"areaRoles":{"teaching-educator-life":"Context / Story","community-identity-belonging":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pamoja_EP1.mp3?dest-id=4227653","guid":"507c9de5-2050-45a8-99bf-7533b21d1b82","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E16":{"catalogId":"TEAK-S03E16","libsynItemId":"33534187","number":"316","season":3,"episode":16,"episodeType":"bonus","finderEligible":true,"title":"The Future of Education: A Family Perspective","publishedUtc":"2024-10-20T20:07:00Z","duration":"05:31","centralIssue":"The future of education through family, teacher, and technology perspectives","summary":"In this insightful BONUS EPISODE FINALE of The Ed Answer Key, we dive deep into the future of education with a unique perspective from a father-son duo who are both educators.","audiences":["Educators","Families"],"seriesArc":"Season 3 father-son bonus series","primaryAreaId":"school-systems-leadership","secondaryAreaIds":["family-school","teaching-educator-life"],"facets":["Family Engagement","Equity & Access","AI & Technology"],"areaRoles":{"family-school":"Supporting","teaching-educator-life":"Supporting","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_EP6.mp3?dest-id=4227653","guid":"d6714596-5eef-4481-808f-e9c6afd9b34c","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E15":{"catalogId":"TEAK-S03E15","libsynItemId":"33435022","number":"315","season":3,"episode":15,"episodeType":"bonus","finderEligible":true,"title":"The Rewards and Realities of Education","publishedUtc":"2024-10-13T11:20:00Z","duration":"05:58","centralIssue":"The rewards, challenges, relationships, and changing realities of teaching","summary":"In this episode of The Ed Answer Key, we explore the rewards and challenges of being an educator, from the joys of seeing students succeed to the frustrations of navigating a changing educational landscape.","audiences":["New teachers","Educators"],"seriesArc":"Season 3 father-son bonus series","primaryAreaId":"teaching-educator-life","secondaryAreaIds":[],"facets":["AI & Technology","Mentorship & Relationships"],"areaRoles":{"teaching-educator-life":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_EP5.mp3?dest-id=4227653","guid":"76c921e2-3c41-4ffa-8cda-383cc3aa0231","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E14":{"catalogId":"TEAK-S03E14","libsynItemId":"33340857","number":"314","season":3,"episode":14,"episodeType":"bonus","finderEligible":true,"title":"Balancing Act: How Teachers Find Time for Life","publishedUtc":"2024-10-06T12:21:00Z","duration":"06:46","centralIssue":"Teacher workload, time management, relationships, and work-life balance","summary":"In this fourth installment of our bonus series, a father and son, both educators, share their personal experiences and practical advice for balancing teaching careers with personal lives. Highlights: • Time Management Techniques: Learn effective strategies to prioritize tasks, manage workload, and avoid burnout.","audiences":["Educators","Families"],"seriesArc":"Season 3 father-son bonus series","primaryAreaId":"teaching-educator-life","secondaryAreaIds":[],"facets":["Family Engagement","Teacher Collaboration","Mentorship & Relationships","Educator Identity & Sustainability"],"areaRoles":{"teaching-educator-life":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_BONUS_4.mp3?dest-id=4227653","guid":"7a65dff1-8dd3-440f-8966-7fcc546a53a0","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E13":{"catalogId":"TEAK-S03E13","libsynItemId":"33258572","number":"313","season":3,"episode":13,"episodeType":"bonus","finderEligible":true,"title":"Navigating the Education Maze: Public vs. Private School - A Father-Son Duo Weighs In","publishedUtc":"2024-09-30T09:36:00Z","duration":"05:44","centralIssue":"Public versus private schooling from family and educator perspectives","summary":"From teacher retention issues to the social dynamics of private schools, they cover it all. Key takeaways: • Teacher burnout: Discover why educators are leaving the profession due to low pay and limited career growth. • Public vs. private schools: Explore the pros and cons of both systems, including social status differences and diverse experiences.","audiences":["Educators","Families"],"seriesArc":"Season 3 father-son bonus series","primaryAreaId":"family-school","secondaryAreaIds":["school-systems-leadership"],"facets":["Family Engagement","Equity & Access","School Choice","Educator Identity & Sustainability"],"areaRoles":{"family-school":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_Bonus_Ep_3.mp3?dest-id=4227653","guid":"c4f8ac92-20f6-4c63-9aba-ac678fc495fd","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E12":{"catalogId":"TEAK-S03E12","libsynItemId":"33156242","number":"312","season":3,"episode":12,"episodeType":"bonus","finderEligible":true,"title":"50 Years of Teaching: The Changing Face of the Classroom","publishedUtc":"2024-09-22T12:52:00Z","duration":"05:24","centralIssue":"How classrooms, discipline, family dynamics, and technology changed across 50 years","summary":"From the segregated schools of the 1970s to the modern-day challenges of discipline and socioeconomic disparities, this veteran teacher shares his insights on the profound changes in education.","audiences":["Educators","Families"],"seriesArc":"Season 3 father-son bonus series","primaryAreaId":"teaching-educator-life","secondaryAreaIds":["student-support","school-systems-leadership"],"facets":["Family Engagement","Equity & Access","Discipline & Safety","AI & Technology"],"areaRoles":{"student-support":"Context / Story","teaching-educator-life":"Context / Story","school-systems-leadership":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/POPS_STUDIO_Episode_2.mp3?dest-id=4227653","guid":"fa33593b-bdb6-48aa-9a4a-5384d03f4ae3","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E11":{"catalogId":"TEAK-S03E11","libsynItemId":"33058167","number":"311","season":3,"episode":11,"episodeType":"bonus","finderEligible":true,"title":"Why I Became a Teacher: A Heartfelt Story","publishedUtc":"2024-09-15T12:48:00Z","duration":"04:59","centralIssue":"Why people become teachers and the role of mentors and community","summary":"He discusses the influential role models who shaped his path, the importance of community support, and the lifelong lessons he's learned. The episode offers a glimpse into the transformative power of education and the profound impact teachers can have on their students.","audiences":["Educators","Community / general listeners"],"seriesArc":"Season 3 father-son bonus series","primaryAreaId":"teaching-educator-life","secondaryAreaIds":[],"facets":["Community & Belonging","Mentorship & Relationships","Educator Identity & Sustainability"],"areaRoles":{"teaching-educator-life":"Context / Story"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Pops_Bonus_Episode_1.mp3?dest-id=4227653","guid":"8071528b-7f8a-4bb2-b39f-8b12bca830b7","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E10":{"catalogId":"TEAK-S03E10","libsynItemId":"32958172","number":"310","season":3,"episode":10,"episodeType":"full","finderEligible":true,"title":"New Teacher Tips & Bonus Series Intro: Season 3 Finale","publishedUtc":"2024-09-08T12:21:00Z","duration":"03:34","centralIssue":"Practical advice for new teachers entering the profession","summary":"Are you a new teacher looking to make a lasting impact? In this special series, you'll hear a unique conversation between a seasoned teacher and his career-changer son as they share their experiences and advice.","audiences":["New teachers","Educators","Community / general listeners"],"seriesArc":"Standalone conversation","primaryAreaId":"teaching-educator-life","secondaryAreaIds":[],"facets":["Teacher Collaboration","Teacher Growth & PD","Community & Belonging","Educator Identity & Sustainability"],"areaRoles":{"teaching-educator-life":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_310-Pops.mp3?dest-id=4227653","guid":"32e24d2a-148c-4b75-acee-5c0e0d3cbf00","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E09":{"catalogId":"TEAK-S03E09","libsynItemId":"32650897","number":"309","season":3,"episode":9,"episodeType":"full","finderEligible":true,"title":"Co-Planning Magic: Transform Your Classroom with Effective Collaboration","publishedUtc":"2024-09-01T12:21:00Z","duration":"07:41","centralIssue":"Co-planning and collaboration as tools for stronger instruction","summary":"From sharing expertise to building a supportive teaching community, we'll discuss how to make co-planning a cornerstone of your success. Listen as we highlight real-life examples of teachers who have transformed their classrooms through effective collaboration.","audiences":["Paraprofessionals","Educators","Community / general listeners"],"seriesArc":"Standalone conversation","primaryAreaId":"learning-classroom","secondaryAreaIds":["teaching-educator-life"],"facets":["Teacher Collaboration","Community & Belonging","Instruction & Planning"],"areaRoles":{"learning-classroom":"Anchor","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_309.mp3?dest-id=4227653","guid":"e41331f1-737a-4d01-aeec-b5f360d73d38","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E08":{"catalogId":"TEAK-S03E08","libsynItemId":"32634347","number":"308","season":3,"episode":8,"episodeType":"full","finderEligible":true,"title":"Ignite Curiosity in the Classroom - 308","publishedUtc":"2024-08-25T12:21:00Z","duration":"06:52","centralIssue":"Curiosity, anticipatory sets, and student questioning as drivers of learning","summary":"The podcast dives deep into the power of the anticipatory set – that captivating introduction that hooks students from the get-go. By embracing student inquiries, even those seemingly unrelated to the curriculum, you create a dynamic learning environment where students feel valued and engaged.","audiences":["Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"learning-classroom","secondaryAreaIds":[],"facets":["Instruction & Planning","Student Engagement & Motivation"],"areaRoles":{"learning-classroom":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_308.mp3?dest-id=4227653","guid":"5871f564-ca34-4b9c-a1d5-b966ba9f3a44","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E07":{"catalogId":"TEAK-S03E07","libsynItemId":"32471882","number":"307","season":3,"episode":7,"episodeType":"full","finderEligible":true,"title":"Why Having Fun in the Classroom Matters - Episode 307","publishedUtc":"2024-08-18T12:21:00Z","duration":"05:54","centralIssue":"Teacher enjoyment, authenticity, well-being, and student engagement","summary":"Students pick up on this positive energy, leading to a more engaging and effective learning environment. The podcast highlights the importance of: • Teacher well-being: Enjoying your job is essential for long-term satisfaction and preventing burnout.","audiences":["Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"learning-classroom","secondaryAreaIds":["teaching-educator-life"],"facets":["Student Well-Being","Student Engagement & Motivation","Educator Identity & Sustainability"],"areaRoles":{"learning-classroom":"Context / Story","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_307.mp3?dest-id=4227653","guid":"a07862af-3820-4431-8f76-6e66e5c4b655","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E06":{"catalogId":"TEAK-S03E06","libsynItemId":"32439827","number":"306","season":3,"episode":6,"episodeType":"full","finderEligible":true,"title":"The Hidden Struggles of Multilingual Families: Positive Self Concept Part 4 of 4 - Episode 306","publishedUtc":"2024-08-11T12:21:00Z","duration":"05:12","centralIssue":"Multilingual-family advocacy and barriers to navigating school systems","summary":"The episode highlights the disproportionate burden placed on parents of multilingual students to advocate for their children within the school system. It calls for a shift in focus, urging for more support and resources for these students and their families to ensure they receive the education they deserve.","audiences":["Multilingual-learner families & educators","School leaders","Families"],"seriesArc":"Positive Self-Concept series","primaryAreaId":"family-school","secondaryAreaIds":["student-support","school-systems-leadership"],"facets":["Family Engagement","Equity & Access","Multilingual Learning"],"areaRoles":{"family-school":"Situational","student-support":"Situational","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_306.mp3?dest-id=4227653","guid":"a188386d-fe80-4ea8-b2aa-79124de3fb6a","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E05":{"catalogId":"TEAK-S03E05","libsynItemId":"32426087","number":"305","season":3,"episode":5,"episodeType":"full","finderEligible":true,"title":"The Fight for Multilingual Learners: Positive Self Concept Part 3 of 4 - Episode 305","publishedUtc":"2024-08-04T12:21:00Z","duration":"06:15","centralIssue":"Support gaps, differentiation, and accountability for multilingual learners","summary":"This episode of The Ed Answer Key delves deep into the challenges faced by multilingual learners in the classroom. The conversation underscores the importance of teacher training and accountability in addressing the needs of multilingual learners.","audiences":["Multilingual-learner families & educators","Paraprofessionals","School leaders","Educators"],"seriesArc":"Positive Self-Concept series","primaryAreaId":"student-support","secondaryAreaIds":["learning-classroom","school-systems-leadership"],"facets":["Multilingual Learning","Assessment & Testing","Instruction & Planning"],"areaRoles":{"learning-classroom":"Situational","student-support":"Situational","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_305.mp3?dest-id=4227653","guid":"e818208f-c887-4563-83eb-b70b9c87b4d5","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E04":{"catalogId":"TEAK-S03E04","libsynItemId":"32274872","number":"304","season":3,"episode":4,"episodeType":"full","finderEligible":true,"title":"Mistakes and Milestones: Positive Self Concept Part 2 of 4 - Episode 304","publishedUtc":"2024-07-28T12:12:00Z","duration":"06:47","centralIssue":"Teacher vulnerability, mistakes, resilience, differentiation, and inclusive culture","summary":"The importance of collaboration between teachers and paraprofessionals is highlighted, emphasizing the need for a supportive and empowering classroom environment. Ultimately, this episode empowers teachers to create a positive and inclusive classroom culture where students feel valued and supported.","audiences":["Paraprofessionals","Educators"],"seriesArc":"Positive Self-Concept series","primaryAreaId":"learning-classroom","secondaryAreaIds":["student-support","teaching-educator-life"],"facets":["Teacher Collaboration","Teacher Growth & PD","Instruction & Planning","Educator Identity & Sustainability"],"areaRoles":{"learning-classroom":"Situational","student-support":"Supporting","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Episode_304.mp3?dest-id=4227653","guid":"4dd303a0-ec8b-434d-8860-ce86ad3954a4","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E03":{"catalogId":"TEAK-S03E03","libsynItemId":"32220837","number":"303","season":3,"episode":3,"episodeType":"full","finderEligible":true,"title":"Mistakes and Magic, Learning Through Errors: Positive Self Concept Part 1 of 4 - Episode 303","publishedUtc":"2024-07-21T12:12:00Z","duration":"05:28","centralIssue":"Positive self-concept, teacher efficacy, student confidence, and learning from mistakes","summary":"In this episode of The Ed Answer Key, we explore the importance of a positive self-concept for both teachers and students. Discover strategies for creating a safe space for making and learning from mistakes, enhancing both personal growth and educational outcomes.","audiences":["Educators","Families"],"seriesArc":"Positive Self-Concept series","primaryAreaId":"learning-classroom","secondaryAreaIds":["student-support","teaching-educator-life"],"facets":["Student Well-Being","Teacher Collaboration","Teacher Growth & PD"],"areaRoles":{"learning-classroom":"Situational","student-support":"Supporting","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_303.mp3?dest-id=4227653","guid":"833c453c-4f9d-4750-9156-97861793fa88","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E02":{"catalogId":"TEAK-S03E02","libsynItemId":"32026897","number":"302","season":3,"episode":2,"episodeType":"full","finderEligible":true,"title":"Standardized Testing: Friend or Foe? - Episode 302","publishedUtc":"2024-07-14T12:12:00Z","duration":"05:05","centralIssue":"Standardized testing, equity, language barriers, growth, and accountability","summary":"They'll dissect the impact of language barriers, explore equity concerns in education, and delve into the need for objective measures of student progress. Here's what you'll learn: • The frustrations: How language barriers and teaching disparities can disadvantage students on standardized tests.","audiences":["Multilingual-learner families & educators","Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"assessment-accountability","secondaryAreaIds":["student-support","school-systems-leadership"],"facets":["Equity & Access","Multilingual Learning","Assessment & Testing"],"areaRoles":{"student-support":"Supporting","assessment-accountability":"Anchor","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_302.mp3?dest-id=4227653","guid":"7ee65ec5-0c01-451c-85cc-3328a99dc63e","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S03E01":{"catalogId":"TEAK-S03E01","libsynItemId":"32026617","number":"301","season":3,"episode":1,"episodeType":"full","finderEligible":true,"title":"Teachers, Paraprofessionals, and Families: A Conversation About Respect and Understanding - Ep 301","publishedUtc":"2024-07-07T12:12:00Z","duration":"05:16","centralIssue":"Respect, collaboration, paraprofessional roles, and post-COVID educator challenges","summary":"Listen in as we explore: • The respect and appreciation educators truly deserve (and how to achieve it!). • The lingering effects of COVID-19 and how we can move forward, stronger than ever. • The critical role of paraprofessionals and how to build a truly collaborative team.","audiences":["Paraprofessionals","Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"teaching-educator-life","secondaryAreaIds":["learning-classroom","school-systems-leadership"],"facets":["Family Engagement","Equity & Access","Teacher Collaboration","Educator Identity & Sustainability"],"areaRoles":{"learning-classroom":"Supporting","teaching-educator-life":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_301.mp3?dest-id=4227653","guid":"66ba4d4c-8432-42ec-8f35-91b2a352b817","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E14":{"catalogId":"TEAK-S02E14","libsynItemId":"31897747","number":"214","season":2,"episode":14,"episodeType":"full","finderEligible":true,"title":"From Classroom to Kitchen Table: Essential Tips for Teacher-Parent Collaboration","publishedUtc":"2024-06-30T12:21:00Z","duration":"05:35","centralIssue":"Home environment, family-school communication, and teacher-parent collaboration","summary":"Join our experienced educators as they discuss: • The undeniable impact of parental involvement on student motivation, social-emotional well-being, and overall academic achievement. • Real-life examples from teachers who have witnessed the power of a strong home-school connection.","audiences":["New teachers","Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"family-school","secondaryAreaIds":["student-support","teaching-educator-life"],"facets":["Family Engagement","Student Well-Being","Equity & Access","Teacher Collaboration","Student Engagement & Motivation","Mentorship & Relationships"],"areaRoles":{"family-school":"Anchor","student-support":"Supporting","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.14.mp3?dest-id=4227653","guid":"ef9e681b-657c-4778-b3c7-7fb949c8c928","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E13":{"catalogId":"TEAK-S02E13","libsynItemId":"31729767","number":"213","season":2,"episode":13,"episodeType":"full","finderEligible":true,"title":"Communication Breakdown: The Frustration of Mixed Messages in Discipline","publishedUtc":"2024-06-23T12:21:00Z","duration":"05:50","centralIssue":"Discipline policy, administrative transparency, and communication with teachers","summary":"Here's what you'll learn: • The teacher's perspective: Hear a real-life story of a teacher blindsided by an administrative decision regarding discipline. • The importance of transparency: Discover why clear communication between teachers and administrators is crucial for effective discipline.","audiences":["School leaders","Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"school-systems-leadership","secondaryAreaIds":["student-support","teaching-educator-life"],"facets":["Leadership & Policy","Discipline & Safety"],"areaRoles":{"student-support":"Supporting","teaching-educator-life":"Supporting","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.13.mp3?dest-id=4227653","guid":"0f2b3da0-de51-4bbb-ae7e-6666cf2f83e9","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E12":{"catalogId":"TEAK-S02E12","libsynItemId":"31698277","number":"212","season":2,"episode":12,"episodeType":"full","finderEligible":true,"title":"Revolutionizing PD: From Mandates to Meaningful Learning - Effective Professional Development Strategies (Part 2 of 2)","publishedUtc":"2024-06-16T12:12:00Z","duration":"06:39","centralIssue":"Professional development that is relevant, collaborative, and teacher-informed","summary":"The Ed Answer Key wraps up its two-part series on revolutionizing professional development (PD) for teachers, emphasizing its importance for both educators and families. Picture full-day workshops where teachers delve into topics and brainstorm with colleagues across schools.","audiences":["Educators","Families"],"seriesArc":"Effective Professional Development Strategies series","primaryAreaId":"school-systems-leadership","secondaryAreaIds":["teaching-educator-life","learning-classroom"],"facets":["Family Engagement","Teacher Collaboration","Teacher Growth & PD","Educator Identity & Sustainability"],"areaRoles":{"learning-classroom":"Supporting","teaching-educator-life":"Supporting","school-systems-leadership":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.12.mp3?dest-id=4227653","guid":"e292c44d-263f-46fd-bbfa-afc2d5d8ab98","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E11":{"catalogId":"TEAK-S02E11","libsynItemId":"31660422","number":"211","season":2,"episode":11,"episodeType":"full","finderEligible":true,"title":"Breaking the Silence: Why Teachers Should Seek Help - Effective Professional Development Strategies (Part 1 of 2)","publishedUtc":"2024-06-09T12:21:00Z","duration":"06:07","centralIssue":"Continuous professional growth and the importance of educators seeking help","summary":"This is part 1 of a 2-part episode on the Ed Answer Key podcast, where we delve into the world of continuous professional development (PD) for educators and school leaders. By actively seeking PD and support from colleagues and experts, teachers can become more effective, ultimately benefiting students.","audiences":["School leaders","Educators","Families"],"seriesArc":"Effective Professional Development Strategies series","primaryAreaId":"teaching-educator-life","secondaryAreaIds":["school-systems-leadership","learning-classroom"],"facets":["Teacher Collaboration","Teacher Growth & PD","Educator Identity & Sustainability"],"areaRoles":{"learning-classroom":"Supporting","teaching-educator-life":"Anchor","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.11.mp3?dest-id=4227653","guid":"7d0cb478-f367-4238-90cb-3ae66a55f345","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E10":{"catalogId":"TEAK-S02E10","libsynItemId":"31466382","number":"210","season":2,"episode":10,"episodeType":"full","finderEligible":true,"title":"The Balancing Act: Teaching and Leading - Prior Knowledge and Effective Teaching (Part 1 of 2)","publishedUtc":"2024-06-02T12:21:00Z","duration":"06:30","centralIssue":"Teacher leadership, mentorship, peer observation, and instructional coaching","summary":"We'll explore the challenges and rewards of teachers supporting their peers while juggling their own classrooms, and the crucial role of instructional coaches in fostering growth. We'll also examine the impact of excellent teachers transitioning into administrative roles and the importance of nurturing the next generation of educators.","audiences":["School leaders","Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"school-systems-leadership","secondaryAreaIds":["teaching-educator-life","learning-classroom"],"facets":["Teacher Growth & PD","Leadership & Policy","Instruction & Planning","Mentorship & Relationships"],"areaRoles":{"learning-classroom":"Supporting","teaching-educator-life":"Supporting","school-systems-leadership":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.10.mp3?dest-id=4227653","guid":"272b5eba-3f4f-4db1-b67f-7ffb0f3eb04b","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E09":{"catalogId":"TEAK-S02E09","libsynItemId":"31466372","number":"209","season":2,"episode":9,"episodeType":"full","finderEligible":true,"title":"Unlocking Potential: Prior Knowledge and Effective Teaching","publishedUtc":"2024-05-26T12:21:00Z","duration":"06:03","centralIssue":"Prior knowledge, teacher-student relationships, collaboration, and student success","summary":"The conversation expands to explore the need for collaboration among educators, mentorship programs, and systemic support to ensure all students have equal opportunities to thrive. 00:29 Exploring Prior Ability and Intelligence in Education 00:46 The Impact of Teacher-Student Relationships on Learning 02:21 Challenges and Solutions in Educational…","audiences":["School leaders","Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"learning-classroom","secondaryAreaIds":["student-support","teaching-educator-life"],"facets":["Equity & Access","Teacher Collaboration","Teacher Growth & PD","Leadership & Policy","Mentorship & Relationships"],"areaRoles":{"learning-classroom":"Anchor","student-support":"Supporting","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.9.mp3?dest-id=4227653","guid":"c99aeeb2-e3a0-4ced-bb79-a8723c191cec","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E08":{"catalogId":"TEAK-S02E08","libsynItemId":"31223782","number":"208","season":2,"episode":8,"episodeType":"full","finderEligible":true,"title":"Breaking Down Barriers in the Classroom: Navigating Student Emotions (Part 2 of 2)","publishedUtc":"2024-05-19T12:12:00Z","duration":"07:26","centralIssue":"Student emotions, cultural backgrounds, family communication, and trust","summary":"This episode goes beyond language barriers, acknowledging that a student's performance and comfort in school can be impacted by a wide range of factors. By acknowledging the unique experiences each student brings to the classroom, we can create a more supportive and inclusive learning environment.","audiences":["Multilingual-learner families & educators","Educators","Families"],"seriesArc":"Student Emotions series","primaryAreaId":"student-support","secondaryAreaIds":["family-school"],"facets":["Family Engagement","Student Well-Being","Equity & Access","Multilingual Learning"],"areaRoles":{"family-school":"Supporting","student-support":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.8.mp3?dest-id=4227653","guid":"4e240093-7e9c-42ce-9721-c4d3716d8d87","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E07":{"catalogId":"TEAK-S02E07","libsynItemId":"31190042","number":"207","season":2,"episode":7,"episodeType":"full","finderEligible":true,"title":"Decoding the Rollercoaster: Navigating Student Emotions (Part 1 of 2)","publishedUtc":"2024-05-12T12:30:00Z","duration":"06:37","centralIssue":"Middle-school emotions, trauma, behavior, and educator responsibility for well-being","summary":"We'll hear from a veteran teacher who shares their experiences encountering students from diverse backgrounds, each grappling with their own unique struggles – poverty, immigration, family issues, and the ever-present pressure of adolescence.","audiences":["Educators"],"seriesArc":"Student Emotions series","primaryAreaId":"student-support","secondaryAreaIds":["learning-classroom","teaching-educator-life"],"facets":["Family Engagement","Student Well-Being","Equity & Access","Discipline & Safety","Educator Identity & Sustainability","Poverty & Basic Needs","Faith & Values"],"areaRoles":{"learning-classroom":"Supporting","student-support":"Situational","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.7.mp3?dest-id=4227653","guid":"f8c14006-bc04-4129-918a-edb3a6fdd916","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E06":{"catalogId":"TEAK-S02E06","libsynItemId":"30895658","number":"206","season":2,"episode":6,"episodeType":"full","finderEligible":true,"title":"Cracking the Co-Planning Code (Part 4 of 4 on Teacher-Student Dependency)","publishedUtc":"2024-05-05T12:21:00Z","duration":"08:15","centralIssue":"Co-planning across general, special, and multilingual education","summary":"Cracking the Co-Planning Code (Part 4 of 4 on Teacher-Student Dependency) We wrap up our series on Teacher-Student Dependency with a deep dive into the world of co-planning in this episode of The Ed Answer Key.","audiences":["Special-education families & educators","New teachers","Educators"],"seriesArc":"Teacher-Student Dependency series","primaryAreaId":"learning-classroom","secondaryAreaIds":["student-support","teaching-educator-life"],"facets":["Equity & Access","Multilingual Learning","Special Education / IEP & 504","Teacher Collaboration","Instruction & Planning"],"areaRoles":{"learning-classroom":"Situational","student-support":"Supporting","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.6.mp3?dest-id=4227653","guid":"101c50b6-dd17-4e1a-8107-328906961b60","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E05":{"catalogId":"TEAK-S02E05","libsynItemId":"30825358","number":"205","season":2,"episode":5,"episodeType":"full","finderEligible":true,"title":"The Complexities of Classroom Planning (Part 3 of 4 on Teacher-Student Dependency)","publishedUtc":"2024-04-28T12:12:00Z","duration":"06:55","centralIssue":"Teacher autonomy, lesson planning, differentiation, and instructional balance","summary":"The Complexities of Classroom Planning: Striking a Balance (Part 3 of 4 on Teacher-Student Dependency) This week on The Ed Answer Key, we tackle the ever-evolving landscape of classroom planning in part three of our Teacher-Student Dependency series.","audiences":["Educators","Families"],"seriesArc":"Teacher-Student Dependency series","primaryAreaId":"learning-classroom","secondaryAreaIds":["school-systems-leadership","teaching-educator-life"],"facets":["Equity & Access","Teacher Collaboration","Instruction & Planning","Educator Identity & Sustainability"],"areaRoles":{"learning-classroom":"Situational","teaching-educator-life":"Supporting","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.5.mp3?dest-id=4227653","guid":"3215da11-c392-48c9-9832-dae0143cd1e7","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E04":{"catalogId":"TEAK-S02E04","libsynItemId":"30817233","number":"204","season":2,"episode":4,"episodeType":"full","finderEligible":true,"title":"Unpacking Teaching Preparedness (Part 2 of 4 on Teacher-Student Dependency)","publishedUtc":"2024-04-21T12:21:00Z","duration":"06:17","centralIssue":"Teaching preparedness, motivation, planning, and adapting instruction","summary":"The conversation dives into the importance of intrinsic motivation, effective planning, and adapting teaching methods to fit the needs of your students. We'll consider how readily available answers can impact student resilience and ask the tough question: are teacher preparation programs adequately equipping educators with the tools they need to be…","audiences":["Educators"],"seriesArc":"Teacher-Student Dependency series","primaryAreaId":"learning-classroom","secondaryAreaIds":["teaching-educator-life"],"facets":["Instruction & Planning","Student Engagement & Motivation"],"areaRoles":{"learning-classroom":"Situational","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.4.mp3?dest-id=4227653","guid":"34f062fe-dc08-4251-8997-d8b7a30a7a31","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E03":{"catalogId":"TEAK-S02E03","libsynItemId":"30813753","number":"203","season":2,"episode":3,"episodeType":"full","finderEligible":true,"title":"Rethinking Student Independence (Teacher-Student Dependency - Part 1 of 4)","publishedUtc":"2024-04-14T13:07:00Z","duration":"07:19","centralIssue":"Post-COVID teacher dependency and building student independence","summary":"Navigating Post-COVID Classroom Challenges: Teacher-Student Dependency This episode of The Ed Answer Key dives head first into a critical question facing educators in a post-COVID world: are students becoming too reliant on teachers?","audiences":["Educators"],"seriesArc":"Teacher-Student Dependency series","primaryAreaId":"learning-classroom","secondaryAreaIds":["student-support","teaching-educator-life"],"facets":["Teacher Growth & PD","Student Engagement & Motivation"],"areaRoles":{"learning-classroom":"Situational","student-support":"Supporting","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.3.mp3?dest-id=4227653","guid":"05f3c5d8-1dc7-4871-b03e-3ad26dfb5ca3","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E02":{"catalogId":"TEAK-S02E02","libsynItemId":"30728683","number":"202","season":2,"episode":2,"episodeType":"full","finderEligible":true,"title":"The Respect Factor: Teachers in Today's Society","publishedUtc":"2024-04-09T08:51:00Z","duration":"04:06","centralIssue":"Respect for teachers and the changing expectations placed on educators","summary":"The conversation delves into the evolving role of teachers, navigating a world where respect from immediate stakeholders – students, parents, and administrators – may differ from the societal value placed on education as a whole.","audiences":["School leaders","Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"teaching-educator-life","secondaryAreaIds":["school-systems-leadership"],"facets":["Family Engagement","Leadership & Policy","Educator Identity & Sustainability"],"areaRoles":{"teaching-educator-life":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.2c.mp3?dest-id=4227653","guid":"962789d5-e83f-47ac-9847-cbdbcbbc2c42","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S02E01":{"catalogId":"TEAK-S02E01","libsynItemId":"30727843","number":"201","season":2,"episode":1,"episodeType":"full","finderEligible":true,"title":"Empathy and Education: Understanding Poverty","publishedUtc":"2024-04-09T08:38:00Z","duration":"08:01","centralIssue":"Poverty, trauma, basic needs, and empathy in education","summary":"Our guests will share powerful stories of culture shock, the importance of building empathy, and the critical need for teacher training to effectively support students facing poverty. This episode is for you if: • You're an educator who wants to better understand the challenges faced by students in poverty.","audiences":["Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"student-support","secondaryAreaIds":["family-school","teaching-educator-life"],"facets":["Student Well-Being","Equity & Access","Mentorship & Relationships","Poverty & Basic Needs"],"areaRoles":{"family-school":"Supporting","student-support":"Situational","teaching-educator-life":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_2.1.mp3?dest-id=4227653","guid":"25e8319f-4adc-4b05-ac30-7f577d2227f9","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E12":{"catalogId":"TEAK-S01E12","libsynItemId":"30402178","number":"112","season":1,"episode":12,"episodeType":"full","finderEligible":true,"title":"Unpacking Standardized Testing: A Teacher's Perspective","publishedUtc":"2024-03-17T12:10:00Z","duration":"04:40","centralIssue":"Limits of standardized testing and the need to measure student growth over time","summary":"In this episode of the Ed Answer Key podcast, discussions revolve around the limitations and potential of standardized testing in education. The conversation concludes with a motivational quote from Bob Dylan, encapsulating the vision of setting high expectations for students and the necessity of working hard to achieve them.","audiences":["Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"assessment-accountability","secondaryAreaIds":["school-systems-leadership","family-school"],"facets":["Assessment & Testing","Student Engagement & Motivation"],"areaRoles":{"family-school":"Supporting","assessment-accountability":"Supporting","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_12.mp3?dest-id=4227653","guid":"238e8a0b-00a3-4608-8633-968d8899f26f","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E11":{"catalogId":"TEAK-S01E11","libsynItemId":"30215848","number":"111","season":1,"episode":11,"episodeType":"full","finderEligible":true,"title":"Teaching in the Age of AI: Frustrations and Self-Control Struggles","publishedUtc":"2024-03-10T12:49:00Z","duration":"05:48","centralIssue":"AI and technology change alongside post-COVID student self-control","summary":"Navigating Educational Challenges: AI, Technology, and Self-Control In this episode of the Ed Answer Key, educators discuss the impact of technology and AI in the classroom, expressing both frustration with the constant change in educational tools and optimism about AI's potential to aid teaching.","audiences":["Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"learning-classroom","secondaryAreaIds":["school-systems-leadership","student-support"],"facets":["Student Well-Being","Discipline & Safety","AI & Technology"],"areaRoles":{"learning-classroom":"Situational","student-support":"Supporting","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_11.mp3?dest-id=4227653","guid":"1e4b4ee0-32e1-47ac-8ce7-ef06d2261b91","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E10":{"catalogId":"TEAK-S01E10","libsynItemId":"30027328","number":"110","season":1,"episode":10,"episodeType":"full","finderEligible":true,"title":"Navigating Education: From Apathy to Intervention Programs","publishedUtc":"2024-03-03T12:12:00Z","duration":"06:13","centralIssue":"Student apathy, motivation, trauma, ADHD concerns, and intervention supports","summary":"The educators explore the concept of intrinsic motivation, emphasizing the importance of fostering a learning environment where students perceive the value of education. 00:04 Introduction to the Ed Answer Key Podcast 00:29 Discussing Student Apathy and Intrinsic Motivation 01:02 The Impact of Teacher-Student Relationships 01:24 Unexpected Student…","audiences":["Special-education families & educators","Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"student-support","secondaryAreaIds":["learning-classroom","family-school"],"facets":["Student Well-Being","Special Education / IEP & 504","Student Engagement & Motivation","Mentorship & Relationships"],"areaRoles":{"family-school":"Situational","learning-classroom":"Supporting","student-support":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_1.10.mp3?dest-id=4227653","guid":"8cec58ab-1474-4291-b86e-51f6ad3e2534","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E09":{"catalogId":"TEAK-S01E09","libsynItemId":"30007093","number":"109","season":1,"episode":9,"episodeType":"full","finderEligible":true,"title":"Discipline in Schools: Challenges and Strategies","publishedUtc":"2024-02-25T12:16:00Z","duration":"07:09","centralIssue":"School discipline, student behavior, administrative procedures, and relationships","summary":"The podcast contributes to the ongoing discourse surrounding the imperative for a deeper understanding of student behavior, the significance of fostering positive teacher-student relationships, and the need for more effective disciplinary strategies.","audiences":["Special-education families & educators","School leaders","Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"student-support","secondaryAreaIds":["school-systems-leadership","family-school"],"facets":["Special Education / IEP & 504","Leadership & Policy","Discipline & Safety","Mentorship & Relationships"],"areaRoles":{"family-school":"Situational","student-support":"Situational","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/Episode_1.9.mp3?dest-id=4227653","guid":"1c8bac5f-dcea-4457-ab0d-3d1def47b829","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E08":{"catalogId":"TEAK-S01E08","libsynItemId":"29884648","number":"108","season":1,"episode":8,"episodeType":"full","finderEligible":true,"title":"Bridging the Gap: Supporting Students with IEPs and 504s - (Navigating Learning Loss and Special Education Part 3)","publishedUtc":"2024-02-18T12:21:00Z","duration":"06:26","centralIssue":"Implementing IEP/504 supports, transitions, teacher skill, and special-needs services","summary":"In this episode, hosts delve into the intricacies of teaching students with special educational needs. The hosts also address misconceptions about private vs public schools' abilities to support special needs students.","audiences":["Multilingual-learner families & educators","Special-education families & educators","New teachers","Educators"],"seriesArc":"Navigating Learning Loss and Special Education series","primaryAreaId":"student-support","secondaryAreaIds":["family-school","learning-classroom"],"facets":["Special Education / IEP & 504","School Choice","Instruction & Planning"],"areaRoles":{"family-school":"Situational","learning-classroom":"Supporting","student-support":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.8_RevLLPt3.mp3?dest-id=4227653","guid":"f3b142c9-bc0b-4f8a-b96b-b1050d1d690a","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E07":{"catalogId":"TEAK-S01E07","libsynItemId":"29855773","number":"107","season":1,"episode":7,"episodeType":"full","finderEligible":true,"title":"Demystifying IEPs & 504s: Navigating Learning Loss and Special Education - Part 2","publishedUtc":"2024-02-11T12:00:00Z","duration":"06:42","centralIssue":"IEP and 504 fundamentals, accountability, equity, and student support","summary":"The second episode of \"Navigating Learning Loss and Special Education\" delves into the complexities of IEPs and 504 plans. This podcast episode tackles the complex world of IEPs (Individualized Education Plans) and 504s (Section 504 plans), focusing on how they impact vulnerable students' journeys in school.","audiences":["Special-education families & educators"],"seriesArc":"Navigating Learning Loss and Special Education series","primaryAreaId":"student-support","secondaryAreaIds":["family-school","school-systems-leadership"],"facets":["Equity & Access","Special Education / IEP & 504","Assessment & Testing"],"areaRoles":{"family-school":"Situational","student-support":"Anchor","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1-7_RevLLPt2.mp3?dest-id=4227653","guid":"6c088f54-3fd2-4032-8c92-f308e8eecb05","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E06":{"catalogId":"TEAK-S01E06","libsynItemId":"29783633","number":"106","season":1,"episode":6,"episodeType":"full","finderEligible":true,"title":"Navigating Learning Loss and Special Education - Part 1","publishedUtc":"2024-02-04T12:00:00Z","duration":"06:38","centralIssue":"Learning loss, special education, family navigation, and student support","summary":"Throughout this episode, the hosts, some of whom are parents of children with special needs themselves, generously share personal anecdotes about their journeys through the maze of special education.","audiences":["Special-education families & educators","Families"],"seriesArc":"Navigating Learning Loss and Special Education series","primaryAreaId":"student-support","secondaryAreaIds":["family-school","school-systems-leadership"],"facets":["Family Engagement","Multilingual Learning","Special Education / IEP & 504"],"areaRoles":{"family-school":"Situational","student-support":"Situational","school-systems-leadership":"Situational"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.6.1_Reversing_Learning_Loss.mp3?dest-id=4227653","guid":"546f1803-c3dd-4bc1-9742-e4186bf1b8f7","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E05":{"catalogId":"TEAK-S01E05","libsynItemId":"29643343","number":"105","season":1,"episode":5,"episodeType":"full","finderEligible":true,"title":"Teachers, Breaks, and Overtime: The Reality of Summer Vacation","publishedUtc":"2024-01-28T15:33:00Z","duration":"05:21","centralIssue":"Teacher workload and misconceptions about summer vacation and unpaid labor","summary":"They highlight how important it is for everyone to support teachers and students for the best learning experience. So, if you've ever wondered what teachers do during the summer or if they really get a break, this episode is a must-listen for students and families who want to learn more about the world of education!","audiences":["School leaders","Educators","Families"],"seriesArc":"Standalone conversation","primaryAreaId":"teaching-educator-life","secondaryAreaIds":["school-systems-leadership"],"facets":["Family Engagement","Educator Identity & Sustainability"],"areaRoles":{"teaching-educator-life":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_1.5_Summer_Vacation.mp3?dest-id=4227653","guid":"7fbeb6f5-c067-451e-844d-40e0de24fd11","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E04":{"catalogId":"TEAK-S01E04","libsynItemId":"29494143","number":"104","season":1,"episode":4,"episodeType":"full","finderEligible":true,"title":"From Lockdown Drills to Guns: A Teacher's Perspective","publishedUtc":"2024-01-21T16:19:00Z","duration":"05:02","centralIssue":"School safety, guns, lockdowns, shootings, and proposals to arm teachers","summary":"While we maintain a humorous tone, the conversation takes a serious turn as we address the alarming reality of school shootings and the controversial proposal of arming teachers. The discussion extends to the intricacies of the fight or flight response, varying levels of training among individuals, and the consideration of implementing metal detectors…","audiences":["Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"student-support","secondaryAreaIds":["school-systems-leadership","family-school"],"facets":["Discipline & Safety"],"areaRoles":{"family-school":"Situational","student-support":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_1.4_From_Lockdown_Drills_to_Guns.mp3?dest-id=4227653","guid":"b10655f9-3c3d-4e6b-ae74-d63198bd26c9","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E03":{"catalogId":"TEAK-S01E03","libsynItemId":"29330898","number":"103","season":1,"episode":3,"episodeType":"full","finderEligible":true,"title":"Toxic Positivity: Unveiling the Reality of School Climate","publishedUtc":"2024-01-14T09:00:00Z","duration":"07:18","centralIssue":"School climate, toxic positivity, COVID effects, and teacher well-being","summary":"We navigate through the challenges encountered by educators, particularly in the context of the profound impact of COVID-19 on teacher-student relationships. Our collective exploration extends to the crucial role of teacher well-being in shaping a positive school culture.","audiences":["Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"teaching-educator-life","secondaryAreaIds":["school-systems-leadership"],"facets":["Student Well-Being","Mentorship & Relationships","Educator Identity & Sustainability"],"areaRoles":{"teaching-educator-life":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.3_School_Climate_1.mp3?dest-id=4227653","guid":"c7c9e73d-695a-4d63-aac3-dafa38cddc1f","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E02":{"catalogId":"TEAK-S01E02","libsynItemId":"29330713","number":"102","season":1,"episode":2,"episodeType":"full","finderEligible":true,"title":"Balancing Autonomy and Curriculum Constraints in Teaching","publishedUtc":"2024-01-05T09:53:00Z","duration":"07:40","centralIssue":"Teacher autonomy, curriculum constraints, bias, and instructional decision-making","summary":"In this episode, we delve into the intriguing realm of teacher autonomy within the classroom. Throughout the conversation, we explore how teacher autonomy influences student learning and emphasize the significance of acknowledging biases and embracing diverse perspectives in the teaching profession.","audiences":["Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"school-systems-leadership","secondaryAreaIds":["learning-classroom","teaching-educator-life"],"facets":["Equity & Access","Leadership & Policy","Instruction & Planning","Educator Identity & Sustainability"],"areaRoles":{"learning-classroom":"Supporting","teaching-educator-life":"Supporting","school-systems-leadership":"Anchor"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.2_Teacher_Autonomy_1.mp3?dest-id=4227653","guid":"17e85f35-4ad5-4598-9a94-333640aa2256","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01E01":{"catalogId":"TEAK-S01E01","libsynItemId":"29326958","number":"101","season":1,"episode":1,"episodeType":"full","finderEligible":true,"title":"From Glorified Babysitters to Essential Workers: The Evolving Perception of Teachers","publishedUtc":"2024-01-05T09:52:00Z","duration":"05:55","centralIssue":"Public perceptions of teachers, respect, and the complexity of the profession","summary":"In our inaugural episode, we explore whether teachers receive the respect they deserve in contemporary society. Drawing from our diverse perspectives, we shed light on the prevailing perceptions surrounding educators, unraveling the multifaceted challenges they grapple with daily.","audiences":["Educators"],"seriesArc":"Standalone conversation","primaryAreaId":"teaching-educator-life","secondaryAreaIds":["school-systems-leadership"],"facets":["Equity & Access","Educator Identity & Sustainability"],"areaRoles":{"teaching-educator-life":"Situational","school-systems-leadership":"Supporting"},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Ep_1.1_Are_Teachers_Respected_2.mp3?dest-id=4227653","guid":"d805e17d-5d36-4dd0-a713-bb07888cfef1","sourceFeed":"https://feeds.libsyn.com/494513/rss"},"TEAK-S01-TRAILER":{"catalogId":"TEAK-S01-TRAILER","libsynItemId":"28772853","number":"TRAILER","season":1,"episode":null,"episodeType":"trailer","finderEligible":false,"title":"Let the Show Begin!","publishedUtc":"2023-11-27T15:09:00Z","duration":"01:16","centralIssue":"Show introduction, format, audience, and promise of short practical education conversations","summary":"Embark on a unique educational adventure with The Ed Answer Key podcast! It's an adventure that promises excitement, discovery, and practical takeaways for all.","audiences":["Educators","Families","General education audience"],"seriesArc":"Show trailer","primaryAreaId":"","secondaryAreaIds":[],"facets":["Show Orientation"],"areaRoles":{},"audioUrl":"https://dts.podtrac.com/redirect.mp3/traffic.libsyn.com/secure/201b6c0d-d4bc-4b69-ad63-1a78eef6334a/TEAK_Promo_70.mp3?dest-id=4227653","guid":"6c63cceb-30f2-4f7a-a3e4-6a981942ad57","sourceFeed":"https://feeds.libsyn.com/494513/rss"}},"qa":{"status":"pending-rerun","knownFix":"PLAYER-001: clear stale native-player catalog state on close and reload when src is missing.","validationScope":"21 question paths, recommendation promotion, player-state independence, disclosure controls, responsive layout, embedded fallback, and production-data integrity."}}</script>
+<script id="eak-conversation-finder-cf3-js">
+(async () => {
+  const fallbackNode=document.getElementById('eakConversationDataFallback');
+  if(!fallbackNode) return;
+
+  let data;
+  try{ data=JSON.parse(fallbackNode.textContent); }catch(error){ console.error('Conversation Finder fallback data failed to parse.',error); return; }
+
+  if(window.location.protocol!=='file:'){
+    try{
+      const response=await fetch('./conversations.json',{cache:'no-store'});
+      if(response.ok){
+        const external=await response.json();
+        if(external?.schemaVersion && external?.areas?.length) data=external;
+      }
+    }catch(error){
+      console.info('Conversation Finder is using the embedded production-data fallback.');
+    }
+  }
+
+  const areas=data.areas||[];
+  const questions=data.questions||{};
+  const episodes=data.episodes||{};
+
+  const topicsEl=document.getElementById('finderTopics');
+  const questionsEl=document.getElementById('finderQuestions');
+  const resultEl=document.getElementById('finderResult');
+  const stage1=document.getElementById('finderStage1');
+  const stage2=document.getElementById('finderStage2');
+  const stage3=document.getElementById('finderStage3');
+  const topicSummary=document.getElementById('finderTopicSummary');
+  const questionSummary=document.getElementById('finderQuestionSummary');
+  const episodeSummary=document.getElementById('finderEpisodeSummary');
+  const stage1Toggle=document.getElementById('finder-stage-1-label');
+  const stage2Toggle=document.getElementById('finder-stage-2-label');
+  const stage3Toggle=document.getElementById('finder-stage-3-label');
+  const playerShell=document.getElementById('episodePlayerShell');
+  const playerAudio=document.getElementById('episodePlayerAudio');
+  const playerTitle=document.getElementById('episodePlayerTitle');
+  const playerMeta=document.getElementById('episodePlayerMeta');
+  const playerClose=document.getElementById('episodePlayerClose');
+  if(!topicsEl||!questionsEl||!resultEl||!stage1||!stage2||!stage3) return;
+
+  let activeArea=null;
+  let activeQuestion=null;
+  let primaryEpisodeId=null;
+  let activeClusterEpisodeIds=[];
+  const logoSrc=document.querySelector('.site-header .brand-symbol')?.getAttribute('src')||'';
+  const escapeHTML=value=>String(value??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+
+  const setStage=(stage,state)=>{
+    stage.classList.remove('is-active','is-complete','is-available');
+    if(state) stage.classList.add(state);
+    const toggle=stage.querySelector('.finder-stage-toggle');
+    const expanded=state==='is-active';
+    const chevron=stage.querySelector('.finder-stage-chevron');
+    const label=toggle?.querySelector('strong')?.textContent?.trim()||'section';
+    stage.setAttribute('aria-expanded',String(expanded));
+    toggle?.setAttribute('aria-expanded',String(expanded));
+    if(chevron) chevron.textContent=expanded?'−':'+';
+    if(toggle&&!toggle.disabled) toggle.setAttribute('aria-label',`${expanded?'Collapse':'Open'} ${label}`);
+  };
+
+  const scrollStage=stage=>{
+    if(window.matchMedia('(max-width: 820px)').matches){
+      window.setTimeout(()=>stage.scrollIntoView({behavior:'smooth',block:'nearest'}),180);
+    }
+  };
+
+  const collapseFor=target=>{
+    if(target===stage1){
+      setStage(stage1,'is-active');
+      if(activeArea) setStage(stage2,'is-complete'); else setStage(stage2,null);
+      if(activeQuestion) setStage(stage3,'is-complete'); else if(activeArea) setStage(stage3,'is-available'); else setStage(stage3,null);
+    }else if(target===stage2&&activeArea){
+      setStage(stage1,'is-complete');
+      setStage(stage2,'is-active');
+      if(activeQuestion) setStage(stage3,'is-complete'); else setStage(stage3,'is-available');
+    }else if(target===stage3&&activeQuestion){
+      setStage(stage1,'is-complete');
+      setStage(stage2,'is-complete');
+      setStage(stage3,'is-active');
+    }
+  };
+
+  const toggleStage=stage=>{
+    if(stage.classList.contains('is-active')){
+      if(stage===stage1) setStage(stage1,activeArea?'is-complete':'is-available');
+      else if(stage===stage2) setStage(stage2,activeQuestion?'is-complete':'is-available');
+      else if(stage===stage3) setStage(stage3,'is-complete');
+      return;
+    }
+    collapseFor(stage);
+  };
+
+  stage1Toggle?.addEventListener('click',()=>toggleStage(stage1));
+  stage2Toggle?.addEventListener('click',()=>{if(activeArea) toggleStage(stage2);});
+  stage3Toggle?.addEventListener('click',()=>{if(activeQuestion) toggleStage(stage3);});
+
+  setStage(stage1,'is-active');
+  setStage(stage2,null);
+  setStage(stage3,null);
+
+  topicsEl.innerHTML=areas.map(area=>`<button class="finder-topic" type="button" data-topic="${escapeHTML(area.id)}" aria-pressed="false">${escapeHTML(area.label)}</button>`).join('');
+  topicsEl.querySelectorAll('.finder-topic').forEach(btn=>btn.addEventListener('click',()=>selectArea(btn.dataset.topic)));
+
+  function selectArea(id){
+    const next=areas.find(area=>area.id===id)||null;
+    const changed=!activeArea||activeArea.id!==id;
+    activeArea=next;
+    if(changed){
+      activeQuestion=null;
+      primaryEpisodeId=null;
+      activeClusterEpisodeIds=[];
+      questionSummary.textContent='';
+      episodeSummary.textContent='';
+      resultEl.innerHTML='';
+    }
+    topicsEl.querySelectorAll('.finder-topic').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.topic===id)));
+    topicSummary.textContent=activeArea?activeArea.label:'';
+    stage2Toggle.disabled=!activeArea;
+    stage3Toggle.disabled=!activeQuestion;
+    renderQuestions();
+    setStage(stage1,'is-complete');
+    setStage(stage2,'is-active');
+    setStage(stage3,activeQuestion?'is-complete':'is-available');
+    scrollStage(stage2);
+  }
+
+  function renderQuestions(){
+    if(!activeArea){questionsEl.innerHTML='';return;}
+    const areaQuestions=(activeArea.questionIds||[]).map(id=>questions[id]).filter(Boolean).sort((a,b)=>a.displayOrder-b.displayOrder);
+    questionsEl.innerHTML=areaQuestions.map((q,i)=>`<button class="finder-question" type="button" data-index="0${i+1}" data-question-id="${escapeHTML(q.id)}" aria-pressed="${String(activeQuestion?.id===q.id)}">${escapeHTML(q.text)}</button>`).join('');
+    questionsEl.querySelectorAll('.finder-question').forEach(btn=>btn.addEventListener('click',()=>selectQuestion(btn.dataset.questionId)));
+  }
+
+  function selectQuestion(id){
+    const q=questions[id];
+    if(!activeArea||!q||q.areaId!==activeArea.id) return;
+    activeQuestion=q;
+    activeClusterEpisodeIds=[q.startHere,...(q.alsoWorthHearing||[])].filter(cid=>episodes[cid]);
+    primaryEpisodeId=q.startHere;
+    questionsEl.querySelectorAll('.finder-question').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.questionId===id)));
+    questionSummary.textContent=q.text;
+    stage3Toggle.disabled=false;
+    setStage(stage1,'is-complete');
+    setStage(stage2,'is-complete');
+    setStage(stage3,'is-active');
+    renderResult(primaryEpisodeId);
+    scrollStage(stage3);
+  }
+
+  function headlineClass(title){
+    const length=String(title||'').length;
+    if(length>88) return 'is-very-long';
+    if(length>58) return 'is-long';
+    return '';
+  }
+
+  function relatedMarkup(primaryId){
+    const related=activeClusterEpisodeIds.filter(cid=>cid!==primaryId);
+    return {
+      count:related.length,
+      html:related.map(cid=>{
+        const item=episodes[cid];
+        return `<button class="finder-related-card" type="button" data-promote-episode="${escapeHTML(cid)}">
+          <span>Ep. ${escapeHTML(item.number)} · ${escapeHTML(item.duration)}</span>
+          <strong>${escapeHTML(item.title)}</strong>
+          <small>Make this the recommendation</small>
+        </button>`;
+      }).join('')
+    };
+  }
+
+  function renderResult(cid){
+    const episode=episodes[cid];
+    if(!episode) return;
+    primaryEpisodeId=cid;
+    episodeSummary.textContent=`Ep. ${episode.number}`;
+    const related=relatedMarkup(cid);
+    const gridClass=related.count===3?'finder-related-grid is-three':'finder-related-grid';
+    resultEl.innerHTML=`<article class="finder-primary" data-catalog-id="${escapeHTML(cid)}">
+      ${logoSrc?`<img class="finder-primary-watermark" src="${logoSrc}" alt="" aria-hidden="true">`:''}
+      <span class="finder-primary-kicker">Start here</span>
+      <span class="finder-primary-meta">EP. ${escapeHTML(episode.number)} · ${escapeHTML(episode.duration)}</span>
+      <h3 class="${headlineClass(episode.title)}">${escapeHTML(episode.title)}</h3>
+      <p>${escapeHTML(episode.summary)}</p>
+      <div class="finder-primary-actions"><button class="finder-listen" type="button" data-listen-episode="${escapeHTML(cid)}">Listen Now</button></div>
+    </article>
+    <div class="finder-related">
+      <span class="finder-related-label">Also worth hearing</span>
+      <div class="${gridClass}">${related.html}</div>
+    </div>`;
+
+    resultEl.querySelector('[data-listen-episode]')?.addEventListener('click',event=>openFinderPlayer(event.currentTarget.dataset.listenEpisode));
+    resultEl.querySelectorAll('[data-promote-episode]').forEach(btn=>btn.addEventListener('click',()=>{
+      renderResult(btn.dataset.promoteEpisode);
+      resultEl.querySelector('.finder-primary')?.animate(
+        [{transform:'translateY(5px)',opacity:.72},{transform:'translateY(0)',opacity:1}],
+        {duration:260,easing:'cubic-bezier(.2,.8,.2,1)'}
+      );
+    }));
+  }
+
+  function closeFinderPlayer(){
+    playerShell?.classList.remove('is-open');
+    if(playerAudio){
+      playerAudio.pause();
+      playerAudio.removeAttribute('src');
+      delete playerAudio.dataset.catalogId;
+      playerAudio.load();
+    }
+  }
+
+  function openFinderPlayer(cid){
+    const episode=episodes[cid];
+    if(!episode||!episode.audioUrl||!playerShell||!playerAudio||!playerTitle||!playerMeta) return;
+
+    const signatureShell=document.getElementById('signaturePlayerShell');
+    const signatureFrame=document.getElementById('signaturePlayerFrame');
+    const signatureTrigger=document.getElementById('signatureTrigger');
+    signatureShell?.classList.remove('is-open');
+    if(signatureFrame) signatureFrame.src='';
+    signatureTrigger?.setAttribute('aria-expanded','false');
+    if(signatureTrigger) signatureTrigger.textContent='Listen to the signature episode';
+
+    playerTitle.textContent=episode.title;
+    playerMeta.textContent=`Episode ${episode.number} · ${episode.duration} · Listen here without leaving The Ed Answer Key.`;
+
+    if(playerAudio.dataset.catalogId!==cid || !playerAudio.getAttribute('src')){
+      playerAudio.pause();
+      playerAudio.src=episode.audioUrl;
+      playerAudio.dataset.catalogId=cid;
+      playerAudio.load();
+    }
+    playerShell.classList.add('is-open');
+    const playPromise=playerAudio.play();
+    if(playPromise?.catch) playPromise.catch(()=>{});
+    window.setTimeout(()=>playerShell.scrollIntoView({behavior:'smooth',block:'nearest'}),120);
+  }
+
+  playerClose?.addEventListener('click',closeFinderPlayer);
+  window.addEventListener('keydown',event=>{if(event.key==='Escape'&&playerShell?.classList.contains('is-open')) closeFinderPlayer();});
+
+  // If the separate signature listening room opens, stop the Finder player.
+  document.getElementById('signatureTrigger')?.addEventListener('click',()=>{
+    window.requestAnimationFrame(()=>{
+      if(document.getElementById('signaturePlayerShell')?.classList.contains('is-open')) closeFinderPlayer();
+    });
+  });
+})();
+</script>
 </body>
 </html>

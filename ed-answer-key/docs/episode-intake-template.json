@@ -1,0 +1,32 @@
+{
+  "catalogId": "TEAK-S05E01",
+  "publisherMetadata": {
+    "title": "",
+    "publishedUtc": "",
+    "guid": "",
+    "libsynItemId": "",
+    "season": 5,
+    "episode": 1,
+    "episodeType": "full",
+    "duration": "",
+    "audioUrl": "",
+    "description": ""
+  },
+  "enrichment": {
+    "centralIssue": "",
+    "summary": "",
+    "audiences": [],
+    "seriesArc": "",
+    "contentMode": "",
+    "takeaways": [],
+    "evidenceScope": "RSS title + publisher description/content only"
+  },
+  "taxonomy": {
+    "primaryAreaId": "",
+    "secondaryAreaIds": [],
+    "facets": []
+  },
+  "areaRoles": {},
+  "questionMappings": [],
+  "recommendationReview": []
+}

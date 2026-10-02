@@ -1,16 +1,39 @@
-# Ed Answer Key v51.3.9 favicon hard reset
+# The Ed Answer Key — Conversation Finder CF3.1 Release Candidate
 
-This release is based on v51.3.8 and changes only favicon delivery.
+This folder is the GitHub-ready static build for **The Ed Answer Key** Conversation Finder.
 
-Why this fix is necessary:
-- v51.3.8 referenced `favicon.ico`, but that file was missing from the package.
-- Chrome can therefore retain the previous favicon from cache or fall back to another icon.
+## Runtime files
+- `index.html` — complete site and Conversation Finder interface
+- `conversations.json` — production episode, taxonomy, question, and recommendation data
+- `assets/brand-mark.png` — self-contained favicon/touch icon asset
 
-What v51.3.9 changes:
-- Adds a real multi-size `favicon.ico`.
-- Keeps the standard PNG favicon files.
-- Adds uniquely named v5139 favicon files to force a fresh browser request.
-- Updates the HTML to reference those unique filenames.
-- Adds a shortcut-icon declaration for broader browser compatibility.
+## Maintenance
+- `docs/PUBLISHING-WORKFLOW.md` — Episode 57+ editorial and publishing workflow
+- `docs/episode-intake-template.json` — structured intake template for a new episode
+- `scripts/validate-conversations.py` — structural validator for `conversations.json`
 
-No visual page layout or interaction changes were made.
+## Validate before deployment
+From this directory:
+
+```bash
+python scripts/validate-conversations.py conversations.json
+```
+
+Expected result:
+
+```text
+PASS
+areas=7 questions=21 finderEligible=55
+```
+
+## Deployment
+This is a static site. Keep `index.html` and `conversations.json` in the same directory. The Finder loads `./conversations.json` over HTTP/HTTPS and contains an identical embedded fallback for local-file viewing.
+
+If this folder lives inside the SageGap repository as `/ed-answer-key/`, GitHub Pages/Cloudflare can serve it at the corresponding `/ed-answer-key/` path without a framework build step.
+
+## Release state
+Branch/build: `51.3.11-CF3.1-QA-validated`.
+
+`PLAYER-001` from CF3.0 is patched: closing the Finder audio player clears its cached catalog ID, and reopening the same episode reloads its RSS audio source.
+
+The production data has passed structural validation. Treat this commit as the **CF3.1 release candidate** until the final deployed-browser regression pass is completed on the hosted URL.
