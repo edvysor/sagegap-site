@@ -1,14 +1,14 @@
-# SageGap v59 - Header Contact + Compact Contact Section
+# SageGap v61 — Editorial Luxury Contact Success
 
-Baseline: v58, locked everywhere else.
+Baseline: v60, locked everywhere except the successful contact-form state.
 
 Changes:
-- Adds Contact to the desktop primary navigation.
-- Adds Contact SageGap to the mobile menu before consultation / early-access actions.
-- Keeps the inline near-footer contact form and existing Formspree behavior.
-- Compresses the Contact area into one split elevated surface instead of two visually heavy bento boxes.
-- Left column now holds the short introduction, direct hello@sagegap.com fallback, and a quiet privacy warning.
-- Right column holds the form with reduced vertical footprint.
-- Mobile stacks the split surface cleanly.
+- Replaced the UI-style confirmation badge with an editorial success composition.
+- Added the existing SageGap logo as a subtle micro mark/seal.
+- Added the headline: “Thank you for beginning the conversation.”
+- Preserved a clear follow-up expectation without overpromising response timing.
+- Added the distinctive closing line: “Every better handoff begins with a clear first connection.”
+- Preserved hello@sagegap.com as the direct follow-up path.
+- Responsive success-state styling added for mobile.
 
-For GitHub, replace only the root index.html.
+Deploy by replacing only the root `index.html`.
