@@ -1,3 +1,3 @@
-# SageGap v47 Mobile Gap Accordion
+# SageGap v56 – Wellbeing hover copy final fit
 
-Based on v46. Desktop is unchanged. On screens at or below 760px, the four “Gap Between Systems” explanatory cards collapse to title rows with accessible disclosure controls. Only one explanation opens at a time. This reduces vertical scroll while preserving the full content on demand.
+Based on v55. Only the Wellbeing hover sentence was shortened to: “Health, therapy, and development stay connected.” The Whole picture pill and all layout/interaction behavior remain unchanged.

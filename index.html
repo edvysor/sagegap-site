@@ -1166,6 +1166,580 @@
   .gap-card,.gap-detail,.gap-chevron,.gap-chevron::before,.gap-chevron::after{transition:none!important}
 }
 </style>
+
+<style id="sagegap-v48-record-card-typography-refinement">
+/* ============================================================
+   v48 Record-card typographic refinement
+   Keeps the existing card footprint and interaction model.
+   Rebalances typography, icon scale, internal spacing, and hover
+   hierarchy so each card feels composed around its content rather
+   than content dropped into a pre-sized surface.
+   ============================================================ */
+
+/* Desktop / large tablet */
+.record-domain{
+  min-height:214px;
+}
+.domain-rest,.domain-detail{
+  padding:20px 20px 18px;
+}
+.domain-rest{
+  display:grid;
+  grid-template-rows:auto 1fr;
+  gap:14px;
+}
+.domain-rest .record-icon{
+  width:48px;
+  height:48px;
+  border-radius:15px;
+}
+.domain-rest .record-icon svg{
+  width:24px;
+  height:24px;
+}
+.domain-rest>div{
+  align-self:end;
+  padding-bottom:2px;
+}
+.domain-rest b{
+  font-size:clamp(1.16rem,1.18vw,1.38rem);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  margin-bottom:7px;
+  max-width:12ch;
+}
+.domain-rest div>span{
+  font-size:clamp(.86rem,.83vw,.98rem);
+  line-height:1.28;
+  color:rgba(255,255,255,.64);
+  max-width:18ch;
+}
+
+.domain-detail{
+  grid-template-rows:auto 1fr auto;
+  gap:12px;
+  padding:20px;
+  background:
+    radial-gradient(circle at 78% 14%,rgba(255,255,255,.10),transparent 35%),
+    linear-gradient(155deg,rgba(72,162,135,.99),rgba(34,103,82,.99));
+}
+.domain-kicker{
+  font-size:clamp(.68rem,.66vw,.76rem);
+  letter-spacing:.13em;
+  line-height:1.15;
+  color:rgba(255,255,255,.82);
+}
+.domain-detail p{
+  font-size:clamp(.88rem,.86vw,1rem);
+  line-height:1.38;
+  align-self:center;
+  color:#fff;
+  max-width:18ch;
+  text-wrap:pretty;
+}
+.domain-state{
+  font-size:clamp(.64rem,.63vw,.72rem)!important;
+  line-height:1.16;
+  padding:7px 10px;
+  border-color:rgba(255,255,255,.26);
+  background:rgba(255,255,255,.105);
+  width:fit-content;
+}
+.record-domain:hover,.record-domain:focus,.record-domain.is-active{
+  transform:translateY(-3px);
+  border-color:rgba(207,238,227,.32);
+  box-shadow:0 18px 36px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.14);
+}
+
+/* Mid-width desktop/tablet keeps the same visual confidence */
+@media(min-width:761px) and (max-width:1240px){
+  .record-domain{min-height:224px}
+  .domain-rest,.domain-detail{padding:18px}
+  .domain-rest .record-icon{width:46px;height:46px;border-radius:14px}
+  .domain-rest .record-icon svg{width:23px;height:23px}
+  .domain-rest b{font-size:clamp(1.08rem,1.7vw,1.24rem)}
+  .domain-rest div>span{font-size:clamp(.82rem,1.2vw,.92rem)}
+  .domain-detail{gap:10px}
+  .domain-kicker{font-size:.66rem}
+  .domain-detail p{font-size:clamp(.82rem,1.25vw,.94rem);line-height:1.36}
+  .domain-state{font-size:.62rem!important;padding:6px 9px}
+}
+
+/* Mobile carousel: keep the same card size but improve readability. */
+@media(max-width:760px){
+  .record-domain{min-height:198px}
+  .domain-rest,.domain-detail{padding:18px}
+  .domain-rest{gap:12px}
+  .domain-rest .record-icon{width:45px;height:45px;border-radius:14px}
+  .domain-rest .record-icon svg{width:22px;height:22px}
+  .domain-rest b{font-size:1.16rem;max-width:13ch}
+  .domain-rest div>span{font-size:.88rem;max-width:19ch}
+  .domain-kicker{font-size:.66rem}
+  .domain-detail p{font-size:.88rem;line-height:1.36;max-width:19ch}
+  .domain-state{font-size:.62rem!important;padding:6px 9px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .record-domain:hover,.record-domain:focus,.record-domain.is-active{transform:none}
+}
+</style>
+
+
+<style id="sagegap-v49-record-card-family-language">
+/* ============================================================
+   v49 Record-card family-language refinement
+   Equalizes the three default labels and gives hover/reveal copy
+   the warmer Lora editorial voice already used across SageGap.
+   Card dimensions and interaction behavior remain unchanged.
+   ============================================================ */
+
+/* Default state: equal semantic weight, cleaner occupation. */
+.domain-rest{
+  grid-template-rows:auto 1fr;
+  gap:16px;
+}
+.domain-rest>div{
+  align-self:end;
+  padding-bottom:4px;
+}
+.domain-rest b{
+  font-size:clamp(1.28rem,1.34vw,1.52rem)!important;
+  line-height:.98!important;
+  letter-spacing:-.03em!important;
+  max-width:none!important;
+  margin-bottom:8px!important;
+}
+.domain-rest div>span{
+  font-size:clamp(.88rem,.90vw,1.02rem)!important;
+  line-height:1.28!important;
+  max-width:18ch!important;
+}
+
+/* Hover/reveal state: warmer, shorter, more editorial. */
+.domain-detail{
+  grid-template-rows:auto 1fr auto;
+  gap:14px!important;
+  padding:22px 22px 20px!important;
+}
+.domain-kicker{
+  font-size:clamp(.70rem,.72vw,.80rem)!important;
+  letter-spacing:.14em!important;
+  line-height:1.15!important;
+  color:rgba(255,255,255,.86)!important;
+}
+.domain-detail p{
+  font-family:'Lora',Georgia,serif!important;
+  font-size:clamp(1.10rem,1.18vw,1.34rem)!important;
+  line-height:1.30!important;
+  letter-spacing:-.018em!important;
+  color:rgba(255,255,255,.97)!important;
+  max-width:15.5ch!important;
+  align-self:center!important;
+  text-wrap:pretty;
+}
+.domain-state{
+  font-size:clamp(.66rem,.66vw,.74rem)!important;
+  padding:7px 11px!important;
+  line-height:1.15!important;
+}
+
+@media(min-width:761px) and (max-width:1240px){
+  .domain-rest b{font-size:clamp(1.18rem,1.8vw,1.38rem)!important}
+  .domain-rest div>span{font-size:clamp(.84rem,1.25vw,.95rem)!important}
+  .domain-detail{padding:20px!important;gap:12px!important}
+  .domain-kicker{font-size:.68rem!important}
+  .domain-detail p{
+    font-size:clamp(1.00rem,1.48vw,1.18rem)!important;
+    line-height:1.30!important;
+    max-width:15ch!important;
+  }
+}
+
+@media(max-width:760px){
+  .domain-rest b{font-size:1.24rem!important}
+  .domain-rest div>span{font-size:.90rem!important}
+  .domain-detail{padding:19px!important;gap:11px!important}
+  .domain-kicker{font-size:.67rem!important}
+  .domain-detail p{
+    font-size:1.04rem!important;
+    line-height:1.30!important;
+    max-width:16ch!important;
+  }
+  .domain-state{font-size:.63rem!important;padding:6px 9px!important}
+}
+</style>
+
+<style id="sagegap-v50-record-card-alignment-overflow-fix">
+/* ============================================================
+   v50 Record-card alignment + overflow refinement
+   Keeps v49 naming, card geometry, and interaction behavior.
+   Aligns all default title blocks to a common vertical baseline
+   and keeps hover copy comfortably inside the fixed card.
+   ============================================================ */
+
+/* Default state: every title/subtitle block begins on the same line. */
+.domain-rest{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:0!important;
+}
+.domain-rest .record-icon{
+  flex:0 0 auto!important;
+}
+.domain-rest>div{
+  align-self:stretch!important;
+  margin-top:clamp(34px,3.4vw,44px)!important;
+  padding-bottom:0!important;
+}
+.domain-rest b{
+  margin-bottom:8px!important;
+}
+.domain-rest div>span{
+  max-width:17ch!important;
+}
+
+/* Hover/reveal: fixed card footprint, calm editorial occupation. */
+.domain-detail{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  gap:0!important;
+  padding:20px 20px 18px!important;
+  overflow:hidden!important;
+}
+.domain-kicker{
+  flex:0 0 auto!important;
+  margin:0 0 16px!important;
+}
+.domain-detail p{
+  flex:1 1 auto!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0!important;
+  align-self:stretch!important;
+  font-family:'Lora',Georgia,serif!important;
+  font-size:clamp(.98rem,1.04vw,1.16rem)!important;
+  line-height:1.28!important;
+  letter-spacing:-.016em!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+  text-wrap:pretty;
+}
+.domain-state{
+  flex:0 0 auto!important;
+  margin-top:14px!important;
+  max-width:100%!important;
+}
+
+@media(min-width:761px) and (max-width:1240px){
+  .domain-rest>div{margin-top:34px!important}
+  .domain-detail{padding:18px!important}
+  .domain-kicker{margin-bottom:12px!important}
+  .domain-detail p{
+    font-size:clamp(.92rem,1.28vw,1.05rem)!important;
+    line-height:1.27!important;
+  }
+  .domain-state{margin-top:10px!important}
+}
+
+@media(max-width:760px){
+  .domain-rest>div{margin-top:28px!important}
+  .domain-detail{padding:18px!important}
+  .domain-kicker{margin-bottom:12px!important}
+  .domain-detail p{
+    font-size:1rem!important;
+    line-height:1.28!important;
+  }
+  .domain-state{margin-top:10px!important}
+}
+</style>
+
+
+<style id="sagegap-v51-record-card-default-containment-fix">
+/* ============================================================
+   v51 Record-card default containment refinement
+   Keeps v50 naming, dimensions, and hover treatment. Replaces
+   the fixed-margin default layout with a bounded two-row system
+   so titles/subtitles cannot bleed outside the card.
+   ============================================================ */
+.record-domain{
+  overflow:hidden!important;
+  contain:paint;
+}
+.domain-rest{
+  display:grid!important;
+  grid-template-rows:auto minmax(0,1fr)!important;
+  row-gap:20px!important;
+  padding:20px!important;
+  overflow:hidden!important;
+  min-width:0!important;
+  min-height:0!important;
+}
+.domain-rest .record-icon{
+  margin:0!important;
+  flex:none!important;
+}
+.domain-rest>div{
+  margin-top:0!important;
+  padding:0!important;
+  align-self:end!important;
+  min-width:0!important;
+  min-height:0!important;
+  overflow:hidden!important;
+}
+.domain-rest b,
+.domain-rest div>span{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
+.domain-rest b{
+  font-size:clamp(1.22rem,1.28vw,1.46rem)!important;
+  line-height:1!important;
+  margin:0 0 8px!important;
+}
+.domain-rest div>span{
+  font-size:clamp(.84rem,.86vw,.98rem)!important;
+  line-height:1.25!important;
+  text-wrap:balance;
+}
+
+@media(min-width:761px) and (max-width:1240px){
+  .domain-rest{
+    padding:18px!important;
+    row-gap:18px!important;
+  }
+  .domain-rest b{
+    font-size:clamp(1.12rem,1.7vw,1.30rem)!important;
+  }
+  .domain-rest div>span{
+    font-size:clamp(.80rem,1.15vw,.90rem)!important;
+    line-height:1.24!important;
+  }
+}
+
+@media(max-width:760px){
+  .domain-rest{
+    padding:18px!important;
+    row-gap:16px!important;
+  }
+  .domain-rest b{
+    font-size:1.16rem!important;
+  }
+  .domain-rest div>span{
+    font-size:.86rem!important;
+    line-height:1.24!important;
+  }
+}
+</style>
+
+
+<style id="sagegap-v52-record-card-locked-geometry">
+/* ============================================================
+   v52 Record-card locked geometry
+   Final containment/alignment layer for Explore the Record cards.
+   Default state uses identical title/subtitle rows across all cards.
+   Hover state uses kicker/body/status rows inside a fixed footprint.
+   ============================================================ */
+.record-domain{
+  overflow:hidden!important;
+  contain:layout paint!important;
+}
+.domain-rest,.domain-detail{
+  position:absolute!important;
+  inset:0!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  border-radius:inherit!important;
+  min-width:0!important;
+  min-height:0!important;
+}
+
+/* DEFAULT: icon row + one fixed text region shared by all 3 cards. */
+.domain-rest{
+  display:grid!important;
+  grid-template-rows:48px minmax(0,1fr)!important;
+  gap:0!important;
+  padding:20px!important;
+}
+.domain-rest .record-icon{
+  width:48px!important;
+  height:48px!important;
+  margin:0!important;
+  align-self:start!important;
+}
+.domain-rest>div{
+  align-self:end!important;
+  display:grid!important;
+  grid-template-rows:34px 64px!important;
+  height:98px!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  min-width:0!important;
+}
+.domain-rest b{
+  display:flex!important;
+  align-items:flex-start!important;
+  width:100%!important;
+  margin:0!important;
+  font-size:clamp(1.20rem,1.24vw,1.42rem)!important;
+  line-height:1!important;
+  letter-spacing:-.028em!important;
+  white-space:nowrap!important;
+}
+.domain-rest div>span{
+  display:block!important;
+  width:100%!important;
+  margin:0!important;
+  padding-top:4px!important;
+  font-size:clamp(.83rem,.84vw,.96rem)!important;
+  line-height:1.28!important;
+  color:rgba(255,255,255,.64)!important;
+  overflow:hidden!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+  text-wrap:balance!important;
+}
+
+/* HOVER: fixed kicker / body / status rows. Nothing can escape. */
+.domain-detail{
+  display:grid!important;
+  grid-template-rows:28px minmax(0,1fr) 34px!important;
+  align-items:stretch!important;
+  gap:8px!important;
+  padding:18px 20px!important;
+  background:
+    radial-gradient(circle at 78% 14%,rgba(255,255,255,.10),transparent 35%),
+    linear-gradient(155deg,rgba(72,162,135,.99),rgba(34,103,82,.99))!important;
+}
+.domain-kicker{
+  display:flex!important;
+  align-items:flex-start!important;
+  margin:0!important;
+  font-size:clamp(.68rem,.68vw,.76rem)!important;
+  line-height:1.08!important;
+  letter-spacing:.14em!important;
+  overflow:hidden!important;
+}
+.domain-detail p{
+  align-self:center!important;
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  max-height:100%!important;
+  margin:0!important;
+  font-family:'Lora',Georgia,serif!important;
+  font-size:clamp(.96rem,1.0vw,1.12rem)!important;
+  line-height:1.24!important;
+  letter-spacing:-.015em!important;
+  color:rgba(255,255,255,.97)!important;
+  overflow:hidden!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  hyphens:none!important;
+  text-wrap:pretty!important;
+}
+.domain-state{
+  align-self:end!important;
+  justify-self:start!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:7px 10px!important;
+  font-size:clamp(.62rem,.62vw,.70rem)!important;
+  line-height:1.05!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+
+@media(min-width:761px) and (max-width:1240px){
+  .record-domain{height:224px!important;min-height:224px!important;max-height:224px!important}
+  .domain-rest{grid-template-rows:46px minmax(0,1fr)!important;padding:18px!important}
+  .domain-rest .record-icon{width:46px!important;height:46px!important}
+  .domain-rest>div{grid-template-rows:32px 62px!important;height:94px!important}
+  .domain-rest b{font-size:clamp(1.10rem,1.64vw,1.28rem)!important}
+  .domain-rest div>span{font-size:clamp(.80rem,1.08vw,.90rem)!important;line-height:1.25!important}
+  .domain-detail{grid-template-rows:26px minmax(0,1fr) 32px!important;padding:17px 18px!important;gap:7px!important}
+  .domain-detail p{font-size:clamp(.90rem,1.18vw,1.02rem)!important;line-height:1.22!important}
+  .domain-state{font-size:.61rem!important;padding:6px 9px!important}
+}
+
+@media(min-width:1241px){
+  .record-domain{height:214px!important;min-height:214px!important;max-height:214px!important}
+}
+
+@media(max-width:760px){
+  .record-domain{height:198px!important;min-height:198px!important;max-height:198px!important}
+  .domain-rest{grid-template-rows:45px minmax(0,1fr)!important;padding:17px!important}
+  .domain-rest .record-icon{width:45px!important;height:45px!important}
+  .domain-rest>div{grid-template-rows:30px 58px!important;height:88px!important}
+  .domain-rest b{font-size:1.14rem!important}
+  .domain-rest div>span{font-size:.84rem!important;line-height:1.24!important;padding-top:3px!important}
+  .domain-detail{grid-template-rows:25px minmax(0,1fr) 31px!important;padding:16px 17px!important;gap:6px!important}
+  .domain-kicker{font-size:.64rem!important}
+  .domain-detail p{font-size:.93rem!important;line-height:1.22!important}
+  .domain-state{font-size:.59rem!important;padding:6px 8px!important}
+}
+
+@media(max-width:420px){
+  .domain-rest b{font-size:1.08rem!important}
+  .domain-rest div>span{font-size:.81rem!important}
+  .domain-detail p{font-size:.89rem!important;line-height:1.20!important}
+}
+</style>
+
+
+<style id="sagegap-v53-record-card-pill-containment">
+/* ============================================================
+   v53 Explore-the-Record status pill containment
+   Shorter premium status language + intrinsic-width pills that
+   can never exceed the fixed card footprint.
+   ============================================================ */
+.domain-state{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  justify-self:start!important;
+  align-self:end!important;
+  width:max-content!important;
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  padding:7px 11px!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+  font-size:clamp(.61rem,.60vw,.69rem)!important;
+  line-height:1!important;
+  letter-spacing:-.005em!important;
+}
+@media(min-width:761px) and (max-width:1240px){
+  .domain-state{padding:6px 9px!important;font-size:.60rem!important}
+}
+@media(max-width:760px){
+  .domain-state{padding:6px 8px!important;font-size:.58rem!important}
+}
+</style>
+
+
+<style id="sagegap-v54-wellbeing-copy-pill-refinement">
+/* v54: clearer Wellbeing language + centered hover status pills. */
+.domain-state{
+  justify-self:center!important;
+  text-align:center!important;
+}
+</style>
+
 </head>
 <body>
 <div class="announcement">
@@ -1222,16 +1796,16 @@
 <div class="record-explore-label"><span>Explore the record</span><span>Hover, focus, or tap</span></div>
 <div class="record-domain-grid" aria-label="Family record categories">
 <article class="record-domain" tabindex="0">
-<div class="domain-rest"><span class="record-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 5.5c2.7-.8 5.2-.4 8.5 1.5v12c-3.3-1.9-5.8-2.3-8.5-1.5z"/><path d="M20.5 5.5c-2.7-.8-5.2-.4-8.5 1.5v12c3.3-1.9 5.8-2.3 8.5-1.5z"/></svg></span><div><b>Academic</b><span>The learning story</span></div></div>
-<div class="domain-detail"><span class="domain-kicker">Academic</span><p>IEPs, evaluations, goals, progress, and accommodations stay connected across years.</p><span class="domain-state">Connected over time</span></div>
+<div class="domain-rest"><span class="record-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3.5 5.5c2.7-.8 5.2-.4 8.5 1.5v12c-3.3-1.9-5.8-2.3-8.5-1.5z"/><path d="M20.5 5.5c-2.7-.8-5.2-.4-8.5 1.5v12c3.3-1.9 5.8-2.3 8.5-1.5z"/></svg></span><div><b>Learning</b><span>Your child’s learning story</span></div></div>
+<div class="domain-detail"><span class="domain-kicker">Learning</span><p>IEPs, goals, progress, and supports stay connected as your child grows.</p><span class="domain-state">Connected</span></div>
 </article>
 <article class="record-domain" tabindex="0">
-<div class="domain-rest"><span class="record-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.2 5.8a5 5 0 0 0-7.1 0L12 6.9l-1.1-1.1a5 5 0 0 0-7.1 7.1L12 21l8.2-8.1a5 5 0 0 0 0-7.1z"/><path d="M6.8 13h2.3l1.2-2.2 2.1 4.1 1.3-2.4h3.5"/></svg></span><div><b>Health &amp; development</b><span>Support in context</span></div></div>
-<div class="domain-detail"><span class="domain-kicker">Health &amp; development</span><p>Medical forms, therapy notes, developmental supports, and provider context stay close to the learning story.</p><span class="domain-state">Relevant context, together</span></div>
+<div class="domain-rest"><span class="record-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.2 5.8a5 5 0 0 0-7.1 0L12 6.9l-1.1-1.1a5 5 0 0 0-7.1 7.1L12 21l8.2-8.1a5 5 0 0 0 0-7.1z"/><path d="M6.8 13h2.3l1.2-2.2 2.1 4.1 1.3-2.4h3.5"/></svg></span><div><b>Wellbeing</b><span>Health and development, together</span></div></div>
+<div class="domain-detail"><span class="domain-kicker">Wellbeing</span><p>Health, therapy, and development stay connected.</p><span class="domain-state">Whole picture</span></div>
 </article>
 <article class="record-domain" tabindex="0">
-<div class="domain-rest"><span class="record-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8.5 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M2.8 20c.6-4 2.7-6 5.7-6 2.1 0 3.8 1 4.8 3"/><path d="M16.8 13.2l4 1.7v3.2c0 2.2-1.6 3.4-4 4.4-2.4-1-4-2.2-4-4.4v-3.2z"/><path d="m15.2 17.8 1.1 1.1 2.1-2.3"/></svg></span><div><b>People &amp; permissions</b><span>Your circle, your rules</span></div></div>
-<div class="domain-detail"><span class="domain-kicker">People &amp; permissions</span><p>Families decide which educators, specialists, advocates, or caregivers can access each part of the record.</p><span class="domain-state">Family controlled</span></div>
+<div class="domain-rest"><span class="record-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8.5 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M2.8 20c.6-4 2.7-6 5.7-6 2.1 0 3.8 1 4.8 3"/><path d="M16.8 13.2l4 1.7v3.2c0 2.2-1.6 3.4-4 4.4-2.4-1-4-2.2-4-4.4v-3.2z"/><path d="m15.2 17.8 1.1 1.1 2.1-2.3"/></svg></span><div><b>Circle</b><span>Your people, your rules</span></div></div>
+<div class="domain-detail"><span class="domain-kicker">Circle</span><p>Your family decides who can see what, and when.</p><span class="domain-state">Family controlled</span></div>
 </article>
 </div>
 <div class="record-foot" aria-label="What makes the SageGap record different">
