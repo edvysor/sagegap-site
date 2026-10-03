@@ -889,6 +889,283 @@
 }
 </style>
 
+
+
+<style id="sagegap-v46-mobile-story-experience">
+/* ============================================================
+   v46 Mobile family-story experience
+   Desktop/tablet composition remains untouched. On phones the
+   long narrative becomes progressive disclosure and the four
+   outcomes become a horizontal snap sequence.
+   ============================================================ */
+.story-mobile-experience{display:none}
+
+@media (max-width:760px){
+  .family-story{padding-block:54px 62px}
+  .family-story .wrap{width:min(var(--max),calc(100% - 24px))}
+
+  .story-shell{
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+    padding:10px!important;
+    border-radius:30px!important;
+    background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(249,246,240,.82))!important;
+    box-shadow:
+      0 22px 50px rgba(15,37,53,.11),
+      0 8px 18px rgba(15,37,53,.055),
+      inset 0 1px 0 rgba(255,255,255,.96)!important;
+  }
+
+  .story-quote-card{
+    min-height:0!important;
+    padding:30px 24px 26px!important;
+    border-radius:24px!important;
+    display:block!important;
+    box-shadow:
+      0 20px 42px rgba(15,37,53,.22),
+      0 6px 14px rgba(15,37,53,.12),
+      inset 0 1px 0 rgba(255,255,255,.12)!important;
+  }
+  .story-quote-card::after{
+    font-size:9rem!important;
+    right:14px!important;
+    top:-26px!important;
+    color:rgba(255,255,255,.055)!important;
+  }
+  .story-kicker{font-size:.67rem!important;letter-spacing:.13em!important}
+  .story-quote-card .section-title{
+    font-size:clamp(2.25rem,11.5vw,3.2rem)!important;
+    line-height:.98!important;
+    letter-spacing:-.045em!important;
+    margin:18px 0 0!important;
+    max-width:12ch!important;
+  }
+
+  /* Hide the desktop long-form quote; replace with a compact mobile summary. */
+  .story-quote{display:none!important}
+  .story-mobile-experience{display:block;margin-top:28px;position:relative;z-index:2}
+  .story-mobile-pull{
+    margin:0 0 20px!important;
+    max-width:20ch;
+    font-family:'Lora',Georgia,serif;
+    font-size:clamp(1.28rem,6.2vw,1.62rem);
+    line-height:1.34;
+    letter-spacing:-.025em;
+    color:rgba(255,255,255,.92);
+  }
+  .story-mobile-details{
+    border-top:1px solid rgba(255,255,255,.13);
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+  .story-mobile-details summary{
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:15px 0;
+    cursor:pointer;
+    color:#fff;
+    font-size:.88rem;
+    font-weight:700;
+    letter-spacing:.01em;
+  }
+  .story-mobile-details summary::-webkit-details-marker{display:none}
+  .story-mobile-details summary i{
+    width:30px;height:30px;border-radius:999px;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.07);
+    color:#dff3ec;
+    font-style:normal;
+    font-size:1rem;
+    line-height:1;
+    transition:transform .22s ease,background .22s ease;
+  }
+  .story-mobile-details[open] summary i{transform:rotate(45deg);background:rgba(255,255,255,.11)}
+  .story-mobile-full{
+    padding:3px 0 18px;
+    color:rgba(255,255,255,.73);
+    font-size:.91rem;
+    line-height:1.62;
+  }
+  .story-mobile-full p{margin:0 0 13px}
+  .story-mobile-full p:last-child{margin-bottom:0}
+  .story-mobile-full em{color:#dff3ec}.story-mobile-full strong{color:white}
+
+  .story-attribution{
+    margin-top:22px!important;
+    padding-top:0!important;
+    gap:12px!important;
+    font-size:.78rem!important;
+  }
+  .story-attribution b{font-size:.83rem!important;margin-bottom:2px!important}
+  .story-attribution span{font-size:.72rem!important}
+
+  .story-impact{
+    padding:28px 20px 24px!important;
+    border-radius:24px!important;
+    justify-content:flex-start!important;
+    box-shadow:
+      0 18px 38px rgba(15,37,53,.085),
+      0 6px 14px rgba(15,37,53,.05),
+      inset 0 1px 0 #fff!important;
+  }
+  .story-impact .eyebrow{font-size:.67rem!important;letter-spacing:.13em!important}
+  .story-impact h3{
+    font-size:clamp(2rem,9.6vw,2.6rem)!important;
+    line-height:1.00!important;
+    letter-spacing:-.04em!important;
+    margin:14px 0 14px!important;
+    max-width:12ch;
+  }
+  .story-impact>p{
+    font-size:.94rem!important;
+    line-height:1.55!important;
+    margin:0 0 22px!important;
+    max-width:34ch;
+  }
+
+  /* Horizontal outcomes: one deliberate card per swipe instead of a long stack. */
+  .impact-list{
+    display:flex!important;
+    gap:12px!important;
+    overflow-x:auto!important;
+    overscroll-behavior-inline:contain;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    margin:0 -4px!important;
+    padding:4px 4px 14px!important;
+  }
+  .impact-list::-webkit-scrollbar{display:none}
+  .impact-row{
+    flex:0 0 min(82%,300px);
+    min-height:192px;
+    scroll-snap-align:center;
+    display:flex!important;
+    flex-direction:column;
+    gap:17px!important;
+    padding:20px!important;
+    border-radius:22px!important;
+    background:linear-gradient(160deg,#fffefa,#fbf8f2)!important;
+    box-shadow:
+      0 10px 24px rgba(15,37,53,.075),
+      inset 0 1px 0 rgba(255,255,255,.96)!important;
+  }
+  .impact-icon{
+    width:46px!important;height:46px!important;
+    border-radius:15px!important;
+    flex:0 0 46px!important;
+  }
+  .impact-row b{
+    font-size:1.04rem!important;
+    line-height:1.18!important;
+    margin-bottom:8px!important;
+  }
+  .impact-row span{
+    font-size:.88rem!important;
+    line-height:1.52!important;
+  }
+  .story-note{
+    margin:12px 2px 0!important;
+    padding-top:15px;
+    border-top:1px solid rgba(23,56,75,.08);
+    font-size:.72rem!important;
+    line-height:1.52!important;
+  }
+}
+
+@media (max-width:430px){
+  .story-shell{padding:8px!important;border-radius:27px!important}
+  .story-quote-card{padding:26px 21px 23px!important;border-radius:22px!important}
+  .story-impact{padding:25px 18px 21px!important;border-radius:22px!important}
+  .impact-row{flex-basis:86%;min-height:184px;padding:18px!important}
+}
+
+@media (max-width:360px){
+  .story-quote-card .section-title{font-size:2.12rem!important}
+  .story-mobile-pull{font-size:1.22rem}
+  .impact-row{flex-basis:90%}
+}
+</style>
+
+
+<style id="sagegap-v47-mobile-gap-accordion">
+/* ============================================================
+   v47 Mobile Gap Between Systems accordion
+   Desktop keeps the full explanatory cards. Phones retain the
+   four bold titles but progressively disclose supporting copy.
+   ============================================================ */
+.gap-card-body{min-width:0}
+.gap-toggle{
+  appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:0;margin:0;
+  width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+  text-align:left;color:white;font:inherit;cursor:default
+}
+.gap-title{
+  display:block;font-family:'Outfit',sans-serif;color:white;font-weight:700;
+  letter-spacing:-.02em;font-size:1rem;line-height:1.25;margin:0 0 5px
+}
+.gap-chevron{display:none}
+.gap-detail p{color:rgba(255,255,255,.60);font-size:.91rem;margin:0;line-height:1.55}
+
+@media(max-width:760px){
+  .gap-band{padding-block:58px 62px}
+  .gap-cards{gap:10px!important;margin-top:2px}
+  .gap-card{
+    grid-template-columns:44px minmax(0,1fr)!important;
+    gap:12px!important;padding:14px 15px!important;border-radius:20px!important;
+    align-items:center!important;background:rgba(255,255,255,.05)!important;
+    transition:background .24s ease,border-color .24s ease,box-shadow .24s ease
+  }
+  .gap-num{
+    width:44px!important;height:44px!important;border-radius:14px!important;
+    font-size:.84rem!important;align-self:start
+  }
+  .gap-toggle{align-items:center;min-height:44px;cursor:pointer;gap:12px}
+  .gap-title{
+    font-size:.96rem!important;line-height:1.23!important;margin:0!important;
+    letter-spacing:-.018em
+  }
+  .gap-chevron{
+    display:grid;place-items:center;position:relative;flex:0 0 30px;width:30px;height:30px;
+    border-radius:999px;background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.105);
+    transition:background .22s ease,border-color .22s ease
+  }
+  .gap-chevron::before,.gap-chevron::after{
+    content:"";position:absolute;background:rgba(255,255,255,.72);border-radius:99px;
+    transition:transform .22s ease,opacity .22s ease
+  }
+  .gap-chevron::before{width:10px;height:1.5px}
+  .gap-chevron::after{width:1.5px;height:10px}
+  .gap-detail{
+    max-height:0;overflow:hidden;opacity:0;margin-top:0;padding-right:5px;
+    transition:max-height .30s cubic-bezier(.2,.75,.25,1),opacity .20s ease,margin-top .26s ease
+  }
+  .gap-detail p{font-size:.83rem!important;line-height:1.54!important;color:rgba(255,255,255,.62)!important}
+  .gap-card.is-open{
+    align-items:start!important;background:rgba(255,255,255,.075)!important;
+    border-color:rgba(58,140,116,.30)!important;
+    box-shadow:0 13px 28px rgba(3,16,25,.13),inset 0 1px 0 rgba(255,255,255,.04)
+  }
+  .gap-card.is-open .gap-detail{max-height:190px;opacity:1;margin-top:7px;padding-bottom:3px}
+  .gap-card.is-open .gap-chevron{background:rgba(58,140,116,.17);border-color:rgba(58,140,116,.30)}
+  .gap-card.is-open .gap-chevron::after{transform:scaleY(0);opacity:0}
+}
+
+@media(max-width:430px){
+  .gap-band{padding-block:52px 56px}
+  .gap-card{padding:13px 14px!important;border-radius:19px!important}
+  .gap-num{width:42px!important;height:42px!important;border-radius:13px!important}
+  .gap-toggle{min-height:42px}
+  .gap-title{font-size:.92rem!important}
+  .gap-detail p{font-size:.80rem!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .gap-card,.gap-detail,.gap-chevron,.gap-chevron::before,.gap-chevron::after{transition:none!important}
+}
+</style>
 </head>
 <body>
 <div class="announcement">
@@ -982,11 +1259,11 @@
 <p class="section-copy">Schools, providers, therapists, evaluators, and families can each hold valid pieces of a child's story. The failure happens in the handoffs: information gets separated, context disappears, and the family becomes the only bridge.</p>
 <p class="gap-quote">A family crisis should not become an information crisis.</p>
 </div>
-<div class="gap-cards reveal">
-<article class="gap-card"><span class="gap-num">01</span><div><h3>Records live in different places.</h3><p>The school has one file. A provider has another. A therapist has a third. Families are expected to connect what the systems do not.</p></div></article>
-<article class="gap-card"><span class="gap-num">02</span><div><h3>Transitions erase context.</h3><p>A new teacher, building, district, or caregiver can force a child to restart the story instead of continuing it.</p></div></article>
-<article class="gap-card"><span class="gap-num">03</span><div><h3>Meetings move faster than understanding.</h3><p>Families receive dense documents, unfamiliar terms, and consequential decisions on institutional timelines.</p></div></article>
-<article class="gap-card"><span class="gap-num">04</span><div><h3>Advocacy depends on memory.</h3><p>Without a longitudinal record, patterns, promises, and prior supports are easy to miss precisely when they matter most.</p></div></article>
+<div class="gap-cards reveal" data-gap-accordion>
+<article class="gap-card" data-gap-card><span class="gap-num">01</span><div class="gap-card-body"><button class="gap-toggle" type="button" aria-expanded="false" aria-controls="gap-detail-01"><span class="gap-title">Records live in different places.</span><span class="gap-chevron" aria-hidden="true"></span></button><div class="gap-detail" id="gap-detail-01"><p>The school has one file. A provider has another. A therapist has a third. Families are expected to connect what the systems do not.</p></div></div></article>
+<article class="gap-card" data-gap-card><span class="gap-num">02</span><div class="gap-card-body"><button class="gap-toggle" type="button" aria-expanded="false" aria-controls="gap-detail-02"><span class="gap-title">Transitions erase context.</span><span class="gap-chevron" aria-hidden="true"></span></button><div class="gap-detail" id="gap-detail-02"><p>A new teacher, building, district, or caregiver can force a child to restart the story instead of continuing it.</p></div></div></article>
+<article class="gap-card" data-gap-card><span class="gap-num">03</span><div class="gap-card-body"><button class="gap-toggle" type="button" aria-expanded="false" aria-controls="gap-detail-03"><span class="gap-title">Meetings move faster than understanding.</span><span class="gap-chevron" aria-hidden="true"></span></button><div class="gap-detail" id="gap-detail-03"><p>Families receive dense documents, unfamiliar terms, and consequential decisions on institutional timelines.</p></div></div></article>
+<article class="gap-card" data-gap-card><span class="gap-num">04</span><div class="gap-card-body"><button class="gap-toggle" type="button" aria-expanded="false" aria-controls="gap-detail-04"><span class="gap-title">Advocacy depends on memory.</span><span class="gap-chevron" aria-hidden="true"></span></button><div class="gap-detail" id="gap-detail-04"><p>Without a longitudinal record, patterns, promises, and prior supports are easy to miss precisely when they matter most.</p></div></div></article>
 </div>
 </div>
 </section>
@@ -999,6 +1276,16 @@
 <span class="story-kicker">A real family moment</span>
 <h2 class="section-title" id="family-story-title" style="color:white;margin-top:18px;max-width:720px">The information existed. Access did not.</h2>
 <p class="story-quote">“When their mom was out of town, I needed medical paperwork and school information for our children. I knew the information existed, but I just couldn’t get to all of it quickly. Pieces lived in different portals, folders, messages, and with different people. <em>Meanwhile, the school and doctor still needed answers.</em> Having <strong>one family-controlled place for the current, verified records</strong> would have turned a stressful search into a simple handoff.”</p>
+<div class="story-mobile-experience" aria-label="Real family story summary">
+  <p class="story-mobile-pull">“The information existed, but I couldn’t get to all of it quickly.”</p>
+  <details class="story-mobile-details">
+    <summary><span>Read the full story</span><i aria-hidden="true">+</i></summary>
+    <div class="story-mobile-full">
+      <p>When their mom was out of town, I needed medical paperwork and school information for our children. I knew the information existed, but I just couldn’t get to all of it quickly. Pieces lived in different portals, folders, messages, and with different people.</p>
+      <p><em>Meanwhile, the school and doctor still needed answers.</em> Having <strong>one family-controlled place for the current, verified records</strong> would have turned a stressful search into a simple handoff.</p>
+    </div>
+  </details>
+</div>
 </div>
 <div class="story-attribution"><i></i><div><b>A dad of two school-age children</b><span>One of the real-life moments behind SageGap</span></div></div>
 </article>
@@ -1126,6 +1413,43 @@
     }
     enableProgressiveReveal('.record-domain');
     enableProgressiveReveal('.aud-card');
+
+    // Mobile Gap Between Systems accordion: one explanation at a time.
+    const gapAccordionMedia=window.matchMedia('(max-width:760px)');
+    const gapCards=[...document.querySelectorAll('[data-gap-card]')];
+    function syncGapAccordion(){
+      const mobile=gapAccordionMedia.matches;
+      gapCards.forEach(card=>{
+        const button=card.querySelector('.gap-toggle');
+        if(!button)return;
+        if(mobile){
+          card.classList.remove('is-open');
+          button.setAttribute('aria-expanded','false');
+          button.tabIndex=0;
+        }else{
+          card.classList.remove('is-open');
+          button.setAttribute('aria-expanded','true');
+          button.tabIndex=-1;
+        }
+      });
+    }
+    gapCards.forEach(card=>{
+      const button=card.querySelector('.gap-toggle');
+      button?.addEventListener('click',()=>{
+        if(!gapAccordionMedia.matches)return;
+        const willOpen=!card.classList.contains('is-open');
+        gapCards.forEach(other=>{
+          other.classList.remove('is-open');
+          other.querySelector('.gap-toggle')?.setAttribute('aria-expanded','false');
+        });
+        if(willOpen){
+          card.classList.add('is-open');
+          button.setAttribute('aria-expanded','true');
+        }
+      });
+    });
+    gapAccordionMedia.addEventListener?.('change',syncGapAccordion);
+    syncGapAccordion();
 
     function openModal(id,focusId){document.getElementById(id)?.classList.add('open');document.body.style.overflow='hidden';setTimeout(()=>document.getElementById(focusId)?.focus(),120)}
     function closeModal(id){document.getElementById(id)?.classList.remove('open');document.body.style.overflow=''}
