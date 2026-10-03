@@ -24,3 +24,6 @@ The lookup uses JSONP so it works from a static GitHub Pages deployment without 
 
 ## Rendering note
 Apple may block or partially render its iframe inside sandboxed preview environments. The authoritative visual test is the GitHub/Cloudflare-hosted page, where the Signature Listening Room already demonstrates the same embed pattern successfully.
+
+## CF3.3.1 patch
+The **SageGap** link in the footer opens SageGap in a separate tab so active listening on The Ed Answer Key is not replaced. The SageGap link in the site header remains same-tab navigation.

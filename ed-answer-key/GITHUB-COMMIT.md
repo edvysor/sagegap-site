@@ -1,16 +1,11 @@
-# GitHub commit
+# Suggested GitHub commit
 
-Suggested branch:
-`ed-answer-key/cf3.3-apple-native-player`
-
-Suggested commit:
+Branch: `ed-answer-key/cf3.3.1-footer-link`
 
 ```text
-feat(ed-answer-key): align Conversation Finder with Apple Podcasts player
+fix(ed-answer-key): open footer SageGap link in new tab
 
-- replace custom Finder audio card with Apple Podcasts embed
-- resolve episodes from canonical RSS GUIDs
-- add title/search fallback and session cache
-- inherit live podcast artwork and Apple playback UI
-- preserve independent Finder and player state
+- keep header SageGap navigation unchanged
+- open footer SageGap destination in a separate tab
+- add noopener/noreferrer protection
 ```

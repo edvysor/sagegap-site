@@ -1,24 +1,9 @@
 {
-  "branch": "51.3.11-CF3.3-apple-native-player",
-  "stage": 8,
-  "baseline": "51.3.11-CF3.2-branded-player",
-  "player": {
-    "finder": "Apple Podcasts episode iframe",
-    "signature": "Apple Podcasts episode iframe",
-    "resolution": "RSS GUID \u2192 Apple episodeGuid; title/search fallback"
-  },
-  "counts": {
-    "rssItems": 56,
-    "finderEligibleEpisodes": 55,
-    "areas": 7,
-    "visibleQuestions": 21,
-    "recommendationClusters": 21
-  },
-  "knownAppleEpisodeIds": {
-    "TEAK-S04E09": "1000681299090",
-    "TEAK-S04E10": "1000682022301",
-    "TEAK-S04E11": "1000682739753",
-    "TEAK-S04E12": "1000683657197",
-    "TEAK-S04E13": "1000684696059"
-  }
+  "branch": "51.3.11-CF3.3.1-footer-link",
+  "base": "51.3.11-CF3.3-apple-native-player",
+  "change": "Footer SageGap link opens in new tab only.",
+  "headerSageGapUnchanged": true,
+  "footerSageGapTarget": "_blank",
+  "footerSageGapRel": "noopener noreferrer",
+  "indexSha256": "5fd8b822661db424f696c4723fe24c935c2e7e2024ebe2e971baa6defc797803"
 }

@@ -7,3 +7,8 @@
 - Added known Apple IDs for Episodes 409–413 for immediate resolution of the newest catalog entries.
 - Removed the duplicated local editorial player artwork from the runtime package.
 - Preserved Finder/player state independence and CF3.1 close/reopen behavior.
+
+## CF3.3.1 — Footer SageGap new-tab behavior
+- Footer **SageGap** link now opens in a new browser tab.
+- Added `rel="noopener noreferrer"` for safe external-tab behavior.
+- Header SageGap link and all other navigation behavior remain unchanged.
