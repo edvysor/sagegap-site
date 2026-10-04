@@ -1,6 +1,6 @@
-# The Ed Answer Key — CF3.4.2 Contact Alias
+# The Ed Answer Key — CF3.4.3 Contact Alias
 
-Branch: `51.3.11-CF3.4.2-contact-alias`
+Branch: `51.3.11-CF3.4.3-contact-alias`
 
 This patch builds on CF3.4.1 and changes only the public footer contact identity.
 
@@ -21,3 +21,7 @@ The mixed-case display is for readability and branding. Email routing remains ca
 ## Before publishing
 
 Create or verify the `edanswerkey@sagegap.com` alias with the email provider that hosts `sagegap.com`, route it to the intended mailbox, then test inbound mail and reply behavior. See `docs/EMAIL-ALIAS-SETUP.md`.
+
+
+## CF3.4.3 contact delivery
+The footer email now progressively enhances into a branded on-site contact form using the existing SageGap Formspree endpoint. Direct `mailto:` remains available as a fallback. See `docs/CONTACT-FORM-SETUP.md`.

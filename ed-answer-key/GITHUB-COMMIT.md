@@ -1,15 +1,9 @@
-# GitHub commit
+# GitHub Commit
 
 Suggested branch:
-
-```text
-ed-answer-key/cf3.4.2-contact-alias
-```
+`ed-answer-key/cf3.4.3-contact-form`
 
 Suggested commit:
+`fix(ed-answer-key): add reliable website contact submission flow`
 
-```text
-fix(ed-answer-key): add branded podcast contact alias
-```
-
-Deploy the contents of this directory over the existing `/ed-answer-key/` directory after the mailbox alias is configured and tested.
+Replace the existing `/ed-answer-key/` contents with this package, review the diff, deploy, then run the live contact test in `docs/CONTACT-FORM-SETUP.md`.

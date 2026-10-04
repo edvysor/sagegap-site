@@ -1,19 +1,20 @@
 {
-  "branch": "51.3.11-CF3.4.2-contact-alias",
-  "status": "static-pass",
+  "branch": "51.3.11-CF3.4.3-contact-form",
   "checks": {
-    "legacyBroadSpanSelectorAbsent": true,
-    "activeBroadSpanSelectorAbsent": true,
-    "numberScopedSelectorPresent": true,
-    "defensiveCopyResetPresent": true,
-    "questions": 21,
-    "areas": 7,
-    "finderEligible": 55,
-    "appleIframePresent": true,
-    "footerSageGapNewTab": true
+    "branch": true,
+    "footer_trigger": true,
+    "modal": true,
+    "form": true,
+    "formspree": true,
+    "form_type": true,
+    "mailto_fallback": true,
+    "success_state": true,
+    "error_state": true,
+    "apple_embed_preserved": true,
+    "finder_data_preserved": true,
+    "footer_sagegap_newtab": true,
+    "javascript_syntax": true
   },
-  "footerContactDisplay": "EdAnswerKey@sagegap.com",
-  "footerContactMailto": "edanswerkey@sagegap.com",
-  "oldFooterContactOccurrences": 0,
-  "newFooterContactOccurrences": 1
+  "javascriptErrors": [],
+  "allPassed": true
 }

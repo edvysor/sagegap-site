@@ -1,5 +1,15 @@
 # Changelog
 
+## CF3.4.3 — Website Contact Form
+- Converts the footer Ed Answer Key email interaction into a real on-site contact form.
+- Reuses the existing SageGap Formspree endpoint already delivering to `david@sagegap.com`.
+- Adds source/form-type metadata so Ed Answer Key submissions can be filtered separately in Gmail.
+- Keeps `EdAnswerKey@sagegap.com` visible and preserves a `mailto:` fallback.
+- Adds success, loading, error, outside-click, Escape-key, and mobile dialog states.
+- Preserves CF3.4.1 guided navigation, Apple-native player behavior, recommendation data, and footer SageGap new-tab behavior.
+
+# Changelog
+
 ## 51.3.11-CF3.4.2-contact-alias
 
 - Replaced the Ed Answer Key footer contact `hello@sagegap.com` with `EdAnswerKey@sagegap.com`.
