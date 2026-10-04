@@ -1,37 +1,38 @@
-# Ed Answer Key Website Contact Form — CF3.4.3
+# Ed Answer Key Contact Form — Production Verification
 
-## Runtime behavior
-The footer continues to display `EdAnswerKey@sagegap.com`. With JavaScript enabled, clicking it opens the branded on-site contact dialog. If JavaScript fails, the original `mailto:` fallback still opens the visitor's mail application.
+Dedicated Formspree endpoint:
+`https://formspree.io/f/xkjowkav`
 
-## Delivery
-The form posts to the existing, proven SageGap Formspree endpoint:
+Dedicated form:
+**Ed Answer Key Contact**
 
-`https://formspree.io/f/xdabadpk`
+Notification destination:
+**david@sagegap.com**
 
-The current Formspree destination is `david@sagegap.com`, so website submissions reach the same Google Workspace inbox without creating another paid mailbox. Each Ed Answer Key submission carries:
+## Gmail filter
 
-- `form_type = Ed Answer Key Contact`
-- `_subject = Ed Answer Key Website Contact`
-- `source = Ed Answer Key website footer`
-- the visitor's name, email, selected topic, message, and page URL
+From:
+`noreply@formspree.io`
 
-## Gmail visual labeling
-Because Formspree sends the notification to `david@sagegap.com` rather than directly to the alias, the existing Gmail filter `to:edanswerkey@sagegap.com` will not label these website-form notifications. Add a second filter for website submissions:
+Has the words:
+`"Ed Answer Key Contact"`
 
-`from:noreply@formspree.io "Ed Answer Key Contact"`
+Action:
+Apply the red **Ed Answer Key** label.
 
-Apply the **Ed Answer Key** label and keep the message in the Inbox. This preserves the red visual channel for both direct alias mail and website-form mail.
+## Live verification after deployment
 
-## Reply identity
-A Formspree notification is addressed to `david@sagegap.com`, so Gmail may default the reply's From address to David. Before sending a reply to a website submission, choose **The Ed Answer Key <edanswerkey@sagegap.com>** from Gmail's From selector.
+1. Open the live Ed Answer Key site.
+2. Click **EdAnswerKey@sagegap.com** in the footer.
+3. Submit:
+   - Name: Website QA
+   - Email: an outside address you control
+   - Topic: General inquiry
+   - Message: CF3.4.4 production contact test
+4. Confirm the site displays **Message sent.**
+5. In Formspree, open **Ed Answer Key Contact → Submissions** and confirm the entry appears.
+6. Confirm the Formspree notification reaches `david@sagegap.com`.
+7. Confirm Gmail applies the red **Ed Answer Key** label.
+8. Reply and confirm the From identity is **The Ed Answer Key <edanswerkey@sagegap.com>**.
 
-For fully automatic alias-aware replies in the future, create a dedicated Formspree form whose destination is `edanswerkey@sagegap.com`, then replace the action URL in `index.html`. The current build works immediately using the existing endpoint.
-
-## Verification
-1. Deploy the build to GitHub.
-2. Click `EdAnswerKey@sagegap.com` in the footer.
-3. Submit a test message.
-4. Confirm the success state appears without leaving the page.
-5. Confirm a Formspree notification arrives at `david@sagegap.com`.
-6. Confirm the Gmail Ed Answer Key label is applied after the filter above is created.
-7. Reply using the Ed Answer Key From identity.
+If the site reports an error, open the browser developer console. CF3.4.4 logs Formspree's response status/provider payload for diagnosis while keeping the listener-facing message simple.

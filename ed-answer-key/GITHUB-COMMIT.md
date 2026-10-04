@@ -1,9 +1,9 @@
-# GitHub Commit
+# Suggested GitHub commit
 
-Suggested branch:
-`ed-answer-key/cf3.4.3-contact-form`
+Branch:
+`ed-answer-key/cf3.4.4-dedicated-contact-endpoint`
 
-Suggested commit:
-`fix(ed-answer-key): add reliable website contact submission flow`
+Commit:
+`fix(ed-answer-key): route contact form through dedicated Formspree endpoint`
 
-Replace the existing `/ed-answer-key/` contents with this package, review the diff, deploy, then run the live contact test in `docs/CONTACT-FORM-SETUP.md`.
+After deployment, submit one live-site test and confirm the entire delivery chain.

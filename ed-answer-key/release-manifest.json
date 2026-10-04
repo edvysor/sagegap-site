@@ -1,35 +1,12 @@
 {
-  "branch": "51.3.11-CF3.4.3-contact-form",
-  "baseline": "51.3.11-CF3.4-guided-mobile-nav",
-  "purpose": "Correct CF3.4 Conversation Finder step-header overlap without changing content architecture or recommendations",
-  "counts": {
-    "rssItems": 56,
-    "finderEligibleEpisodes": 55,
-    "areas": 7,
-    "visibleQuestions": 21,
-    "recommendationClusters": 21
-  },
-  "fixes": [
-    {
-      "id": "LAYOUT-001",
-      "issue": "Legacy .finder-stage-label span selector styled the CF3.4 copy wrapper as a 28x28 circular badge, causing text overlap.",
-      "fix": "Scope legacy badge selectors to .finder-stage-number and reset .finder-stage-copy."
-    }
-  ],
-  "taxonomyChanged": false,
-  "recommendationClustersChanged": false,
-  "appleNativePlayerPreserved": true,
-  "footerSageGapNewTabPreserved": true,
-  "change": "Footer contact changed to EdAnswerKey@sagegap.com (mailto: edanswerkey@sagegap.com).",
-  "contact": {
-    "display": "EdAnswerKey@sagegap.com",
-    "mailtoFallback": "mailto:edanswerkey@sagegap.com",
-    "formEndpoint": "https://formspree.io/f/xdabadpk",
-    "formType": "Ed Answer Key Contact",
-    "currentDestination": "david@sagegap.com",
-    "progressiveEnhancement": true
-  },
-  "releaseType": "contact-delivery-patch",
-  "htmlSha256": "82519a016b1c285f28fd1a706636f8d30da27cc3922698c7b2489952793dc6b8",
-  "conversationsSha256": "21ba31274fcdfb87fa34d47637f10b10fce1bbfc9771760214f1cff458f7aec9"
+  "branch": "51.3.11-CF3.4.4-dedicated-contact-endpoint",
+  "contact_form": {
+    "provider": "Formspree",
+    "form_name": "Ed Answer Key Contact",
+    "endpoint": "https://formspree.io/f/xkjowkav",
+    "notification_destination": "david@sagegap.com",
+    "public_identity": "edanswerkey@sagegap.com",
+    "form_type": "Ed Answer Key Contact",
+    "subject": "Ed Answer Key Contact \u2014 Website message"
+  }
 }

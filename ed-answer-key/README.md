@@ -1,27 +1,39 @@
-# The Ed Answer Key — CF3.4.3 Contact Alias
+# The Ed Answer Key — CF3.4.4 Dedicated Contact Endpoint
 
-Branch: `51.3.11-CF3.4.3-contact-alias`
+This release keeps the Conversation Finder, Apple-native listening experience, guided mobile navigation,
+footer SageGap new-tab behavior, and Ed Answer Key email identity intact.
 
-This patch builds on CF3.4.1 and changes only the public footer contact identity.
+## Contact reliability change
 
-## Footer contact
+The footer contact form now posts to the dedicated Formspree form:
 
-Displayed address: **EdAnswerKey@sagegap.com**  
-Mail target: `mailto:edanswerkey@sagegap.com`
+`https://formspree.io/f/xkjowkav`
 
-The mixed-case display is for readability and branding. Email routing remains case-insensitive in normal mail systems.
+Form name: **Ed Answer Key Contact**
 
-## Preserved behavior
+Operational notification inbox: **david@sagegap.com**
 
-- Header and footer navigation behavior remains unchanged.
-- Footer SageGap link still opens in a new tab.
-- Apple-native Conversation Finder player remains unchanged.
-- Seven Finder areas, 21 guided choices, and recommendation clusters remain unchanged.
+Public reply identity: **The Ed Answer Key <edanswerkey@sagegap.com>**
 
-## Before publishing
+## Reliability refinements
 
-Create or verify the `edanswerkey@sagegap.com` alias with the email provider that hosts `sagegap.com`, route it to the intended mailbox, then test inbound mail and reply behavior. See `docs/EMAIL-ALIAS-SETUP.md`.
+- Dedicated Ed Answer Key Formspree endpoint; no longer shares the Teacher Copilot endpoint.
+- Removed the custom `_gotcha` honeypot so there is no silent-discard path from that field.
+- Uses Formspree's current `subject` field.
+- Keeps `form_type=Ed Answer Key Contact` for Gmail filtering.
+- Shows success only after a successful Formspree HTTP response.
+- Logs Formspree HTTP/provider details to the browser console if submission fails.
+- Keeps a visible `mailto:edanswerkey@sagegap.com` fallback.
 
+## Gmail filter
 
-## CF3.4.3 contact delivery
-The footer email now progressively enhances into a branded on-site contact form using the existing SageGap Formspree endpoint. Direct `mailto:` remains available as a fallback. See `docs/CONTACT-FORM-SETUP.md`.
+From:
+`noreply@formspree.io`
+
+Has the words:
+`"Ed Answer Key Contact"`
+
+Apply label:
+**Ed Answer Key**
+
+Do not skip the inbox.
