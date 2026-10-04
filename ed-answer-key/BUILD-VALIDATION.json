@@ -1,5 +1,5 @@
 {
-  "branch": "51.3.11-CF3.4.1-layout-fix",
+  "branch": "51.3.11-CF3.4.2-contact-alias",
   "status": "static-pass",
   "checks": {
     "legacyBroadSpanSelectorAbsent": true,
@@ -11,5 +11,9 @@
     "finderEligible": 55,
     "appleIframePresent": true,
     "footerSageGapNewTab": true
-  }
+  },
+  "footerContactDisplay": "EdAnswerKey@sagegap.com",
+  "footerContactMailto": "edanswerkey@sagegap.com",
+  "oldFooterContactOccurrences": 0,
+  "newFooterContactOccurrences": 1
 }

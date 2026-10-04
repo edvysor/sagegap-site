@@ -1,0 +1,14 @@
+{
+  "branch": "51.3.11-CF3.4.2-contact-alias",
+  "checks": {
+    "footer_contact_display": true,
+    "footer_mailto": true,
+    "old_footer_mailto_removed": true,
+    "conversation_validator_passed": true
+  },
+  "validator": {
+    "returncode": 0,
+    "stdout": "PASS\nareas=7 questions=21 finderEligible=55",
+    "stderr": ""
+  }
+}

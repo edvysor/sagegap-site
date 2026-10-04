@@ -1,5 +1,5 @@
 {
-  "branch": "51.3.11-CF3.4.1-layout-fix",
+  "branch": "51.3.11-CF3.4.2-contact-alias",
   "baseline": "51.3.11-CF3.4-guided-mobile-nav",
   "purpose": "Correct CF3.4 Conversation Finder step-header overlap without changing content architecture or recommendations",
   "counts": {
@@ -19,5 +19,11 @@
   "taxonomyChanged": false,
   "recommendationClustersChanged": false,
   "appleNativePlayerPreserved": true,
-  "footerSageGapNewTabPreserved": true
+  "footerSageGapNewTabPreserved": true,
+  "change": "Footer contact changed to EdAnswerKey@sagegap.com (mailto: edanswerkey@sagegap.com).",
+  "contact": {
+    "display": "EdAnswerKey@sagegap.com",
+    "mailto": "edanswerkey@sagegap.com",
+    "scope": "footer only"
+  }
 }

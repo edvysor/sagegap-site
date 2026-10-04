@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "branch": "51.3.11-CF3.4.1-layout-fix",
+  "branch": "51.3.11-CF3.4.2-contact-alias",
   "stage": 8,
   "generatedFromStages": [
     1,
@@ -2581,6 +2581,7 @@
     "canonicalQuestionPreserved": true,
     "navigationModel": "Choose a topic → choose what sounds closest → Start Here",
     "completedStepControl": "Change",
-    "layoutFix": "Legacy stage-header badge CSS now targets only .finder-stage-number; copy wrapper is protected from inherited circle sizing."
+    "layoutFix": "Legacy stage-header badge CSS now targets only .finder-stage-number; copy wrapper is protected from inherited circle sizing.",
+    "contactPass": "CF3.4.2 footer contact alias"
   }
 }

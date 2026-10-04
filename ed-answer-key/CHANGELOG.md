@@ -1,5 +1,12 @@
 # Changelog
 
+## 51.3.11-CF3.4.2-contact-alias
+
+- Replaced the Ed Answer Key footer contact `hello@sagegap.com` with `EdAnswerKey@sagegap.com`.
+- The live link uses `mailto:edanswerkey@sagegap.com`.
+- No header, Finder, player, taxonomy, recommendation, or SageGap-link behavior changed.
+
+
 ## 51.3.11-CF3.4.1-layout-fix
 
 ### Layout correction

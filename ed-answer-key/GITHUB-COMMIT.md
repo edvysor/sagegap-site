@@ -1,9 +1,15 @@
 # GitHub commit
 
 Suggested branch:
-`ed-answer-key/cf3.4.1-layout-fix`
+
+```text
+ed-answer-key/cf3.4.2-contact-alias
+```
 
 Suggested commit:
-`fix(ed-answer-key): correct Conversation Finder step-header overlap`
 
-This patch is intended to replace the CF3.4 draft before deployment.
+```text
+fix(ed-answer-key): add branded podcast contact alias
+```
+
+Deploy the contents of this directory over the existing `/ed-answer-key/` directory after the mailbox alias is configured and tested.
