@@ -29,5 +29,6 @@
   "areaRoles": {},
   "questionMappings": [],
   "recommendationReview": [],
-  "appleEpisodeId": null
+  "appleEpisodeId": null,
+  "finder_ui_note": "New episodes generally reuse existing questions. New visible questions require displayLabel + descriptor while preserving a canonical full question."
 }

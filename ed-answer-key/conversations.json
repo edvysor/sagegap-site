@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "branch": "51.3.11-CF3.3-apple-native-player",
+  "branch": "51.3.11-CF3.4.1-layout-fix",
   "stage": 8,
   "generatedFromStages": [
     1,
@@ -35,7 +35,9 @@
         "FS-Q1",
         "FS-Q2",
         "FS-Q3"
-      ]
+      ],
+      "displayLabel": "Family & School",
+      "cue": "Support · communication · choices"
     },
     {
       "id": "learning-classroom",
@@ -45,7 +47,9 @@
         "LC-Q1",
         "LC-Q2",
         "LC-Q3"
-      ]
+      ],
+      "displayLabel": "Learning & Classroom",
+      "cue": "Engagement · independence · planning"
     },
     {
       "id": "student-support",
@@ -55,7 +59,9 @@
         "SS-Q1",
         "SS-Q2",
         "SS-Q3"
-      ]
+      ],
+      "displayLabel": "Student Support",
+      "cue": "IEPs · behavior · well-being"
     },
     {
       "id": "teaching-educator-life",
@@ -65,7 +71,9 @@
         "TE-Q1",
         "TE-Q2",
         "TE-Q3"
-      ]
+      ],
+      "displayLabel": "Teaching & Educator Life",
+      "cue": "Growth · burnout · profession"
     },
     {
       "id": "assessment-accountability",
@@ -75,7 +83,9 @@
         "AA-Q1",
         "AA-Q2",
         "AA-Q3"
-      ]
+      ],
+      "displayLabel": "Assessment & Testing",
+      "cue": "Results · fairness · purpose"
     },
     {
       "id": "school-systems-leadership",
@@ -85,7 +95,9 @@
         "SL-Q1",
         "SL-Q2",
         "SL-Q3"
-      ]
+      ],
+      "displayLabel": "School Systems",
+      "cue": "Policy · leadership · communication"
     },
     {
       "id": "community-identity-belonging",
@@ -95,7 +107,9 @@
         "CI-Q1",
         "CI-Q2",
         "CI-Q3"
-      ]
+      ],
+      "displayLabel": "Community & Belonging",
+      "cue": "Identity · relationships · generations"
     }
   ],
   "questions": {
@@ -112,7 +126,10 @@
         "TEAK-S01E07",
         "TEAK-S03E06"
       ],
-      "clusterRationale": "A broad, practical conversation about the home-school connection makes the clearest entry point before moving into community partnership, formal student supports, or multilingual-family advocacy."
+      "clusterRationale": "A broad, practical conversation about the home-school connection makes the clearest entry point before moving into community partnership, formal student supports, or multilingual-family advocacy.",
+      "fullQuestion": "How can families and schools work together when a child needs more support?",
+      "displayLabel": "Getting more support",
+      "descriptor": "Work with the school when a child needs help."
     },
     "FS-Q2": {
       "id": "FS-Q2",
@@ -127,7 +144,10 @@
         "TEAK-S01E07",
         "TEAK-S02E14"
       ],
-      "clusterRationale": "This episode begins from families navigating a complicated support system, making it the closest match to confusion about school processes, terminology, and what a child may need."
+      "clusterRationale": "This episode begins from families navigating a complicated support system, making it the closest match to confusion about school processes, terminology, and what a child may need.",
+      "fullQuestion": "What should I do when I don't understand what the school is telling me—or what my child needs?",
+      "displayLabel": "Understanding the school",
+      "descriptor": "Make sense of services, plans, and what a child needs."
     },
     "FS-Q3": {
       "id": "FS-Q3",
@@ -142,7 +162,10 @@
         "TEAK-S03E16",
         "TEAK-S01E12"
       ],
-      "clusterRationale": "The father-son public-versus-private conversation directly addresses school choice from both family and educator perspectives, with the companion episodes adding testing pressure, future-facing family concerns, and assessment context."
+      "clusterRationale": "The father-son public-versus-private conversation directly addresses school choice from both family and educator perspectives, with the companion episodes adding testing pressure, future-facing family concerns, and assessment context.",
+      "fullQuestion": "How do I make sense of different school choices, expectations, and pressures?",
+      "displayLabel": "Choosing a school",
+      "descriptor": "Compare school options, expectations, and testing pressures."
     },
     "LC-Q1": {
       "id": "LC-Q1",
@@ -157,7 +180,10 @@
         "TEAK-S02E09",
         "TEAK-S03E03"
       ],
-      "clusterRationale": "Curiosity is the most direct entry into engagement, while the companion conversations add enjoyment, teacher-student relationships, confidence, and a classroom culture where mistakes are safe."
+      "clusterRationale": "Curiosity is the most direct entry into engagement, while the companion conversations add enjoyment, teacher-student relationships, confidence, and a classroom culture where mistakes are safe.",
+      "fullQuestion": "What actually helps students become more engaged and curious about learning?",
+      "displayLabel": "Getting students engaged",
+      "descriptor": "Curiosity, motivation, relationships, and stronger learning."
     },
     "LC-Q2": {
       "id": "LC-Q2",
@@ -172,7 +198,10 @@
         "TEAK-S03E04",
         "TEAK-S02E09"
       ],
-      "clusterRationale": "The episode explicitly asks whether students have become too dependent on teachers and centers the move toward independence, with companions adding confidence, productive mistakes, resilience, and relationships."
+      "clusterRationale": "The episode explicitly asks whether students have become too dependent on teachers and centers the move toward independence, with companions adding confidence, productive mistakes, resilience, and relationships.",
+      "fullQuestion": "How can teachers help students become more independent without leaving them unsupported?",
+      "displayLabel": "Building independence",
+      "descriptor": "Support students without creating dependence."
     },
     "LC-Q3": {
       "id": "LC-Q3",
@@ -187,7 +216,10 @@
         "TEAK-S02E05",
         "TEAK-S02E12"
       ],
-      "clusterRationale": "This is the clearest practical entry point on co-planning itself; the companion set adds inclusive co-planning, the planning-versus-autonomy balance, and the professional-learning structures that can make collaboration useful."
+      "clusterRationale": "This is the clearest practical entry point on co-planning itself; the companion set adds inclusive co-planning, the planning-versus-autonomy balance, and the professional-learning structures that can make collaboration useful.",
+      "fullQuestion": "What makes planning and collaboration actually improve what happens in the classroom?",
+      "displayLabel": "Planning that works",
+      "descriptor": "Collaboration, co-planning, and better instruction."
     },
     "SS-Q1": {
       "id": "SS-Q1",
@@ -202,7 +234,10 @@
         "TEAK-S04E08",
         "TEAK-S02E08"
       ],
-      "clusterRationale": "Starting with poverty, trauma, basic needs, and empathy makes the hidden-barriers question concrete; the companions broaden that lens to emotions, social needs, culture, communication, and trust."
+      "clusterRationale": "Starting with poverty, trauma, basic needs, and empathy makes the hidden-barriers question concrete; the companions broaden that lens to emotions, social needs, culture, communication, and trust.",
+      "fullQuestion": "What might be getting in the way when a student is struggling—even if the problem isn't academic?",
+      "displayLabel": "When it isn’t just academics",
+      "descriptor": "Emotions, trauma, basic needs, and belonging."
     },
     "SS-Q2": {
       "id": "SS-Q2",
@@ -217,7 +252,10 @@
         "TEAK-S01E08",
         "TEAK-S03E06"
       ],
-      "clusterRationale": "The IEP/504 explainer is the strongest orientation to formal supports, followed by family navigation, implementation in classrooms, and a parallel look at language-access barriers for multilingual families."
+      "clusterRationale": "The IEP/504 explainer is the strongest orientation to formal supports, followed by family navigation, implementation in classrooms, and a parallel look at language-access barriers for multilingual families.",
+      "fullQuestion": "How are schools supposed to support students with IEPs, 504 plans, or language needs?",
+      "displayLabel": "IEPs, 504s & language support",
+      "descriptor": "Understand formal supports, accommodations, and access."
     },
     "SS-Q3": {
       "id": "SS-Q3",
@@ -232,7 +270,10 @@
         "TEAK-S01E04",
         "TEAK-S04E06"
       ],
-      "clusterRationale": "The discipline episode most directly addresses behavior and disciplinary strategy; the companions then add communication failures, physical safety, and the role of structure and boundaries."
+      "clusterRationale": "The discipline episode most directly addresses behavior and disciplinary strategy; the companions then add communication failures, physical safety, and the role of structure and boundaries.",
+      "fullQuestion": "What should schools do when behavior, discipline, or safety starts affecting learning?",
+      "displayLabel": "Behavior, discipline & safety",
+      "descriptor": "When behavior or safety begins affecting learning."
     },
     "TE-Q1": {
       "id": "TE-Q1",
@@ -247,7 +288,10 @@
         "TEAK-S01E05",
         "TEAK-S02E11"
       ],
-      "clusterRationale": "Work-life balance and time management provide the most recognizable starting point, while the companion conversations surface school climate, invisible workload, and the importance of seeking professional support."
+      "clusterRationale": "Work-life balance and time management provide the most recognizable starting point, while the companion conversations surface school climate, invisible workload, and the importance of seeking professional support.",
+      "fullQuestion": "What helps teachers stay effective without burning themselves out?",
+      "displayLabel": "Avoiding burnout",
+      "descriptor": "Workload, boundaries, support, and staying effective."
     },
     "TE-Q2": {
       "id": "TE-Q2",
@@ -262,7 +306,10 @@
         "TEAK-S02E12",
         "TEAK-S02E10"
       ],
-      "clusterRationale": "The new-teacher episode gives direct entry-level advice, followed by conversations on asking for help, meaningful professional development, mentorship, peer observation, and teacher leadership."
+      "clusterRationale": "The new-teacher episode gives direct entry-level advice, followed by conversations on asking for help, meaningful professional development, mentorship, peer observation, and teacher leadership.",
+      "fullQuestion": "What should a new or growing educator understand about becoming good at this work?",
+      "displayLabel": "Becoming a better educator",
+      "descriptor": "Growth, mentorship, feedback, and practice."
     },
     "TE-Q3": {
       "id": "TE-Q3",
@@ -277,7 +324,10 @@
         "TEAK-S01E05",
         "TEAK-S03E12"
       ],
-      "clusterRationale": "The inaugural episode directly examines public perceptions of teachers, then the companions contrast those perceptions with the profession's rewards, workload, and changes witnessed across a long teaching career."
+      "clusterRationale": "The inaugural episode directly examines public perceptions of teachers, then the companions contrast those perceptions with the profession's rewards, workload, and changes witnessed across a long teaching career.",
+      "fullQuestion": "Why does the teaching profession feel so different from what people outside schools imagine?",
+      "displayLabel": "What teaching is really like",
+      "descriptor": "Realities people outside schools may not see."
     },
     "AA-Q1": {
       "id": "AA-Q1",
@@ -291,7 +341,10 @@
         "TEAK-S03E02",
         "TEAK-S04E09"
       ],
-      "clusterRationale": "This conversation is explicitly framed around the limitations and potential of standardized testing, making it the cleanest response to what tests reveal and what they leave out."
+      "clusterRationale": "This conversation is explicitly framed around the limitations and potential of standardized testing, making it the cleanest response to what tests reveal and what they leave out.",
+      "fullQuestion": "What does standardized testing actually tell us about student learning—and what does it miss?",
+      "displayLabel": "What tests really tell us",
+      "descriptor": "What standardized testing shows—and what it misses."
     },
     "AA-Q2": {
       "id": "AA-Q2",
@@ -305,7 +358,10 @@
         "TEAK-S03E02",
         "TEAK-S01E12"
       ],
-      "clusterRationale": "The public/private/charter comparison makes differences in school context visible, while the companion episodes add language-barrier, equity, growth, and accountability considerations."
+      "clusterRationale": "The public/private/charter comparison makes differences in school context visible, while the companion episodes add language-barrier, equity, growth, and accountability considerations.",
+      "fullQuestion": "How can testing be fair when students, schools, and circumstances are so different?",
+      "displayLabel": "Is testing fair?",
+      "descriptor": "Equity, language, context, and opportunity."
     },
     "AA-Q3": {
       "id": "AA-Q3",
@@ -319,7 +375,10 @@
         "TEAK-S01E12",
         "TEAK-S04E09"
       ],
-      "clusterRationale": "This episode most explicitly addresses why standardized assessments persist—baseline measurement, accountability, comparability, and tracking growth—while also acknowledging their limitations."
+      "clusterRationale": "This episode most explicitly addresses why standardized assessments persist—baseline measurement, accountability, comparability, and tracking growth—while also acknowledging their limitations.",
+      "fullQuestion": "Why do schools rely on standardized tests if educators know they have limitations?",
+      "displayLabel": "Why schools still test",
+      "descriptor": "Accountability, comparison, and student growth."
     },
     "SL-Q1": {
       "id": "SL-Q1",
@@ -334,7 +393,10 @@
         "TEAK-S03E02",
         "TEAK-S03E05"
       ],
-      "clusterRationale": "Teacher autonomy versus curriculum constraints is the clearest example of a capable educator operating inside a larger system; the companions add discipline policy, testing/accountability, and support-system gaps."
+      "clusterRationale": "Teacher autonomy versus curriculum constraints is the clearest example of a capable educator operating inside a larger system; the companions add discipline policy, testing/accountability, and support-system gaps.",
+      "fullQuestion": "Why can good educators still feel stuck inside school policies and systems?",
+      "displayLabel": "When the system gets in the way",
+      "descriptor": "Policies, requirements, resources, and constraints."
     },
     "SL-Q2": {
       "id": "SL-Q2",
@@ -349,7 +411,10 @@
         "TEAK-S02E11",
         "TEAK-S04E07"
       ],
-      "clusterRationale": "Mentorship, peer observation, instructional coaching, and teacher leadership make this the strongest leadership entry point, with companions on professional development, help-seeking culture, and wider school-community support."
+      "clusterRationale": "Mentorship, peer observation, instructional coaching, and teacher leadership make this the strongest leadership entry point, with companions on professional development, help-seeking culture, and wider school-community support.",
+      "fullQuestion": "What kind of leadership actually helps teachers improve and students succeed?",
+      "displayLabel": "Leadership that helps",
+      "descriptor": "Coaching, support, and professional growth."
     },
     "SL-Q3": {
       "id": "SL-Q3",
@@ -364,7 +429,10 @@
         "TEAK-S03E01",
         "TEAK-S04E07"
       ],
-      "clusterRationale": "The episode centers mixed messages and transparency around school decisions, then the companions show communication challenges across multilingual families, educator teams, and family-school-community partnerships."
+      "clusterRationale": "The episode centers mixed messages and transparency around school decisions, then the companions show communication challenges across multilingual families, educator teams, and family-school-community partnerships.",
+      "fullQuestion": "Why do schools sometimes struggle to communicate clearly even when everyone is trying to help?",
+      "displayLabel": "Why communication breaks down",
+      "descriptor": "Mixed messages among schools, staff, and families."
     },
     "CI-Q1": {
       "id": "CI-Q1",
@@ -379,7 +447,10 @@
         "TEAK-S04E13",
         "TEAK-S04E04"
       ],
-      "clusterRationale": "School, friendship, faith, and community are explicitly presented as roots carried into adult life, with companion stories adding neighborhood-school legacy, enduring sisterhood, and service through Pomoja."
+      "clusterRationale": "School, friendship, faith, and community are explicitly presented as roots carried into adult life, with companion stories adding neighborhood-school legacy, enduring sisterhood, and service through Pomoja.",
+      "fullQuestion": "What makes a school or neighborhood feel like a community people carry with them for life?",
+      "displayLabel": "What makes community last",
+      "descriptor": "Belonging, shared history, and school identity."
     },
     "CI-Q2": {
       "id": "CI-Q2",
@@ -394,7 +465,10 @@
         "TEAK-S04E05",
         "TEAK-S04E13"
       ],
-      "clusterRationale": "The School 26 story most directly shows families, educators, and community shaping identity and excellence, with companions emphasizing mentorship, formative relationships, faith, and lifelong friendship."
+      "clusterRationale": "The School 26 story most directly shows families, educators, and community shaping identity and excellence, with companions emphasizing mentorship, formative relationships, faith, and lifelong friendship.",
+      "fullQuestion": "How do relationships with teachers, friends, family, and mentors shape who students become?",
+      "displayLabel": "Relationships that shape us",
+      "descriptor": "Teachers, friends, family, and mentors."
     },
     "CI-Q3": {
       "id": "CI-Q3",
@@ -409,7 +483,10 @@
         "TEAK-S04E04",
         "TEAK-S04E01"
       ],
-      "clusterRationale": "This conversation explicitly asks what today's children can gain from earlier community practices, while the companion set adds parent partnerships, service, and the neighborhood-school model that shaped the speakers."
+      "clusterRationale": "This conversation explicitly asks what today's children can gain from earlier community practices, while the companion set adds parent partnerships, service, and the neighborhood-school model that shaped the speakers.",
+      "fullQuestion": "What can earlier generations teach us about building stronger communities for children today?",
+      "displayLabel": "Lessons from earlier generations",
+      "descriptor": "What the past can teach us about supporting children today."
     }
   },
   "episodes": {
@@ -2497,5 +2574,13 @@
     "lookupUrl": "https://itunes.apple.com/lookup?id=1724677627&entity=podcastEpisode&limit=200",
     "searchUrl": "https://itunes.apple.com/search?media=podcast&entity=podcastEpisode&limit=25&term=",
     "resolutionStrategy": "Known IDs → Apple show lookup by RSS episodeGuid → normalized episode title → per-episode Apple search fallback."
+  },
+  "ux": {
+    "finderPass": "CF3.4.1 overlap/layout correction",
+    "visibleQuestionPattern": "short intent label + one-line descriptor",
+    "canonicalQuestionPreserved": true,
+    "navigationModel": "Choose a topic → choose what sounds closest → Start Here",
+    "completedStepControl": "Change",
+    "layoutFix": "Legacy stage-header badge CSS now targets only .finder-stage-number; copy wrapper is protected from inherited circle sizing."
   }
 }

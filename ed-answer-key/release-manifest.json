@@ -1,9 +1,23 @@
 {
-  "branch": "51.3.11-CF3.3.1-footer-link",
-  "base": "51.3.11-CF3.3-apple-native-player",
-  "change": "Footer SageGap link opens in new tab only.",
-  "headerSageGapUnchanged": true,
-  "footerSageGapTarget": "_blank",
-  "footerSageGapRel": "noopener noreferrer",
-  "indexSha256": "5fd8b822661db424f696c4723fe24c935c2e7e2024ebe2e971baa6defc797803"
+  "branch": "51.3.11-CF3.4.1-layout-fix",
+  "baseline": "51.3.11-CF3.4-guided-mobile-nav",
+  "purpose": "Correct CF3.4 Conversation Finder step-header overlap without changing content architecture or recommendations",
+  "counts": {
+    "rssItems": 56,
+    "finderEligibleEpisodes": 55,
+    "areas": 7,
+    "visibleQuestions": 21,
+    "recommendationClusters": 21
+  },
+  "fixes": [
+    {
+      "id": "LAYOUT-001",
+      "issue": "Legacy .finder-stage-label span selector styled the CF3.4 copy wrapper as a 28x28 circular badge, causing text overlap.",
+      "fix": "Scope legacy badge selectors to .finder-stage-number and reset .finder-stage-copy."
+    }
+  ],
+  "taxonomyChanged": false,
+  "recommendationClustersChanged": false,
+  "appleNativePlayerPreserved": true,
+  "footerSageGapNewTabPreserved": true
 }

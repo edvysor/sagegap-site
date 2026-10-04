@@ -1,14 +1,12 @@
 # Changelog
 
-## CF3.3 — Apple-native player
-- Replaced the CF3.2 custom RSS audio card with Apple Podcasts episode embeds.
-- Apple now supplies live episode artwork and playback UI inside the Ed Answer Key listening-room shell.
-- Added GUID-first Apple episode resolution with title/search fallback and session caching.
-- Added known Apple IDs for Episodes 409–413 for immediate resolution of the newest catalog entries.
-- Removed the duplicated local editorial player artwork from the runtime package.
-- Preserved Finder/player state independence and CF3.1 close/reopen behavior.
+## 51.3.11-CF3.4.1-layout-fix
 
-## CF3.3.1 — Footer SageGap new-tab behavior
-- Footer **SageGap** link now opens in a new browser tab.
-- Added `rel="noopener noreferrer"` for safe external-tab behavior.
-- Header SageGap link and all other navigation behavior remain unchanged.
+### Layout correction
+- Corrected the overlapping Conversation Finder step headings introduced in CF3.4.
+- Restricted legacy circular step-badge styling to `.finder-stage-number` only.
+- Added defensive resets so the title/helper-copy wrapper cannot inherit badge dimensions, background, radius, or shadow.
+- Preserved the shortened topic/question copy, guided three-step navigation, Apple-native player, recommendation graph, and footer SageGap new-tab behavior.
+
+## 51.3.11-CF3.4-guided-mobile-nav
+- Introduced short intent labels + descriptors and explicit three-step navigation.

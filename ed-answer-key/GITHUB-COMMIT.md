@@ -1,11 +1,9 @@
-# Suggested GitHub commit
+# GitHub commit
 
-Branch: `ed-answer-key/cf3.3.1-footer-link`
+Suggested branch:
+`ed-answer-key/cf3.4.1-layout-fix`
 
-```text
-fix(ed-answer-key): open footer SageGap link in new tab
+Suggested commit:
+`fix(ed-answer-key): correct Conversation Finder step-header overlap`
 
-- keep header SageGap navigation unchanged
-- open footer SageGap destination in a separate tab
-- add noopener/noreferrer protection
-```
+This patch is intended to replace the CF3.4 draft before deployment.
