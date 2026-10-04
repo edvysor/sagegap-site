@@ -14,3 +14,7 @@ Deployment:
 3. Preserve any other repository files you still need.
 4. Confirm GitHub Pages is publishing from the intended branch/folder.
 5. Test the contact, Early Access, and Teacher Copilot forms after deployment.
+
+
+V64 HOTFIX — 2026-10-04
+Removed Formspree _gotcha honeypot fields from Contact, Early Access, and Teacher Copilot forms after verified legitimate submissions were flagged with: "Honeypot field _gotcha is not empty." No visible design changes. Existing Formspree endpoint and subject metadata retained.
