@@ -1,11 +1,10 @@
 # Changelog
 
-## CF3.4.4 — Dedicated Contact Endpoint
-
-- Routed the Ed Answer Key contact form to the dedicated Formspree endpoint `xkjowkav`.
-- Removed the custom `_gotcha` field.
-- Replaced `_subject` with `subject`.
-- Preserved `form_type=Ed Answer Key Contact` for Gmail filtering.
-- Improved provider-side error diagnostics.
-- Preserved direct email fallback.
-- No changes to Conversation Finder taxonomy, recommendations, Apple playback, header navigation, or footer SageGap behavior.
+## CF3.5 — Finder First
+- Moved Conversation Finder immediately after the hero.
+- Promoted Finder to primary hero CTA and first navigation item.
+- Added mobile Find shortcut.
+- Reduced mobile time-to-Finder by suppressing decorative hero art.
+- Added 50+ / 7 / 3 value strip and evergreen positioning.
+- Reframed podcatcher rail as secondary listening path.
+- Preserved Finder logic, recommendation graph, Apple player, contact endpoint, and footer SageGap behavior.

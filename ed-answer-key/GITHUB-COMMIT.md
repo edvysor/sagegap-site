@@ -1,9 +1,7 @@
 # Suggested GitHub commit
 
 Branch:
-`ed-answer-key/cf3.4.4-dedicated-contact-endpoint`
+`ed-answer-key/cf3.5-finder-first`
 
 Commit:
-`fix(ed-answer-key): route contact form through dedicated Formspree endpoint`
-
-After deployment, submit one live-site test and confirm the entire delivery chain.
+`feat(ed-answer-key): make Conversation Finder the primary listening entry`

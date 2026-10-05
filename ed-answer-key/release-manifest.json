@@ -1,12 +1,13 @@
 {
-  "branch": "51.3.11-CF3.4.4-dedicated-contact-endpoint",
-  "contact_form": {
-    "provider": "Formspree",
-    "form_name": "Ed Answer Key Contact",
-    "endpoint": "https://formspree.io/f/xkjowkav",
-    "notification_destination": "david@sagegap.com",
-    "public_identity": "edanswerkey@sagegap.com",
-    "form_type": "Ed Answer Key Contact",
-    "subject": "Ed Answer Key Contact \u2014 Website message"
+  "branch": "51.3.11-CF3.5-finder-first",
+  "baseline": "51.3.11-CF3.4.4-dedicated-contact-endpoint",
+  "intent": "Make Conversation Finder the primary listening discovery experience.",
+  "preserved": {
+    "finderEligibleEpisodes": 55,
+    "areas": 7,
+    "questions": 21,
+    "appleNativePlayer": true,
+    "finderPlayerStateIndependence": true,
+    "contactEndpoint": "https://formspree.io/f/xkjowkav"
   }
 }

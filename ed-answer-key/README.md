@@ -1,39 +1,15 @@
-# The Ed Answer Key — CF3.4.4 Dedicated Contact Endpoint
+# The Ed Answer Key — CF3.5 Finder First
 
-This release keeps the Conversation Finder, Apple-native listening experience, guided mobile navigation,
-footer SageGap new-tab behavior, and Ed Answer Key email identity intact.
+CF3.5 promotes the Conversation Finder from a secondary archive feature to the primary discovery and listening doorway.
 
-## Contact reliability change
-
-The footer contact form now posts to the dedicated Formspree form:
-
-`https://formspree.io/f/xkjowkav`
-
-Form name: **Ed Answer Key Contact**
-
-Operational notification inbox: **david@sagegap.com**
-
-Public reply identity: **The Ed Answer Key <edanswerkey@sagegap.com>**
-
-## Reliability refinements
-
-- Dedicated Ed Answer Key Formspree endpoint; no longer shares the Teacher Copilot endpoint.
-- Removed the custom `_gotcha` honeypot so there is no silent-discard path from that field.
-- Uses Formspree's current `subject` field.
-- Keeps `form_type=Ed Answer Key Contact` for Gmail filtering.
-- Shows success only after a successful Formspree HTTP response.
-- Logs Formspree HTTP/provider details to the browser console if submission fails.
-- Keeps a visible `mailto:edanswerkey@sagegap.com` fallback.
-
-## Gmail filter
-
-From:
-`noreply@formspree.io`
-
-Has the words:
-`"Ed Answer Key Contact"`
-
-Apply label:
-**Ed Answer Key**
-
-Do not skip the inbox.
+## UX changes
+- Conversation Finder appears immediately after the hero.
+- Primary hero CTA: **Find a Conversation**.
+- Secondary hero CTA: **Listen in Your App**.
+- Header navigation leads with **Find**.
+- Mobile header includes a direct **Find** shortcut.
+- On phones, decorative hero artwork yields to the Finder to reduce time-to-use.
+- Finder positioning emphasizes **50+ conversations / 7 topic areas / 3 taps to start** and evergreen usefulness.
+- Spotify, Apple Podcasts, and YouTube remain available directly after the Finder.
+- Finder recommendation logic, Apple-native playback, and independent Finder/player state are unchanged.
+- Dedicated Formspree endpoint remains `https://formspree.io/f/xkjowkav`.

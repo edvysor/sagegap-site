@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "branch": "51.3.11-CF3.4.3-contact-form",
+  "branch": "51.3.11-CF3.5-finder-first",
   "stage": 8,
   "generatedFromStages": [
     1,
@@ -2582,6 +2582,7 @@
     "navigationModel": "Choose a topic → choose what sounds closest → Start Here",
     "completedStepControl": "Change",
     "layoutFix": "Legacy stage-header badge CSS now targets only .finder-stage-number; copy wrapper is protected from inherited circle sizing.",
-    "contactPass": "CF3.4.3 website contact form via existing SageGap Formspree endpoint"
+    "contactPass": "CF3.4.4 dedicated Ed Answer Key Formspree endpoint",
+    "finderPositioning": "Finder First — primary listening entry immediately after hero; mobile prioritizes Finder over decorative hero artwork."
   }
 }
