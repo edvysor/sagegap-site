@@ -1,15 +1,21 @@
-# The Ed Answer Key — CF3.5 Finder First
+# The Ed Answer Key — CF3.5.2 Header Alignment
 
-CF3.5 promotes the Conversation Finder from a secondary archive feature to the primary discovery and listening doorway.
+This is a surgical responsive-layout refinement over CF3.5.1.
 
-## UX changes
-- Conversation Finder appears immediately after the hero.
-- Primary hero CTA: **Find a Conversation**.
-- Secondary hero CTA: **Listen in Your App**.
-- Header navigation leads with **Find**.
-- Mobile header includes a direct **Find** shortcut.
-- On phones, decorative hero artwork yields to the Finder to reduce time-to-use.
-- Finder positioning emphasizes **50+ conversations / 7 topic areas / 3 taps to start** and evergreen usefulness.
-- Spotify, Apple Podcasts, and YouTube remain available directly after the Finder.
-- Finder recommendation logic, Apple-native playback, and independent Finder/player state are unchanged.
-- Dedicated Formspree endpoint remains `https://formspree.io/f/xkjowkav`.
+## Change
+At compressed/mobile widths the site header now uses a three-column grid:
+
+**brand (flexible) | Find (fixed) | menu (fixed)**
+
+This prevents the red Find utility from crowding or overlapping the horizontal Ed Answer Key wordmark.
+
+The utility controls also step down slightly at 760px, 520px, and 380px breakpoints.
+
+## Preserved
+- Finder-first page hierarchy
+- Conversation Finder behavior and recommendation mappings
+- 55 Finder-eligible conversations / 7 areas / 21 questions
+- Apple-native playback
+- dedicated Formspree contact endpoint
+- listener-facing CF3.5.1 language
+- footer SageGap new-tab behavior

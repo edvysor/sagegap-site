@@ -1,10 +1,9 @@
 # Changelog
 
-## CF3.5 — Finder First
-- Moved Conversation Finder immediately after the hero.
-- Promoted Finder to primary hero CTA and first navigation item.
-- Added mobile Find shortcut.
-- Reduced mobile time-to-Finder by suppressing decorative hero art.
-- Added 50+ / 7 / 3 value strip and evergreen positioning.
-- Reframed podcatcher rail as secondary listening path.
-- Preserved Finder logic, recommendation graph, Apple player, contact endpoint, and footer SageGap behavior.
+## CF3.5.2 — Header Alignment
+- Rebuilt compressed/mobile header as a three-column grid.
+- Reserved the flexible column for the Ed Answer Key brand lockup.
+- Kept Find and menu controls in fixed utility columns.
+- Reduced mobile Find pill and menu dimensions slightly.
+- Added tighter 520px and 380px breakpoint behavior.
+- No changes to Finder logic, content, playback, or contact routing.

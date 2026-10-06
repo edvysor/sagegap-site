@@ -1,7 +1,7 @@
 # Suggested GitHub commit
 
 Branch:
-`ed-answer-key/cf3.5-finder-first`
+`ed-answer-key/cf3.5.2-header-alignment`
 
 Commit:
-`feat(ed-answer-key): make Conversation Finder the primary listening entry`
+`fix(ed-answer-key): align mobile Find utility with brand header`
