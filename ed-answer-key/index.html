@@ -2569,6 +2569,40 @@ footer .brand-text > span.brand-subtitle{
 
 </style>
 
+
+<style id="eak-start-here-anchor-v1">
+/* Make the hero-level Start Here cue an actual route into the finder. */
+#conversationFinder{scroll-margin-top:118px}
+.finder-eyebrow-link{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0;
+}
+.finder-start-link{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px solid rgba(237,28,36,.34);
+  padding-bottom:2px;
+  transition:color .18s ease,border-color .18s ease,background .18s ease;
+}
+.finder-start-link:hover{
+  color:var(--red);
+  border-color:var(--red);
+}
+.finder-start-link:focus-visible{
+  outline:2px solid rgba(237,28,36,.48);
+  outline-offset:4px;
+  border-radius:4px;
+}
+@media(max-width:720px){
+  #conversationFinder{scroll-margin-top:96px}
+  .finder-start-link{
+    border-bottom-width:2px;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="announcement">
@@ -2635,7 +2669,7 @@ footer .brand-text > span.brand-subtitle{
 <div class="wrap">
 <div class="episodes-head finder-head">
 <div class="finder-first-intro">
-<span class="eyebrow">Start here · Conversation Finder</span>
+<span class="eyebrow finder-eyebrow-link"><a class="finder-start-link" href="#conversationFinder" aria-label="Start the Conversation Finder">Start here</a><span aria-hidden="true"> · </span><span>Conversation Finder</span></span>
 <h2 class="section-title" id="episodes-title">50+ conversations. Find the one that fits what you need now.</h2>
 <p class="section-copy">Skip the archive. Choose a topic, pick what sounds closest, and we’ll point you to the best conversation to begin with. The library is built to stay useful long after an episode is published.</p>
 <div class="finder-value-strip" aria-label="Conversation Finder benefits">
