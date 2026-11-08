@@ -2603,6 +2603,172 @@ footer .brand-text > span.brand-subtitle{
 }
 </style>
 
+
+<!-- EAK Conversation Finder tactile controls | 2026-11-08 -->
+<style id="eak-conversation-finder-raised-controls">
+/* Conversation Finder: physical-feeling, keyboard-accessible selection controls. */
+#conversationFinder .finder-topics{
+  gap:18px 16px;
+  padding:12px 5px 25px!important;
+}
+#conversationFinder .finder-topic{
+  isolation:isolate;
+  overflow:visible;
+  min-height:86px;
+  padding:17px 63px 17px 26px;
+  border:1px solid rgba(142,138,139,.34);
+  border-bottom-color:rgba(125,121,122,.48);
+  border-radius:22px;
+  background:linear-gradient(155deg,#fff 0%,#fdfcfc 45%,#f0eded 100%);
+  color:#242426;
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.98),
+    inset 1px 0 0 rgba(255,255,255,.74),
+    inset 0 -1px 1px rgba(114,108,109,.08),
+    0 4px 0 rgba(193,189,190,.65),
+    0 13px 19px -7px rgba(20,20,25,.24),
+    0 22px 34px -17px rgba(20,20,25,.24);
+  transform:translateY(0);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease,color .18s ease;
+  touch-action:manipulation;
+}
+#conversationFinder .finder-topic::before{
+  content:"";
+  position:absolute;
+  left:13px;
+  top:50%;
+  width:4px;
+  height:36px;
+  border-radius:999px;
+  transform:translateY(-50%);
+  background:linear-gradient(180deg,#ff4149,var(--red));
+  box-shadow:1px 0 3px rgba(237,28,36,.18);
+  pointer-events:none;
+}
+#conversationFinder .finder-topic::after{
+  content:'→';
+  position:absolute;
+  top:50%;
+  right:14px;
+  display:grid;
+  place-items:center;
+  width:37px;
+  height:37px;
+  border:1px solid rgba(237,28,36,.16);
+  border-radius:50%;
+  background:linear-gradient(145deg,#fff,#f3eeee);
+  color:var(--red);
+  font-size:1.17rem;
+  font-weight:900;
+  line-height:1;
+  transform:translateY(-50%);
+  box-shadow:inset 0 1px 1px #fff,0 3px 0 rgba(181,173,174,.50),0 7px 12px rgba(20,20,25,.18);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
+  pointer-events:none;
+}
+#conversationFinder .finder-topic strong{
+  color:inherit;
+  letter-spacing:-.025em;
+}
+#conversationFinder .finder-topic small{
+  color:rgba(32,32,35,.62);
+  font-weight:650;
+}
+@media(hover:hover) and (pointer:fine){
+  #conversationFinder .finder-topic:hover{
+    z-index:3;
+    transform:translateY(-3px);
+    border-color:rgba(237,28,36,.27);
+    background:linear-gradient(155deg,#fff 0%,#fff 47%,#f7f0f0 100%);
+    box-shadow:
+      inset 0 2px 2px #fff,
+      0 5px 0 rgba(188,180,182,.66),
+      0 18px 26px -8px rgba(20,20,25,.27),
+      0 28px 40px -19px rgba(20,20,25,.25);
+  }
+  #conversationFinder .finder-topic:hover::after{
+    transform:translate(2px,-50%);
+    box-shadow:inset 0 1px 1px #fff,0 3px 0 rgba(181,173,174,.50),0 9px 15px rgba(20,20,25,.21);
+  }
+}
+#conversationFinder .finder-topic:active{
+  transform:translateY(3px);
+  transition-duration:.07s;
+  box-shadow:inset 0 2px 4px rgba(60,53,54,.12),0 1px 0 rgba(175,168,170,.72),0 4px 8px -3px rgba(20,20,25,.19);
+}
+#conversationFinder .finder-topic:active::after{
+  transform:translateY(calc(-50% + 2px));
+  box-shadow:inset 0 2px 3px rgba(65,40,43,.12),0 1px 0 rgba(181,173,174,.65);
+}
+#conversationFinder .finder-topic:focus-visible{
+  outline:3px solid rgba(237,28,36,.64);
+  outline-offset:5px;
+  z-index:4;
+}
+#conversationFinder .finder-topic[aria-pressed="true"]{
+  background:linear-gradient(150deg,#ff333b,var(--red) 48%,#d9141c);
+  color:#fff;
+  border-color:#b5141e;
+  border-bottom-color:#9f0d16;
+  box-shadow:inset 0 2px 2px rgba(255,255,255,.24),0 4px 0 #a71921,0 13px 20px -7px rgba(125,12,22,.32),0 23px 34px -18px rgba(18,18,23,.29);
+}
+#conversationFinder .finder-topic[aria-pressed="true"]::before{
+  background:linear-gradient(180deg,#fff,#ffced0);
+  box-shadow:1px 0 3px rgba(80,0,0,.13);
+}
+#conversationFinder .finder-topic[aria-pressed="true"] small{color:rgba(255,255,255,.87)}
+#conversationFinder .finder-topic[aria-pressed="true"]::after{
+  content:'✓';
+  color:var(--red);
+  background:linear-gradient(145deg,#fff,#fff3f3);
+  border-color:rgba(255,255,255,.75);
+}
+#conversationFinder .finder-topic[aria-pressed="true"]:active{
+  box-shadow:inset 0 3px 6px rgba(102,0,0,.22),0 1px 0 #a71921,0 4px 9px rgba(125,12,22,.24);
+}
+
+/* The second-stage question choices use the same directional lighting. */
+#conversationFinder .finder-question{
+  border-color:rgba(142,138,139,.24);
+  background:linear-gradient(150deg,#fff,#f8f6f6 100%);
+  box-shadow:inset 0 2px 1px rgba(255,255,255,.96),0 3px 0 rgba(193,189,190,.52),0 10px 18px -8px rgba(20,20,25,.18);
+  touch-action:manipulation;
+}
+#conversationFinder .finder-stage.is-active .finder-question:hover{
+  box-shadow:inset 0 2px 1px #fff,0 4px 0 rgba(193,189,190,.55),0 16px 24px -10px rgba(20,20,25,.22);
+}
+#conversationFinder .finder-stage.is-active .finder-question:active{
+  transform:translateY(2px)!important;
+  box-shadow:inset 0 2px 4px rgba(60,53,54,.1),0 1px 0 rgba(193,189,190,.50),0 3px 7px rgba(20,20,25,.14);
+}
+#conversationFinder .finder-question[aria-pressed="true"]{
+  border-color:rgba(237,28,36,.55);
+  background:linear-gradient(150deg,#fff,#fff6f6);
+  box-shadow:inset 0 2px 1px #fff,0 3px 0 rgba(237,28,36,.28),0 12px 20px -8px rgba(20,20,25,.19);
+}
+#conversationFinder .finder-question:focus-visible{
+  outline:3px solid rgba(237,28,36,.62);
+  outline-offset:4px;
+}
+@media(max-width:820px){
+  #conversationFinder .finder-topics{gap:18px}
+  #conversationFinder .finder-topic{min-height:78px;padding:16px 58px 16px 26px}
+  #conversationFinder .finder-topic strong{font-size:.94rem;line-height:1.18}
+  #conversationFinder .finder-topic small{font-size:.76rem;line-height:1.32}
+}
+@media(max-width:390px){
+  #conversationFinder .finder-topic{padding-right:55px;padding-left:23px}
+  #conversationFinder .finder-topic strong{font-size:.90rem}
+  #conversationFinder .finder-topic small{font-size:.71rem}
+  #conversationFinder .finder-topic::after{right:11px;width:34px;height:34px}
+}
+@media(prefers-reduced-motion:reduce){
+  #conversationFinder .finder-topic,
+  #conversationFinder .finder-topic::after,
+  #conversationFinder .finder-question{transition:none!important}
+}
+</style>
+
 </head>
 <body>
 <div class="announcement">
