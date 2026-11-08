@@ -485,7 +485,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.58);padding:56px 0 32px}
 }
 </style>
 
-<meta content="v72-icons-alignment-view-colors" name="sagegap-build"/>
+<meta content="v75-mobile-responsive-system" name="sagegap-build"/>
 <style id="sagegap-v68-integration-link">
 .deep-link-v68{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--navy);font-size:.84rem;font-weight:700;border-bottom:1px solid rgba(15,37,53,.18);padding-bottom:3px;transition:.18s ease}.deep-link-v68:hover{color:var(--teal);border-color:rgba(58,140,116,.35)}.deep-link-v68 span{transition:transform .18s ease}.deep-link-v68:hover span{transform:translateX(3px)}
 </style>
@@ -795,6 +795,278 @@ footer{background:var(--navy);color:rgba(255,255,255,.58);padding:56px 0 32px}
 }
 </style>
 
+
+<style id="sagegap-v75-mobile-responsive-system">
+/* v75 — intentional mobile composition, not compressed desktop */
+.mobile-node-rail{display:contents}
+
+@media(max-width:760px){
+  html,body{max-width:100%;overflow-x:clip}
+  main,section,.wrap,.hero-grid,.bond-shell,.gap-grid,.record-head,.record-shell-v67,
+  .tissue-grid,.experience-head,.conversation-strip-v65,.trust-grid,.contact-shell{
+    min-width:0!important;max-width:100%!important;
+  }
+  h1,h2,h3,p,.section-title,.section-copy{max-width:100%;overflow-wrap:break-word}
+  img,svg{max-width:100%}
+
+  /* Chapter rows cannot dictate page width. */
+  .story-step{
+    width:auto!important;
+    max-width:100%!important;
+    white-space:normal!important;
+  }
+  .story-step + .eyebrow,
+  .eyebrow{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    white-space:normal!important;
+    line-height:1.38;
+    letter-spacing:.11em;
+    font-size:.66rem;
+    align-items:flex-start;
+  }
+  .eyebrow:before{
+    flex:0 0 46px!important;
+    width:46px!important;
+    margin-top:.18em;
+  }
+
+  /* Editorial type scales to the phone, not the desktop composition. */
+  .hero-copy h1{
+    font-size:clamp(3rem,14vw,4rem)!important;
+    line-height:.89!important;
+  }
+  .section-title,
+  .gap .section-title{
+    font-size:clamp(2.62rem,12.5vw,3.45rem)!important;
+    line-height:.94!important;
+    text-wrap:balance;
+  }
+  .bond-intro h2{
+    font-size:clamp(2.55rem,12vw,3.25rem)!important;
+    line-height:.94!important;
+  }
+  .section-copy,.gap .section-copy,.bond-intro .bond-definition{
+    font-size:.99rem!important;
+    line-height:1.62!important;
+  }
+
+  /* Hero connective model: Egg first, context second, swipeable rather than crowded. */
+  .connective-card{
+    min-height:0!important;
+    padding:18px 14px 14px!important;
+    border-radius:27px!important;
+    overflow:hidden!important;
+  }
+  .connective-top{
+    padding:0 2px 14px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:10px;
+    align-items:start;
+  }
+  .connective-top span:first-child{
+    font-size:.62rem!important;
+    line-height:1.35;
+    letter-spacing:.12em;
+    max-width:20ch;
+  }
+  .connective-top span:last-child{
+    font-size:.68rem!important;
+    line-height:1.35;
+    text-align:right;
+    max-width:10ch;
+  }
+  .connection-field{
+    position:relative!important;
+    inset:auto!important;
+    display:block!important;
+    min-width:0!important;
+  }
+  .connection-line{display:none!important}
+  .egg-center{
+    position:relative!important;
+    inset:auto!important;
+    grid-column:auto!important;
+    width:188px!important;
+    height:242px!important;
+    margin:0 auto 16px!important;
+    padding:25px 22px!important;
+  }
+  .egg-copy .small{font-size:.59rem!important}
+  .egg-copy strong{
+    font-size:1.58rem!important;
+    line-height:.98!important;
+    margin:10px 0 8px!important;
+  }
+  .egg-copy p{
+    font-size:.70rem!important;
+    line-height:1.42!important;
+  }
+  .egg-confirm{
+    margin-top:11px!important;
+    font-size:.63rem!important;
+    padding:6px 9px!important;
+  }
+  .mobile-node-rail{
+    display:flex!important;
+    gap:10px;
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:2px;
+    overscroll-behavior-inline:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 2px 9px;
+    scrollbar-width:none;
+  }
+  .mobile-node-rail::-webkit-scrollbar{display:none}
+  .mobile-node-rail .node{
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+    flex:0 0 78%;
+    width:auto!important;
+    min-width:0!important;
+    min-height:126px!important;
+    scroll-snap-align:start;
+    padding:17px!important;
+  }
+  .mobile-node-rail .node:hover{transform:none!important}
+  .mobile-node-rail .node b{font-size:.98rem!important}
+  .mobile-node-rail .node span{font-size:.78rem!important;line-height:1.45!important}
+
+  /* Reusable mobile snap rails: one card in focus, next card visibly peeking. */
+  .bond-grid,
+  .gap-cards,
+  .record-shell-v67 .record-notes-v67,
+  .experience-grid-v65,
+  .trust-cards{
+    display:grid!important;
+    grid-template-columns:none!important;
+    grid-template-rows:none!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:min(86%,320px)!important;
+    gap:12px!important;
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x mandatory;
+    scroll-padding-inline:0;
+    overscroll-behavior-inline:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 0 10px!important;
+    scrollbar-width:none;
+  }
+  .bond-grid::-webkit-scrollbar,
+  .gap-cards::-webkit-scrollbar,
+  .record-shell-v67 .record-notes-v67::-webkit-scrollbar,
+  .experience-grid-v65::-webkit-scrollbar,
+  .trust-cards::-webkit-scrollbar{display:none}
+  .bond-grid > *,
+  .gap-cards > *,
+  .record-shell-v67 .record-notes-v67 > *,
+  .experience-grid-v65 > *,
+  .trust-cards > *{
+    scroll-snap-align:start;
+    min-width:0!important;
+  }
+
+  .bond-side{min-width:0!important;padding:20px 18px!important}
+  .bond-card{min-height:238px!important;padding:21px!important}
+  .gap-grid > *{min-width:0!important}
+  .gap-cards{margin-top:28px}
+  .gap-card{
+    min-height:226px!important;
+    padding:22px!important;
+  }
+  .gap-card h3{font-size:1.12rem!important;line-height:1.25!important}
+  .gap-card p{font-size:.88rem!important;line-height:1.55!important}
+  .gap-quote{font-size:1.02rem!important;line-height:1.5!important}
+
+  /* Canonical Record section: compact visual + swipeable dimensions. */
+  .record-shell-v67{padding:9px!important;border-radius:26px!important}
+  .record-shell-v67 .record-visual-v67{
+    height:352px!important;
+    min-height:352px!important;
+    padding:20px 18px!important;
+  }
+  .record-label{
+    font-size:.58rem!important;
+    letter-spacing:.08em!important;
+    gap:8px!important;
+  }
+  .record-egg{
+    width:184px!important;
+    height:238px!important;
+    padding:28px 24px!important;
+    top:55%!important;
+  }
+  .record-egg strong{font-size:1.62rem!important}
+  .record-egg span{font-size:.69rem!important}
+  .r1{width:260px!important;height:260px!important}
+  .r2{display:none!important}
+  .record-shell-v67 .record-notes-v67{
+    grid-column:1!important;
+    grid-row:2!important;
+    height:auto!important;
+    margin-top:2px;
+  }
+  .record-shell-v67 .record-notes-v67 .record-note{
+    min-height:212px!important;
+    height:auto!important;
+    padding:21px!important;
+  }
+  .record-discipline-v67{
+    grid-column:1!important;
+    grid-row:3!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    padding:20px 20px 20px 23px!important;
+  }
+
+  /* Other card systems: no cramped two-column tablet residue. */
+  .tissue-map{grid-template-columns:1fr!important}
+  .tissue-card.center{grid-column:auto!important;display:grid!important}
+  .experience-grid-v65 .experience-card{
+    min-height:300px!important;
+  }
+  .trust-card{min-height:190px!important}
+
+  /* TEAK lockup may wrap intentionally on the narrowest devices. */
+  .conversation-strip-v65{padding:22px 19px!important}
+  .conversation-destination-v73{
+    max-width:100%!important;
+    min-width:0!important;
+  }
+  .conversation-destination-v73 .teak-wordmark{
+    white-space:normal!important;
+    flex-wrap:wrap!important;
+  }
+
+  /* Contact and final CTA remain contained. */
+  .cta-card,.contact-intro,.contact-form-card{min-width:0!important}
+}
+
+@media(max-width:430px){
+  .wrap{width:calc(100% - 24px)!important}
+  .hero-copy h1{font-size:clamp(2.82rem,13.5vw,3.45rem)!important}
+  .section-title,.gap .section-title{font-size:clamp(2.45rem,11.8vw,3rem)!important}
+  .bond-intro h2{font-size:clamp(2.4rem,11.5vw,2.9rem)!important}
+  .egg-center{width:176px!important;height:228px!important}
+  .mobile-node-rail .node{flex-basis:84%!important}
+  .bond-grid,.gap-cards,.record-shell-v67 .record-notes-v67,.experience-grid-v65,.trust-cards{
+    grid-auto-columns:88%!important;
+  }
+  .record-shell-v67 .record-visual-v67{height:338px!important;min-height:338px!important}
+  .record-egg{width:174px!important;height:226px!important}
+  .r1{width:242px!important;height:242px!important}
+}
+</style>
+
 </head>
 <body>
 <div class="announcement"><div class="wrap"><strong>Family-first by design.</strong> The child’s story stays with the family who lives it.</div></div>
@@ -825,10 +1097,12 @@ footer{background:var(--navy);color:rgba(255,255,255,.58);padding:56px 0 32px}
       <div class="connective-top"><span>SageGap connective tissue</span><span>One child. One story.</span></div>
       <div class="connection-field">
         <span class="connection-line l1"></span><span class="connection-line l2"></span><span class="connection-line l3"></span><span class="connection-line l4"></span>
-        <article class="node family"><b>Family</b><span>History, priorities, decisions, lived context.</span></article>
-        <article class="node school"><b>School</b><span>Learning, goals, supports, progress, evaluations.</span></article>
-        <article class="node care"><b>Care</b><span>Health, therapy, development, provider context.</span></article>
-        <article class="node support"><b>Supports</b><span>People, permissions, services, transitions.</span></article>
+        <div class="mobile-node-rail" role="region" aria-label="People and context connected around the Family Record">
+          <article class="node family"><b>Family</b><span>History, priorities, decisions, lived context.</span></article>
+          <article class="node school"><b>School</b><span>Learning, goals, supports, progress, evaluations.</span></article>
+          <article class="node care"><b>Care</b><span>Health, therapy, development, provider context.</span></article>
+          <article class="node support"><b>Supports</b><span>People, permissions, services, transitions.</span></article>
+        </div>
         <div class="egg-center"><div class="egg-copy"><span class="small">Canonical Egg</span><strong>The Family Record</strong><p>A trusted longitudinal record the family helps confirm and carry forward.</p><span class="egg-confirm"><i></i> Family confirmed</span></div></div>
       </div>
     </aside>
